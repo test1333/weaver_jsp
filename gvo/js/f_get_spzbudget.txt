@@ -1,0 +1,48 @@
+create or replace function f_get_spzbudget(i_kmcode    varchar2,
+                                          i_cbzxcode  varchar2,
+                                          i_requestid varchar2,
+                                          i_date      varchar2,
+                                          i_zcid      varchar2,
+                                          i_type      varchar2)
+  return number as
+
+  v_result number(12, 2) := 0;
+begin
+  if i_type = '0' then
+    begin
+      select round(nvl(sum(nvl(amount, 0)), 0), 2)
+        into v_result
+        from formtable_main_576     a,
+             formtable_main_576_dt1 b,
+             workflow_requestbase   c
+       where a.id = b.mainid
+         and a.requestid = c.requestid
+         and c.currentnodetype < 3
+         and a.requestid <> i_requestid
+         and b.costcenter = i_cbzxcode
+         and b.expaccount = i_kmcode
+         and trunc(to_date(outdate, 'yyyy-mm-dd'), 'mm') =
+             trunc(to_date(i_date, 'yyyy-mm-dd'), 'mm');
+    exception
+      when no_data_found then
+        v_result := 0;
+    end;
+  else
+    begin
+      select round(nvl(sum(nvl(amount, 0)), 0), 2)
+        into v_result
+        from formtable_main_576     a,
+             formtable_main_576_dt1 b,
+             workflow_requestbase   c
+       where a.id = b.mainid
+         and a.requestid = c.requestid
+         and c.currentnodetype < 3
+         and a.requestid <> i_requestid
+         and b.zcmc = i_zcid;
+    exception
+      when no_data_found then
+        v_result := 0;
+    end;
+  end if;
+  return v_result;
+end;

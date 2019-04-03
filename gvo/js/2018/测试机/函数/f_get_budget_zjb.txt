@@ -1,0 +1,23 @@
+create or replace function f_get_budget_zjb(i_yskm   varchar2,
+                                            i_fyqj varchar2,
+                                            i_cdbm varchar2,
+                                            i_type varchar2,
+                                            i_lcid varchar2)
+  return varchar2 as
+    v_result number(20,2) :=0;
+begin
+     if i_yskm ='' or i_fyqj = '' or  i_cdbm = '' or i_type = '' then
+       return v_result;
+     end if;
+     if i_type ='0' then
+       select nvl(sum(nvl(je,0)),0) into v_result from uf_pr_budget  where  substr(qj,'0','7')=substr(i_fyqj,'0','7') and cdbm=i_cdbm and yskm=i_yskm and lcid not in(nvl(i_lcid,-1));
+     elsif i_type = '1' then 
+       select nvl(sum(nvl(je,0)),0) into v_result from uf_pr_budget  where  substr(qj,'0','4')=substr(i_fyqj,'0','4') and gsdm=i_cdbm and yskm=i_yskm and lcid not in(nvl(i_lcid,-1));
+     elsif i_type = '2' then
+       select nvl(sum(nvl(je,0)),0) into v_result from uf_pr_budget  where  substr(qj,'0','4')=substr(i_fyqj,'0','4') and cdbm=i_cdbm and yskm=i_yskm and lcid not in(nvl(i_lcid,-1));
+     end if;
+   
+
+
+    return v_result;
+end;

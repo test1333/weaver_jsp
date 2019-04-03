@@ -1,0 +1,4 @@
+ALTER view [dbo].[tmc_gwk_2018_view] as 
+select f2.id,f2.skfxx as cardid,wn.kh as cardno,f2.cnzfje as amount,f2.sjskrq as genDate,f2.mainid from formtable_main_370_dt2 f2
+join uf_NewBusiness wn on f2.skfxx=wn.id
+where zffs2=2 

@@ -1,0 +1,6 @@
+create table gvo_other_role
+(
+ 
+  now_id        VARCHAR2(200),
+ other_id        VARCHAR2(200)
+)

@@ -1,0 +1,1 @@
+doFieldSQL(" select case when '$6487$'='1' then (select b.UnitPrice from formtable_main_21 a, formtable_main_21_dt1 b where a.id=b.mainid and PartNo='$6467$' and SuppilerCode='$6573$' and (Quantity<='$6472$' and Quantity2>='$6472$') and (WorkDate<='$6458$' and WorkDate2>='$6458$')) else 0 end ")

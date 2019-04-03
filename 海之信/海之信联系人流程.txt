@@ -1,0 +1,39 @@
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 -->
+<script type="text/javascript">
+
+   var yddh="#field11677_";
+   var bgdh="#field11676_";
+   var dzyx="#field11679_";
+  jQuery(document).ready(function(){
+
+   checkCustomize = function(){
+      var num=jQuery("#indexnum0").val();
+      for(var index=0;index<=num;index++){
+         if(jQuery(yddh+index).length>0){
+          var tmp_yddh = jQuery(yddh+index).val();
+          var tmp_bgdh = jQuery(bgdh+index).val();
+          var tmp_dzyx = jQuery(dzyx+index).val();
+        if(tmp_yddh =='' && tmp_bgdh =='' && tmp_dzyx =='' ){
+           alert("请填写联系人的办公电话或移动电话或电子邮箱");
+           return false;
+         } 
+     }
+      }
+    return true;
+   }
+
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+

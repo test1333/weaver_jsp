@@ -1,0 +1,8 @@
+create or replace trigger WORKFLOW_CURRENTOPERATOR_YJZX
+  before UPDATE  of takisremark on Workflow_Currentoperator
+  for each row
+ when (old.takisremark=-2 and new.takisremark=0)
+begin
+   update ofs_todo_data@dblink_oa set  isremark=0,viewtype=0 where SYSCODE='EC' and  flowid=to_char(:old.requestid) and receiver=(select loginid from hrmresource where id=:old.userid)  and islasttimes='1';
+
+end;

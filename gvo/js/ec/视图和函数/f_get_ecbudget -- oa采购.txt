@@ -1,0 +1,103 @@
+create or replace function f_get_ecbudget(i_lx       varchar2,
+                                           i_kmcode   varchar2,
+                                           i_cbzxcode varchar2,
+                                           i_date     varchar2,
+                                           i_zcid     varchar2,
+                                           i_type     varchar2)
+  return number as
+  v_ysje         number(12, 2) := 0;
+  v_yyje         number(12, 2) := 0;
+  v_kyje         number(12, 2) := 0;
+  v_result       number(12, 2) := 0;
+  v_cbzxid       varchar2(100) := '';
+  v_kmid         varchar2(100) := '';
+  v_monthid      varchar2(100) := '';
+   v_supsubjectid varchar2(100) := '';
+  v_yearid       varchar2(100) := '';
+  v_budgetinfoid varchar2(100) := '';
+begin
+  if i_lx = 'PR04' then
+    if i_kmcode is null or i_cbzxcode is null or i_date is null then
+      v_ysje := 0;
+      v_yyje := 0;
+      v_kyje := 0;
+    else
+      begin
+        select id as cbzxid
+          into v_cbzxid
+          from fnacostcenter
+         where trim(code) = trim(i_cbzxcode);
+        select id as kmid
+          into v_kmid
+          from fnabudgetfeetype
+         where trim(codename) = trim(i_kmcode);
+
+           select supsubject
+        into v_supsubjectid
+        from FnaBudgetfeeType
+       where id = v_kmid;
+
+        select a.periodsid as monthid, b.id as yearid
+          into v_monthid, v_yearid
+          from FnaYearsPeriodsList a, FnaYearsPeriods b
+         where a.fnayearid = b.id
+           and b.status = 1
+           and trim(a.startdate) <= trim(i_date)
+           and trim(a.enddate) >= trim(i_date);
+
+        select id
+          into v_budgetinfoid
+          from fnabudgetinfo
+         where status = 1
+           and organizationtype = '18004'
+           and budgetperiods = v_yearid
+           and budgetorganizationid = v_cbzxid;
+        select  nvl(sum(nvl(budgetaccount, 0)),0) as ysje
+          into v_ysje
+          from FnaBudgetInfoDetail
+         where budgetinfoid = v_budgetinfoid
+           and budgettypeid  in(select id from FnaBudgetfeeType where supsubject=v_supsubjectid)
+           and budgetperiodslist = v_monthid;
+        select nvl(sum(nvl(amount, 0)), 0) as yyje
+          into v_yyje
+          from FnaExpenseInfo
+         where organizationid = v_cbzxid
+           and subject in(select id from FnaBudgetfeeType where supsubject=v_supsubjectid)
+           and budgetperiods = v_yearid
+           and budgetperiodslist = v_monthid;
+        v_kyje := v_ysje - v_yyje;
+      exception
+        when no_data_found then
+          v_ysje := 0;
+          v_yyje := 0;
+          v_kyje := 0;
+      end;
+    end if;
+  else
+    if i_zcid is null then
+      v_ysje := 0;
+      v_yyje := 0;
+      v_kyje := 0;
+    else
+      begin
+        select budgetamt, usedamt, usableamt
+          into v_ysje, v_yyje, v_kyje
+          from v_ec_eqname
+         where id = i_zcid;
+      exception
+        when no_data_found then
+          v_ysje := 0;
+          v_yyje := 0;
+          v_kyje := 0;
+      end;
+    end if;
+  end if;
+  if i_type = '0' then
+    v_result := v_ysje;
+  elsif i_type = '1' then
+    v_result := v_yyje;
+  else
+    v_result := v_kyje;
+  end if;
+  return v_result;
+end;

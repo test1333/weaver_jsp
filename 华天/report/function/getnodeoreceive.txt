@@ -1,0 +1,24 @@
+create or replace function getnodeoreceive(i_nodeid    in varchar2,
+                                          i_requestid in varchar2)
+  return varchar2 as
+  v_result varchar2(100);
+begin
+
+
+      begin
+        select receive
+          into v_result
+          from (select receivedate||' '||receivetime as receive
+                  from workflow_currentoperator
+                 where requestid = i_requestid
+                   and nodeid = i_nodeid
+                   and isremark in (0,2,4,5)
+                 order by id desc)
+         where rownum = 1;
+      exception
+        when others then
+          v_result := '';
+      end;
+
+  return v_result;
+end;

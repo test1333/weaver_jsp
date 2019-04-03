@@ -1,0 +1,6 @@
+create table request_fk_record(
+requestid varchar(200),
+seq integer,
+fkseq  integer,
+sfscpz varchar(200)
+)

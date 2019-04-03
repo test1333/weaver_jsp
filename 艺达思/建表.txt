@@ -1,0 +1,9 @@
+CREATE TABLE yds_SysNo
+(
+id int,
+SysNo varchar(255),
+dateSys varchar(255),
+NextSeq int,
+Tablename varchar(255),
+strsys varchar(255)
+)

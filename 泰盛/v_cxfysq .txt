@@ -1,0 +1,12 @@
+create or replace view v_cxfysq as
+select a.requestid,
+       a.requestname,
+       (select lastname from hrmresource where id = a.creater) as creater,
+       a.createdate || ' ' || a.createtime as time,a.creater as createrid
+  from workflow_requestbase a, formtable_main_50 b
+ where a.requestid = b.requestid
+   and a.workflowid = 359
+   and a.currentnodetype >= 3
+   and (b.status = '' or b.status is null or b.status = '0')
+   and ( select sum(nvl(amount,0)) from FnaExpenseInfo where requestid=a.requestid and status=0)>0
+order by requestid desc

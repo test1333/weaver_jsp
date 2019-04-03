@@ -1,0 +1,29 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_payReqView2]    Script Date: 3/25/2019 5:34:32 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+ALTER VIEW [dbo].[gb_payReqView2] AS 
+--select sum(b.dfje) as bcje,isnull(sum(b.sfje),0) as sfje,isnull(b.sfpk,'1') as sfpk,(sum(b.jeyb)-isnull(sum(b.sfje),0)) as syje,b.id,b.gysmc,b.fph,b.fkqx,b.company,b.bz,b.jeyb,b.jermb,a.GYSMC as gys,a.YHZH,a.LHH,a.KHH,a.JGH,a.CNAPS,b.fkid,(select d.selectname from workflow_billfield e, workflow_bill c,workflow_selectitem d where e.billid=c.id and d.fieldid=e.id  and c.tablename='uf_suppmessForm' and e.fieldname='ZHSK' and d.cancel=0 and d.selectvalue = a.ZHSK) as ZHSK from uf_payinternal b
+--left join uf_suppmessForm a
+ --on a.id =b.gysmc where a.id not in (select gys from uf_ztpkgys ) and b.fph not in (select fphm from  uf_ztpkfp ) group by b.gysmc,b.fkqx,b.company,b.bz,b.jeyb,b.jermb,a.GYSMC,a.YHZH,a.LHH,a.KHH,a.JGH,a.CNAPS,a.ZHSK,b.id,b.sfpk,b.fkid,b.fph
+ 
+ select max(t.gys) as gys,t.gysmc,max(t.fkqx) as fkqx,t.company as gs,t.bz,isnull(sum(t.jeyb) ,0) as ybje,
+isnull(sum(t.jermb),0) as rmb,max(t.YHZH) as yhzh,max(t.LHH) as lhh,max(t.KHH) as khh,max(t.JGH) as jgh,max(t.CNAPS) as CNAPS,
+max(t.ZHSK) as zhsk,t.cgdl,(select buydl from uf_buydl where id=t.cgdl) as cgdlspan from (select isnull(b.sfpk,'1') as sfpk,b.id,b.gysmc,b.fph,b.fkqx,b.company,b.bz,b.jeyb,b.jermb,a.GYSMC as gys,a.YHZH,a.LHH,
+a.KHH,a.JGH,a.CNAPS,b.fkid,(select d.selectname from workflow_billfield e, workflow_bill c,workflow_selectitem d where e.billid=c.id 
+and d.fieldid=e.id  and c.tablename='uf_suppmessForm' and e.fieldname='ZHSK' and d.cancel=0 and d.selectvalue = a.ZHSK) as ZHSK,b.cgdl
+ from uf_payinternal b join uf_suppmessForm a on a.id =b.gysmc where a.id not in (select gys from uf_ztpkgys ) and b.fph not in 
+ (select fphm from  uf_ztpkfp ) ) t where  t.sfpk='1' group by t.gysmc,t.bz,t.company,t.cgdl
+
+
+GO
+
+

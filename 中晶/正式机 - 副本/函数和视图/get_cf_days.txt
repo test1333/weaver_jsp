@@ -1,0 +1,24 @@
+alter function [dbo].[get_cf_days](@ryid varchar(20),@type varchar(20),@startday varchar(20),@endday varchar(20))
+
+	returns int
+as
+begin
+	declare @o_days int
+
+    set @o_days=0
+	if @type=1 
+		 begin
+		 	select @o_days=isnull(SUM(isnull(qjqjhts,0)),0)  from formtable_main_17 a,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype>=3 and a.name=@ryid and a.qjlx<>12 and b.workflowid=55 and sqrq>=@startday and sqrq<=@endday
+		 end
+	else if @type=2
+		begin
+			select @o_days=isnull(SUM(isnull(qjqjhts,0)),0)  from formtable_main_17 a,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype>=3 and a.name=@ryid and a.qjlx=12 and b.workflowid=55 and sqrq>=@startday and sqrq<=@endday
+	 	end
+	 else if @type=3
+		begin
+			select @o_days=FLOOR(isnull(SUM(isnull(totalhours,0)),0)/8 ) from Bill_HrmOvertimeSapa a,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype>=3 and a.resourceid=@ryid and b.workflowid=66 and applydate>=@startday and applydate<=@endday
+	 	end
+	 
+	return @o_days
+end
+GO

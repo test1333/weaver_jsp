@@ -1,0 +1,5 @@
+create or replace view v_jiaban_time as
+
+ 
+ select TO_CHAR(to_date(a.gsrq,'yyyy-mm-dd'),'YYYY-MM') TIME,xm,nvl(sum(a.yjjbss),0) as hours from formtable_main_5_dt1  a,formtable_main_5 b,workflow_requestbase c WHERE a.mainid=b.id and b.requestid=c.requestid and c.currentnodetype>=3 and TO_CHAR(to_date(a.gsrq,'yyyy-mm-dd'),'yyyy') = TO_CHAR(SYSDATE,'YYYY') group by xm,TO_CHAR(to_date(a.gsrq,'yyyy-mm-dd'),'YYYY-MM')
+ 

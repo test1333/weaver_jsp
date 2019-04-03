@@ -1,0 +1,5 @@
+CREATE OR REPLACE VIEW V_HRMONTHYJ_dt AS
+SELECT c.gh as ygh,c.xm as qjr,c.qjlb as jiabie,b.jb as jbname,SUM(c.yjqjxss) AS SJXS£¬substr(c.yjqjksrq,1,4) as riqi
+from formtable_main_499 a left join formtable_main_499_dt1 c on a.id=c.mainid left join formtable_main_112 b on c.qjlb=b.xjbh
+where c.sjqjxss is null AND a.requestid in(select requestid from workflow_requestbase where currentnodetype<>3 )
+group by c.gh,c.xm,c.qjlb,b.jb,substr(c.yjqjksrq,1,4);

@@ -1,0 +1,7 @@
+create or replace view fl_cptcaptical_view as
+select a.id,a.name,a.blongsubcompany,a.CAPITALSPEC,a.capitalgroupid,d.assortmentname||'>'||b.assortmentname as assortname,fl_cptProperty(capitalgroupid) as supgroupid,c.subcompanyname,
+ZT,a.frcompanycode  from cptcapital a
+left join cptcapitalassortment b on a.capitalgroupid=b.id
+left join hrmsubcompany c on a.blongsubcompany=c.id
+left join cptcapitalassortment d on fl_cptProperty(a.capitalgroupid)=d.id
+where isdata=1;

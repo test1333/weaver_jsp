@@ -1,0 +1,9 @@
+ALTER view [dbo].[tmc_gwk_2018_view] as 
+select f2.id,f2.skfxx as cardid,wn.kh as cardno,f2.cnzfje as amount,f2.sjskrq as genDate,f2.mainid 
+from formtable_main_370_dt2 f2,uf_NewBusiness wn,formtable_main_370 a,uf_personal_borrow b
+where f2.mainid=a.id 
+ and f2.skfxx=wn.id
+ and a.requestId=b.xglc
+ and f2.skfxx=b.gwk
+ and ISNULL(b.jkye,0)>0
+ and f2.zffs2=2 

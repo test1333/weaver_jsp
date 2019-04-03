@@ -1,0 +1,23 @@
+create or replace function getischaoshi(i_nodeid    in varchar2,
+                                          i_requestid in varchar2)
+  return varchar2 as
+  v_result varchar2(100) :='0';
+  v_operatedate varchar2(100);
+  v_receivedate varchar2(100);
+begin
+
+      v_receivedate := getnodeyjwcsje(i_nodeid,i_requestid);
+      v_operatedate := getnodesjclsj(i_nodeid,i_requestid);
+ if v_receivedate = '' or v_receivedate ='' then
+   return '0';
+ end if;
+ begin
+      select case when to_date(v_operatedate,'yyyy-mm-dd hh24:mi:ss')> to_date(v_receivedate,'yyyy-mm-dd hh24:mi:ss') then '1' else '0' end
+      into v_result
+      from dual;
+ exception
+   when others then
+     v_result :='0';
+ end;
+  return v_result;
+end;

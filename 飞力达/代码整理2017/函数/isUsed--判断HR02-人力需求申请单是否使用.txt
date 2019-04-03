@@ -1,0 +1,70 @@
+create or replace function isUsed(i_id        number,
+                                  i_userid    varchar2,
+                                  i_requestid varchar2) return varchar as
+
+  v_count  number := 0;
+  v_count1 number := 0;
+begin
+
+  select count(1)
+    into v_count1
+    from uf_special_depart
+   where BMBM in (select b.departmentcode
+                    from hrmresource a, hrmdepartment b
+                   where a.departmentid = b.id
+                     and a.id = i_userid);
+  if v_count1 > 0 then
+    select count(1)
+      into v_count
+      from formtable_main_5_dt1
+     where sqbhc is not null
+       and mainid in
+           (select id
+              from formtable_main_5 a, workflow_requestbase b
+             where XQGS in
+                   (select subcompanyid1 from hrmresource where id = i_userid)
+               and a.requestid = b.requestid
+               and b.currentnodetype >= 3)
+       and id not in (select distinct nvl(RLXQSQDH, 0)
+                        from formtable_main_7
+                       where requestid != i_requestid)
+       and id not in (select distinct nvl(RLXQSQD2, 0)
+                        from formtable_main_4
+                       where requestid != i_requestid)
+       and id = i_id;
+    if v_count > 0 then
+      return 'S';
+    end if;
+    return 'F';
+  else
+  
+    select count(1)
+      into v_count
+      from formtable_main_5_dt1
+     where sqbhc is not null
+       and mainid in (select id
+                        from formtable_main_5 a, workflow_requestbase b
+                       where XQBM in
+                             (select id
+                                from hrmdepartment
+                              connect by supdepid = prior id
+                               start with id in (select departmentid
+                                                   from hrmresource
+                                                  where id = i_userid))
+                         and a.requestid = b.requestid
+                         and b.currentnodetype >= 3)
+          
+       and id not in (select distinct nvl(RLXQSQDH, 0)
+                        from formtable_main_7
+                       where requestid != i_requestid)
+       and id not in (select distinct nvl(RLXQSQD2, 0)
+                        from formtable_main_4
+                       where requestid != i_requestid)
+       and id = i_id;
+  
+    if v_count > 0 then
+      return 'S';
+    end if;
+    return 'F';
+  end if;
+end;

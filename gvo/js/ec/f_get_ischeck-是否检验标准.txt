@@ -1,0 +1,30 @@
+create or replace function f_get_ischeck(i_persion varchar2,
+                                         i_sub     varchar2)
+  return varchar2 as
+  v_seclevel number(12, 2) := 0;
+  v_code     varchar2(20);
+  v_result   varchar2(20);
+begin
+  v_result := '0';
+  begin
+    select seclevel into v_seclevel from hrmresource where id = i_persion;
+    select subcompanycode into v_code from hrmsubcompany where id = i_sub;
+  exception
+    when no_data_found then
+      return v_result;
+  end;
+
+  if v_seclevel = '' or v_code = '' then
+    return '';
+  end if;
+  if v_code = '7000' and (v_seclevel >= 10 and v_seclevel <= 50) then
+    v_result := '1';
+  end if;
+  if v_code = '7001' and (v_seclevel >= 10 and v_seclevel <= 60) then
+    v_result := '1';
+  end if;
+  if v_code = '7002' and (v_seclevel >= 10 and v_seclevel <= 60) then
+    v_result := '1';
+  end if;
+  return v_result;
+end;

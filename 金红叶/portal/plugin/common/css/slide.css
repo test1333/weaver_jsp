@@ -1,0 +1,135 @@
+﻿.demolist {
+	font-size: 0;
+	*word-spacing: -1px;
+}
+
+p {
+	font-size: 11.7px;
+}
+
+.demolist li {
+	display: inline-block;
+	font-size: 14px;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin-right: 10px;
+	*display: inline;
+	*zoom: 1;
+	word-spacing: normal;
+	letter-spacing: normal;
+	vertical-align: top;
+}
+
+.active {
+	background: #eee;
+}
+
+.hidden {
+	display: none;
+}
+
+.code {
+	padding: 10px 0;
+}
+
+.code h3 span {
+	border: 1px solid #ddd;
+	margin-left: -1px;
+	padding: 10px;
+	display: inline-block;
+	cursor: pointer;
+}
+
+pre {
+	background: #eee;
+	padding: 10px;
+}
+
+.flexslider {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.slides {
+	position: relative;
+} /*必须加这句css,否则向左右，上下滚动时会没有效果*/
+.slides li {
+	width: 100%;
+	overflow: hidden;
+}
+
+.slides .item-img {
+	width: 100%;
+	float: left;
+}
+
+.slides .item-img img {
+	width: 100%;
+	height: 241px;
+	float: left;
+	border:0px;
+}
+
+.slides .item-content {
+	width: 100%;
+	text-align: left;
+	color:#999 !important;
+}
+.slides .item-content a{
+	font-size:13px;font-weight:bold;
+}
+/*圆形切换*/
+.flex-control-nav {
+	width: 120px;
+	position: absolute;
+	bottom: 0px;
+	text-align: center;
+	right:0px;
+}
+.flex-control-nav li {
+	margin: 0 5px;
+	display: inline-block;
+	zoom: 1;
+*display: inline;
+}
+.flex-control-paging li a {
+	background: url(../images/dot.png) no-repeat 0 -16px;
+	display:block;
+	height: 16px;
+	overflow: hidden;
+	text-indent:-99em;
+	width: 16px;
+	cursor: pointer;
+}
+.flex-control-paging li a.flex-active {
+	background-position: 0 0;
+}
+/*前一个，后一个切换*/
+.flex-direction-nav {
+*height: 0;
+display:none;
+}
+.flex-direction-nav a {
+	width: 60px;
+	height: 90px;
+	margin: -60px 0 0;
+	display: block;
+	background: url(../images/ad_ctr.png) no-repeat 0 0;
+	position: absolute;
+	top: 50%;
+	z-index: 10;
+	cursor: pointer;
+	text-indent: -9999px;
+	opacity: 0;
+	filter:alpha(opacity=0);
+-webkit-transition: all .3s ease;
+}
+.flex-direction-nav .flex-next {
+	background-position: 0 -90px;
+	right: 0;
+}
+.flex-direction-nav .flex-prev {
+	left: 0;
+}

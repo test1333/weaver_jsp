@@ -1,0 +1,64 @@
+create or replace function f_get_yearbudget_ybwl(i_kmid varchar2,
+                                                 i_cdgs varchar2,
+                                                 i_date varchar2)
+  return number as
+  v_ysje         number(20, 2) := 0;
+  v_yyje         number(20, 2) := 0;
+  v_kyje         number(20, 2) := 0;
+  v_result       number(20, 2) := 0;
+  v_monthid      varchar2(100) := '';
+  v_yearid       varchar2(100) := '';
+  v_budgetinfoid varchar2(100) := '';
+begin
+
+  if i_kmid is null or i_cdgs is null or i_date is null then
+    v_ysje := 0;
+    v_yyje := 0;
+    v_kyje := 0;
+  else
+    begin
+
+      select a.periodsid as monthid, b.id as yearid
+        into v_monthid, v_yearid
+        from FnaYearsPeriodsList a, FnaYearsPeriods b
+       where a.fnayearid = b.id
+         and b.status = 1
+         and trim(a.startdate) <= trim(i_date)
+         and trim(a.enddate) >= trim(i_date);
+
+      select nvl(sum(nvl(budgetaccount, 0)), 0) as ysje
+        into v_ysje
+        from FnaBudgetInfoDetail
+       where budgetinfoid in
+             (select id
+                from fnabudgetinfo
+               where status = 1
+                 and organizationtype = '2'
+                 and budgetperiods = v_yearid
+                 and budgetorganizationid in
+                     (select id
+                        from hrmdepartment
+                       where subcompanyid1 = i_cdgs))
+         and budgettypeid = i_kmid
+         and budgetperiods = v_yearid;
+      select nvl(sum(nvl(amount, 0)), 0) as yyje
+        into v_yyje
+        from FnaExpenseInfo
+       where organizationid in
+             (select id from hrmdepartment where subcompanyid1 = i_cdgs)
+         and organizationtype = '2'
+         and subject = i_kmid
+         and budgetperiods = v_yearid;
+      v_kyje := v_ysje - v_yyje;
+    exception
+      when no_data_found then
+        v_ysje := 0;
+        v_yyje := 0;
+        v_kyje := 0;
+    end;
+  end if;
+
+  v_result := v_kyje;
+
+  return v_result;
+end;

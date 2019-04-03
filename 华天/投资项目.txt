@@ -1,0 +1,42 @@
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 -->
+<script type="text/javascript">
+  var sblx1="#field11273";//设备类型1
+  var sblx01="#field11243";//设备类型01
+  var djbb01="#field11263";//单价(本币)01
+  var djwb01="#field11268";//单价(外币)01
+  jQuery(document).ready(function () {
+       jQuery(sblx1).bindPropertyChange(function () {
+           var sblx1_val = jQuery(sblx1).val();
+           jQuery(sblx01).val(sblx1_val);
+
+       	});
+
+        jQuery(djbb01).bind('change',function(){      
+            var djbb01_val = jQuery(djbb01).val();
+           if(djbb01_val != ''){
+                jQuery(djwb01).val("");
+                jQuery(djwb01+"span").text("");
+                jQuery(djwb01).attr('disabled',true);
+           }else{
+                jQuery(djwb01).attr('disabled',false);
+           }
+       });   
+  
+
+
+
+
+
+   });
+</script>
+
+
+
+
+
+
+
+
+
+
+

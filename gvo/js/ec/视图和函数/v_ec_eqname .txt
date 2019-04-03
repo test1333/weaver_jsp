@@ -1,0 +1,2 @@
+create or replace view v_ec_eqname as
+select id, (select subcompanycode from hrmsubcompany where id=a.corpname) as subcompanycode ,nvl(budgetamt,0) as budgetamt ,nvl(usedamt,0) as usedamt,nvl(budgetamt,0)-nvl(usedamt,0) as usableamt,equipmentname as eqid,  (select cataname from uf_therdbill where id=equipmentname) as eqname from uf_projectBudget a where a.projectCatagories='2'; 

@@ -1,0 +1,38 @@
+create or replace function getnodelogtype(i_nodeid    in varchar2,
+                                          i_requestid in varchar2)
+  return varchar2 as
+  v_result varchar2(100);
+begin
+  
+  
+  begin
+  select isremark
+    into v_result
+    from (select isremark
+            from workflow_currentoperator
+           where requestid = i_requestid
+             and nodeid = i_nodeid
+             and isremark in (0,2,4,5)
+           order by id desc)
+   where rownum = 1;
+   exception
+     when no_data_found then
+       v_result :='';
+   end;
+   if v_result ='0' then
+       v_result :='未操作';
+   elsif v_result='1' then
+       v_result :='转发';
+   elsif v_result='2' then
+       v_result :='已操作';
+   elsif v_result='4' then
+       v_result :='归档';
+    elsif v_result='5' then
+       v_result :='超时';
+   
+   else
+       v_result :='';   
+   end if;   
+ 
+   return v_result;
+end;

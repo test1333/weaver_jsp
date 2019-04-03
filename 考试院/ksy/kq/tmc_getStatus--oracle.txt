@@ -1,0 +1,88 @@
+create or replace function tmc_getStatus(v_atten_day in varchar2,v_emp_id in int,v_amOrPm in varchar2)
+  return varchar2
+as
+  v_mxid number;
+  v_week number;
+  v_res_ut_1 number;
+  v_res_ut_2 number;
+  v_res_ut varchar2(10);
+begin
+  select  nvl(MAX(ud.id),-1) into v_mxid from formtable_main_82 u
+    join formtable_main_82_dt1 ud on u.id=ud.mainid join workflow_requestbase a on u.requestId=a.requestid
+  where a.currentnodetype>=3 and u.sbzurq<=v_atten_day and u.sbzurq>to_char(to_date(v_atten_day,'yyyy-mm-dd')-7,'yyyy-mm-dd') and ud.xm=v_emp_id;
+
+  if v_mxid = -1 then
+   return '';
+  end if;
+
+  v_res_ut_1 := 0 ;
+
+  select (case trim(to_char(to_date(v_atten_day,'yyyy-mm-dd') ,'day','NLS_DATE_LANGUAGE=AMERICAN'))
+      when 'monday' then 2
+      when 'tuesday' then 3
+      when 'wednesday' then 4
+      when 'thursday' then 5
+      when 'friday' then 6
+      when 'saturday' then 7
+      when 'sunday' then 1
+      else 0
+     end
+    ) into v_week from dual;
+
+  if v_week = 2 then
+    select sw1 ,xw1 into v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 3 then
+    select sw2 ,xw2 into  v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 4 then
+    select sw3 ,xw3 into  v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 5 then
+    select sw4 ,xw4 into v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 6 then
+    select sw5 ,xw5 into v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 7 then
+    select sw6 ,xw6 into v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  elsif v_week = 1 then
+    select sw7 ,xw7 into v_res_ut_1,v_res_ut_2 from formtable_main_82_dt1 where id=v_mxid;
+  end if;
+
+  if v_amOrPm = 'AM' then
+    v_res_ut := v_res_ut_1;
+  else
+    v_res_ut := v_res_ut_2;
+  end if;
+
+  if v_res_ut='0' then
+    v_res_ut := '正常';
+  end if;
+  if v_res_ut='1' then
+    v_res_ut := '缺勤';
+  end if;
+  if v_res_ut='2' then
+    v_res_ut := '迟到';
+  end if;
+  if v_res_ut='3' then
+    v_res_ut := '早退';
+  end if;
+  if v_res_ut='4' then
+    v_res_ut := '公务';
+  end if;
+  if v_res_ut='5' then
+    v_res_ut := '事假';
+  end if;
+  if v_res_ut='6' then
+    v_res_ut := '看病';
+  end if;
+  if v_res_ut='7' then
+    v_res_ut := '病假';
+  end if;
+  if v_res_ut='8' then
+    v_res_ut := '公休';
+  end if;
+  if v_res_ut='9' then
+    v_res_ut := '例假';
+  end if;
+  if v_res_ut='10' then
+    v_res_ut := '其他';
+  end if;
+  return v_res_ut;
+end;

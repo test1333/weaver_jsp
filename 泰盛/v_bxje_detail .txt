@@ -1,0 +1,2 @@
+create or replace view v_bxje_detail as
+select casqmx,nvl(sum(nvl(a.bxje,0)),0) bxje from formtable_main_51_dt1 a,formtable_main_51 b where a.mainid=b.id and casqmx is not null  group by casqmx 

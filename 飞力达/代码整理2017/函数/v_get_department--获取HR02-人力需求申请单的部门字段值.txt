@@ -1,0 +1,19 @@
+create or replace function v_get_department(v_id number) return varchar2
+as
+
+v_name varchar2(200);
+begin
+  begin
+  select c.departmentname
+   into v_name
+  from formtable_main_5_dt1 a, formtable_main_5 b, hrmdepartment c
+ where a.mainid = b.id
+   and b.xqbm = c.id
+   and a.id= v_id;
+   exception
+     when no_data_found then
+       v_name := '';
+   end;
+
+   return v_name;
+end;

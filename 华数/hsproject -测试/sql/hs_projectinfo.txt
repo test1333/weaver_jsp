@@ -1,0 +1,5 @@
+CREATE TABLE hs_projectinfo
+(
+id integer
+
+)

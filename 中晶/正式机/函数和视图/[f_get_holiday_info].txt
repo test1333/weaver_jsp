@@ -1,0 +1,103 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[f_get_holiday_info]    Script Date: 03/12/2018 14:03:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER function  [dbo].[f_get_holiday_info](@sqr varchar(20),@type varchar(20),@searchyear varchar(20) )
+RETURNS decimal(10,1)
+AS
+BEGIN
+ declare @result decimal(10,1),
+ @starttime varchar(20),
+ @endtime varchar(20)
+ 
+ set @result=0
+ set @starttime = @searchyear+'-01-01'
+ set @endtime = @searchyear+'-12-31'
+ if @type=1 
+     begin
+      select @result=annualdays*8  from hrmannualbatchprocess where subcompanyid=0 and workingage= (DATEDIFF(month,(select startdate from hrmresource where id=@sqr),@endtime))/12 
+     end
+ else if @type=2
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=-6 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+ else if @type=3
+	begin
+	select @result=isnull(SUM(ISNULL(field009,0)),0) from hrm_paid_leave where field007 = 0 and delflag = 0 and field010 >= @starttime and field003 <= @endtime and field002=@sqr
+	end
+ else if @type=4
+	begin
+	select @result=isnull(SUM(ISNULL(field009,0)),0)-isnull(SUM(ISNULL(field011,0)),0) from hrm_paid_leave where field007 = 0 and delflag = 0 and field010 >= @starttime and field003 <= @endtime and field002=@sqr
+	end
+ else if @type=5
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=1 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=6
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=2 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=7
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=5 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=8
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=7 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=9
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=8 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=10
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=9 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=11
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=10 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=12
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=12 and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=13
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='0' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=14
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='1' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=15
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='2' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=16
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='3' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=17
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='4' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=18
+	begin
+	select @result=isnull(SUM(ISNULL(xs,0)),0) from formtable_main_17 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and qjlx=13 and qtlx='5' and qijrq2<=@endtime and qijrq1>=@starttime and name=@sqr
+	end
+else if @type=19
+	begin
+	select @result=isnull(SUM(ISNULL(sx,0)),0) from formtable_main_27 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype >=3 and jbhsfs1='0' and jbjsrq1<=@endtime and jbrq1>=@starttime and xm=@sqr
+	end
+return @result
+end
+
+GO
+
+

@@ -1,0 +1,26 @@
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 -->
+<script type="text/javascript">
+	var syb="#field30499";//事业部
+	jQuery(document).ready(function(){
+
+		var syb_val=jQuery(syb).val();
+		if(syb_val=="20")
+		{
+                        jQuery("#tzx_head1").text("调整项1");
+			$(".td_tzx2").show();
+			$(".td_tzx3").show();
+			$(".td_tzx4").show();
+		}
+		else	
+		{
+                        jQuery("#tzx_head1").text("调整金额");
+			$(".td_tzx2").hide();
+			$(".td_tzx3").hide();
+			$(".td_tzx4").hide();
+		}
+    
+	});
+    
+</script>
+
+

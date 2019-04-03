@@ -1,0 +1,28 @@
+create or replace function getnodeyjwcsje(i_nodeid    in varchar2,
+                                          i_requestid in varchar2)
+  return varchar2 as
+  v_result varchar2(100);
+  v_count number(10);
+begin
+     select count(1) into v_count from uf_outtime_cong_dt1 where jdid=i_nodeid;
+     if v_count <=0 then
+       return '';
+     end if;
+
+      begin
+        select (select to_char(to_date(receive,'yyyy-mm-dd hh24:mi:ss')+xh/24+fz/24/60,'yyyy-mm-dd hh24:mi:ss') from uf_outtime_cong_dt1 where jdid=i_nodeid and rownum=1)
+          into v_result
+          from (select receivedate||' '||receivetime as receive
+                  from workflow_currentoperator
+                 where requestid = i_requestid
+                   and nodeid = i_nodeid
+                   and isremark in (0,2,4,5)
+                 order by id desc)
+         where rownum = 1;
+      exception
+        when others then
+          v_result := '';
+      end;
+
+  return v_result;
+end;

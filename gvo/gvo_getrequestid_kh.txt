@@ -1,0 +1,118 @@
+create or replace function gvo_getrequestid_kh(i_requestid varchar2,
+                                               i_type      varchar2)
+  return varchar2 as
+  v_result varchar2(200);
+  v_count  number(10) := 0;
+begin
+  if i_type = '1' then
+    select count(1)
+      into v_count
+      from workflow_requestbase a, formtable_main_520 b
+     where a.requestid = b.requestid
+       and a.workflowid = 7945
+       and a.currentnodetype >= 3
+       and (createdate >=
+           to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+           createdate < to_char(sysdate, 'yyyy-mm-dd'))
+       and b.jxkhmbzd = i_requestid;
+       if v_count=0 then
+         v_result := i_requestid;
+       else
+         select max(a.requestid) as requestid
+
+          into v_result
+          from workflow_requestbase a, formtable_main_520 b
+          where a.requestid = b.requestid
+           and a.workflowid = 7945
+           and a.currentnodetype >= 3
+           and (createdate >=
+               to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+                createdate < to_char(sysdate, 'yyyy-mm-dd'))
+           and b.jxkhmbzd = i_requestid;
+       end if;
+  end if;
+    if i_type = '2' then
+    select count(1)
+      into v_count
+      from workflow_requestbase a, formtable_main_521 b
+     where a.requestid = b.requestid
+       and a.workflowid = 7946
+       and a.currentnodetype >= 3
+       and (createdate >=
+           to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+           createdate < to_char(sysdate, 'yyyy-mm-dd'))
+       and b.jxkhmbzd = i_requestid;
+       if v_count=0 then
+         v_result := i_requestid;
+       else
+          select max(a.requestid) as requestid
+
+          into v_result
+          from workflow_requestbase a, formtable_main_521 b
+          where a.requestid = b.requestid
+           and a.workflowid = 7946
+           and a.currentnodetype >= 3
+           and (createdate >=
+               to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+                createdate < to_char(sysdate, 'yyyy-mm-dd'))
+           and b.jxkhmbzd = i_requestid;
+       end if;
+  end if;
+    if i_type = '3' then
+    select count(1)
+      into v_count
+      from workflow_requestbase a, formtable_main_522 b
+     where a.requestid = b.requestid
+       and a.workflowid = 7947
+       and a.currentnodetype >= 3
+       and (createdate >=
+           to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+           createdate < to_char(sysdate, 'yyyy-mm-dd'))
+       and b.jxkhmbzd = i_requestid;
+       if v_count=0 then
+         v_result := i_requestid;
+       else
+          select max(a.requestid) as requestid
+
+          into v_result
+          from workflow_requestbase a, formtable_main_522 b
+          where a.requestid = b.requestid
+           and a.workflowid = 7947
+           and a.currentnodetype >= 3
+           and (createdate >=
+               to_char(sysdate - interval '6' month, 'yyyy-mm-dd') and
+                createdate < to_char(sysdate, 'yyyy-mm-dd'))
+           and b.jxkhmbzd = i_requestid;
+       end if;
+  end if;
+    if i_type = '4' then
+    select count(1)
+      into v_count
+      from workflow_requestbase a, formtable_main_523 b
+     where a.requestid = b.requestid
+       and a.workflowid = 7948
+       and a.currentnodetype >= 3
+       and (createdate >=
+           to_char(sysdate - interval '12' month, 'yyyy-mm-dd') and
+           createdate < to_char(sysdate, 'yyyy-mm-dd'))
+       and b.jxkhmbzd = i_requestid;
+       if v_count=0 then
+         v_result := i_requestid;
+       else
+          select max(a.requestid) as requestid
+
+          into v_result
+          from workflow_requestbase a, formtable_main_523 b
+          where a.requestid = b.requestid
+           and a.workflowid = 7948
+           and a.currentnodetype >= 3
+           and (createdate >=
+               to_char(sysdate - interval '12' month, 'yyyy-mm-dd') and
+                createdate < to_char(sysdate, 'yyyy-mm-dd'))
+           and b.jxkhmbzd = i_requestid;
+       end if;
+  end if;
+
+  return v_result;
+
+end;

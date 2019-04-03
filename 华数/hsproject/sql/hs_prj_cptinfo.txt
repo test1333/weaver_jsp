@@ -1,0 +1,7 @@
+CREATE TABLE hs_prj_cptinfo
+(
+id integer,
+prjid integer,
+issys varchar2(10)
+)
+

@@ -1,0 +1,17 @@
+USE [ecology];
+GO
+SET ANSI_NULLS ON;
+GO
+SET QUOTED_IDENTIFIER ON;
+GO
+ALTER FUNCTION [dbo].[get_some_mont_OUT](@martID int,@stockID int,@startday VARCHAR(20),@endday VARCHAR(20))
+	returns decimal(18,2)
+	as
+	begin
+		declare @res decimal(18,2)
+		select  @res = ISnull(SUM(rksl),0) from uf_stock where CKID=@stockID and wlmc=@martID and rkrq<@endday and rkrq>=@startday and rkly=1
+		
+		return @res
+		
+	end
+GO

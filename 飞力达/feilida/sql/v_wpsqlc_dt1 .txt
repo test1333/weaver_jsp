@@ -1,0 +1,2 @@
+create or replace view v_wpsqlc_dt1 as
+select a.mainid,wm_concat(b.name||'*'||a.shl||'('||a.je||')') as wpmc from formtable_main_115_dt1 a,cptcapital b where a.cptname=b.id group by a.mainid

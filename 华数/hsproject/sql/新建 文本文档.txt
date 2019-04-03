@@ -1,0 +1,19 @@
+create view v_oa_prj_amount as 
+select  fnumber,fyear,sum(famount) as famount from (select reverse(substring(reverse(a.FNumber),1,charindex('.',reverse(a.FNumber)) - 1)) as fnumber,b.FAmount,c.fyear  from t_Account  a, t_VoucherEntry b,t_voucher c where   a.FAccountID=b.FAccountID and  b.FVoucherID =c.fvoucherid and  a.fnumber like '1604.%' and b.fdc=1) t group by t.fnumber,t.fyear
+
+
+select b.address,regexp_replace(substr(a.projectid,6),'[^0-9]',''),a.price,a.assetcode,a.name from t_asset a, t_location b where a.locationguid=b.locationguid and projectid is not null
+
+
+商务系统 select b.Htbh,b.Htmc,b.GysName,b.Qdrq,b.Htje,c.sgbh,a.qr,a.Kzk_Xmbh from Cggl_Sgd_Cp a,Cggl_Contract b,Cggl_sgd c where a.htbh=b.Htbh and a.SgdpkID=c.lsh and a.Kzk_Xmbh is not null
+
+select b.Htbh,b.Htmc,b.GysName,b.Qdrq,b.Htje,c.sgbh,a.qr,a.Kzk_Xmbh,a.zj from Cggl_Sgd_Cp a,Cggl_Contract b,Cggl_sgd c where a.htbh=b.Htbh and a.SgdpkID=c.lsh and a.Kzk_Xmbh is not null 
+and c.Sgbh='CMSG201624056'
+
+
+待定
+select b.address,regexp_replace(substr(a.projectid,6),'[^0-9]',''),a.price,a.assetcode,a.name,a.numbers from t_asset a, t_location b,t_companyassetsort c where a.locationguid=b.locationguid and a.assetsortguid=c.assetsortguid and projectid is not null and c.companyid ='00001'
+
+00001 传媒
+
+00004紫荆

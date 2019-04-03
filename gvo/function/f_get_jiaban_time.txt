@@ -1,0 +1,29 @@
+create or replace function f_get_jiaban_time(v_id in varchar2,v_month in varchar2)
+return number
+
+as
+
+v_number  number(10,2):=0;
+begin
+  begin
+  select nvl(sum(nvl(a.yjjbss, 0)), 0)
+  into v_number
+    from formtable_main_5_dt1 a,
+         formtable_main_5 b,
+         workflow_requestbase c
+   where a.mainid=b.id
+     and b.requestid=c.requestid
+     and c.currentnodetype >=3
+     and a.xm = v_id
+     and to_date(a.gsrq, 'yyyy-mm-dd') >=
+         trunc(TO_DATE(to_char(sysdate, 'YYYY') || '-' || v_month, 'yyyy-mm'),
+               'mm')
+     and to_date(a.gsrq, 'yyyy-mm-dd') <=
+         last_day(TO_DATE(to_char(sysdate, 'YYYY') || '-' || v_month,
+                          'yyyy-mm'));
+   exception
+     when others then
+       v_number :=0;
+       end;
+   return v_number;
+end;

@@ -1,0 +1,1 @@
+select isnull(sum(distinct d.BBJE),'0') as htzje from uf_invoice a,uf_invoice_dt1 b ,formtable_main_240 c,formtable_main_207 d where a.id=b.mainid and b.ddlc = c.requestid and (c.contactreq is not null and c.contactreq <> '') and a.fplx='1' and c.contactreq=d.requestid and a.id='37'

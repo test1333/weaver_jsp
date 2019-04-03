@@ -1,0 +1,25 @@
+alter function [dbo].[getcdztName](@ortype varchar(100),@orid varchar(100))
+returns varchar(300)
+as
+begin
+  declare @result varchar(300)
+
+if @ortype=1
+	begin
+	select @result=subcompanyname from HrmSubCompany where id=@orid
+	end
+else if @ortype=2 
+	begin
+	select @result=departmentname from hrmdepartment where id=@orid
+	end
+else if @ortype=18004
+	begin
+	 select @result=name from fnacostcenter where id=@orid
+	end
+else
+    begin
+		set @result=''
+			
+    end
+return @result
+end

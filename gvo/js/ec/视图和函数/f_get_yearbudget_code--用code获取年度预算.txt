@@ -1,0 +1,25 @@
+create or replace function f_get_yearbudget_code(i_kmcode   varchar2,
+                                            i_cbzxcode varchar2,
+                                            i_year   varchar2)
+  return number as
+
+  v_result number(12, 2) := 0;
+begin
+
+  if i_kmcode is null or i_cbzxcode is null then
+    v_result :=0;
+  else
+    begin
+      select kyje
+      into v_result
+        from v_ec_yearfnabudget
+       where fnayear = substr(i_year, 0, 4)
+         and trim(kmcode) = i_kmcode
+         and trim(cbzxcode) = i_cbzxcode;
+    exception
+      when no_data_found then
+        v_result := 0;
+    end;
+ end if;
+  return v_result;
+end;

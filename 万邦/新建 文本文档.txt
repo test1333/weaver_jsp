@@ -1,0 +1,1 @@
+http://116.226.32.144:8088/login/Login.jsp?logintype=1

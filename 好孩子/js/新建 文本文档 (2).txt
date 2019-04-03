@@ -1,0 +1,1 @@
+doFieldSQL(" select COUNT(a.requestid) from workflow_requestbase a ,formtable_main_42 b where a.requestid=b.requestId and a.currentnodetype<3 and b.sqr='$7063$' and b.jklx='$7066$' and b.requestid not in('$11012$') ")

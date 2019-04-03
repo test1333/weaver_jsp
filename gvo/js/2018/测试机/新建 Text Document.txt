@@ -1,0 +1,1 @@
+select nvl(sum(nvl(je,0)),0) from uf_pr_budget where (cgsqdh,mxhid) in (select distinct cgsqdh,mxhid from uf_pr_budget where lcid='1362027')

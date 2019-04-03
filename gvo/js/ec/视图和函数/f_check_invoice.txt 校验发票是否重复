@@ -1,0 +1,20 @@
+create or replace function f_check_invoice(i_fplx varchar2,
+                                            i_fphm    varchar2)
+  return varchar2 as
+    v_result varchar2(20):='';
+begin
+    if i_fplx = '1' then
+      begin
+        select b.requestmark into v_result from uf_e_invoice a ,workflow_requestbase b where a.xglc=b.requestid and a.fphm=i_fphm;
+
+      exception
+         when no_data_found then
+            v_result :='';
+      end;
+
+    else
+      v_result :='';
+
+    end if;
+    return v_result;
+end;

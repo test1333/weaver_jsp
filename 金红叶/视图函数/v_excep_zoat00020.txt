@@ -1,0 +1,19 @@
+create or replace view v_excep_zoat00020 as 
+select a.*
+  from zoat00020 a, workflow_requestbase b
+ where a.lc_no = b.requestid
+   and b.currentnodetype>=3
+   and a.status in ('F', 'J', 'T')
+   and (a.upd_flag is null or a.upd_flag = 'N')
+   and a.oa_status is not null
+   and (a.sap_status is null or a.sap_status='E')
+union
+select a.*
+  from zoat00020 a, workflow_requestbase b
+ where a.lc_no = b.requestid
+   and b.currentnodetype>=3
+   and a.status in ('F', 'J', 'T')
+   and (a.upd_flag ='Y')
+   and a.oa_status is not null
+   and (a.sap_status is null or a.sap_status='E' or a.sap_updatestatus is null or a.sap_updatestatus='E')
+   

@@ -1,0 +1,22 @@
+npp增加费用分类  成本中心增加字段
+采购申请增加fykm字段
+3个采购申请视图变更
+3个createpoflow.jsp变更  D:\工作\jsp\好孩子\goodbaby\adore\jsp\gns\purchase\bid\createPOFlow.jsp
+采购订单流程增加采购大类和费用科目字段
+入库单流程增加采购大类和费用科目字段
+/weaver_new/src/goodbaby/order/CreatChu.java 代码修改
+发票库表单 主表和明细表增加采购大类
+D:\工作\jsp\好孩子\goodbaby\whfp\insert.jsp
+付款申请流程明细增加采购大类 联动配置 模板配置
+排款中间uf_payinternal增加字段采购大类 流程转数据配置
+排款流程中间uf_flow_payinternal增加字段采购大类
+待排款列表修改
+D:\工作\jsp\好孩子\goodbaby\daisy\payment\payReqList\payList.jsp
+D:\工作\jsp\好孩子\goodbaby\daisy\payment\payReqList\createPayFlow.jsp
+带排款视图修改
+排款流程增加采购大类字段明细表
+付款中间	uf_fkzjb增加字段采购大类
+D:\工作\jsp\好孩子\goodbaby\daisy\payment\willPay\saveData.jsp
+
+
+

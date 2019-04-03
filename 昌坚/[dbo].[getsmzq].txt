@@ -1,0 +1,7 @@
+alter function [dbo].[getsmzq](@id varchar(30))
+ RETURNS varchar(20) 
+AS
+begin
+return (select isnull((select case  isnull(smzq,'0')when '0' then '初始' when '1' then '审批中' when '2' then '受控' else '' end from cus_fielddata where id=@id and scope='DocCustomFieldBySecCategory'),'') as smzq)
+end
+ 

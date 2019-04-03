@@ -1,0 +1,29 @@
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+	var telInfo= "#field6735";
+        var mailInfo = "#field6736";
+    
+
+       var yddh="#field6720";
+       var bgdh="#field6719";
+       var dzyx="#field6722";
+
+	checkCustomize = function() {
+   
+        var tmp_yddh = jQuery(yddh).val();
+        var tmp_bgdh = jQuery(bgdh).val();
+        var tmp_dzyx = jQuery(dzyx).val();
+
+  
+         if(tmp_yddh =="" && tmp_bgdh =="" && tmp_dzyx =="" ){
+          alert("请填写联系人的办公电话或移动电话或电子邮箱");
+          return false;
+         }        
+
+       
+
+                    return true;
+	}
+});
+</script>

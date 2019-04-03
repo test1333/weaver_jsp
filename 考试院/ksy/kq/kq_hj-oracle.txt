@@ -1,0 +1,184 @@
+create or replace function kq_hj(v_emid in varchar2,v_lx in varchar2,v_begintime in varchar2,v_endtime in varchar2)
+	return number
+is
+	v_count number;
+	v_week1 number;
+	v_qzy varchar2(50);
+	v_lastday varchar2(50);
+begin
+	v_count := 0;
+	select (case trim(to_char(to_date(v_begintime,'yyyy-mm-dd') ,'day','NLS_DATE_LANGUAGE=AMERICAN'))
+		  when 'monday' then 2
+		  when 'tuesday' then 3
+		  when 'wednesday' then 4
+		  when 'thursday' then 5
+		  when 'friday' then 6
+		  when 'saturday' then 7
+		  when 'sunday' then 1
+		  else 0
+		 end
+		) into v_week1 from dual;
+
+  if v_week1 !=2 then
+    if v_week1=1 then
+      v_week1 := v_week1+7;
+    end if;
+
+    select to_char(to_date(v_begintime,'yyyy-mm-dd')-v_week1+2,'yyyy-mm-dd') into v_qzy from dual;
+    if v_week1 <= 8 then
+      select COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw7=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw7=v_lx;
+    end if;
+
+    if v_week1 <= 7 then
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw6=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw6=v_lx;
+    end if;
+
+    if v_week1 <= 6 then
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw5=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw5=v_lx;
+     end if;
+
+    if v_week1 <= 5 then
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw4=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw4=v_lx;
+    end if;
+
+    if v_week1 <= 4 then
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw3=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw3=v_lx;
+    end if;
+
+    if v_week1<=3 then
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw2=v_lx;
+
+      select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw2=v_lx;
+    end if;
+  end if;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+      where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw1=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw1=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw2=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw2=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw3=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw3=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw4=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw4=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw5=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw5=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw6=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw6=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and sw7=v_lx  and xm=v_emid;
+
+  select v_count+COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+    where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<v_endtime and a.sbzurq>=v_begintime and xw7=v_lx  and xm=v_emid;
+
+  select to_char(to_date(v_endtime,'yyyy-mm-dd')-1,'yyyy-mm-dd') into v_lastday from dual;
+
+  select (case trim(to_char(to_date(v_lastday,'yyyy-mm-dd') ,'day','NLS_DATE_LANGUAGE=AMERICAN'))
+      when 'monday' then 2
+      when 'tuesday' then 3
+      when 'wednesday' then 4
+      when 'thursday' then 5
+      when 'friday' then 6
+      when 'saturday' then 7
+      when 'sunday' then 1
+      else 0
+     end
+    ) into v_week1 from dual;
+
+  if v_week1 != 1 then
+    select to_char(to_date(v_lastday,'yyyy-mm-dd')-v_week1+2,'yyyy-mm-dd') into v_qzy from dual;
+    if v_week1 <= 7 then
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw7=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw7=v_lx;
+    end if;
+
+    if v_week1 <= 6 then
+      select v_count-COUNT(b.id)  into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw6=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw6=v_lx;
+    end if;
+
+    if v_week1 <= 5 then
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw5=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw5=v_lx;
+    end if;
+
+    if v_week1<=4 then
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw4=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw4=v_lx;
+    end if;
+
+    if v_week1<=3 then
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw3=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw3=v_lx;
+    end if;
+
+    if v_week1<=2 then
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and sw2=v_lx;
+
+      select v_count-COUNT(b.id) into v_count from formtable_main_82 a,formtable_main_82_dt1 b,workflow_requestbase c
+        where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=v_qzy and xm=v_emid and xw2=v_lx;
+    end if;
+  end if;
+  return v_count;
+end;

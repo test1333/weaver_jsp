@@ -1,0 +1,35 @@
+create or replace function f_check_wpsq(i_id in varchar2,
+                                           i_reqid  in varchar2,
+                                         i_bxr in varchar2)
+  return varchar2 as
+  v_count   number(10) := 0;
+  v_sub varchar2(20);
+begin
+  begin
+    select subcompanyid1 
+     into v_sub
+    from hrmresource where id=i_bxr;
+  exception
+    when no_data_found then
+      v_sub := ''; 
+  end;
+  
+  select count(1) into v_count from formtable_main_115 where requestid=i_id and shygs = v_sub;
+  if i_bxr = '1' then
+    v_count :=1;
+   end if; 
+  if v_count < 1 then 
+    return 'E';
+  end if;
+  v_count :=0;
+ select count(1)
+ into v_count
+   from formtable_main_58
+  where requestid not in (i_reqid)
+    and instr((',' || WPSQD_NEW || ','), ',' || i_id || ',') > 0;
+  if v_count > 0 then
+    return 'E';
+  end if;
+  return 'S';
+
+end;

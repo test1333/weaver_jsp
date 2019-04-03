@@ -1,0 +1,3 @@
+create or replace view v_wpsqlc as
+select d.wpmc ,a.shqdbh, b.requestid, b.requestname,c.assortmentname as cpttype,(select assortmentname from cptcapitalassortment where id=cptProp) as cptProp ,(select lastname from hrmresource where id=a.shqr) as sqr  ,b.lastoperatedate,(select subcompanyname from hrmsubcompany where id= a.shygs) as shygs from  formtable_main_115 a ,workflow_requestbase b ,cptcapitalassortment c,v_wpsqlc_dt1 d where a.id=d.mainid and a.cpttype=c.id and a.requestid=b.requestid and b.currentnodetype>=3
+order by b.lastoperatedate desc;

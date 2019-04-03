@@ -1,0 +1,3 @@
+alter table request_fk_record add  fkrq varchar(20);
+alter table request_fk_record add  fksj varchar(20);
+alter table request_fk_record add  fklx varchar(20);

@@ -1,0 +1,10 @@
+gvo/check/monthCheckUrl.jsp?checkstatus=0
+
+改java文件的modeid
+改ModeForward id
+执行视图
+v_month_check_person
+v_check_zg.sql
+v_check_jl.sql
+v_check_zg_1.sql
+v_check_jl_1.sql

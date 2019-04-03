@@ -1,0 +1,19 @@
+create function [dbo].[isxjkm](@id varchar(100),@orid varchar(100))
+returns varchar
+as
+begin
+  declare @v_count int;
+  
+WITH allsub(id)
+as (
+SELECT id FROM FnaBudgetfeeType where id=@orid
+ UNION ALL SELECT a.id FROM FnaBudgetfeeType a,allsub b where a.supsubject = b.id  
+) select @v_count=COUNT(1) from allsub where id=@id
+
+if @v_count >0
+begin
+return 'S';
+end
+return 'E';
+end
+

@@ -1,0 +1,12 @@
+ALTER view [dbo].[v_fukuan_requestFlow_yf] as
+select a.requestid,a.requestname, b.xm as sqr,b.sqrq as sqrq, b.biz as bz,b.bxzje as fkje ,b.gsmc as gs,b.fkfs  as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_30 b where a.requestid=b.requestId and a.workflowid='60' and a.currentnodetype>=3 and yfk ='1'
+union all
+select a.requestid,a.requestname,b.xm as sqr,b.tbrq as sqrq, b.bib as bz,b.zzje as fkje,b.gsmc as gs,b.fkyh as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_22 b where a.requestid=b.requestId and a.workflowid='57' and b.sfxyzz='0' and a.currentnodetype>=3 and yfk ='1'
+union all
+select a.requestid,a.requestname,b.hxr as sqr,b.sqrq as sqrq, b.bb as bz,b.kxje as fkje ,b.gsmc as gs, b.fkfs as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_33 b where a.requestid=b.requestId and a.workflowid='72' and a.currentnodetype>=3 and yfk ='1'
+union all
+select a.requestid,a.requestname,b.hxr as sqr,b.sqrq as sqrq, b.bb as bz,b.kxje as fkje ,b.gsmc as gs,b.fkfs as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_43 b where a.requestid=b.requestId and a.workflowid='71' and a.currentnodetype>=3 and yfk ='1'
+union all
+select a.requestid,a.requestname,b.xm as sqr,b.sqrq as sqrq, b.bb as bz,b.zzje as fkje  ,b.gsmc as gs,b.fkfs as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_16 b where a.requestid=b.requestId and a.workflowid='70' and a.currentnodetype>=3 and yfk ='1'
+union all
+select a.requestid,a.requestname,b.sqr as sqr,b.sqrq as sqrq, '0' as bz,b.bxzje as fkje ,b.gsmc as gs ,b.fkfs as fkfs,b.cnry,a.requestmark from workflow_requestbase a,formtable_main_29 b where a.requestid=b.requestId and a.workflowid='61' and a.currentnodetype>=3 and yfk ='1'

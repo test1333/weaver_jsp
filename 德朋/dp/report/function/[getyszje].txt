@@ -1,0 +1,15 @@
+alter function [dbo].[getyszje](@fbiid varchar(100),@ksyue varchar(100),@jsyue varchar(100),@kmid varchar(100) )
+returns decimal(20,2)
+as
+begin
+  declare @result decimal(20,2)
+  if @kmid=''
+  begin
+   select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid =@fbiid and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue
+  end
+  else
+     begin
+     select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid =@fbiid and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and budgettypeid in(select id from FnaBudgetfeeType where dbo.[isxjkm](id,@kmid)='S')
+     end
+return @result
+end

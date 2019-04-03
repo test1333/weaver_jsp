@@ -1,0 +1,19 @@
+create or replace view v_copy_zoat00020 as
+select a."MANDT",a."LC_TYPE",a."REF_NO",a."INDEX_NO",a."CRDATE",a."CRTIME",a."CREATEDBY",a."STATUS",a."LC_NO",a."OA_MD5",a."UPD_FLAG",a."OA_DATE",a."OA_TIME",a."OA_ENDDATE",a."OA_ENDTIME",a."UPD_SUC",a."UPD_DATE",a."UPD_TIME",a."PERNR_F",a."REMARK",a."OA_STATUS",a."SAP_STATUS",a."SAP_UPDATESTATUS"
+  from zoat00020 a, workflow_requestbase b
+ where a.lc_no = b.requestid
+   and b.currentnodetype>=3
+   and a.status in ('F', 'J', 'T')
+   and (a.upd_flag is null or a.upd_flag = 'N')
+   and a.oa_status is not null
+   and a.sap_status='S'
+union
+select a."MANDT",a."LC_TYPE",a."REF_NO",a."INDEX_NO",a."CRDATE",a."CRTIME",a."CREATEDBY",a."STATUS",a."LC_NO",a."OA_MD5",a."UPD_FLAG",a."OA_DATE",a."OA_TIME",a."OA_ENDDATE",a."OA_ENDTIME",a."UPD_SUC",a."UPD_DATE",a."UPD_TIME",a."PERNR_F",a."REMARK",a."OA_STATUS",a."SAP_STATUS",a."SAP_UPDATESTATUS"
+  from zoat00020 a, workflow_requestbase b
+ where a.lc_no = b.requestid
+   and b.currentnodetype>=3
+   and a.status in ('F', 'J', 'T')
+   and (a.upd_flag ='Y')
+   and a.oa_status is not null
+   and a.sap_status='S'
+   and a.sap_updatestatus='S';

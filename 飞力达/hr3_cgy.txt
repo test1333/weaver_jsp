@@ -1,0 +1,21 @@
+create or replace view hr3_cgy as
+select a.id,
+       (select case
+                 when count(a.id) > 0 then
+                  '二次入职'
+                 else
+                  '否'
+               end
+          from hrmresource hr
+         where hr.certificatenum = a.zjhm
+           and hr.status = 5) as cgy,
+      case when b.id is null then 'Z1' else case when (select count(hr.id)
+          from hrmresource hr
+         where hr.certificatenum = a.zjhm
+           and hr.status = 5) >0 then case when c.field2 = '正式工' then 'Z2'  when c.field2 = '劳务派遣' then 'Z6' when c.field2 = '实习生' then 'Z6' when c.field2 = '其他员工' then 'Z2' when c.field2 = '零时工' then 'Z6'else ''end else 'Z1'  end end as rssj,
+     case when b.id is null then a.yztjbm else case when (select count(hr.id)
+          from hrmresource hr
+         where hr.certificatenum = a.zjhm
+           and hr.status = 5) >0 then case when c.field2 = '正式工' then '01'  when c.field2 = '劳务派遣' then '01' when c.field2 = '实习生' then '02' when c.field2 = '其他员工' then '03' when c.field2 = '零时工' then '03' else ''end else a.yztjbm  end end as yydm
+  from formtable_main_41 a
+  left join hrmresource b on a.zjhm = b.certificatenum left join cus_fielddata c on b.id=c.id and c.scopeid='-1';

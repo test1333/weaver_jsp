@@ -1,0 +1,127 @@
+alter function [dbo].[getfy](@ortype varchar(100),@orid varchar(100),@bdpid varchar(100),@type varchar(100),@ksyue varchar(100),@jsyue varchar(100),@kmid varchar(100) )
+returns decimal(20,2)
+as
+begin
+  declare @result decimal(20,2)
+  if @ortype = '2'
+  begin
+  if @type='1'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where  (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+ else if @type='2'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+  else if @type='3'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or organizationid=@orid) and organizationtype=@ortype  and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+  end
+  else if @ortype = '1'
+	begin
+		 if @type='1'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where  (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2  and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2 and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+ else if @type='2'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2  and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2 and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+  else if @type='3'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2  and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where (organizationid in(select id from hrmdepartment 
+	   where subcompanyid1 = @orid) or organizationid=@orid) and organizationtype=2 and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+	end
+  else
+  begin
+	if @type='1'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status=0 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+ else if @type='2'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status=1 and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+  else if @type='3'
+  begin
+   if @kmid=''
+	   begin
+	   select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue 
+	   end
+   else
+       begin
+       select @result=SUM(amount) from FnaExpenseInfo where organizationid=@orid and organizationtype=@ortype  and budgetperiods=@bdpid and status in(0,1) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and subject=@kmid
+       end
+  end
+  end
+return @result
+end

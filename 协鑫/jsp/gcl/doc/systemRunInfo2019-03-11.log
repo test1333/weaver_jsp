@@ -1,0 +1,1346 @@
+2019-03-11 09:53:54:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 30   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 10:44:37:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 31   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 11:51:27:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 31   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 12:32:18:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 30   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 13:26:48:==========Init security rules==========
+2019-03-11 13:26:48:The Ecology Version is E7!
+2019-03-11 13:26:48:start copy custom security files to ecology...
+2019-03-11 13:26:48:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-11 13:26:48:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-11 13:26:48:end copy custom security files to ecology...
+2019-03-11 13:26:49:special rules intercept level is 2
+2019-03-11 13:26:49:start copy files to ecology...
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-11 13:26:49:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-11 13:26:49:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-11 13:26:49:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-11 13:26:49:end copy files to ecology...
+2019-03-11 13:26:49:load E7 security file...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-11 13:26:49:watchDog is start------------------------>
+2019-03-11 13:26:49:update URL::https://update.e-cology.cn/
+2019-03-11 13:26:49:security current version is v5.6, and the security rule current version is v4.5
+2019-03-11 13:26:49:29 thread is start success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-11 13:26:49:email send thread start success
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-11 13:26:49:clear standard rules of webservice-list,webservice-list
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-11 13:26:49:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-11 13:26:49:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-11 13:26:49:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-11 13:26:49:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-11 13:26:49:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-11 13:26:49:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-11 13:26:49:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-11 13:26:49:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-11 13:26:49:clear standard rules of /exp/expmanual.jsp,s
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-11 13:26:49:======Start security firewall===========
+2019-03-11 13:26:49:SecurityMain.java---->Start security firewall timer...
+2019-03-11 13:26:49:SecurityMain.java---->Start security firewall timer success...
+2019-03-11 13:26:49:SecurityMain.java---->Start forbidden writer timer...
+2019-03-11 13:26:49:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-11 13:26:49:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-11 13:26:58:The server is resin3
+2019-03-11 13:55:59:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 32   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 14:16:02:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 30   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 14:25:21:java.lang.reflect.InvocationTargetException
+2019-03-11 14:25:22:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:71: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+1 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:71: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+1 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:31:09:java.lang.reflect.InvocationTargetException
+2019-03-11 14:31:09:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:71: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+1 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:71: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+1 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:34:41:java.lang.reflect.InvocationTargetException
+2019-03-11 14:34:41:>>>>Xss(Exception):sw=com.caucho.jsp.JspLineParseException: /login/VerifyRtxLogin.jsp:18: contentType 'text/html; charset=GBK' conflicts with previous value of contentType 'text/html; charset=UTF-8'.  Check the .jsp and any included .jsp files for conflicts.
+
+16:  <jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page" />
+17:  <jsp:useBean id="log" class="weaver.general.BaseBean" scope="page" />
+18:  <%@ page language="java" contentType="text/html; charset=GBK" %>
+19:  
+20:  <%
+
+	at com.caucho.jsp.java.JspNode.error(JspNode.java:1764)
+	at com.caucho.jsp.java.JspNode.error(JspNode.java:1753)
+	at com.caucho.jsp.java.JspDirectivePage.addAttribute(JspDirectivePage.java:100)
+	at com.caucho.jsp.java.JavaJspBuilder.attribute(JavaJspBuilder.java:388)
+	at com.caucho.jsp.JspParser.parseDirective(JspParser.java:1234)
+	at com.caucho.jsp.JspParser.parseScriptlet(JspParser.java:1113)
+	at com.caucho.jsp.JspParser.parseNode(JspParser.java:474)
+	at com.caucho.jsp.JspParser.parseJsp(JspParser.java:374)
+	at com.caucho.jsp.JspParser.parse(JspParser.java:263)
+	at com.caucho.jsp.JspCompilerInstance.parse(JspCompilerInstance.java:515)
+	at com.caucho.jsp.JspCompilerInstance.generate(JspCompilerInstance.java:454)
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:386)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+
+2019-03-11 14:39:13:java.lang.reflect.InvocationTargetException
+2019-03-11 14:39:13:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:40:19:java.lang.reflect.InvocationTargetException
+2019-03-11 14:40:19:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:40:26:java.lang.reflect.InvocationTargetException
+2019-03-11 14:40:26:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:43: ~0&?
+&? ØÏ log
+Mn { _jsp._login._VerifyRtxLogin__jsp
+log.writeLog("para="+para);
+^
+/login/VerifyRtxLogin.jsp:68: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:131: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+4 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:42:46:java.lang.reflect.InvocationTargetException
+2019-03-11 14:42:46:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:44:13:java.lang.reflect.InvocationTargetException
+2019-03-11 14:44:14:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:44:55:java.lang.reflect.InvocationTargetException
+2019-03-11 14:44:55:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /login/VerifyRtxLogin.jsp:69: ~0&?
+&? ¹Õ getUser(int,int)
+Mn { weaver.hrm.User
+		user1 = User.getUser(xxxid, 0);
+		            ^
+/login/VerifyRtxLogin.jsp:132: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+System.out.println("fromtest==="+fromtest);
+                                 ^
+/login/VerifyRtxLogin.jsp:133: ~0&?
+&? ØÏ fromtest
+Mn { _jsp._login._VerifyRtxLogin__jsp
+if(!"1".equals(fromtest)){
+               ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 14:46:57:java.lang.reflect.InvocationTargetException
+2019-03-11 14:46:57:>>>>Xss(Exception):sw=com.caucho.jsp.JspLineParseException: /login/VerifyRtxLogin.jsp:18: expected '%>' at '"'.  JSP directive syntax is '<%@ name attr1='value1' ... %>'.  (Started at line 18)
+
+16:  <jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page" />
+17:  <jsp:useBean id="log" class="weaver.general.BaseBean" scope="page" />
+18:  <%@ page language="java" contentType="text/html; charset="GBK" %>
+19:  
+20:  <%
+
+	at com.caucho.jsp.JspParser.error(JspParser.java:2137)
+	at com.caucho.jsp.JspParser.parseDirective(JspParser.java:1225)
+	at com.caucho.jsp.JspParser.parseScriptlet(JspParser.java:1113)
+	at com.caucho.jsp.JspParser.parseNode(JspParser.java:474)
+	at com.caucho.jsp.JspParser.parseJsp(JspParser.java:374)
+	at com.caucho.jsp.JspParser.parse(JspParser.java:263)
+	at com.caucho.jsp.JspCompilerInstance.parse(JspCompilerInstance.java:515)
+	at com.caucho.jsp.JspCompilerInstance.generate(JspCompilerInstance.java:454)
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:386)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+
+2019-03-11 14:47:05:java.lang.reflect.InvocationTargetException
+2019-03-11 14:47:05:>>>>Xss(Exception):sw=com.caucho.jsp.JspLineParseException: /login/VerifyRtxLogin.jsp:18: expected '%>' at '"'.  JSP directive syntax is '<%@ name attr1='value1' ... %>'.  (Started at line 18)
+
+16:  <jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page" />
+17:  <jsp:useBean id="log" class="weaver.general.BaseBean" scope="page" />
+18:  <%@ page language="java" contentType="text/html; charset="GBK" %>
+19:  
+20:  <%
+
+	at com.caucho.jsp.JspParser.error(JspParser.java:2137)
+	at com.caucho.jsp.JspParser.parseDirective(JspParser.java:1225)
+	at com.caucho.jsp.JspParser.parseScriptlet(JspParser.java:1113)
+	at com.caucho.jsp.JspParser.parseNode(JspParser.java:474)
+	at com.caucho.jsp.JspParser.parseJsp(JspParser.java:374)
+	at com.caucho.jsp.JspParser.parse(JspParser.java:263)
+	at com.caucho.jsp.JspCompilerInstance.parse(JspCompilerInstance.java:515)
+	at com.caucho.jsp.JspCompilerInstance.generate(JspCompilerInstance.java:454)
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:386)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+
+2019-03-11 15:14:13:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 31   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 15:17:36:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 31   user:ÏµÍ³¹ÜÀíÔ±
+2019-03-11 15:34:47:==========Init security rules==========
+2019-03-11 15:34:47:The Ecology Version is E7!
+2019-03-11 15:34:47:start copy custom security files to ecology...
+2019-03-11 15:34:47:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-11 15:34:47:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-11 15:34:47:end copy custom security files to ecology...
+2019-03-11 15:34:47:special rules intercept level is 2
+2019-03-11 15:34:47:start copy files to ecology...
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-11 15:34:47:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-11 15:34:47:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-11 15:34:47:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-11 15:34:47:end copy files to ecology...
+2019-03-11 15:34:47:load E7 security file...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-11 15:34:47:watchDog is start------------------------>
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-11 15:34:47:update URL::https://update.e-cology.cn/
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-11 15:34:47:clear standard rules of webservice-list,webservice-list
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-11 15:34:47:security current version is v5.6, and the security rule current version is v4.5
+2019-03-11 15:34:47:30 thread is start success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-11 15:34:47:email send thread start success
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-11 15:34:47:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-11 15:34:47:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-11 15:34:47:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-11 15:34:47:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-11 15:34:47:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-11 15:34:47:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-11 15:34:47:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-11 15:34:47:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-11 15:34:47:clear standard rules of /exp/expmanual.jsp,s
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-11 15:34:47:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-11 15:34:48:======Start security firewall===========
+2019-03-11 15:34:48:SecurityMain.java---->Start security firewall timer...
+2019-03-11 15:34:48:SecurityMain.java---->Start security firewall timer success...
+2019-03-11 15:34:48:SecurityMain.java---->Start forbidden writer timer...
+2019-03-11 15:34:48:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-11 15:34:48:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-11 15:34:55:The server is resin3
+2019-03-11 15:42:14:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 32   user:×ÞÊ¿Ãô
+2019-03-11 15:47:00:java.lang.reflect.InvocationTargetException
+2019-03-11 15:47:00:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+/gcl/doc/docaction.jsp:9: ~0&?
+&? ?ýp CreateCYWorkFLow(java.lang.String,java.lang.String)
+Mn { gcl.doc.workflow.CreateCYWorkFLow
+    CreateCYWorkFLow ta = new CreateCYWorkFLow(billid,creater);
+                          ^
+/gcl/doc/docaction.jsp:10: àÕ gcl.doc.workflow.CreateCYWorkFLow -?CreateWF(java.lang.String,java.lang.String) ??()
+    result = ta.CreateWF();
+               ^
+5 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+/gcl/doc/docaction.jsp:9: ~0&?
+&? ?ýp CreateCYWorkFLow(java.lang.String,java.lang.String)
+Mn { gcl.doc.workflow.CreateCYWorkFLow
+    CreateCYWorkFLow ta = new CreateCYWorkFLow(billid,creater);
+                          ^
+/gcl/doc/docaction.jsp:10: àÕ gcl.doc.workflow.CreateCYWorkFLow -?CreateWF(java.lang.String,java.lang.String) ??()
+    result = ta.CreateWF();
+               ^
+5 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 15:52:17:java.lang.reflect.InvocationTargetException
+2019-03-11 15:52:17:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 15:52:20:java.lang.reflect.InvocationTargetException
+2019-03-11 15:52:20:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-11 15:52:23:java.lang.reflect.InvocationTargetException
+2019-03-11 15:52:23:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor62.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /gcl/doc/docaction.jsp:4: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String billid = Util.null2String(request.getParameter("billid")); 
+                ^
+/gcl/doc/docaction.jsp:5: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String creater = Util.null2String(request.getParameter("creater")); 
+                 ^
+/gcl/doc/docaction.jsp:6: ~0&?
+&? ØÏ Util
+Mn { _jsp._gcl._doc._docaction__jsp
+String type = Util.null2String(request.getParameter("type")); 
+              ^
+3 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+

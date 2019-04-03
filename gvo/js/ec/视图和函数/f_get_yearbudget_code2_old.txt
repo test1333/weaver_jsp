@@ -1,0 +1,64 @@
+create or replace function f_get_yearbudget_code2(i_kmcode   varchar2,
+                                                  i_cbzxcode varchar2,
+                                                  i_year     varchar2)
+  return number as
+
+  v_ysje         number(12, 2) := 0;
+  v_yyje         number(12, 2) := 0;
+  v_kyje         number(12, 2) := 0;
+  v_result       number(12, 2) := 0;
+  v_cbzxid       varchar2(100) := '';
+  v_kmid         varchar2(100) := '';
+  v_yearid       varchar2(100) := '';
+  v_budgetinfoid varchar2(100) := '';
+begin
+
+  if i_kmcode is null or i_cbzxcode is null or i_year is null then
+    v_result := 0;
+  else
+    begin
+      select id as cbzxid
+        into v_cbzxid
+        from fnacostcenter
+       where trim(code) = trim(i_cbzxcode);
+      select id as kmid
+        into v_kmid
+        from fnabudgetfeetype
+       where trim(codename) = trim(i_kmcode);
+
+      select id
+        into v_yearid
+        from FnaYearsPeriods
+       where status = 1
+         and fnayear = substr(i_year, 0, 4);
+
+        select id
+                into v_budgetinfoid
+                from fnabudgetinfo
+               where status = 1
+                 and organizationtype = '18004'
+                 and budgetperiods = v_yearid
+                 and budgetorganizationid = v_cbzxid;
+
+
+      select nvl(sum(nvl(budgetaccount, 0)), 0) as ysje
+        into v_ysje
+        from FnaBudgetInfoDetail
+       where budgetinfoid = v_budgetinfoid
+         and budgettypeid = v_kmid;
+
+      select nvl(sum(nvl(amount, 0)), 0) as yyje
+        into v_yyje
+        from FnaExpenseInfo
+       where organizationid = v_cbzxid
+         and subject = v_kmid
+         and budgetperiods = v_yearid;
+      v_kyje   := v_ysje - v_yyje;
+      v_result := v_kyje;
+    exception
+      when no_data_found then
+        v_result := 0;
+    end;
+  end if;
+  return v_result;
+end;

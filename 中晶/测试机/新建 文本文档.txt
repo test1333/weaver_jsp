@@ -1,0 +1,1 @@
+SELECT  count(id)  from  self_all_day_info  where day_info>=@attend_start_date and day_info<=@attend_end_date and dbo.sh_what_holiday(day_info)=2

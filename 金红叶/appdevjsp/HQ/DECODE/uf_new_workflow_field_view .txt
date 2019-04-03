@@ -1,0 +1,4 @@
+create or replace view uf_new_workflow_field_view as
+select wbf.id,wbf.fieldname,ht.indexdesc,wbf.billid from workflow_billfield  wbf
+join htmllabelindex ht on ht.id=wbf.fieldlabel
+where wbf.viewtype=0;

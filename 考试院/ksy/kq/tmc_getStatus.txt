@@ -1,0 +1,106 @@
+alter function tmc_getStatus(@atten_day varchar(10),@emp_id int,@amOrPm varchar(10))
+	returns varchar(10)	
+as
+begin
+	declare @mxid int,
+			@week int,
+			@res_ut_1 int,
+			@res_ut_2 int,
+			@res_ut varchar(10)		
+	select @mxid = isnull(MAX(ud.id),-1) from formtable_main_182 u 
+		join formtable_main_182_dt1 ud on u.id=ud.mainid join workflow_requestbase a on u.requestId=a.requestid
+	where a.currentnodetype>=3 and u.sbzurq<=@atten_day and u.sbzurq>DateAdd(day,-7,@atten_day) and ud.xm=@emp_id
+	if @mxid = -1 
+	begin
+	 return ''
+	end
+	set @res_ut_1 = 0
+	set @res_ut_1 = 0
+	
+	select @week = datepart(weekday, @atten_day)
+	if @week = 2
+		begin
+			select @res_ut_1=sw1,@res_ut_2 = xw1 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 3
+		begin
+			select @res_ut_1=sw2,@res_ut_2 = xw2 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 4
+		begin
+			select @res_ut_1=sw3,@res_ut_2 = xw3 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 5
+		begin
+			select @res_ut_1=sw4,@res_ut_2 = xw4 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 6
+		begin
+			select @res_ut_1=sw5,@res_ut_2 = xw5 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 7
+		begin
+			select @res_ut_1=sw6,@res_ut_2 = xw6 from formtable_main_182_dt1 where id=@mxid
+		end
+	else if @week = 1
+		begin
+			select @res_ut_1=sw7,@res_ut_2 = xw7 from formtable_main_182_dt1 where id=@mxid
+		end
+	
+	if @amOrPm = 'AM'
+		begin
+			set @res_ut = @res_ut_1
+		end
+	else
+		begin
+			set @res_ut = @res_ut_2
+		end
+	if @res_ut='0'
+	   begin
+	  set @res_ut='正常'
+	   end
+	if @res_ut='1'
+	   begin
+	  set @res_ut='缺勤'
+	   end
+	   if @res_ut='2'
+	   begin
+	  set @res_ut='迟到'
+	   end
+	   if @res_ut='3'
+	   begin
+	  set @res_ut='早退'
+	  end
+	  if @res_ut='4'
+	   begin
+	  set @res_ut='公务'
+	  end
+	  
+	  if @res_ut='5'
+	   begin
+	  set @res_ut='事假'
+	  end
+	  if @res_ut='6'
+	   begin
+	  set @res_ut='看病'
+	  end
+	  if @res_ut='7'
+	   begin
+	  set @res_ut='病假'
+	  end
+	  if @res_ut='8'
+	   begin
+	  set @res_ut='公休'
+	  end
+	  if @res_ut='9'
+	   begin
+	  set @res_ut='例假'
+	  
+	   end 
+	  if @res_ut='10'
+	   begin
+	  set @res_ut='其他'
+	  end 
+	return @res_ut
+end
+go	

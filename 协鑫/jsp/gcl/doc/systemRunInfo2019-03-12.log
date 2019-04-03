@@ -1,0 +1,1872 @@
+2019-03-12 00:03:39:==========Init security rules==========
+2019-03-12 00:03:40:The Ecology Version is E7!
+2019-03-12 00:03:40:start copy custom security files to ecology...
+2019-03-12 00:03:40:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 00:03:40:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 00:03:40:end copy custom security files to ecology...
+2019-03-12 00:03:40:special rules intercept level is 2
+2019-03-12 00:03:40:start copy files to ecology...
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 00:03:40:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 00:03:40:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 00:03:40:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 00:03:40:end copy files to ecology...
+2019-03-12 00:03:40:load E7 security file...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 00:03:40:watchDog is start------------------------>
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 00:03:40:update URL::https://update.e-cology.cn/
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 00:03:40:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 00:03:40:30 thread is start success...
+2019-03-12 00:03:40:email send thread start success
+2019-03-12 00:03:40:clear standard rules of webservice-list,webservice-list
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 00:03:40:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 00:03:40:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 00:03:40:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 00:03:40:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 00:03:40:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 00:03:40:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 00:03:40:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 00:03:40:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 00:03:40:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 00:03:40:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 00:03:41:======Start security firewall===========
+2019-03-12 00:03:41:SecurityMain.java---->Start security firewall timer...
+2019-03-12 00:03:41:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 00:03:41:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 00:03:41:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 00:03:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 00:03:49:The server is resin3
+2019-03-12 00:06:34:==========Init security rules==========
+2019-03-12 00:06:34:The Ecology Version is E7!
+2019-03-12 00:06:34:start copy custom security files to ecology...
+2019-03-12 00:06:34:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 00:06:34:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 00:06:34:end copy custom security files to ecology...
+2019-03-12 00:06:34:special rules intercept level is 2
+2019-03-12 00:06:34:start copy files to ecology...
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 00:06:34:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 00:06:34:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 00:06:34:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 00:06:34:end copy files to ecology...
+2019-03-12 00:06:34:load E7 security file...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 00:06:34:watchDog is start------------------------>
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 00:06:34:update URL::https://update.e-cology.cn/
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 00:06:34:clear standard rules of webservice-list,webservice-list
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 00:06:34:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 00:06:34:29 thread is start success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 00:06:34:email send thread start success
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 00:06:34:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 00:06:34:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 00:06:34:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 00:06:34:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 00:06:34:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 00:06:34:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 00:06:34:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 00:06:34:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 00:06:34:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 00:06:34:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 00:06:35:======Start security firewall===========
+2019-03-12 00:06:35:SecurityMain.java---->Start security firewall timer...
+2019-03-12 00:06:35:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 00:06:35:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 00:06:35:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 00:06:35:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 00:06:42:The server is resin3
+2019-03-12 10:07:47:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 30   user:œµÕ≥π‹¿Ì‘±
+2019-03-12 10:24:19:==========Init security rules==========
+2019-03-12 10:24:19:The Ecology Version is E7!
+2019-03-12 10:24:19:start copy custom security files to ecology...
+2019-03-12 10:24:19:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 10:24:19:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 10:24:19:end copy custom security files to ecology...
+2019-03-12 10:24:19:special rules intercept level is 2
+2019-03-12 10:24:19:start copy files to ecology...
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 10:24:19:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 10:24:19:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 10:24:19:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 10:24:19:end copy files to ecology...
+2019-03-12 10:24:19:load E7 security file...
+2019-03-12 10:24:19:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 10:24:20:watchDog is start------------------------>
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 10:24:20:update URL::https://update.e-cology.cn/
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 10:24:20:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 10:24:20:30 thread is start success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 10:24:20:email send thread start success
+2019-03-12 10:24:20:clear standard rules of webservice-list,webservice-list
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 10:24:20:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 10:24:20:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 10:24:20:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 10:24:20:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 10:24:20:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 10:24:20:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 10:24:20:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 10:24:20:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 10:24:20:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 10:24:20:======Start security firewall===========
+2019-03-12 10:24:20:SecurityMain.java---->Start security firewall timer...
+2019-03-12 10:24:20:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 10:24:20:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 10:24:20:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 10:24:20:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 10:24:28:The server is resin3
+2019-03-12 10:34:14:==========Init security rules==========
+2019-03-12 10:34:14:The Ecology Version is E7!
+2019-03-12 10:34:14:start copy custom security files to ecology...
+2019-03-12 10:34:14:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 10:34:14:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 10:34:14:end copy custom security files to ecology...
+2019-03-12 10:34:15:special rules intercept level is 2
+2019-03-12 10:34:15:start copy files to ecology...
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 10:34:15:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 10:34:15:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 10:34:15:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 10:34:15:end copy files to ecology...
+2019-03-12 10:34:15:load E7 security file...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 10:34:15:watchDog is start------------------------>
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 10:34:15:update URL::https://update.e-cology.cn/
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 10:34:15:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 10:34:15:29 thread is start success...
+2019-03-12 10:34:15:clear standard rules of webservice-list,webservice-list
+2019-03-12 10:34:15:email send thread start success
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 10:34:15:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 10:34:15:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 10:34:15:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 10:34:15:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 10:34:15:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 10:34:15:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 10:34:15:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 10:34:15:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 10:34:15:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 10:34:15:======Start security firewall===========
+2019-03-12 10:34:15:SecurityMain.java---->Start security firewall timer...
+2019-03-12 10:34:15:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 10:34:15:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 10:34:15:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 10:34:15:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 10:34:25:The server is resin3
+2019-03-12 10:35:40:param you request is not in params cache£¨params:::D41D8CD98F00B204E9800998ECF8427E:::user:
+2019-03-12 10:38:02:==========Init security rules==========
+2019-03-12 10:38:02:The Ecology Version is E7!
+2019-03-12 10:38:02:start copy custom security files to ecology...
+2019-03-12 10:38:02:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 10:38:02:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 10:38:02:end copy custom security files to ecology...
+2019-03-12 10:38:03:special rules intercept level is 2
+2019-03-12 10:38:03:start copy files to ecology...
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 10:38:03:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 10:38:03:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 10:38:03:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 10:38:03:end copy files to ecology...
+2019-03-12 10:38:03:load E7 security file...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 10:38:03:watchDog is start------------------------>
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 10:38:03:update URL::https://update.e-cology.cn/
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 10:38:03:clear standard rules of webservice-list,webservice-list
+2019-03-12 10:38:03:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 10:38:03:29 thread is start success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 10:38:03:email send thread start success
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 10:38:03:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 10:38:03:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 10:38:03:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 10:38:03:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 10:38:03:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 10:38:03:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 10:38:03:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 10:38:03:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 10:38:03:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 10:38:03:======Start security firewall===========
+2019-03-12 10:38:03:SecurityMain.java---->Start security firewall timer...
+2019-03-12 10:38:03:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 10:38:03:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 10:38:03:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 10:38:03:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 10:38:12:The server is resin3
+2019-03-12 10:41:41:==========Init security rules==========
+2019-03-12 10:41:41:The Ecology Version is E7!
+2019-03-12 10:41:41:start copy custom security files to ecology...
+2019-03-12 10:41:41:/usr/weaver/ecology/WEB-INF/weaver_security_config.xml has exists, do not copy it...
+2019-03-12 10:41:41:/usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml has exists, do not copy it...
+2019-03-12 10:41:41:end copy custom security files to ecology...
+2019-03-12 10:41:41:special rules intercept level is 2
+2019-03-12 10:41:41:start copy files to ecology...
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp) to /usr/weaver/ecology/systeminfo/menuconfig/LeftMenuDrag.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/menuconfig/vssver2.scc) to /usr/weaver/ecology/systeminfo/menuconfig/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/vssver2.scc) to /usr/weaver/ecology/systeminfo/template/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/systeminfo/template/templateOperation.jsp) to /usr/weaver/ecology/systeminfo/template/templateOperation.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/vssver2.scc) to /usr/weaver/ecology/email/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/email/MailContacterImportCSV.jsp) to /usr/weaver/ecology/email/MailContacterImportCSV.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/LeftMenuDrag.jsp) to /usr/weaver/ecology/formmode/menu/LeftMenuDrag.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/formmode/menu/vssver2.scc) to /usr/weaver/ecology/formmode/menu/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/album/ImageUploadDealN.jsp) to /usr/weaver/ecology/album/ImageUploadDealN.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/upload.jsp) to /usr/weaver/ecology/js/swfupload/upload.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/swfupload/vssver2.scc) to /usr/weaver/ecology/js/swfupload/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.php) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.php failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/vssver2.scc) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb) to /usr/weaver/ecology/js/extjs/examples/feed-viewer/feed-proxy.ashx.vb failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp) to /usr/weaver/ecology/js/jquery/plugins/jqueryFileTree/connectors/jqueryFileTree.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/vssver2.scc) to /usr/weaver/ecology/vssver2.scc failed!
+2019-03-12 10:41:41:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/users.data) to /usr/weaver/ecology/messager/users.data success!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/messager/vssver2.scc) to /usr/weaver/ecology/messager/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/CoworkList.jsp) to /usr/weaver/ecology/cowork/CoworkList.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/cowork/vssver2.scc) to /usr/weaver/ecology/cowork/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/upload.jsp) to /usr/weaver/ecology/tools/SWFUpload/upload.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/tools/SWFUpload/vssver2.scc) to /usr/weaver/ecology/tools/SWFUpload/vssver2.scc failed!
+2019-03-12 10:41:41:copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/newportal/contactslist.jsp) to /usr/weaver/ecology/newportal/contactslist.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/layout/Operate.jsp) to /usr/weaver/ecology/page/maint/layout/Operate.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/vssver2.scc) to /usr/weaver/ecology/page/maint/common/vssver2.scc failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/page/maint/common/UserResourceUpload.jsp) to /usr/weaver/ecology/page/maint/common/UserResourceUpload.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/rte/uploader.jsp) to /usr/weaver/ecology/rte/uploader.jsp failed!
+2019-03-12 10:41:41:file is not modified, copy file(/usr/weaver/ecology/WEB-INF/replaceFiles/E7/ecology/updateRules.jsp) to /usr/weaver/ecology/updateRules.jsp failed!
+2019-03-12 10:41:41:end copy files to ecology...
+2019-03-12 10:41:41:load E7 security file...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/weaver_security_rules.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/E7/weaver_security_rules.xml success...
+2019-03-12 10:41:41:watchDog is start------------------------>
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml start...
+2019-03-12 10:41:41:update URL::https://update.e-cology.cn/
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules_for_filetype.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml start...
+2019-03-12 10:41:41:security current version is v5.6, and the security rule current version is v4.5
+2019-03-12 10:41:41:29 thread is start success...
+2019-03-12 10:41:41:email send thread start success
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityRule/Rule/weaver_security_rules.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml start...
+2019-03-12 10:41:41:clear standard rules of webservice-list,webservice-list
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_ws.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_no_access_freq_urls.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_session.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_cookie.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_bz.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml start...
+2019-03-12 10:41:41:clear standard rules of /weaver/com.weaver.formmodel.mobile.security.edaction,content
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_eaction.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml start...
+2019-03-12 10:41:41:clear standard rules of /page/element/compatible/newsoperate.jsp,tabwhere
+2019-03-12 10:41:41:clear standard rules of /mobilemode/action.jsp,sqlwhere
+2019-03-12 10:41:41:clear standard rules of /formmode/tree/customtreenodeoperation.jsp,datacondition
+2019-03-12 10:41:41:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_condition$
+2019-03-12 10:41:41:clear standard rules of /workflow/workflow/wfurger_operation.jsp,^group_\d+_conditioncn$
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_tbys.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_ebridge.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_for_messager.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_update_url.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml start...
+2019-03-12 10:41:41:clear standard rules of /exp/expmanualopterator.jsp,s
+2019-03-12 10:41:41:clear standard rules of /workflow/request/workflowlayoutedit.jsp,s
+2019-03-12 10:41:41:clear standard rules of /exp/expmanual.jsp,s
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_custom_rules_1.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml start...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_white_ip.xml success...
+2019-03-12 10:41:41:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml start...
+2019-03-12 10:41:42:======Start security firewall===========
+2019-03-12 10:41:42:SecurityMain.java---->Start security firewall timer...
+2019-03-12 10:41:42:SecurityMain.java---->Start security firewall timer success...
+2019-03-12 10:41:42:SecurityMain.java---->Start forbidden writer timer...
+2019-03-12 10:41:42:SecurityMain.java---->Start forbidden writer timer success...
+2019-03-12 10:41:42:load rule file /usr/weaver/ecology/WEB-INF/securityXML/weaver_security_rules_for_need_login_urls.xml success...
+2019-03-12 10:41:49:The server is resin3
+2019-03-12 10:42:30:java.lang.reflect.InvocationTargetException
+2019-03-12 10:42:30:>>>>Xss(Exception):sw=java.lang.IllegalStateException: forward() not allowed after buffer has committed.
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:151)
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:111)
+	at _jsp._wui._main__jsp._jspService(_main__jsp.java:293)
+	at com.caucho.jsp.JavaPage.service(JavaPage.java:61)
+	at com.caucho.jsp.Page.pageservice(Page.java:578)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:195)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+
+2019-03-12 11:02:50:java.lang.reflect.InvocationTargetException
+2019-03-12 11:02:50:>>>>Xss(Exception):sw=java.lang.IllegalStateException: forward() not allowed after buffer has committed.
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:151)
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:111)
+	at _jsp._wui._main__jsp._jspService(_main__jsp.java:293)
+	at com.caucho.jsp.JavaPage.service(JavaPage.java:61)
+	at com.caucho.jsp.Page.pageservice(Page.java:578)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:195)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:53)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+
+2019-03-12 11:09:35:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 30   user:œµÕ≥π‹¿Ì‘±
+2019-03-12 11:22:49:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 40   user:œµÕ≥π‹¿Ì‘±
+2019-03-12 11:37:23:/dwr/exec/msgutil.getpopupmsg is timeout,timeout is 30 time is 31   user:œµÕ≥π‹¿Ì‘±
+2019-03-12 11:38:19:/gcl/doc/editremark.jsp is timeout,timeout is 30 time is 58   user:œµÕ≥π‹¿Ì‘±
+2019-03-12 11:59:44:java.lang.reflect.InvocationTargetException
+2019-03-12 11:59:45:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/gcl/doc/editRemark.jsp:89: ~0&?
+&? ÿœ emp_id
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((emp_id));
+                 ^
+/gcl/doc/editRemark.jsp:89: ^’Ñ{?
+?
+      out.print((emp_id));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+14 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/gcl/doc/editRemark.jsp:89: ~0&?
+&? ÿœ emp_id
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((emp_id));
+                 ^
+/gcl/doc/editRemark.jsp:89: ^’Ñ{?
+?
+      out.print((emp_id));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+14 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:03:09:java.lang.reflect.InvocationTargetException
+2019-03-12 13:03:09:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:03:11:java.lang.reflect.InvocationTargetException
+2019-03-12 13:03:11:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:03:32:java.lang.reflect.InvocationTargetException
+2019-03-12 13:03:32:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:05:36:java.lang.reflect.InvocationTargetException
+2019-03-12 13:05:36:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:05:38:java.lang.reflect.InvocationTargetException
+2019-03-12 13:05:38:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+
+2019-03-12 13:05:40:java.lang.reflect.InvocationTargetException
+2019-03-12 13:05:40:>>>>Xss(Exception):sw=com.caucho.jsp.JspParseException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.jsp.JspCompilerInstance.compile(JspCompilerInstance.java:434)
+	at com.caucho.jsp.JspManager.compile(JspManager.java:242)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:171)
+	at com.caucho.jsp.JspManager.createPage(JspManager.java:150)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:248)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:178)
+	at com.caucho.jsp.PageManager.getPage(PageManager.java:161)
+	at com.caucho.jsp.QServlet.getSubPage(QServlet.java:295)
+	at com.caucho.jsp.QServlet.getPage(QServlet.java:210)
+	at com.caucho.server.dispatch.PageFilterChain.compilePage(PageFilterChain.java:238)
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:145)
+	at weaver.filter.PFixFilter.doFilter(PFixFilter.java:128)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.MonitorXFixIPFilter.doFilter(MonitorXFixIPFilter.java:30)
+	at weaver.filter.MonitorForbiddenUrlFilter.doFilter(MonitorForbiddenUrlFilter.java:133)
+	at weaver.filter.MonitorCheckdbFilter.doFilter(MonitorCheckdbFilter.java:49)
+	at weaver.filter.MonitorXUrlTimeFilter.doFilter(MonitorXUrlTimeFilter.java:66)
+	at weaver.filter.DynamicMonitorXFilter.doFilter(DynamicMonitorXFilter.java:86)
+	at weaver.filter.MonitorXFilter.doFilter(MonitorXFilter.java:83)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.IECompatibleFilter.doFilter(IECompatibleFilter.java:31)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.filter.DialogHandleFilter.doFilter(DialogHandleFilter.java:63)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:71)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at weaver.security.filter.SecurityMain.process(SecurityMain.java:536)
+	at sun.reflect.GeneratedMethodAccessor60.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at weaver.filter.SecurityFilter.doFilterInternal(SecurityFilter.java:49)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:76)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)
+	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)
+	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)
+	at java.lang.Thread.run(Thread.java:662)
+Caused by: com.caucho.java.JavaCompileException: /systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+^
+/systeminfo/TopTitle.jsp:12: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+titlename = Util.null2String(titlename) ;
+                             ^
+/systeminfo/TopTitle.jsp:35: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+String pagename= titlename ;
+                 ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+         ^
+/systeminfo/TopTitle.jsp:65: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      if(imagefilename != null && !imagefilename.equals("")){
+                                   ^
+/systeminfo/TopTitle.jsp:66: ~0&?
+&? ÿœ imagefilename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((imagefilename));
+                 ^
+/systeminfo/TopTitle.jsp:66: ^’Ñ{?
+?
+      out.print((imagefilename));
+                ^
+/systeminfo/TopTitle.jsp:68: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:68: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+/systeminfo/TopTitle.jsp:74: ~0&?
+&? ÿœ needhelp
+Mn { _jsp._gcl._doc._editRemark__jsp
+			    if(!needhelp.equals("")){
+			        ^
+/systeminfo/TopTitle.jsp:151: ~0&?
+&? ÿœ titlename
+Mn { _jsp._gcl._doc._editRemark__jsp
+      out.print((titlename));
+                 ^
+/systeminfo/TopTitle.jsp:151: ^’Ñ{?
+?
+      out.print((titlename));
+                ^
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (Ü÷ÜÚ«ˆ?API
+?ÅÜ„Ê∆·o?( -Xlint:deprecation Õ∞?
+?/usr/weaver/ecology/WEB-INF/work/_jsp/_gcl/_doc/_editRemark__jsp.java (?œ¿?âhÑÕ\
+?ÅÜ„Ê∆·o?( -Xlint:unchecked Õ∞?
+12 ?
+	at com.caucho.java.InternalCompiler.executeInt(InternalCompiler.java:243)
+	at com.caucho.java.InternalCompiler.compileInt(InternalCompiler.java:96)
+	at com.caucho.java.AbstractJavaCompiler.run(AbstractJavaCompiler.java:102)
+	... 1 more
+

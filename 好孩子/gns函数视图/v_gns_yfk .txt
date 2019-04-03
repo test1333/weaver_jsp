@@ -1,0 +1,7 @@
+alter view v_gns_yfk as 
+select a.requestid,(STUFF(( SELECT    ',' + convert( varchar(20),t.requestid)
+                          FROM      formtable_main_306 t,workflow_requestbase t1
+                          WHERE     t.requestid=t1.requestid and t.htlc = a.requestid and t1.currentnodetype=3 and isnull(bcjeyb,0)-isnull(ycxje,0)>0
+                        FOR
+                          XML PATH('')
+                        ), 1, 1, '')) as yfklc from formtable_main_207 a

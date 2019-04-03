@@ -1,0 +1,1 @@
+select id,name,blongsubcompany,capitalgroupid,assortname,supgroupid,subcompanyname,CAPITALSPEC from fl_cptCaptical_view where blongsubcompany=$subcom$ and capitalgroupid=$cptProp$ and ZT =1

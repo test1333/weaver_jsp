@@ -1,0 +1,3 @@
+doFieldSQL(" select [dbo].[get_workday_2]('$8888$') ")
+
+doFieldSQL(" select convert(varchar(10),dateadd(month, datediff(month, 0, '$8888$'), -1),120) ")

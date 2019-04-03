@@ -1,0 +1,7 @@
+create or replace trigger workflow_requestdeletelog_oa
+  after insert  on workflow_requestdeletelog
+  for each row
+begin
+ delete ofs_todo_data@dblink_oa  where flowid=:new.request_id;
+
+end;

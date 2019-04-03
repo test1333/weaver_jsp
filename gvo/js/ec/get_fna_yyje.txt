@@ -1,0 +1,33 @@
+create or replace function get_fna_yyje(i_cbzx              varchar2,
+                                        i_kmid              varchar2,
+                                        i_budgetperiods     varchar2,
+                                        i_budgetperiodslist varchar2)
+  return varchar2 as
+
+  v_result number(12,2);
+begin
+  begin
+  select yyje
+  into v_result
+    from (select sum(nvl(amount, 0)) as yyje,
+                 organizationid,
+                 subject,
+                 budgetperiods,
+                 budgetperiodslist
+            from FnaExpenseInfo
+           where organizationtype = '18004'
+           group by organizationid,
+                    subject,
+                    budgetperiods,
+                    budgetperiodslist)
+   where organizationid = i_cbzx
+     and subject = i_kmid
+     and budgetperiods = i_budgetperiods
+     and budgetperiodslist = i_budgetperiodslist;
+ exception
+   when no_data_found then
+     v_result :=0;
+
+ end;
+  return v_result;
+end;

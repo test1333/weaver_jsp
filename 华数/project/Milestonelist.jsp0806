@@ -1,0 +1,284 @@
+<%@ page language="java" contentType="text/html; charset=GBK" %> <%@ include file="/systeminfo/init.jsp" %>
+<jsp:useBean id="RecordSet" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="Util" class="weaver.general.Util" scope="page" />
+<jsp:useBean id="ResourceComInfo" class="weaver.hrm.resource.ResourceComInfo" scope="page"/>
+<jsp:useBean id="SubCompanyComInfo" class="weaver.hrm.company.SubCompanyComInfo" scope="page" />
+<jsp:useBean id="CheckSubCompanyRight" class="weaver.systeminfo.systemright.CheckSubCompanyRight" scope="page" />
+<%
+boolean canedit = true;
+ 
+String stonedate=new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+String stonename="";
+String stoneorder=""; 
+String id=Util.null2String(request.getParameter("id"));
+String isshowall=Util.null2String(request.getParameter("isshowall"));
+String projid=Util.null2String(request.getParameter("projid")); 
+if(!id.equals("")){
+	RecordSet.executeSql(" select * from wasu_projstone where projid="+projid+" and id="+id+" order by stoneorder asc "); 
+	if(RecordSet.next()){
+		stoneorder=Util.null2String(RecordSet.getString("stoneorder"));
+		stonename=Util.null2String(RecordSet.getString("stonename")); 
+	 	stonedate=Util.null2String(RecordSet.getString("stonedate"));
+    }
+}
+
+//标示当前操作页面是修改页面还是添加页面
+String isupdate=request.getParameter("isupdate");
+if (isupdate == null || isupdate.length() < 0){
+		isupdate = "no";
+}
+%>
+
+
+<HTML><HEAD>
+<LINK href="/css/Weaver.css" type=text/css rel=STYLESHEET> 
+<SCRIPT language="javascript" src="/js/weaver.js"></script> 
+<SCRIPT language="javascript" src="/js/jquery/jquery.js"></script>
+</HEAD>
+<%
+String imagefilename = "/images/hdMaintenance.gif";
+String titlename = "里程碑维护";
+String needfav ="1";
+String needhelp ="";
+%>
+<BODY>
+<%@ include file="/systeminfo/TopTitle.jsp" %>
+<%@ include file="/systeminfo/RightClickMenuConent.jsp" %>
+<%
+if(canedit){
+    if(id.equals("")){
+RCMenu += "{"+SystemEnv.getHtmlLabelName(611,user.getLanguage())+",javascript:submitData(),_self} " ;
+RCMenuHeight += RCMenuHeightStep ;}else{
+RCMenu += "{"+SystemEnv.getHtmlLabelName(86,user.getLanguage())+",javascript:submitData(),_self} " ;
+RCMenuHeight += RCMenuHeightStep ;
+}
+}
+%>
+<%@ include file="/systeminfo/RightClickMenu.jsp" %>
+<table width=100% height=100% border="0" cellspacing="0" cellpadding="0">
+<colgroup>
+<col width="10">
+<col width="">
+<col width="10">
+<tr>
+<td height="10" colspan="3"></td>
+</tr>
+<tr>
+<td ></td>
+<td valign="top">
+<TABLE class=Shadow>
+<tr>
+<td valign="top">
+
+<%if(canedit){%>
+<FORM id=weaverA name=weaverA action="MilestoneOperation.jsp" method=post  > 
+<%if(id.equals("")){%> 
+	<input class=inputstyle type="hidden" name="method" value="add">
+	<input class=inputstyle type="hidden" name="projid" value="<%=projid%>">
+<%}else{%>
+	<input class=inputstyle type="hidden" name="method" value="edit">
+	<input class=inputstyle type="hidden" name="id" value="<%=id%>">
+	<input class=inputstyle type="hidden" name="projid" value="<%=projid%>">
+<%}%>
+<TABLE class=Viewform>
+  <COLGROUP>
+  <COL width="15%">
+  <COL width=85%>
+  <TBODY>
+  <TR class=Sapcing>
+          <TD class=Sep1 colSpan=4></TD></TR>
+          <TD>里程碑序号</TD> 
+          <TD class=Field> 
+              <input class=inputstyle id=stoneorder name=stoneorder <%if(!stoneorder.equals("")){%> readonly=readonly <%}%>  style="width=20%" onblur="onblurCheckName()" onchange='checkinput("stoneorder","stoneorderimage")' value="<%if(!stoneorder.equals("")){%><%=stoneorder%><%}%>"><SPAN id=stoneorderimage><%if(id.equals("")){%><IMG src="/images/BacoError.gif" align=absMiddle><%}%></SPAN><SPAN id=checknameinfo style='color:red;'>&nbsp;</SPAN>
+		  </TD>
+        </TR>
+     <TR><TD class=Line colSpan=2></TD></TR>
+    
+        <tr>
+            <td >里程碑名称</td>
+            <td class=field >
+                 <input class=inputstyle id=stonename name=stonename  style="width=30%" onblur="onblurCheckName()" onchange='checkinput("stonename","stonenameimage")' value="<%if(!stonename.equals("")){%><%=stonename%><%}%>"><SPAN id=stonenameimage><%if(id.equals("")){%><IMG src="/images/BacoError.gif" align=absMiddle><%}%></SPAN><SPAN id=checknameinfo style='color:red;'>&nbsp;</SPAN>
+            </td>
+        </tr>
+        <tr class="Spacing"><td colspan=2 class="Line"></td></tr>
+           <TR>
+          <TD>里程碑日期</TD>
+          <TD class=Field>
+			  <BUTTON class="Calendar" id="selectBeginDate" onclick="onshowPlanDate(stonedate, selectBeginDateSpan)"></BUTTON> 
+				<SPAN id="selectBeginDateSpan">
+				 <%=stonedate %>
+				</SPAN>  
+				<INPUT type="hidden" id="stonedate" name="stonedate" value="<%=stonedate%>">   
+		  </TD>
+        </TR>
+        <TR><TD class=Line colSpan=2></TD></TR>
+           
+  </TBODY>
+</TABLE>
+</FORM>
+
+<FORM id=weaverD action="MilestoneOperation.jsp" method=post>
+<input class=inputstyle type="hidden" name="method" value="delete"> 
+<input class=inputstyle type="hidden" name="projid" value="<%=projid%>"> 
+<TABLE class=form>
+  <COLGROUP>
+  <COL width="20%">
+  <COL width=80%>
+  <TBODY>
+  <TR class=separator>
+          <TD class=Sep1 colSpan=2></TD></TR>
+           <TR>
+          <TD colSpan=2> 
+		  <BUTTON class=btnDelete accessKey=D type=submit onclick="return isdel()"><U>D</U>-<%=SystemEnv.getHtmlLabelName(91,user.getLanguage())%></BUTTON>
+		  <BUTTON class=btnSubmit accessKey=D type=button onclick="window.location='/project/Milestonelist.jsp?isshowall=1&projid=<%=projid %>'"><U>A</U>-显示全部</BUTTON>
+		  <BUTTON class=btnSubmit accessKey=D type=button onclick="window.location='/project/Milestonelist.jsp?isshowall=0&projid=<%=projid %>'"><U>B</U>-只显正常</BUTTON>
+		  </TD>
+        </TR>
+  </TBODY>
+</TABLE>
+<%}%>
+	  <TABLE class=ListStyle cellspacing=1 >
+        <TBODY>
+	    <TR class=Header>
+			<th width=10>&nbsp;</th>
+			<th>里程碑序号</th>
+            <th>里程碑名称</th>
+			<th>里程碑日期</th> 
+	    </TR>
+        <TR class=Line><TD colspan="4" ></TD></TR>
+<%
+String andsql=" and (stonestatus=0 or stonestatus is null) ";
+   if(isshowall.equals("1")){
+	   andsql=""; 
+   }
+    RecordSet.executeSql("select * from wasu_projstone where projid="+projid+""+andsql+" order by stoneorder asc ");
+ 
+boolean isLight = false;
+while(RecordSet.next())
+{
+	String style="";  
+	if("1".equals(RecordSet.getString("stonestatus"))){
+		style="style='background-color:red;'"; 
+	}
+		if(isLight)
+		{%>
+	<TR CLASS=DataDark <%=style %>>
+<%		}else{%>
+	<TR CLASS=DataLight <%=style %>>
+<%		}%>
+
+			<th width=10><%if(canedit){%><input class=inputstyle type=checkbox name=stoneids value="<%=RecordSet.getString("id")%>"><%}%></th>
+			<td>
+			<a href="Milestonelist.jsp?id=<%=RecordSet.getString("id")%>&isupdate=yes&projid=<%=projid%>"><%=Util.forHtml(RecordSet.getString("stoneorder"))%></A>
+			</td>
+            <td>
+			<a href="Milestonelist.jsp?id=<%=RecordSet.getString("id")%>&isupdate=yes&projid=<%=projid%>"><%=Util.forHtml(RecordSet.getString("stonename"))%></A>
+			</td>
+			<td><%=Util.forHtml(RecordSet.getString("stonedate"))%></td>
+    </tr>
+<%
+	isLight = !isLight;
+}%>
+	  </TBODY>
+	  </TABLE>
+</FORM>
+</td>
+</tr>
+</TABLE>
+</td>
+<td></td>
+</tr>
+<tr>
+<td height="10" colspan="3"></td>
+</tr>
+</table> 
+<script language=javascript>
+
+$(document).ready(function(){
+	//alert("hide");
+	//$("#checknameinfo").hide();	
+});
+
+
+function submitData(){  
+	var st=jQuery("#stonedate").val();
+	var so=jQuery("#stoneorder").val(); 
+	if(1==1){
+		if(st&&so){ 
+			jQuery.post("/project/MilestoneDecide.jsp",{stonedate:jQuery("#stonedate").val(),stoneorder:jQuery("#stoneorder").val(),'projid':'<%=projid%>','method':'decide'},function(datas){  							 
+						//$("#checknameinfo").hide(); 
+				if(datas.indexOf("ok") > 0){   
+					weaverA.submit();
+				} else { 				 	  
+					alert("里程碑日期不符合！");  
+					return false; 
+				}
+			});
+		}else{ 
+			alert("相关字段为空！"); 
+			return false;
+		}
+	}else{
+		weaverA.submit();
+	}
+}
+
+function onblurCheckName() {
+		var roomname = $("#roomname").val();		
+		var isupdate = '<%=isupdate%>';
+		var name = '<%=stonename%>';
+		if (isupdate == "no"){
+				$.post("/meeting/Maint/MeetingRoomCheck.jsp",{roomname:encodeURIComponent($("#roomname").val())},function(datas){ 							 
+						 if (datas.indexOf("exist") > 0){
+						 	  $("#checknameinfo").show();						 	
+						 	  $("#checknameinfo").text(" <%=SystemEnv.getHtmlLabelName(780,user.getLanguage())%><%=SystemEnv.getHtmlLabelName(195,user.getLanguage())%> [ "+roomname+" ] <%=SystemEnv.getHtmlLabelName(24943,user.getLanguage())%>");
+						 } else { 
+						 		$("#checknameinfo").hide();
+						 }
+				});
+		} else if (isupdate == "yes"){			
+				$.post("/meeting/Maint/MeetingRoomCheck.jsp",{roomname:encodeURIComponent($("#roomname").val()),id:'<%=id%>'},function(datas){ 	
+						 if (datas.indexOf("exist") > 0){				 	  
+						 	  $("#checknameinfo").show();						 	
+						 	  $("#checknameinfo").text(" <%=SystemEnv.getHtmlLabelName(780,user.getLanguage())%><%=SystemEnv.getHtmlLabelName(195,user.getLanguage())%> [ "+roomname+" ] <%=SystemEnv.getHtmlLabelName(24943,user.getLanguage())%>");
+						 }
+				});				
+	  }
+}
+</script>
+<script language=vbs>
+sub onShowHrmID()
+	id = window.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp")
+	if (Not IsEmpty(id)) then
+	if id(0)<> "" then
+	hrmidspan.innerHtml = "<A href='/hrm/resource/HrmResource.jsp?id="&id(0)&"'>"&id(1)&"</A>"
+	weaverA.hrmid.value=id(0)
+	else
+    hrmidspan.innerHtml = ""
+	weaverA.hrmid.value=""
+	end if
+	end if
+end sub
+sub adfonShowSubcompany()
+	id = window.showModalDialog("/systeminfo/BrowserMain.jsp?url=/hrm/company/SubcompanyBrowser4.jsp?rightStr=MeetingRoomAdd:Add")
+	issame = false
+	if (Not IsEmpty(id)) then
+	if id(0)<> 0 then
+	if id(0) = weaverA.subcompanyid.value then
+		issame = true
+	end if
+	subcompanyspan.innerHtml = id(1)
+	weaverA.subcompanyid.value=id(0)
+	else
+	subcompanyspan.innerHtml = "<IMG src='/images/BacoError.gif' align=absMiddle>"
+	weaverA.subcompanyid.value=""
+	end if
+	end if
+end sub
+</script>
+</body>
+<SCRIPT language="javascript" src="/js/datetime.js"></script>
+<SCRIPT language="javascript" src="/js/project/WdatePicker.js"></script>
+<!-- added by cyril on 2008-06-12 for td8828-->
+<script language=javascript src="/js/checkData.js"></script>
+</html>

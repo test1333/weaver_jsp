@@ -1,0 +1,14 @@
+项目阶段后增加，更新项目状态不对
+
+insert into uf_prj_process(formmodeid,modedatacreater,modedatacreatertype,modedatacreatedate,modedatacreatetime,isused,dsporder,processname,prjtype)
+select formmodeid,modedatacreater,modedatacreatertype,modedatacreatedate,modedatacreatetime,isused,dsporder,processname,41 from uf_prj_process where prjtype=1
+
+
+
+insert into uf_process_keyword(formmodeid,modedatacreater,modedatacreatertype,modedatacreatedate,modedatacreatetime,processtype,keyword,projecttype)
+select '554','1','0','2018-08-07','09:38:23',b.id,c.id,a.id from uf_project_type a,uf_prj_process b,uf_prj_porcessfield c where b.prjtype=a.id and b.id=c.processtype and c.fieldname='processattach' and a.id not in(1,2,3)
+
+
+insert into uf_prj_sysmoney_mt(prjtype,formmodeid,modedatacreater,modedatacreatertype,modedatacreatedate,modedatacreatetime，hour,mark,remark,datasource,day,halfhour,month,mapsql, description,isused)
+select a.id,b.* from uf_project_type a,(select formmodeid,modedatacreater,modedatacreatertype,modedatacreatedate,modedatacreatetime，hour,mark,remark,datasource,day,halfhour,month,mapsql, description,isused from uf_prj_sysmoney_mt where prjtype=1
+) b  where a.id not in (1,2,3)

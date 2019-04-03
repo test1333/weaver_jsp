@@ -1,0 +1,8 @@
+create or replace trigger WORKFLOW_CURRENTOPERATOR_VT
+  before UPDATE  of viewtype on Workflow_Currentoperator
+  for each row
+ when (old.isremark='4 ' and new.viewtype='-2' )
+begin
+ update ofs_todo_data@dblink_oa set  viewtype=1 where flowid=:old.requestid and receiver=(select loginid from hrmresource where id=:old.userid) and  islasttimes=1 and isremark=4;
+
+end;

@@ -1,0 +1,5 @@
+create or replace view v_yq_projectcount as
+select '总数' as 类型,count(1) as 项目数 from hs_projectinfo
+
+union all
+select '延期数' as 类型,count(1) as 项目数 from hs_projectinfo where nvl(isdelay,0)=1;

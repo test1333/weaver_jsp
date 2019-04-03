@@ -1,0 +1,20 @@
+alter function get_workday_some(@what_day varchar(20),@workDay int)
+returns varchar(20)
+as
+begin
+	declare @nownum int,
+	@result_day varchar(20),
+	@datetype varchar(20)
+	set @result_day=@what_day
+	set @nownum=1;
+    while @nownum<=@workday
+	  begin
+		select  @result_day=CONVERT(varchar(100),dateadd(day,-1,@result_day),23)
+		select  @datetype= dbo.sh_what_holiday(@result_day)
+		 if @datetype=2
+			begin
+			  set @nownum=@nownum+1
+			end
+      end
+	return @result_day
+end

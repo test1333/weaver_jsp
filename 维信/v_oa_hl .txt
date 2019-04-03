@@ -1,0 +1,2 @@
+create or replace view v_oa_hl as
+select cxcrcd,trunc(cxcrr,4) as cxcrr FROM CRPDTA.F0015 where CXCRDC='CNY' and (to_char(crpdta.ntod(CXEFT),'yyyy-mm-dd'),cxcrcd) in (SELECT max(to_char(crpdta.ntod(CXEFT),'yyyy-mm-dd')) as cxeft,cxcrcd FROM CRPDTA.F0015  WHERE  CXCRDC='CNY' group by cxcrcd)

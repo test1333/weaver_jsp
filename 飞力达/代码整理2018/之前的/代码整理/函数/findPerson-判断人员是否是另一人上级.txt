@@ -1,0 +1,21 @@
+create or replace function findPerson(i_id number, i_userid varchar2)
+  return varchar as
+
+  v_count number := 0;
+begin
+
+  select count(1)
+    into v_count
+    from hrmresource
+   where id in (select id
+                  from hrmresource a
+                connect by MANAGERID = prior id
+                 start with id = i_userid)
+     and id = i_id;
+  
+   if v_count > 0 then 
+     return 'S';
+   end if; 
+   return 'F';
+
+end;

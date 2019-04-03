@@ -1,0 +1,2 @@
+alter view v_already_paymeng_new as
+select fkseq,sqr,isnull(SUM(ISNULL(fkje,0)),0) as fkje,fkrq,fksj,fklx,bzid,bz,gs from v_already_paymeng  group by fkseq ,sqr,bzid,bz,gs,fkrq,fksj,fklx 

@@ -1,0 +1,116 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*"%>
+
+<%@ page import="weaver.page.interfaces.*"%>
+<%@ page import="weaver.page.interfaces.commons.*"%>
+
+<%@ page import="weaver.hrm.HrmUserVarify"%>
+<%@ page import="weaver.hrm.User"%>
+
+<%@ page import="weaver.general.*"%>
+
+<jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="resourceComInfo" class="weaver.hrm.resource.ResourceComInfo" scope="page" />
+
+<% 
+//
+//	tab 为 tab页默认参数，请根据实际情况传值
+	
+//	此页面输出如下html代码，请保证class不要修改
+	
+//	wfcentericon1,wfcentericon2  数字根据顺序生成
+	
+//	url 请填写对应打开的连接
+
+String tab = Util.null2String(request.getParameter("tab"),"1");
+String lang = Util.null2String(request.getParameter("lang"),"7");
+%>
+<%!
+
+    private String getImageFile(String imagefileid) {
+    String imagefile = "/weaver/weaver.file.FileDownload?fileid=";
+    if (!"".equals(imagefileid)) {
+            imagefile += imagefileid;
+    }else{
+        imagefile="/portal/plugin/images/opzm/icon.png";
+        
+    }
+    return imagefile;
+}
+%>
+<div id="container">	
+	<div id="xtdhFlex" class='flexslider' style="height: 165px;">
+		<ul class='slides' style="height: 73px;">
+		<%
+		int count = 1;
+		User user = HrmUserVarify.getUser (request , response);
+        int departmentid = Util.getIntValue(resourceComInfo.getDepartmentID(""+user.getUID()), -1);
+        int subcompanyid = Util.getIntValue(resourceComInfo.getSubCompanyID(""+user.getUID()), -1);
+		String sql = "";
+		sql = "select u.url,b.title,c.imagefileid from uf_xtdh u left join uf_xtdh_dt1 b on u.id = b.mainid left join DocImageFile c on u.tp=c.docid"
+            +" where u.sffc=1 and b.dyybq='名称' and b.title is not null and b.lanid="+ lang
+            +" and (((','||u.dfb||',') like '%,"+subcompanyid+",%' ) or ( (','||u.dbm||',') like '%,"+departmentid+",%') or ((','||to_char(u.drl)||',') like '%,"+user.getUID()
+            +",%') or (exists(select h.id from hrmrolemembers h where (','||u.role||',') like ('%,'||h.roleid||',%') and h.resourceid="+user.getUID()+"))) order by u.px asc";
+		rs.executeSql(sql);	
+		while(rs.next()){
+		    String imagefileid = getImageFile(Util.null2String(rs.getString("imagefileid")));
+		    String name = rs.getString("title");
+			String url = rs.getString("url");
+			
+			
+		
+		//做成slider，每8个一组
+		if(count%12 == 1){
+		%>
+		
+			<li style="cursor: default;height:73px;">
+		<%
+		}
+		%>
+				<div class="xtdhitem">
+					<%
+						String pic = "background-image: url("+imagefileid+");";
+					%>
+					<div class="icon" style="<%=pic %>cursor:pointer;" id="xtdhitemicon1" link="<%=url %>"></div>
+					<div class="xtdhitemcontent">
+						<div class="main">
+							<a href="<%=url %>" title="<%=name %>" target="_blank"><%=name %></a>
+						</div>
+					</div>
+				</div> 
+	   <%
+		if(count%12 == 0){
+		%>
+			</li>
+			</ul>
+			<ul class='slides' style="height:73px;">
+		<%
+		}
+		%>
+		<%
+		count++;
+		}
+		%>
+		<%
+		if(count%12 != 0){
+		%>
+		  </li>
+		<%
+		}
+		%>
+		</ul>
+	</div>
+</div>
+
+<!-- <script type="text/javascript">
+	$(document).ready(function() {
+		$('#xtdhFlex').flexslider({
+			animation : "slide",
+			slideshow : false
+		});
+		$(".xtdhitem .icon").click(function(){
+		  var url=$(this).attr("link");
+		  window.open(url);
+		});		
+	})
+</script> -->

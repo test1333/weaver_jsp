@@ -1,0 +1,23 @@
+USE [ecology]
+GO
+/****** Object:  UserDefinedFunction [dbo].[checkDRname]    Script Date: 02/10/2017 12:14:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER function [dbo].[checkDRname](@sjml varchar(30),@mlmc varchar(30))
+returns int
+as
+begin
+  declare @result int
+
+if @sjml is null or @sjml = ''
+begin
+  select @result=count(id) from DocSecCategory where categoryname=@mlmc and  (parentid is null or parentid<=0)
+end
+else
+begin
+  select @result=count(id) from DocSecCategory where categoryname=@mlmc and  parentid =@sjml
+end
+return @result
+end

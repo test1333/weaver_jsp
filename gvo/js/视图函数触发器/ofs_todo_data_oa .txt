@@ -1,0 +1,10 @@
+create or replace trigger ofs_todo_data_oa
+  after insert   on ofs_todo_data
+  for each row
+declare
+ PRAGMA  AUTONOMOUS_TRANSACTION;
+begin
+  update ofs_todo_data set nodename=:new.nodename where flowid=:new.flowid;
+  COMMIT;
+
+end;

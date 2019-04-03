@@ -1,0 +1,3 @@
+create or replace view uf_mode_workflow_view as
+select wb.id,wb.tablename,hi.indexdesc from workflow_bill wb
+join htmllabelindex hi on wb.namelabel=hi.id;

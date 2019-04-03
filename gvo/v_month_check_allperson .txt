@@ -1,0 +1,19 @@
+create or replace view v_month_check_allperson as
+select a.id,
+       (select case
+                 when supdepid = 0 then
+                  a.departmentid
+                 else
+                  supdepid
+               end
+          from hrmdepartment
+         where id = a.departmentid) as departmentid,
+       a.departmentid as ygz,
+       to_char(sysdate, 'yyyy-mm') as khny,
+       a.workcode,
+       a.managerid,
+       (select managerid from hrmresource where id = a.managerid) as supmanagerid
+  from hrmresource a
+ where a.subcompanyid1 = '25'
+   and a.status = 1
+   and a.accounttype <> 1;

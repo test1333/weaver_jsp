@@ -1,0 +1,1 @@
+select requestid,requestname,requestmark, name, gyshmch,hj  from v_fksqd where dbo.[checkDRname]('$sqr$','$rqid$',requestid)='S' order by createdate desc

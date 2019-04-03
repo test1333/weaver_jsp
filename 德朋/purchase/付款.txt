@@ -1,0 +1,26 @@
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 -->
+<script type="text/javascript">
+    var ddje="#field7647";
+    var yzfje="#field7648";
+    var bczfje="#field7649";
+    jQuery(document).ready(function () {
+       checkCustomize = function () {
+          var ddje_val=jQuery(ddje).val();
+          var yzfje_val=jQuery(yzfje).val();
+          var bczfje_val=jQuery(bczfje).val();
+          if(Number(yzfje_val)+Number(bczfje_val) > Number(ddje_val)){
+              alert("本次付款金额+已支付金额 不得大于订单总金额。")
+              return false;
+          }
+          return true;
+       
+       }
+
+    });
+</script>
+
+
+
+
+
+

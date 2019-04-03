@@ -1,0 +1,3 @@
+<script type="text/javascript" src="/gvo/HRworkflow/get_jiaban_3_xss.js"></script>
+<script type="text/javascript" src="/gvo/HRworkflow/check_jiabankz_qr.js"></script>
+<script type="text/javascript" src="/gvo/hrm/js/gvo_sj_jiaban.js"></script>

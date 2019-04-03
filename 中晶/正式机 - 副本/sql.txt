@@ -1,0 +1,18 @@
+select * from HrmDepartment where id in(WITH allsub(id,departmentname)
+as (
+SELECT id,departmentname FROM HrmDepartment where id=31
+ UNION ALL SELECT a.id,a.departmentname FROM HrmDepartment a,allsub b where a.supdepid = b.id
+) select id from allsub)
+
+WITH allsub(id,departmentname)
+as (
+SELECT id,departmentname FROM HrmDepartment where id=31
+ UNION ALL SELECT a.id,a.departmentname FROM HrmDepartment a,allsub b where a.supdepid = b.id
+) 
+
+select * from hrmresource where departmentid in(select id from allsub) and startdate
+
+select COUNT(1) from (select convert(varchar(10),dateadd(dd,number,'2017-10-01'),120) as day
+from master..spt_values 
+where type='P' 
+and dateadd(dd,number,'2017-10-01')<=dateadd(dd,-1,'2017-11-01')) a where dbo.sh_what_holiday(day)=2

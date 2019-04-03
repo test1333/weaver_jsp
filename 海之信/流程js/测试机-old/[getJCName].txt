@@ -1,0 +1,52 @@
+create function [dbo].[getJCName](@qym varchar(100),@zh varchar(100),@hy varchar(100),@px1 varchar(30),@px2 varchar(30),@px3 varchar(30))
+returns varchar(300)
+as
+begin
+  declare @result varchar(300)
+
+if @px1 is null or @px1 = '' or @px2 is null or @px2 = '' or @px3 is null or @px3 = ''
+	begin
+	 set @result=@qym+@zh+@hy
+	end
+else if @px1=@px2 or @px1=@px3 or @px2=@px3
+	begin
+	 set @result=@qym+@zh+@hy
+	end
+else
+    begin
+		if @px1='0'
+		   begin 
+		   if @px2='1'
+			 begin
+				set @result=@qym+@zh+@hy
+			 end
+		   else
+			 begin
+			 set @result=@qym+@hy+@zh
+			 end
+		   end
+		else if @px1='1'
+		    begin 
+			   if @px2='0'
+				 begin
+					set @result=@zh+@qym+@hy
+				 end
+			   else
+				begin
+				set @result=@hy+@qym+@zh
+				end
+		    end
+        else
+			begin
+				if @px2='0'
+				 begin
+					set @result=@zh+@hy+@qym
+				 end
+			   else
+				begin
+				   set @result=@hy+@zh+@qym
+				end
+			end
+    end
+return @result
+end

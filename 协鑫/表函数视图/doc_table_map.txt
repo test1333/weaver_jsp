@@ -1,0 +1,10 @@
+create table doc_table_map(
+  ID   INTEGER not null, -- 唯一标示
+
+  WORKFLOWID       INTEGER,
+  -- 传入字段
+  billtablename      VARCHAR2(100),
+  -- 传入类型 （前面以main开头代表是主表   以dt开头代表明细表）
+  -- 注意事项：如果是表信息，有明细信息，千万不要和字段重名！！！
+  type      VARCHAR2(100)
+)

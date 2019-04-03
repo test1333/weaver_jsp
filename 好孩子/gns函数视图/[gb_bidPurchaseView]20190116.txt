@@ -1,0 +1,23 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_bidPurchaseView]    Script Date: 01/16/2019 14:20:35 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER view [dbo].[gb_bidPurchaseView] as
+select a.id,d.id dataId,d.WLMC,d.WLBM,f.id gysId,f.GYSMC,b.requestId,b.SHR SQRXX,b.YQJHRQ needDate,
+  b.CGSQDBH flowNum,d.PP,d.XH,d.GG,g.DW,a.SL_1 SL,d.YGDJ,b.buydl,b.NPPdl,b.zjlbm,b.CBZX
+from formtable_main_202_dt1 a left join formtable_main_202 b on a.mainid=b.id
+left join workflow_requestbase c on b.requestId=c.requestid
+left join uf_inquiryForm d on a.CGSQWLJGK_1=d.id
+left join uf_NPP e on d.WLLX1=e.id
+left join uf_suppmessForm f on d.GYSMC=f.id
+left join uf_unitForms g on d.DW = g.id
+where c.currentnodetype=3 and d.SFZTB=0 and e.buydl<>2
+GO
+
+

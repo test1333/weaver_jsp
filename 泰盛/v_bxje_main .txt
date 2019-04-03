@@ -1,0 +1,2 @@
+create or replace view v_bxje_main as
+select fysqlc,nvl(sum(nvl(bxje,0)),0) bxje from formtable_main_51 where fysqlc is not null  group by fysqlc 

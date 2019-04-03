@@ -1,0 +1,760 @@
+<!DOCTYPE HTML>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="weaver.conn.*"%>
+<%@ page import="weaver.page.interfaces.*"%>
+<%@ page import="weaver.page.interfaces.commons.*"%>
+<%@ page import="weaver.systeminfo.SystemEnv"%>
+
+<%@ page import="weaver.hrm.HrmUserVarify"%>
+<%@ page import="weaver.hrm.User"%>
+
+<%@ page import="weaver.general.*"%>
+<jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="resourceComInfo" class="weaver.hrm.resource.ResourceComInfo" scope="page" />
+<jsp:useBean id="dc" class="weaver.docs.docs.DocComInfo" scope="page"/>
+<jsp:useBean id="WorkflowRequestUtil" class="weaver.workflow.search.WorkflowRequestUtil" scope="page"/><!-- 增加待办数量接口-zhukaiyan increase-->
+
+
+<%
+	User user = HrmUserVarify.getUser(request, response);	
+	if (user == null) {
+		response.sendRedirect("/login/Login.jsp");
+		return;
+	}
+
+	int departmentid = Util.getIntValue(resourceComInfo.getDepartmentID(""+user.getUID()), -1);
+	int subcompanyid = Util.getIntValue(resourceComInfo.getSubCompanyID(""+user.getUID()), -1);
+	
+	Map param = new HashMap();
+	param.put("user", user);
+
+	//获取快捷搜索项
+	//QuickSearchItemsInterface qi=  new PageInterfaceFactory<QuickSearchItemsInterface>().getImplementByInterface(QuickSearchItemsInterface.class.getName());
+	//List searchList = qi.getQuickSearchMenuList(param);
+  
+	//
+	//获取人员信息/
+	//param.put("userid", user.getUID()+"");
+	//UserInterface si=  new PageInterfaceFactory<UserInterface>().getImplementByInterface(UserInterface.class.getName());
+	//List userInfoList = si.getUserList(param);
+	//Map userInfo =(Map) userInfoList.get(0);
+	///
+	//获取自定义菜单信息/
+	//String menuid = new BaseBean().getPropValue("cspage","leftmenu");
+	//param.put("typeId", menuid);
+	//param.put("showAllSubMenu", true);
+
+	//CustomMenuInterface ci=  new PageInterfaceFactory<CustomMenuInterface>().getImplementByInterface(CustomMenuInterface.class.getName());
+	//List menuList = ci.getCustomMenuList(param);
+	//
+	BaseBean bean = new BaseBean();
+	//我的待办
+	String todoUrl = bean.getPropValue("cspage","todoUrl.more");
+	// 规章制度
+    String gzzdUrl = bean.getPropValue("cspage","gzzdUrl.more");
+	// 热点图片新闻目录
+	String hotnewssec =  bean.getPropValue("cspage","hotnews.sec");
+	// 热点图片新闻显示条数
+	String hotnewssize =  bean.getPropValue("cspage","hotnews.size");
+	param.put("perpage", hotnewssize);
+	param.put("pageIndex", 1);
+	param.put("docDirIds", hotnewssec);
+	DocumentInterface mdi=  new PageInterfaceFactory<DocumentInterface>().getImplementByInterface(DocumentInterface.class.getName());
+	List hotnewsList = mdi.getDocumentList(param); //下一行increase判断--zhukaiyan
+	if(hotnewsList!=null && hotnewsList.size() > 4){
+		hotnewsList = hotnewsList.subList(0,4);
+	}
+	// 公文公告
+	String noticenewssec =  bean.getPropValue("cspage","noticenews.sec");
+	String noticenewssize =  bean.getPropValue("cspage","noticenews.size");
+	String noticenewsmore =  bean.getPropValue("cspage","noticenews.more");
+	param.put("perpage", noticenewssize);
+    param.put("pageIndex", 1);
+    param.put("docDirIds", noticenewssec);
+    List noticenewsList = mdi.getDocumentList(param);
+    // 通知
+    String tzUrl = bean.getPropValue("cspage","tzUrl.more");
+    // 企业文化
+    String qywhUrl = bean.getPropValue("cspage","qywhUrl.more");
+	// 公司新闻
+    String companynewssec =  bean.getPropValue("cspage","companynews.sec");
+    String companynewssize =  bean.getPropValue("cspage","companynews.size");
+    String companynewmore = bean.getPropValue("cspage","companynews.more");
+    param.put("perpage", companynewssize);
+    param.put("pageIndex", 1);
+    param.put("docDirIds", companynewssec);
+    List companynewsList = mdi.getDocumentList(param);
+	// 知识中心
+	String zszxUrl = bean.getPropValue("cspage","zszxUrl.more");
+	// 日程安排
+	String rcapUrl = bean.getPropValue("cspage","rcapUrl.more");
+
+	//IT服务
+	String itservice = bean.getPropValue("cspage","itservice");
+
+	//HR服务
+	String hrservice = bean.getPropValue("cspage","hrservice");
+
+	//我要吐槽
+	String ridicule = bean.getPropValue("cspage","ridicule");
+
+	//复星黄页
+	String fosunyellowpage = bean.getPropValue("cspage","fosunyellowpage");
+
+	 //我的待办未读数--zhukaiyan increase
+    String resourceid = "" + user.getUID();
+    int workflowCount= WorkflowRequestUtil.getRequestCount(user,resourceid);
+
+    //通知未读数--zhukaiyan increase
+    int noticeCount=1;
+%>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8;" />
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">zhukaiyan next increase -->
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<!--base-css-->
+<link rel="stylesheet" type="text/css" href="common/css/base.css" />
+<link rel="stylesheet" type="text/css" href="common/css/slide.css" />
+<link rel="stylesheet" type="text/css" href="common/css/fx.css" />
+<!--<link rel="stylesheet" type="text/css" href="common/css/quick_links.css" />  -->
+<link rel="stylesheet" type="text/css" href="common/css/gdt-style.css?v=3.0" />
+
+<!--base -js -->
+<script type="text/javascript" src="common/js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="common/js/jquery.js"></script>
+
+<script type="text/javascript" src="common/js/slider.js"></script>
+<script type="text/javascript">
+	if (!String.prototype.trim) {
+		String.prototype.trim = function() {
+			return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '');
+		};
+	}
+</script>
+
+
+
+<style type="">
+* {
+	font-family: "微软雅黑";
+	font-size: 12px;
+}
+
+.slides {
+	height: 180px;
+}
+
+.flex-control-nav {
+	bottom: 0px !important;
+}
+
+.slides li {
+	height: 255px;
+	background-size: 100% 100%;
+}
+
+.mp_tooltip_font-cn{
+	font-size:12px !important;
+}
+
+.mp_tooltip_font-en{
+	font-size:10px !important;
+}
+
+/*#tab-left{
+	position: absolute;
+	right:100px;
+	text-align:center;
+	cursor:pointer;
+	height:50px;
+	line-height:52px;
+	color:#6e83d2;
+}
+
+#tab-right{
+	position: absolute;
+	right:80px;
+	text-align:center;
+	cursor:pointer;
+	height:50px;
+	line-height:52px;
+	color:#6e83d2;
+}*/
+/*zhukaiyan*/
+
+
+/*#tab-left{
+	position: absolute;
+	right:100px;
+	text-align:center;
+	cursor:pointer;
+	height:50px;
+	line-height:52px;
+	color:#fdfdff;
+}
+
+#tab-right{
+	position: absolute;
+	right:80px;
+	text-align:center;
+	cursor:pointer;
+	height:50px;
+	line-height:52px;
+	color:#fdfdff;
+}*/
+
+</style>
+</head>
+
+<body>
+	<div class="container" id="bodyall">
+		<div class="header" style="">
+			<!--顶部右侧搜索工具栏区域 -->
+			<div class="rightContent" style="width:1000px;margin:0 auto;position:relative;">
+			     <!--logo -->
+                <div id="logoArea" style="background:url('/portal/plugin/images/opzm/main_logo.png') center center no-repeat;backgorund-size:100% 100%;"></div>
+				<!-- 搜索框 -->
+                <div id="toolbar" style="position:absolute;right:300px;">
+                    <div id="searchContent" style="position:relative;">
+                        <jsp:include page="/portal/plugin/search.jsp"></jsp:include>
+                    </div>
+                </div>
+				 <!-- toolbar -->
+                    <div id="btnContent" style="position:absolute;right:0px;">
+                    <ul class="btns">
+                        <!--<li id="language" class="language<%=user.getLanguage()%>" title="<%=SystemEnv.getHtmlLabelName(-11483,user.getLanguage())%>"></li>-->
+                        <!--<a href="/middlecenter/index.jsp" target="_blank">
+                            <li id="settingBtn" title="<%=SystemEnv.getHtmlLabelName(83541,user.getLanguage())%>"></li>
+                        </a>-->
+                        <a href="/wui/main.jsp" target="_blank">
+                            <li id="moreBtn" title="<%=SystemEnv.getHtmlLabelName(83516,user.getLanguage())%>"></li>
+                        </a>
+                        <li id="language" class="language<%=user.getLanguage()%>"></li>
+						<li id="logoutBtn" title="<%=SystemEnv.getHtmlLabelName(1205,user.getLanguage())%>"></li>
+                        <a href="/hrm/HrmTab.jsp?_fromURL=HrmResource" target="_blank">
+                         <li title="<%=user.getUsername() %>" style="font-size:14px;color:#919191;width:70px;max-width:100px;word-break:keep-all;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;">
+                                <%=user.getUsername() %>
+                         </li>
+                         </a>
+                        <!-- <%
+                            String deptname = "";
+                            rs.executeSql("select departmentmark from hrmdepartment where id=" + user.getUserDepartment());
+                            if(rs.next()){
+                                deptname = rs.getString("departmentmark");
+                            }
+                        %> -->
+                        <li title="<%=deptname%>" style="font-size:14px;color:#919191;width:70px;margin-left:0px;margin-right:0px;max-width:100px;word-break:keep-all;text-overflow:ellipsis;white-space: nowrap;overflow: hidden;">
+                        </li>
+                    </ul>
+                </div>
+				
+			
+			</div>
+		</div>
+
+		<div class="content">
+			<div id="continar" class="relative">
+				<div id="itemContent">
+					<div class="row">
+					   <!-- 工作中心 -->
+					   <div class="item" id="workCenter" >
+                            <div class="text" style="font-size:24px;color:#ffffff;"><%=SystemEnv.getHtmlLabelName(30871 ,user.getLanguage())%></div>
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:150px;">Work center</div>
+                        </div>
+                        <!-- 我的待办 zhukaiyan -->
+                        <div class="item dynamic1 open" id="todoList" url="<%=todoUrl %>">
+                            <div class="text" style="font-size:24px;color:#ffffff;">
+                            <span style="font-size:24px;color:#ffffff;position:relative;"><%=SystemEnv.getHtmlLabelName(381970 ,user.getLanguage())%></span>
+                            <div style="width: 48px;height: 48px;background: url(/portal/plugin/images/opzm/tip.png) center center no-repeat;background-size: 100% 100%;display: inline-block;position: absolute;top: -44px;right:30px;">
+                            </div>
+                            <span style="position: absolute;width: 48px;height: 48px;top: -44px;right:30px;padding-top: 10px;text-align:center;font-size: 14px;"><%=workflowCount %></span>
+                            </div>
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:150px;">My to-do list</div>
+                        </div>
+                        <!-- 规章制度 -->
+                        <div class="item dynamic1 open" id="gzzd" url="<%=gzzdUrl %>">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:90px;"><%=SystemEnv.getHtmlLabelName(382136,user.getLanguage())%></div>
+                        </div>
+                        <!-- 新闻幻灯片 -->
+                        <div class="" id="_hotnews">
+                            <div id="newsFlex" class='flexslider' style="height: 150px;">
+                                <ul class='slides' style="height: 150px;">
+                                    <% 
+                                            for (int i=0;i<hotnewsList.size();i++ ) {
+                                                Map hotnewsItem = (Map)hotnewsList.get(i);
+                                    %>
+                                        <li class="open" style="height: 150px;" url="/docs/docs/DocDsp.jsp?id=<%=hotnewsItem.get("docid") %>">
+                                            <img src="<%=hotnewsItem.get("img") %>" width="100%" height="100%">
+                                           <!--  <span class="hotnewsSpan">
+                                            <span class="hotnewsTitle"><%=hotnewsItem.get("docsubject") %></span>
+                                            </span>  zhukaiyan -->
+                                            <div style="position:absolute;color:#ffffff; bottom:0px; right:0px; width:100%; height:30px;line-height:30px;background-color:#595C62;opacity: 0.8;filter:alpha(opacity=80);">
+	                                            <span class="hotnewsTitle"><%=hotnewsItem.get("docsubject") %></span>
+                                            </div>
+                                        </li>
+                                    <%
+                                            }
+                                    %>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 公文公告 -->
+                        <div class="item" id="_noticenews" style="cursor: default;" url="">
+                            <div class="newsconent">
+                                <div class="contentHeader">
+                                    <div class="conentTitle"><%=SystemEnv.getHtmlLabelName(381971,user.getLanguage())%></div>
+                                    <!-- <div class="conentMore open" url="<%=noticenewsmore %>"><%=SystemEnv.getHtmlLabelName(17499,user.getLanguage())%></div> -->
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="conentList">
+                                    <ul class="newsList">
+                                        <% 
+                                                for (int i=0;i<noticenewsList.size();i++ ) {
+                                                    Map noticenewsItem = (Map)noticenewsList.get(i);
+                                                    //dc.getIsNewDoc(docId, user.getLogintype(), ""+user.getUID(),doccreaterid,readCount);
+                                                    
+                                        %>
+                                                <li>
+                                                    <a href="/docs/docs/DocDsp.jsp?id=<%=noticenewsItem.get("docid") %>" onclick="hideUnread(<%=noticenewsItem.get("docid")%>)" target="_blank">
+                                                        <%=noticenewsItem.get("docsubject") %>
+                                                    </a>
+                                                     <%if(dc.getIsNewDoc(Util.null2String(noticenewsItem.get("docid")),user.getLogintype(), ""+user.getUID())){ 
+                                                       %>
+                                                       <IMG id='doclist_<%=noticenewsItem.get("docid") %>img' src='/images/ecology8/statusicon/BDNew_wev8.png' title='<%=SystemEnv.getHtmlLabelName(18441,user.getLanguage()) %>' class='wfremindimg' border=0 align='absbottom'>
+                                                       <%} %>
+                                                </li>
+                                        <%
+                                                }
+                                        %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 通知 -->
+                         <div class="item dynamic1 open" id="tz" url="<%=tzUrl %>">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:100px;"><%=SystemEnv.getHtmlLabelName(17855,user.getLanguage())%></div>
+                        </div>
+						<div class="clear"  style="height:10px;">&nbsp;</div>
+					</div>
+
+		
+
+					<div class="row">
+						<div id="wfcenter">
+							<div id="wfcenterheader">
+								<div id="wfcentertitle"><%=SystemEnv.getHtmlLabelName(30871,user.getLanguage())%></div>
+								<div id="wfcenternav">
+									<ul id="wfcenterul">
+										<%
+											String sql = "select u.id,u.cjfl,b.title as flname,u.xxorder from uf_ksgzlm u "
+											+" left join uf_ksgzlm_dt2 b on u.id = b.mainid where u.sffc=1 and b.dyybq='分类' and b.lanid='" + user.getLanguage()+"'"
+											+" and (((','||u.dfb||',') like '%,"+subcompanyid+",%' ) or ( (','||u.dbm||',') like '%,"+departmentid+",%') or ((','||to_char(u.drl)||',') like '%,"+user.getUID()
+											+",%') or (exists(select h.id from hrmrolemembers h where (','||u.role||',') like ('%,'||h.roleid||',%') and h.resourceid="+user.getUID()+"))) order by u.xxorder asc";
+											rs.executeSql(sql);
+											//System.out.println("sql:"+sql);
+											Map map = new HashMap();
+											
+											while(rs.next()){
+												String id = rs.getString("id");											
+												String cjfl = rs.getString("cjfl");									
+												String flname = rs.getString("flname");	
+												
+												if(!map.containsKey(cjfl)){
+													map.put(cjfl,cjfl);
+													if(flname.length()!=0){
+													    if(flname.contains("|")){
+											                String[] temp = flname.split("\\|");
+											                flname = temp[0];
+											            }
+										%>
+													<li tab=<%=id %>><%=flname %></li>
+										<%
+													}
+												}
+											}
+										%>
+									</ul>
+								</div>
+								<!-- <div id="tab-right" onclick="tabsgo(1)">＞</div>  
+            					<div id="tab-left" onclick="tabsgo(0)">＜</div> -->
+								<!-- <div class="conentMore open" style="position: absolute;right:25px;text-align: center;" url="/workflow/request/RequestType.jsp">
+									<%=SystemEnv.getHtmlLabelName(17499,user.getLanguage())%>
+								</div> -->
+								<div class="close"></div>
+								<div class="clear">&nbsp;</div>
+							</div>
+							<div id="wfcentercontent">
+								<!-- 默认加载第一个tab页，剩余点击时ajax加载  -->
+								<jsp:include page="cspage/wfcentertabcontent.jsp"></jsp:include>
+							</div>
+						</div>
+					    <div class="row">
+                        <!-- 企业文化 -->
+                        <div class="item dynamic1 open" id="qywh" url="<%=qywhUrl %>">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:100px;"><%=SystemEnv.getHtmlLabelName(131207 ,user.getLanguage())%></div>
+                        </div>
+                        <!-- 公司新闻 -->
+                        <div class="item" id="_companynews" style="cursor: default;" url="">
+                            <div class="newsconent">
+                                <div class="contentHeader">
+                                    <div class="conentTitle"><%=SystemEnv.getHtmlLabelName(131205,user.getLanguage())%></div>
+                                    <div class="conentMore open" url="<%=companynewmore %>"><%=SystemEnv.getHtmlLabelName(17499,user.getLanguage())%></div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="conentList">
+                                    <ul class="newsList">
+                                        <% 
+                                                for (int i=0;i<companynewsList.size();i++ ) {
+                                                    Map companynewsItem = (Map)companynewsList.get(i);
+                                        %>
+                                                <li>
+                                                    <a href="/docs/docs/DocDsp.jsp?id=<%=companynewsItem.get("docid") %>" onclick="hideUnread(<%=companynewsItem.get("docid")%>)" target="_blank">
+                                                        <%=companynewsItem.get("docsubject") %>
+                                                    </a>
+                                                    <%if(dc.getIsNewDoc(Util.null2String(companynewsItem.get("docid")),user.getLogintype(), ""+user.getUID())){ 
+                                                       %>
+                                                       <IMG id='doclist_<%=companynewsItem.get("docid") %>img' src='/images/ecology8/statusicon/BDNew_wev8.png' title='<%=SystemEnv.getHtmlLabelName(18441,user.getLanguage()) %>' class='wfremindimg' border=0 align='absbottom'>
+                                                     <%} %>
+                                                </li>
+                                        <%
+                                                }
+                                        %>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                         <!-- 知识中心 -->
+                        <div class="item dynamic1 open" id="zszx" url="<%=zszxUrl %>">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:100px;"><%=SystemEnv.getHtmlLabelName(132038,user.getLanguage())%></div>
+                        </div>
+                         <!-- 日程安排 -->
+                        <div class="item dynamic1 open" id="rcap" url="<%=rcapUrl %>">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:100px;"><%=SystemEnv.getHtmlLabelName(1038,user.getLanguage())%></div>
+                        </div>
+                         <!-- 系统导航 -->
+                        <div class="item" id="xtdh" url="">
+                            <div class="text" style="font-size:16px;color:#ffffff;margin-top:100px;"><%=SystemEnv.getHtmlLabelName(381972,user.getLanguage())%></div>
+                        </div>
+
+
+                        <div class="clear" style="height:10px;">&nbsp;</div>
+                    </div>
+
+
+					</div>
+
+				    <!-- 系统导航 -->
+				    <div class="row">
+				        <div id="xtdhDiv">
+				        <div class="_close"></div>
+                            <div id="xtdhcontent">
+                                <!--<jsp:include page="cspage/xtdhcontent.jsp"></jsp:include>-->
+                            </div>
+                        </div>
+				    </div>
+				</div>
+				
+				<!-- 根据预言选择显示的样式 -->
+				<%
+					String mp_tooltip_font = "";					
+					if(user.getLanguage()== 8){
+						mp_tooltip_font = "mp_tooltip_font-en";
+					}else{
+						mp_tooltip_font = "mp_tooltip_font-cn";
+					}
+				%>
+				
+				<!-- 侧边栏 -->
+				<div class="side-bar"> 
+				    <a href="#" class="icon-android">
+				        <div class="chat-tips">
+                            <i></i>
+                            <img style="width:120px;height:120px;" src="images/right/app_android.png" alt="">
+                        </div>
+				    </a> 
+				    <a href="#" class="icon-ios" >
+					    <div class="chat-tips" style="top:10px;">
+						    <i></i>
+						    <img style="width:120px;height:120px;" src="images/right/app_ios.png" alt="">
+					    </div>
+				    </a> 
+				    <a  href="#" class="icon-phone" >
+				         <div class="chat-tips" style="top:75px;">
+                            <i></i>
+                            <img style="width:120px;height:120px;" src="images/right/app_phone.png" alt="">
+                        </div>
+				    </a> 
+				   <!--  <a  href="#" class="icon-qq">
+				         <div class="chat-tips" style="top:140px;">
+                            <i></i>
+                            <img style="width:120px;height:120px;" src="images/right/app_ios.png" alt="">
+                        </div>
+				    </a>  -->
+				    <a  href="#" class="icon-wechat" >
+				         <div class="chat-tips" style="top:205px;">
+                            <i></i>
+                            <img style="width:120px;height:120px;" src="images/right/app_wechat.png" alt="">
+                        </div>
+				    </a> 
+				</div>
+				
+			</div>
+			<div class="footer">
+				©2018&nbsp;&nbsp;金光纸业(中国)投资股份有限公司版权所有
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="common/js/quick_links.js"></script>
+	<script type="text/javascript" src="common/js/common.js"></script>
+	<script type="text/javascript">
+		var tabcount = 8;	
+	
+		$(document).ready(function() {
+			//异步加载显示待办条数
+			$.get("/portal/plugin/cspage/showtodo.jsp?email="+"<%=user.getEmail()%>",function(data,status){
+				if (data == undefined || data == null) {
+					return;
+				} else {
+ 					if(data.num.length > 2){
+ 						$("#unread").addClass("bubble99");
+ 					}else{
+ 						$("#unread").html(data.num);
+ 						$("#unread").addClass("bubble");
+ 					}
+				}
+			});
+
+
+			//首页上下居中
+			var height=document.documentElement.clientHeight;	//取得浏览器页面可视区域的高度
+			var conentheight=79+180+16+150+16+150;
+			$("#itemContent").css("margin-top",(height-conentheight)/2-2 + "px");
+
+			$('#newsFlex').flexslider({
+				animation: "slide",
+				slideshow: true,
+				slideshowSpeed: 5000
+			});
+					
+			$("#typetext").text($("#searchtypelist").find("li:first").text());
+			$("#searchtype").val($("#searchtypelist").find("li:first").attr("searchtype"));
+
+			$(".open").on("click", function() {
+				window.open($(this).attr("url"))
+			});
+
+			$("#wfcenterul").find("li").bind("click",function() {
+				$(".wfcenterseleted").removeClass("wfcenterseleted");
+				$(this).addClass("wfcenterseleted");
+				//alert($(this).attr("tab"));
+				var l = <%=user.getLanguage()%>;
+				$("#wfcentercontent").load("cspage/wfcentertabcontent.jsp?tab=" + $(this).attr("tab") + "&lang=" + l);
+			});
+
+			$("#rightMenuUl").find("li").bind("click",function() {
+				$(".rightmenuselected").removeClass("rightmenuselected");
+				$(this).addClass("rightmenuselected");
+			});
+			
+			$("#logoutBtn").on("click", function() {
+				//top.Dialog.confirm("<%=SystemEnv.getHtmlLabelName(16628,user.getLanguage())%>",function(){
+					window.location='/login/Logout.jsp';
+				//})
+			});
+
+			//切换语言
+			var lang;
+			$("#language").on("click", function() {
+				if(<%=user.getLanguage()%>==7){
+					lang = 8;
+				}else{
+					lang = 7;
+				}
+				$.post("/fxjt/changelang.jsp?lang="+lang,function(){
+					document.location.reload();
+				});
+			});
+
+      //鼠标点击发起流程框，显示流程中心，再点击隐藏
+			$("#workCenter").on("click", function() {
+				$("#wfcenter").slideDown(300);
+				$("#wfcenter").css("top", '-310px');
+				$("#wfcenter").css("margin-left", '30px');
+				//alert($("#wfcenter").css("display").toLowerCase()); 
+				$("#wfcenterul li:eq(0)").click();
+				
+				//alert($("#wfcenterul li:visible").length);
+				if($("#wfcenterul li:visible").length > tabcount){
+					$("#tab-right").css("color","#ffffff");
+				}
+			});
+			
+			function stopPropagation(e) { 
+				if (e.stopPropagation){ 
+					e.stopPropagation(); 
+				}
+				else
+				{ 
+					e.cancelBubble = true; 
+				} 
+			}
+			
+			$("#bodyall").on("click",function(){
+				$("#xtdhDiv").fadeOut(1000);
+				$("#wfcenter").fadeOut(1000);
+			});
+			
+			$('#workCenter').bind('click',function(e){ 
+				stopPropagation(e); 
+			});
+			
+			$('#wfcenter').bind('click',function(e){ 
+				stopPropagation(e); 
+			});
+
+			$('#xtdh').bind('click',function(e){ 
+				stopPropagation(e); 
+			});
+			
+			$('#xtdhDiv').bind('click',function(e){ 
+				stopPropagation(e); 
+			});
+			
+			//系统导航
+			$("#xtdh").on("click", function() {
+                $("#xtdhDiv").slideDown(300);
+                $("#xtdhDiv").css("top", '-150px');
+                $("#xtdhDiv").css("margin-left", '30px');
+                var l = <%=user.getLanguage()%>;
+                $("#xtdhcontent").load("cspage/xtdhcontent.jsp?lang=" + l);
+            });
+
+
+			$(".close").on("click",function(){
+				$("#wfcenter").fadeOut(1000);
+				//$("#wfcenter").slideUp(300);
+				//$("#wfcenter").css("top", '-150px');
+			});
+			$("._close").on("click",function(){
+                $("#xtdhDiv").fadeOut(1000);
+                //$("#wfcenter").slideUp(300);
+                //$("#wfcenter").css("top", '-150px');
+            });
+
+
+			 
+			//鼠标输入右侧菜单，弹出提示框
+			$(".quick_links_panel li").mouseenter(function(){
+				$(this).children(".mp_tooltip").animate({left:-94,queue:true});
+				$(this).children(".mp_tooltip").css("visibility","visible");				
+			});
+			$(".quick_links_panel li").mouseleave(function(){
+				$(this).children(".mp_tooltip").css("visibility","hidden");
+				$(this).children(".mp_tooltip").animate({left:-121,queue:true});				
+			});
+								
+			//常用信息动态显示
+			//dynamic1();
+			//员工服务动态显示
+			//dynamic2();
+			//专业园地动态显示
+			//dynamic3();
+			
+			//用户信息显示
+			$("#hrmBtn-li").mouseenter(function(){
+				$("#user-info").slideDown("slow");
+			});
+			$("#hrmBtn-li").mouseleave(function(){
+				$("#user-info").fadeOut("slow");
+			});
+			//系统导航点击图标也可以link zhukaiyan
+			$(document).delegate(".xtdhitem","click",function(){
+     		window.open($(this).find('.icon').attr('link'));
+   		});
+		});
+
+		//常用信息动态显示	
+		function dynamic1(){
+			var index1 = 0;
+			var dynamicCount1 = $(".dynamic1").length;
+			var dynamic1 = setInterval(function(){
+				$(".dynamic1").eq(index1).fadeToggle("slow",function(){
+					$(this).next(".dynamic1")[0]===undefined ? $(".dynamic1").eq(index1).fadeToggle("slow") : $(this).next('.dynamic1').fadeToggle("slow");
+				});
+				index1++;
+				if(index1==dynamicCount1){
+					index1 = 0;
+				}
+			},3000);
+		}
+				
+		//员工服务动态显示
+		function dynamic2(){
+			var index2 = 1;
+			var dynamicCount2 = $(".dynamic2").length;
+			var dynamic2 = setInterval(function(){
+				$(".dynamic2").hide().eq(index2).slideDown("slow");
+				index2++;
+				if(index2==dynamicCount2){
+					index2 = 0;
+				}
+			},3500);
+		}
+
+		//专业园地动态显示
+		function dynamic3(){
+			var index3 = 1;
+			var dynamicCount3 = $(".dynamic3").length;
+			var dynamic3 = setInterval(function(){
+				$(".dynamic3").hide().eq(index3).fadeIn("slow");
+				index3++;
+				if(index3==dynamicCount3){
+					index3 = 0;
+				}
+			},4000);
+			
+		}
+
+		$('.content').on('scroll', function() {
+
+			$(".rightMenu").css("top", 100 + $(this).scrollTop() + "px");
+
+		});
+
+		
+		function tabsgo(lr){
+		    if(lr)
+		    {
+		    	//alert($("#wfcenterul li:visible").length);
+		        if($("#wfcenterul li:visible").length > tabcount){ //防止全部被隐藏
+		        	$("#wfcenterul li:visible:eq(0)").hide();
+		        	$("#tab-left").css("color","#ffffff");
+		        }
+		        
+		        if($("#wfcenterul li:visible").length == tabcount){
+		        	$("#tab-right").css("color","#6e83d2");
+		        }
+		    }
+		    else{
+		    	$("#wfcenterul li:hidden:last").show();
+		    	if($("#wfcenterul li:visible").length == $("#wfcenterul li").length){
+		    		$("#tab-left").css("color","#6e83d2");
+		    	}
+		    	if($("#wfcenterul li:visible").length > tabcount){
+					$("#tab-right").css("color","#ffffff");
+				}
+		    }
+		}
+		function hideUnread(docid){
+		  $("#doclist_"+docid+"img").hide();
+		}
+	</script>
+</body>
+</html>
+

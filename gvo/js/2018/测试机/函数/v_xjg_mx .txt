@@ -1,0 +1,8 @@
+create or replace view v_xjg_mx as
+select a.requestid as cgddlc,'1' as fycdzt,c.* from formtable_main_814 a,formtable_main_814_dt1 b , uf_pr_budget c 
+where a.id=b.mainid 
+ and  a.requestid=c.lcid
+ and  b.purrequest=c.cgsqdh
+ and  b.reqproject=c.mxhid
+ and  (select nvl(sum(nvl(je,0)),0) from uf_pr_budget where cgsqdh=c.cgsqdh and mxhid=c.mxhid)>0
+ and  nvl(c.je,0)>0

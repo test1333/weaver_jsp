@@ -1,0 +1,12 @@
+create table zj_gl_interface_control (
+ JE_SOURCE_NAME                  varchar(25),
+ STATUS                          varchar(1),
+ INTERFACE_RUN_ID                decimal(15),
+ GROUP_ID                         decimal(15),
+ SET_OF_BOOKS_ID                 decimal(15),
+ PACKET_ID	decimal(15),
+ INTERFACE_TABLE_NAME            varchar(30),
+ PROCESSED_TABLE_CODE             varchar(1),
+ REQUEST_ID                      decimal(15),
+ UPDATE_FLAG      varchar(1)
+)  

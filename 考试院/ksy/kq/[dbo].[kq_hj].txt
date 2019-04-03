@@ -1,0 +1,104 @@
+alter function [dbo].[kq_hj](@emid varchar(30),@lx varchar(30),@begintime varchar(30),@endtime varchar(30))
+returns int
+as
+begin
+declare @count int,
+        @week1 int,
+        @qzy varchar(50),
+        @lastday varchar(50)
+   set @count = 0
+  select @week1=datepart(weekday, cast(@begintime as datetime))
+  if @week1 !=2 
+   begin
+	  if @week1=1 
+	   begin
+		 set @week1=@week1+7
+	   end
+ 
+select @qzy=convert(varchar(100),cast(@begintime as datetime)-@week1+2,23)
+if @week1<=8
+   begin
+   select @count=COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw7=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw7=@lx
+end
+if @week1<=7
+ begin
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw6=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw6=@lx
+ end
+ if @week1<=6
+ begin
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw5=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw5=@lx
+ end
+  if @week1<=5
+ begin
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw4=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw4=@lx
+ end
+ 
+ if @week1<=4
+ begin
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw3=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw3=@lx
+ end
+  if @week1<=3
+ begin
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw2=@lx
+   select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw2=@lx
+ end
+end
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw1=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw1=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw2=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw2=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw3=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw3=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw4=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw4=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw5=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw5=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw6=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw6=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and sw7=@lx  and xm=@emid
+  select @count=@count+COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq<@endtime and a.sbzurq>=@begintime and xw7=@lx  and xm=@emid
+  select @lastday=convert(varchar(100),cast(@endtime as datetime)-1,23)
+  select @week1=datepart(weekday, cast(@lastday as datetime))
+   if @week1 !=1
+  begin
+    select @qzy=convert(varchar(100),cast(@lastday as datetime)-@week1+2,23)
+   if @week1<=7
+   begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw7=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw7=@lx
+end
+if @week1<=6
+ begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw6=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw6=@lx
+ end
+ if @week1<=5
+ begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw5=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw5=@lx
+ end
+  if @week1<=4
+ begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw4=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw4=@lx
+ end
+  if @week1<=3
+ begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw3=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw3=@lx
+ end
+ if @week1<=2
+ begin
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and sw2=@lx
+   select @count=@count-COUNT(b.id) from formtable_main_182 a,formtable_main_182_dt1 b,workflow_requestbase c where a.id=b.mainid   and a.requestId=c.requestid and c.currentnodetype>=3 and a.sbzurq=@qzy and xm=@emid and xw2=@lx
+ end
+  
+   end 
+  return @count
+ 
+end

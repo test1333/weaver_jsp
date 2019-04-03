@@ -1,0 +1,46 @@
+create or replace view v_ec_yearfnabudget as 
+select kmcode,
+       kmid,
+       fnayear,
+       cbzxcode,
+       cbzxid,
+       nvl(sum(nvl(budgetaccount, 0)), 0) as budgetaccount,
+       nvl(sum(nvl(yyje, 0)), 0) as yyje,
+       nvl(sum(nvl(kyje, 0)), 0) as kyje
+  from (select distinct a.id,
+                        (select codename
+                           from fnabudgetfeetype
+                          where id = a.budgettypeid) as kmcode,
+                        a.budgettypeid as kmid,
+                        a.budgetaccount,
+                        c.fnayear,
+                        b.cbzxcode,
+                        b.budgetorganizationid as cbzxid,
+                        get_fna_yyje(b.budgetorganizationid,
+                                     a.budgettypeid,
+                                     a.budgetperiods,
+                                     a.budgetperiodslist) as yyje,
+                        nvl(a.budgetaccount, 0) -
+                        nvl(get_fna_yyje(b.budgetorganizationid,
+                                         a.budgettypeid,
+                                         a.budgetperiods,
+                                         a.budgetperiodslist),
+                            0) as kyje
+          from FnaBudgetInfoDetail a,
+               (select id,
+                       (select code
+                          from fnacostcenter
+                         where id = budgetorganizationid) as cbzxcode,
+                       budgetperiods,
+                       budgetorganizationid
+                  from fnabudgetinfo
+                 where status = 1
+                   and organizationtype = '18004'
+                   and budgetperiods =
+                       (select id from FnaYearsPeriods where status = 1)) b,
+               FnaYearsPeriodsList c
+         where a.budgetinfoid = b.id
+           and a.budgetperiodslist = c.periodsid
+           and a.budgetperiods = c.fnayearid
+           and c.isactive = 1) t
+ group by kmcode,kmid, fnayear, cbzxcode,cbzxid;

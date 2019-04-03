@@ -1,0 +1,38 @@
+create or replace function getnodessjhs(i_nodeid    in varchar2,
+                                          i_requestid in varchar2)
+  return varchar2 as
+  v_result varchar2(100):='1';
+  v_operatedate varchar2(100);
+  v_operatetime varchar2(100);
+  v_receivedate varchar2(100);
+  v_receivetime varchar2(100);
+  v_ceils varchar2(100);
+begin
+
+      begin
+        select operatedate,operatetime,receivedate,receivetime
+          into v_operatedate,v_operatetime,v_receivedate,v_receivetime
+          from (select operatedate,operatetime,receivedate,receivetime
+                  from workflow_currentoperator
+                 where requestid = i_requestid
+                   and nodeid = i_nodeid
+                   and isremark in (0,2,4,5)
+                 order by id desc)
+         where rownum = 1;
+      exception
+        when no_data_found then
+          v_result := '';
+      end;
+  if v_operatedate is null or v_operatedate='' then
+     v_result := '';
+  end if;
+  if v_result = '1' then
+    select ceil((To_date(v_operatedate||' '||v_operatetime , 'yyyy-mm-dd hh24-mi-ss') - To_date(v_receivedate||' '||v_receivetime , 'yyyy-mm-dd hh24-mi-ss')) * 24 * 60 * 60)
+    into v_ceils
+     from dual;
+     select floor(v_ceils/3600)||'–° ±'||floor(mod(v_ceils,3600)/60)||'∑÷'||mod(v_ceils,60)||'√Î'
+     into v_result
+     from dual;
+  end if;
+  return v_result;
+end;

@@ -1,0 +1,1 @@
+alter table zoa_wffield_map add  ismust varchar2(10)

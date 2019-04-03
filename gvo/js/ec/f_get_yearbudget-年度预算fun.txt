@@ -1,0 +1,22 @@
+create or replace function f_get_yearbudget(i_kmid   varchar2,
+                                            i_cbzxid varchar2,
+                                            i_year   varchar2)
+  return number as
+
+  v_result number(12, 2) := 0;
+begin
+
+  begin
+    select kyje
+    into v_result
+      from v_ec_yearfnabudget
+     where fnayear = substr(i_year, 0, 4)
+       and kmid = i_kmid
+       and cbzxid = i_cbzxid;
+  exception
+    when no_data_found then
+      v_result := 0;
+  end;
+
+  return v_result;
+end;

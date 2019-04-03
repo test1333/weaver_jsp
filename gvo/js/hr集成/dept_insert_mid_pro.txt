@@ -1,0 +1,42 @@
+create or replace procedure dept_insert_mid_pro(
+	v_deptid in integer,v_dept_code in varchar2,v_dept_name in varchar2,
+	v_dept_mark in varchar2,v_superid in integer,v_super_comid in integer,v_canceled in integer,update_type char
+)
+as
+	v_super_name varchar2(255);
+	v_canceled_str integer;
+	v_super_com_code varchar2(255);
+begin
+
+	begin
+		all_log(v_deptid||','''||v_dept_code||''','''||v_dept_name||''','''||v_dept_mark||''','||v_superid||','||v_super_comid||','||v_canceled);
+    end;
+	
+	if v_canceled is null then
+		v_canceled_str := 0;
+  else
+    v_canceled_str := v_canceled;
+  end if;
+
+  if v_superid is not null then
+    if v_superid>0 then
+       select departmentcode into v_super_name from hrmdepartment where id=v_superid;
+    end if;
+  end if;
+
+  if v_super_comid is not null then
+    begin
+    select subcompanycode into v_super_com_code from hrmsubcompany where id=v_super_comid;
+    exception
+      when no_data_found then
+        v_super_com_code := '';
+    end;
+  end if;
+
+  insert into HRM_DEPT_MID_INFO£¨id,departmentid,departmentcode,departmentname,departmentmark,supdepid,supdepname,subcompanyid1,
+    subcompanyidname,canceled,createrID,createrNAME,createtime,UpdateNo£©
+  values(hrm_other_mid_info_seqno.nextval,v_deptid,v_dept_code,v_dept_name,v_dept_mark,v_superid,v_super_name,v_super_comid,
+    v_super_com_code,v_canceled_str,null,null,to_char(sysdate,'yyyy-mm-dd hh24:mi:ss'),update_type);
+
+  commit;
+end;

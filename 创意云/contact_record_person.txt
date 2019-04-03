@@ -1,0 +1,6 @@
+create table contact_record_person(
+workplanid integer,
+name varchar(200),
+tel  varchar(200)
+
+)

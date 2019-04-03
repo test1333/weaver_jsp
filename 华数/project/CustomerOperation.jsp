@@ -1,0 +1,261 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page language="java" contentType="text/html; charset=GBK" %> <%@ include file="/systeminfo/init.jsp" %>
+<%@ page import="java.util.*" %>
+<%@ page import="java.sql.Timestamp" %>
+<%@ page import="weaver.file.FileUpload" %>
+<jsp:useBean id="Util" class="weaver.general.Util" scope="page" />
+<jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page"/>
+<jsp:useBean id="rs1" class="weaver.conn.RecordSet" scope="page"/>
+<jsp:useBean id="RecordSet" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="RecordSetV" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="RecordSetT" class="weaver.conn.RecordSet" scope="page" />
+<jsp:useBean id="CustomerInfoComInfo" class="weaver.crm.Maint.CustomerInfoComInfo" scope="page" />
+<jsp:useBean id="DepartmentComInfo" class="weaver.hrm.company.DepartmentComInfo" scope="page" />
+<jsp:useBean id="SendMail" class="weaver.crm.Maint.SendMail" scope="page" />
+<jsp:useBean id="SysRemindWorkflow" class="weaver.system.SysRemindWorkflow" scope="page" />
+<jsp:useBean id="ResourceComInfo" class="weaver.hrm.resource.ResourceComInfo" scope="page"/>
+<jsp:useBean id="CityComInfo" class="weaver.hrm.city.CityComInfo" scope="page"/>
+<jsp:useBean id="CrmViewer" class="weaver.crm.CrmViewer" scope="page"/>
+<jsp:useBean id="ContractViewer" class="weaver.crm.ContractViewer" scope="page"/>
+<jsp:useBean id="CustomerModifyLog" class="weaver.crm.data.CustomerModifyLog" scope="page"/>
+<%--客户审批参数存储类--%>
+<jsp:useBean id="ApproveCustomerParameter" class="weaver.workflow.request.ApproveCustomerParameter" scope="session"/>
+<jsp:useBean id="CrmShareBase" class="weaver.crm.CrmShareBase" scope="page" />
+<%
+
+FileUpload fu = new FileUpload(request);
+
+char flag = 2; 
+String ProcPara = "";
+String strTemp = "";
+String strTempmanager = "";
+String CurrentUser = ""+user.getUID();
+String CurrentUserName = ""+user.getUsername();
+
+String SubmiterType = ""+user.getLogintype();
+String ClientIP = request.getRemoteAddr();
+String CustomerID = "";
+String PortalLoginid = "";
+String PortalPassword = "";
+
+String SWFTitle="";
+String SWFRemark="";
+String SWFSubmiter="";
+String SWFAccepter="";
+
+String fieldName = "";		// added by lupeng for TD826
+
+Date newdate = new Date() ;
+long datetime = newdate.getTime() ;
+Timestamp timestamp = new Timestamp(datetime) ;
+String CurrentDate = (timestamp.toString()).substring(0,4) + "-" + (timestamp.toString()).substring(5,7) + "-" +(timestamp.toString()).substring(8,10);
+String CurrentTime = (timestamp.toString()).substring(11,13) + ":" + (timestamp.toString()).substring(14,16) + ":" +(timestamp.toString()).substring(17,19);
+String method = Util.null2String(fu.getParameter("method"));
+boolean isfromtab =  Util.null2String(fu.getParameter("isfromtab")).equals("true")?true:false;
+String approvedesc = Util.null2String(fu.getParameter("approvedesc")); //客户审批描述
+String requestid = Util.null2String(fu.getParameter("requestid")); //客户审批描述
+
+String Remark=Util.fromScreen3(fu.getParameter("Remark"),user.getLanguage());
+String RemarkDoc=Util.fromScreen3(fu.getParameter("RemarkDoc"),user.getLanguage());
+String Status=Util.fromScreen3(fu.getParameter("Status"),user.getLanguage());
+String Rating=Util.fromScreen3(fu.getParameter("Rating"),user.getLanguage());
+String PortalStatus=Util.fromScreen3(fu.getParameter("PortalStatus"),user.getLanguage());
+
+String CustomerStatus=Util.null2String(fu.getParameter("CustomerStatus"));//客户状态
+
+
+
+if(method.equals("delete")){
+	response.sendRedirect("/CRM/search/CRMCategory.jsp");
+	return;
+}
+
+String projid=Util.fromScreen3(fu.getParameter("projid"),user.getLanguage());
+String Name=Util.fromScreen3(fu.getParameter("Name"),user.getLanguage());
+String xmcode=Util.fromScreen3(fu.getParameter("xmcode"),user.getLanguage());
+String xmjl=Util.fromScreen3(fu.getParameter("xmjl"),user.getLanguage());
+String xmjlname=Util.fromScreen3(fu.getParameter("xmjlname"),user.getLanguage());
+String xmgs=Util.fromScreen3(fu.getParameter("xmgs"),user.getLanguage());
+String xmbm=Util.fromScreen3(fu.getParameter("xmbm"),user.getLanguage()); 
+String sqrq=Util.fromScreen3(fu.getParameter("sqrq"),user.getLanguage());
+String xmjlemail=Util.fromScreen3(fu.getParameter("xmjlemail"),user.getLanguage());
+String xmzl=Util.fromScreen3(fu.getParameter("xmzl"),user.getLanguage());
+String xmqtjf=Util.fromScreen3(fu.getParameter("xmqtjf"),user.getLanguage());
+String firsttype=Util.fromScreen3(fu.getParameter("firsttype"),user.getLanguage());
+String xmlb=Util.fromScreen3(fu.getParameter("xmlb"),user.getLanguage());
+String lxdh=Util.fromScreen3(fu.getParameter("lxdh"),user.getLanguage());
+String sfndys=Util.fromScreen3(fu.getParameter("sfndys"),user.getLanguage());
+String lxlzxs=Util.fromScreen3(fu.getParameter("lxlzxs"),user.getLanguage());
+double xmtzysje = Util.getDoubleValue(fu.getParameter("xmtzysje"),0);
+double xmrjje = Util.getDoubleValue(fu.getParameter("xmrjje"),0);
+double xmfyzyyjje = Util.getDoubleValue(fu.getParameter("xmfyzyyjje"),0);
+double xmyzyje = Util.getDoubleValue(fu.getParameter("xmyzyje"),0); 
+
+String crmCode = Util.fromScreen3(fu.getParameter("crmcode"),user.getLanguage());
+String Abbrev=Util.fromScreen3(fu.getParameter("Abbrev"),user.getLanguage());
+String Address1=Util.fromScreen3(fu.getParameter("Address1"),user.getLanguage());
+String Address2=Util.fromScreen3(fu.getParameter("Address2"),user.getLanguage());
+String Address3=Util.fromScreen3(fu.getParameter("Address3"),user.getLanguage());
+String Zipcode=Util.fromScreen3(fu.getParameter("Zipcode"),user.getLanguage());
+String City=Util.fromScreen3(fu.getParameter("City"),user.getLanguage());
+String Country=Util.fromScreen3(fu.getParameter("Country"),user.getLanguage());
+//String Province=Util.fromScreen3(fu.getParameter("Province"),user.getLanguage());
+String Province= CityComInfo.getCityprovinceid(City);
+String county=Util.fromScreen3(fu.getParameter("County"),user.getLanguage());
+String Language=Util.fromScreen3(fu.getParameter("Language"),user.getLanguage());
+String Phone=Util.fromScreen3(fu.getParameter("Phone"),user.getLanguage());
+String Fax=Util.fromScreen3(fu.getParameter("Fax"),user.getLanguage());
+String Email=Util.fromScreen3(fu.getParameter("Email"),user.getLanguage());
+String Website=Util.fromScreen3(fu.getParameter("Website"),user.getLanguage());
+String bankName=Util.fromScreen3(fu.getParameter("bankname"),user.getLanguage());
+String accountName = Util.fromScreen3(fu.getParameter("accountname"),user.getLanguage());
+String accounts=Util.fromScreen3(fu.getParameter("accounts"),user.getLanguage());
+ 
+String Type=Util.null2String(fu.getParameter("Type")); //客户类型
+String TypeFrom=CurrentDate;
+String Description=Util.fromScreen3(fu.getParameter("Description"),user.getLanguage());
+String Size=Util.fromScreen3(fu.getParameter("Size"),user.getLanguage());
+String Source=Util.fromScreen3(fu.getParameter("Source"),user.getLanguage());
+String Sector=Util.fromScreen3(fu.getParameter("Sector"),user.getLanguage());
+String Manager=Util.fromScreen3(fu.getParameter("Manager"),user.getLanguage());
+//部门由人力资源表中选出该经理的部门
+//String Department=Util.fromScreen3(fu.getParameter("Department"),user.getLanguage());
+String Department= ResourceComInfo.getDepartmentID(Manager);
+String Subcompanyid1=DepartmentComInfo.getSubcompanyid1(Department);
+String Agent=Util.fromScreen3(fu.getParameter("Agent"),user.getLanguage());
+String Parent=Util.fromScreen3(fu.getParameter("Parent"),user.getLanguage());
+String Document=Util.fromScreen3(fu.getParameter("Document"),user.getLanguage());
+String seclevel=Util.fromScreen3(fu.getParameter("seclevel"),user.getLanguage());
+String Photo=Util.fromScreen3(fu.getParameter("Photo"),user.getLanguage());
+String introductionDocid=Util.fromScreen3(fu.getParameter("introductionDocid"),user.getLanguage());
+String CreditAmount=Util.fromScreen3(fu.getParameter("CreditAmount"),user.getLanguage());
+String CreditTime=Util.fromScreen3(fu.getParameter("CreditTime"),user.getLanguage());
+
+
+String customerimageid = "";//联系人照片
+try
+{
+	customerimageid = Util.null2String(fu.uploadFiles("photoid"));//联系人照片
+}
+catch(Exception e)
+{
+	customerimageid = "";
+}
+
+String creditLevel = "0";
+ 
+String dff01=Util.null2String(fu.getParameter("dff01"));
+String dff02=Util.null2String(fu.getParameter("dff02"));
+String dff03=Util.null2String(fu.getParameter("dff03"));
+String dff04=Util.null2String(fu.getParameter("dff04"));
+String dff05=Util.null2String(fu.getParameter("dff05"));
+
+boolean isOracle = (RecordSet.getDBType()).equals("oracle");
+
+String nff01=Util.null2String(fu.getParameter("nff01"));
+String nff02=Util.null2String(fu.getParameter("nff02"));
+String nff03=Util.null2String(fu.getParameter("nff03"));
+String nff04=Util.null2String(fu.getParameter("nff04"));
+String nff05=Util.null2String(fu.getParameter("nff05"));
+String tff01=Util.fromScreen3(fu.getParameter("tff01"),user.getLanguage());
+String tff02=Util.fromScreen3(fu.getParameter("tff02"),user.getLanguage());
+String tff03=Util.fromScreen3(fu.getParameter("tff03"),user.getLanguage());
+String tff04=Util.fromScreen3(fu.getParameter("tff04"),user.getLanguage());
+String tff05=Util.fromScreen3(fu.getParameter("tff05"),user.getLanguage());
+String bff01=Util.null2String(fu.getParameter("bff01"));
+String bff02=Util.null2String(fu.getParameter("bff02"));
+String bff03=Util.null2String(fu.getParameter("bff03"));
+String bff04=Util.null2String(fu.getParameter("bff04"));
+String bff05=Util.null2String(fu.getParameter("bff05"));
+
+
+if(method.equals("add"))
+{ 
+	/*boolean ok=rs.executeSql(" insert into wasu_projectbase (name,xmcode,xmjlname,xmgs,xmbm,sqrq,xmjlemail,xmzl,xmlb,lxdh,sfndys,lxlzxs,xmtzysje,xmrjje,xmfyzyyjje,xmyzyje,xmstatus) values("+  
+			"'"+Name +"','"+xmcode+"','"+xmjlname+"','"+xmgs+"','"+xmbm+"','"+sqrq+"','"+xmjlemail+"',"+xmzl+",'"+xmlb+"','"+lxdh+"',"+sfndys+","+lxlzxs+","+xmtzysje+","+xmrjje+","+xmfyzyyjje+","+xmyzyje+",0)");  */ 
+	boolean ok=rs.executeSql(" insert into wasu_projectbase (name,xmcode,xmjlname,xmgs,xmbm,sqrq,xmjlemail,xmzl,xmlb,lxdh,sfndys,lxlzxs,xmtzysje,xmrjje,xmfyzyyjje,xmyzyje,firsttype,xmqtjf,xmstatus) values("+  
+			"'"+Name +"','"+xmcode+"','"+xmjlname+"','"+xmgs+"','"+xmbm+"','"+sqrq+"','"+xmjlemail+"',"+xmzl+",'"+xmlb+"','"+lxdh+"',"+sfndys+","+lxlzxs+","+xmtzysje+","+xmrjje+","+xmfyzyyjje+","+xmyzyje+",'"+firsttype+"',"+xmqtjf+",0)"); 
+	
+	rs.executeSql("SELECT max(id) as id from wasu_projectbase ORDER BY id desc ");
+	rs.next();
+	String prjid=rs.getString("id");
+	//System.out.println("id:"+prjid);  
+	//增加默认里程碑的管理 
+	String mrlcbformid= Util.null2o(weaver.file.Prop.getPropValue("projconfig", "mrlcb")); 
+    rs.executeSql(" select * from formtable_main_"+mrlcbformid+"_dt1 order by xh asc ");
+    while(rs.next()){
+		String stoneorder=Util.null2String(rs.getString("xh"));
+		String stonename=Util.null2String(rs.getString("lcbmc"));  
+		if(stoneorder.equals("1")){
+			RecordSet.executeSql("insert into wasu_projstone(projid,stoneorder,stonename,stonedate) values("+prjid+","+stoneorder+",'"+stonename+"','"+CurrentDate+"')");
+		}else{
+			RecordSet.executeSql("insert into wasu_projstone(projid,stoneorder,stonename) values("+prjid+","+stoneorder+",'"+stonename+"')");
+		}
+    } 
+	rs.executeSql(" insert into projrecordlog(projid,operatedate,operatetime,operater,clientip,logtype) values("+prjid+",'"+CurrentDate+"','"+CurrentTime+"',"+user.getUID()+",'"+request.getRemoteAddr()+"','新建')");
+	if(!isfromtab)
+		response.sendRedirect("/project/ViewCustomer.jsp?log=n&CustomerID="+prjid);
+	else
+		response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+prjid);
+	
+	return;
+}
+ 
+
+if(method.equals("edit"))
+{
+	if(!projid.equals("")){
+		boolean ok=rs.executeSql(" update wasu_projectbase set name='"+Name+"',xmcode='"+xmcode+"',xmjlname='"+xmjlname+"',xmgs="+xmgs+",xmbm="+xmbm+",sqrq='"+sqrq+"',xmjlemail='"+xmjlemail+"',xmzl="+xmzl+",xmlb='"+xmlb+"',lxdh='"+lxdh+"',sfndys="+sfndys+",lxlzxs="+lxlzxs+",xmtzysje="+xmtzysje+",xmrjje="+xmrjje+",xmfyzyyjje="+xmfyzyyjje+",xmyzyje="+xmyzyje+",firsttype='"+firsttype+"',xmqtjf="+xmqtjf+"  where id="+projid);  
+	}  
+	rs.executeSql(" insert into projrecordlog(projid,operatedate,operatetime,operater,clientip,logtype) values("+projid+",'"+CurrentDate+"','"+CurrentTime+"',"+user.getUID()+",'"+request.getRemoteAddr()+"','修改')");
+	response.sendRedirect("/project/ViewCustomer.jsp?log=n&CustomerID="+projid);
+	return;
+}else if(method.equals("apply")){  
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set sqrq='"+today+"',xmstatus=1 where id="+projid);
+	rs.executeSql(" update wasu_projstone set stonedate='"+today+"' where  stoneorder=2 and projid="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("noapply")){  
+	//增加暂不立项 
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date()); 
+	rs.executeSql(" update wasu_projectbase set noapplyrq='"+today+"',xmstatus=9 where id="+projid); 
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("FOver")){  
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set  xmstatus=2,xmcyrq='"+today+"' where id="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("Online")){    
+	//String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set  xmstatus=8  where id="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("Over")){  
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set  xmstatus=3,xmzyrq='"+today+"'  where id="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("finished")){  
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set  xmstatus=4,xmjsrq='"+today+"'  where id="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}else if(method.equals("nofinished")){   
+	String today=new SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
+	rs.executeSql(" update wasu_projectbase set xmstatus=5,xmjsrq='"+today+"'  where id="+projid);
+	response.sendRedirect("/project/ViewCustomerBase.jsp?log=n&CustomerID="+projid); 
+    return;
+
+}
+  
+
+%>
+

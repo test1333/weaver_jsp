@@ -1,0 +1,8 @@
+alter view v_uf_orders as
+SELECT     ISNULL(b.money, 0) AS money, a.fylx,a.id, a.requestId, a.bh, a.shqr, a.szbm, a.tbshj, a.gysh, a.lxr, a.email, a.tel, a.chzh, a.shb, a.dzh, a.bzh, a.shchfj, a.hj, a.formmodeid, 
+                      a.modedatacreater, a.modedatacreatertype, a.modedatacreatedate, a.modedatacreatetime, a.version, a.lastversion, a.km, a.ysbm, a.yssqsj
+FROM         dbo.uf_orders AS a LEFT OUTER JOIN
+                          (SELECT     qxzdd2, SUM(ISNULL(bczfje, 0)) AS money
+                            FROM          dbo.formtable_main_61
+                            GROUP BY qxzdd2) AS b ON a.requestId = b.qxzdd2
+WHERE     (a.lastversion = '1')

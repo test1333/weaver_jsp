@@ -1,0 +1,2 @@
+ALTER view [dbo].[v_create_certificate_history] as
+select ROW_NUMBER() over(order by fkseq desc,seq asc) as id, a.requestid,requestname,sqr,sqrq,case when bz='1' then '美元' else '人民币'end as bz,bz as bzid,fkje,b.seq,b.fkseq,a.fkfs,a.gs from v_fukuan_requestFlow_yf a ,request_fk_record b where  a.requestid=b.requestid  and (b.sfscpz <> '' and  b.sfscpz is not  null)

@@ -1,0 +1,5 @@
+create table request_hb_record(
+id int,
+requestid varchar(200),
+sfcl varchar(20)--0 未处理 1 处理
+)

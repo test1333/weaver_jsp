@@ -1,0 +1,16 @@
+create function  [dbo].[f_get_jiaban_info](@sqr varchar(20),@searchtime varchar(20) )
+RETURNS decimal(10,1)
+AS
+BEGIN
+ declare @result decimal(10,1),
+ @starttime varchar(20),
+ @endtime varchar(20)
+ 
+ set @result=0
+ set @starttime = @searchtime+'-01'
+ select @endtime=convert(varchar(100),(DATEADD( month, 1, convert(datetime, @starttime,20))-1),23)
+
+ select @result=isnull(SUM(ISNULL(sx,0)),0) from formtable_main_27 a ,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype =3 and jbhsfs1='0' and jbjsrq1=@endtime and jbrq1=@starttime and xm=@sqr
+ 
+return @result
+end

@@ -1,0 +1,31 @@
+alter function [dbo].[getyszje](@ortype varchar(100),@orid varchar(100),@periodid varchar(100),@ksyue varchar(100),@jsyue varchar(100),@kmid varchar(100))
+returns decimal(20,2)
+as
+begin
+  declare @result decimal(20,2)
+  if @ortype='2'
+  begin
+  if @kmid=''
+  begin
+   select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid in(select id from FnaBudgetInfo where  status=1 and organizationtype=@ortype and (budgetorganizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or budgetorganizationid=@orid) and budgetperiods=@periodid) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue
+  end
+  else
+     begin
+     select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid in(select id from FnaBudgetInfo where  status=1 and organizationtype=@ortype and (budgetorganizationid in(select id from HrmDepartment  
+	where supdepid = @orid) or budgetorganizationid=@orid) and budgetperiods=@periodid) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and budgettypeid=@kmid
+     end
+   end
+  else
+  begin
+	if @kmid=''
+  begin
+   select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid in(select id from FnaBudgetInfo where  status=1 and organizationtype=@ortype and  budgetorganizationid=@orid and budgetperiods=@periodid) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue
+  end
+  else
+     begin
+     select @result=SUM(budgetaccount)  from FnaBudgetInfoDetail where budgetinfoid in(select id from FnaBudgetInfo where  status=1 and organizationtype=@ortype and  budgetorganizationid=@orid and budgetperiods=@periodid) and budgetperiodslist >=@ksyue and budgetperiodslist<=@jsyue and budgettypeid=@kmid
+     end
+  end
+return @result
+end

@@ -1,0 +1,8 @@
+select a.* from v_wpsqlc a,formtable_main_115 b where a.requestid=b.requestid and b.shygs =(select subcompanyid1 from hrmresource where id=2) and not exists(select 1 from formtable_main_58 where ','||WPSQD_NEW ||',' like '%,,%' and requestid <>)
+
+select * from v_wpsqlc where f_check_wpsq(requestid,$rqid$,$BXRXM$)='S'
+
+and not exists(select 1 from formtable_main_58 where ','||WPSQD_NEW ||','  like '%,'||a.requestid||',%'and requestid <>$rqid$)
+
+
+select * from (select a.* from v_wpsqlc a,formtable_main_115 b where a.requestid=b.requestid and b.shygs =(select subcompanyid1 from hrmresource where id=$BXRXM$) and not exists(select 1 from formtable_main_58 where ','||WPSQD_NEW ||','  like '%,'||a.requestid||',%' and requestid <>$rqid$ ))

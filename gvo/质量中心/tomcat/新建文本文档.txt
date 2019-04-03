@@ -1,0 +1,2 @@
+D:\apache-tomcat-9.0.17\jdk1.8.0_112
+D:\apache-tomcat-9.0.17\jdk1.8.0_112\jre

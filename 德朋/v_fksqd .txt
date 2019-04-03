@@ -1,0 +1,20 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[v_fksqd]    Script Date: 11/27/2017 11:00:45 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER view  [dbo].[v_fksqd] as
+select t.*,
+(select lastname from hrmresource where id=t.creater) as name,
+t1.gyshmch,
+t1.hj,
+t1.shqr
+from workflow_requestbase  t left join (select b.gyshmch,a.requestId,a.hj,a.shqr from uf_orders  a, uf_cgcgbd b where a.gysh=b.id and lastversion='1') t1 on t.requestid=t1.requestId
+GO
+
+

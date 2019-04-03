@@ -1,0 +1,8 @@
+create or replace trigger WORKFLOW_CURRENTOPERATOR_CS
+  before UPDATE  of isremark on Workflow_Currentoperator
+  for each row
+ when (old.isremark='8 ' or old.isremark='9'  or old.isremark='1' )
+begin
+ update ofs_todo_data@dblink_oa set  isremark=2,viewtype=1 where flowid=:old.requestid and receiver=(select loginid from hrmresource where id=:old.userid);
+
+end;

@@ -1,0 +1,26 @@
+alter function [dbo].[hasruku](@cgdd varchar(30))
+returns varchar(5)
+as
+begin
+  declare @result varchar(5),
+          @count int,
+          @count1 int,
+          @sfwyfk varchar(5)
+  set @result='E'
+  set @count = 0
+   set @count1 = 0
+  select @count=COUNT(b.id) from uf_orders a,uf_orders_dt1 b where a.id=b.mainid and a.requestId=@cgdd 
+  
+  select @count1 =COUNT(b.id) from uf_orders a,uf_orders_dt1 b where a.id=b.mainid and a.requestId=@cgdd 
+and b.shl=( select SUM(cgsl) from formtable_main_36_dt1 c , formtable_main_36 d,workflow_requestbase e where  c.orderid=b.id and c.mainid=d.id and d.requestId=e.requestid and e.currentnodetype>=3)
+  select @sfwyfk=isnull(sfwyfk,'0') from formtable_main_28 where requestId=@cgdd
+  if @count !=0 and @count = @count1
+  begin
+   set @result='S'
+  end
+  else if @sfwyfk='1'
+   begin
+   set @result='S'
+   end
+return @result
+end
