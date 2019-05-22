@@ -1,0 +1,26 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_payAmount]    Script Date: 4/7/2019 7:00:11 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+ALTER view [dbo].[gb_payAmount] as
+select fksqd,sum(isnull(SJFKJE_NPP,JHFKJE_NPP)) bcfkje
+from formtable_main_205_dt1 group by fksqd
+
+
+
+
+
+GO
+
+

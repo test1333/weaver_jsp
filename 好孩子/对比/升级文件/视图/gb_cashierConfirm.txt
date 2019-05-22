@@ -1,0 +1,8 @@
+create view [dbo].[gb_cashierConfirm]
+ as
+
+select id=row_number() over(order by getdate()),
+
+SUM(bcsf)as con,pklcid,pcno,'ÏêÏ¸' as xx,convert(varchar(20),a.pklcid) +'aaa'+a.pcno as cnpdcc  from uf_fkzjb a where a.flag='1' and a.cnqr='0' group by a.pklcid,a.pcno
+
+

@@ -1,0 +1,2 @@
+create or replace view  v_khxx_min as
+select rownum as countnum,a.* from (select infono,(select cus_name from uf_kskx_customer where id=a.cus_name) as cus_name,(select info_name from uf_kskx_infotype where id=a.infotype) as infotype,cus_des from uf_kskx_cus_product a order by id desc) a

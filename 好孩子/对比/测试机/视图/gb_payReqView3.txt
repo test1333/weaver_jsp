@@ -1,0 +1,20 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_payReqView3]    Script Date: 4/7/2019 7:02:19 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER view [dbo].[gb_payReqView3] as
+select b.dfje,isnull(b.sfje,0) as sfje,(sum(b.dfje)-isnull(sum(b.sfje),0)) as syje,b.gysmc,b.fkqx,b.pkid,b.fkrq,(select a.GYSMC from uf_suppmessForm a
+ where a.id =b.gysmc) 
+as gys,b.fkid  from uf_payinternal b group by b.gysmc,b.fkqx,b.dfje,sfje,b.fkid,b.pkid,b.fkrq 
+
+
+GO
+
+

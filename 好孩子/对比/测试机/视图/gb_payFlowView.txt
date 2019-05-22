@@ -1,0 +1,23 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_payFlowView]    Script Date: 4/7/2019 7:00:43 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER VIEW [dbo].[gb_payFlowView] AS 
+
+select a.*,dbo.getCount(a.requestId) as no 
+from  formtable_main_205 a , workflow_requestbase b 
+ where   a.requestId=b.requestid and b.currentnodetype=3
+ 
+ 
+ 
+ 
+
+GO
+
+

@@ -1,0 +1,23 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[get_some_month_IN]    Script Date: 4/7/2019 7:32:52 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER FUNCTION [dbo].[get_some_month_IN](@martID int,@stockID int)
+	returns decimal(18,2)
+	as
+	begin
+		declare @res decimal(18,2)
+		select  @res = ISnull(SUM(rksl),0) from uf_stock where CKID=@stockID and wlmc=@martID  and rkly=0
+		
+		return @res
+		
+	end
+GO
+
+

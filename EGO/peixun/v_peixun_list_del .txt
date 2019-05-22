@@ -1,0 +1,3 @@
+alter view v_peixun_list_del as
+
+select id+100000000 as id,'' as lastname,GH as workcode,FirstName as field11,LastName as field10,HTLX as field12,CBZX as field2,ZZDM as departmentcode,ZZMC as departmentname,ZW as jobtitlename,KCQD as CourseList,PEMU as Trainingcategory,PXNF as year,KSSJ as starttime,JSSJ as endtime,SC as xs,PXZX as Trainingcenter,'' as certificate, CYQK as Attendance, GRFY as fei , ZFY as Cost,pxry,LEFT(kssj,10) as startdate,LEFT(jssj,10) as finishdate,bm as departmentid, ZT as status  from uf_BTABLE

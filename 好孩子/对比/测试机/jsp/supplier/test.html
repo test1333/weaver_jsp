@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		html,body{
+			width:100%;
+		}
+		html,div,p,body{
+			margin:0px;
+			padding:0px;
+		}
+		#mainDiv{
+			margin:0px;
+			width:99.8%;
+			/*border:1px solid red; */
+			background:url("./images/1.jpg") no-repeat;
+			background-size: 100%;
+			margin-top: -12px;
+			
+		
+		}
+		#mainDiv .imgDiv{
+			border:1px solid hsla(0,0%,90%,.5);
+			/* background: #bbb; */
+			background-clip: padding-box;
+			width:10%;
+			height:100px;
+			margin-left: 10px;
+			margin-top: 10px;
+		}
+		#mainDiv .imgDiv img{
+			width:100%;
+			height:100%;
+		}
+		
+		#mainDiv .leftDiv{
+			margin-top:10px;
+			margin-left:27%;
+			width:25%;
+			border:1px solid hsla(0,0%,90%,.5);
+			/* background: #bbb; */
+			background-clip: padding-box;
+			height:160px;
+		}
+		#mainDiv .leftDiv_0{
+			margin-top:10px;
+			margin-left:27%;
+			width:25%;
+			/* border:1px solid red; */
+			height:160px;
+		}
+		/* #mainDiv .leftDiv_1{
+			height:95px;
+            width:12%;
+			
+		} */
+		#mainDiv .leftDiv_1 {
+			height: 95px;
+			width: 12%;
+			background: rgba(7, 138, 169, 0.85);
+		}
+		/* #mainDiv .leftDiv_1_1{
+			margin-top:10px;
+			margin-left:27%;
+			width:10px;
+			border:1px solid red;
+			height:10px;
+		} */
+		#mainDiv .leftDiv_1_1 img{
+			width:100%;
+			height:100%;
+		}
+		#mainDiv .leftDiv_1_1 {
+			margin-top: 12px;
+			margin-left: 11%;
+			width: 31px;
+			/* border: 1px solid red; */
+			height: 40px;
+		}
+		#mainDiv .leftDiv_1_2 {
+			margin-top: -36px;
+			margin-left: 37%;
+			width: 89px;
+			/* border: 1px solid hsla(0,0%,90%,.5); */
+			/* background: #bbb; */
+			/* background-clip: padding-box; */
+			height: 61px;
+		}
+		#mainDiv .leftDiv_2{
+			margin-top:-97px;
+			margin-left:40%;
+			width:12%;
+			height:95px;
+		
+			
+		}
+		#mainDiv .rightDiv{
+			margin-top:-214px;
+			margin-left:53%;
+			width:18%;
+			border:1px solid hsla(0,0%,90%,.5);
+			/* background: #bbb; */
+			background-clip: padding-box;
+			height:100px;
+
+		}
+		#mainDiv .rightDiv_1 {
+			margin-top: -440px;
+			background-color: rgb(15,200,220);
+		}
+		#mainDiv .rightDiv_1_1 {
+			margin-top: 35px;
+			margin-left: 14%;
+			width: 42px;
+			/* border: 1px solid hsla(0,0%,90%,.5); */
+			/* background: #bbb; */
+			/* background-clip: padding-box; */
+			height: 40px;
+		}
+		#mainDiv .rightDiv_1_1 img{
+			width:100%;
+			height:100%;
+		}
+	
+
+		#mainDiv .rightDiv_1_2 {
+			margin-top: -42px;
+			margin-left: 37%;
+			width: 109px;
+			/* border: 1px solid hsla(0,0%,90%,.5); */
+			/* background: #bbb; */
+			/* background-clip: padding-box; */
+			height: 67px;
+		}
+		#mainDiv .rightDiv_2{
+			margin-top:10px;
+			background-color: rgb(69, 122, 235);
+			
+		}
+		#mainDiv .rightDiv_2_2 {
+			margin-top: -42px;
+			margin-left: 39%;
+			width: 133px;
+			/* border: 1px solid red; */
+			/* background-color: rgb(20,215,250); */
+			height: 70px;
+		}
+		#mainDiv .rightDiv_3{
+			margin-top:10px;
+			background-color: rgb(235, 169, 46);
+		}
+		#mainDiv .rightDiv_4{
+			margin-top:10px;
+			background-color: rgba(154, 194, 11, 0.932);
+		}
+		.leftDiv{
+			text-align: center;
+			line-height: 95px;
+			font-size: 30px;
+			color:white;
+			background: rgb(40,161,128);
+			padding-bottom: 0px;
+		}
+		
+		.leftDiv p{
+			height:10px;
+			font-size: 25px;
+			margin-top: -40px;			
+        }
+
+		.leftDiv_0{
+			text-align: center;
+			line-height: 95px;
+			font-size: 30px;
+			color:white;
+			background: rgb(6, 156, 194);
+			padding-bottom: 0px;
+		}
+		
+		.leftDiv_0 p{
+			height:10px;
+			font-size: 25px;
+			margin-top: -40px;			
+        }
+		.leftDiv_1_2 {
+			text-align: center;
+			line-height: 38px;
+			font-size: 26px;
+			color: white;
+			/* background: rgb(40,161,128); */
+			padding-bottom: 0px;
+		}
+		.leftDiv_1_2 p {
+			height: 0px;
+			font-size: 23px;
+			margin-top: -7px;
+		}
+		.rightDiv_1_2 {
+			text-align: center;
+			line-height: 38px;
+			font-size: 26px;
+			color: white;
+			/* background: rgb(40,161,128); */
+			padding-bottom: 0px;
+		}
+		.rightDiv_1_2 p {
+			height: 0px;
+			font-size: 23px;
+			margin-top: -7px;
+		}
+		.rightDiv_2_2 {
+			text-align: center;
+			line-height: 38px;
+			font-size: 26px;
+			color: white;
+			/* background: rgb(40,161,128); */
+			padding-bottom: 0px;
+		}
+		.rightDiv_2_2 p {
+			height: 0px;
+			font-size: 23px;
+			margin-top: -7px;
+		}
+		/*body{ 
+			/* height: 100%; 
+			background:url("./images/1.jpg") no-repeat;
+		}*/
+		
+	</style>
+	
+</head>
+<body>
+	<div id = "mainDiv">
+		<div class = "imgDiv">
+			<img src ="./images/2.jpg"/>
+		</div>
+		<div class = "leftDiv">
+			待办事项<br/>
+			<p>11</p>	
+		</div>
+		<div class = "leftDiv leftDiv_0">
+            已办事项<br/>
+			<p>11</p>	
+        </div>
+		<div class = "leftDiv leftDiv_1">
+            <div class = "leftDiv_1_1"><img src ="./images/calender.png"/></div>
+            <div class = "leftDiv_1_2">招投标<br/>
+			<p>11</p></div>
+        </div>
+		<div class = "leftDiv leftDiv_2">
+            <div class = "leftDiv_1_1"><img src ="./images/complaint.png"/></div>
+            <div class = "leftDiv_1_2">投&nbsp;&nbsp;&nbsp;诉<br/>
+			<p>11</p></div>
+        </div>
+		<div class = "rightDiv rightDiv_1">
+			<div class = "rightDiv_1_1"><img src ="./images/note.png"/></div>
+            <div class = "rightDiv_1_2">公&nbsp;&nbsp;&nbsp;告</div>
+        </div>
+		<div class = "rightDiv rightDiv_2">
+			<div class = "rightDiv_1_1"><img src ="./images/comm.png"/></div>
+			<div class = "rightDiv_2_2">基本信息</div>
+        </div>
+		<div class = "rightDiv rightDiv_3">
+				<div class = "rightDiv_1_1"><img src ="./images/set.png"/></div>
+				<div class = "rightDiv_2_2">密码修改</div>
+        </div>
+		<div class = "rightDiv rightDiv_4">
+				<div class = "rightDiv_1_1"><img src ="./images/logout.png"/></div>
+				<div class = "rightDiv_2_2">退&nbsp;&nbsp;&nbsp;出</div>
+        </div>
+	</div>
+	<script type="text/javascript">
+		 autodivheight();
+		function autodivheight(){ //函数：获取尺寸
+                    //获取浏览器窗口高度
+                    var winHeight=0;
+                    if (window.innerHeight)
+                        winHeight = window.innerHeight;
+                    else if ((document.body) && (document.body.clientHeight))
+                        winHeight = document.body.clientHeight;
+                    //通过深入Document内部对body进行检测，获取浏览器窗口高度
+                    if (document.documentElement && document.documentElement.clientHeight)
+                        
+                  document.getElementById("mainDiv").style.height=window.innerHeight-10 +"px";
+                }
+                window.onresize=autodivheight; //浏览器窗口发生变化时同时变化DIV高度
+                
+	</script>
+</body>
+</html>

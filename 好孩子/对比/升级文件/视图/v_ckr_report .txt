@@ -1,0 +1,2 @@
+ALTER view [dbo].[v_ckr_report] as
+select  cwny+'_'+convert(varchar(50),ckid)+'_'+convert(varchar(50),wlid) as keyid, cwny,ckmc,yjcbzx,wlbm,wlmc,dw,dbo.[f_get_crk_sl](cwny,ckid,wlid,'qc') as qcsl,dbo.[f_get_crk_sl](cwny,ckid,wlid,'rk') as rksl,dbo.[f_get_crk_sl](cwny,ckid,wlid,'ck') as cksl,dbo.[f_get_crk_sl](cwny,ckid,wlid,'kykc') as kykc,dbo.[f_get_crk_sl](cwny,ckid,wlid,'je') as je  from v_ckr_list group by cwny,ckmc,yjcbzx,wlbm,wlmc,ckid,wlid,dw

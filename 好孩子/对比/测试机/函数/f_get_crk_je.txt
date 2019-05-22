@@ -1,0 +1,53 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[f_get_crk_je]    Script Date: 4/7/2019 7:26:27 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER  function [dbo].[f_get_crk_je](@yf varchar(20),@ckid varchar(20),@wlid varchar(20),@type varchar(10))
+returns decimal(15,2)
+as
+begin
+	declare @rksl decimal(15,2),
+			@cksl decimal(15,2),
+			@begindate varchar(20),
+			@enddate varchar(20),
+			@result decimal(15,2)
+			
+	select @begindate=LEFT(@yf,4)+'-'+SUBSTRING(@yf,5,2)+'-01'
+	select @enddate=convert(varchar(100),dateadd(ms,-3,DATEADD(mm, DATEDIFF(m,0,convert(datetime, @begindate,20))+1, 0)),23)
+	if @type = 'qcye' 
+		begin
+			select @rksl=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=0 and rkrq <@begindate
+			select @result=@rksl-cast(isnull(sum(isnull(je,0)),0) as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=1 and rkrq <@begindate
+		end
+	else if @type = 'byrk'
+		begin
+			select @result=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=0 and rkrq <=@enddate and rkrq>=@begindate
+		end
+	else if @type = 'byll'
+		begin
+			select @result=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=1 and rkrq <=@enddate and rkrq>=@begindate
+		end
+	else if @type = 'ly'
+		begin
+			select @result=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=1 and rkrq <=@enddate and rkrq>=@begindate and (thbs is null or thbs ='1')
+		end
+	else if @type = 'th'
+		begin
+			select @result=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=1 and rkrq <=@enddate and rkrq>=@begindate and thbs ='0'
+		end	
+	else if @type = 'qmye' 
+		begin
+			select @rksl=cast(isnull(sum(isnull(je,0)),0)as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=0 and rkrq <=@enddate
+			select @result=@rksl-cast(isnull(sum(isnull(je,0)),0) as numeric(15,2)) from v_ckr_list where ckid=@ckid  and rkly=1 and rkrq <=@enddate
+		end
+	return @result
+end
+GO
+
+

@@ -1,0 +1,20 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[getStockInfo]    Script Date: 4/7/2019 7:05:25 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER view [dbo].[getStockInfo] as select  e.wlmc ,e.wlbm as wlbm,e.ckmc,sum(rksl-ylysl) as kykc from (select d.id,
+ (select a.WLname from uf_materialDatas a where a.id = d.wlmc) as wlmc,
+ (select b.WLBM from uf_materialDatas b where b.id = d.wlmc) as wlbm,
+ (select c.requestmark from workflow_requestbase c where c.requestid=d.lch) as bdbh, 
+ (select f.CKMC from uf_stocks f where id = d.CKID) as ckmc,d.rkrq,d.rksj,d.rkjg,d.rksl,d.ylysl from uf_stock d where d.rkly=0) e 
+ group by e.wlmc,e.wlbm,e.ckmc
+
+GO
+
+

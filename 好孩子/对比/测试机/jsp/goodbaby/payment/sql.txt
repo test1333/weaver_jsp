@@ -1,0 +1,22 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_cashierConfirm]    Script Date: 11/25/2018 10:52:24 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER view [dbo].[gb_cashierConfirm]  ---竃追鳩範
+ as
+
+select id=row_number() over(order by getdate()),
+
+SUM(bcsf)as con,pklcid,pcno from uf_fkzjb a where a.flag='1' and a.cnqr='0' group by a.pklcid,a.pcno
+
+
+GO
+
+、、、、、、、、、、、、、、、、、、、、、、、、、

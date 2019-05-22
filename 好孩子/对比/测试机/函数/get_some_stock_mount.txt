@@ -1,0 +1,29 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[get_some_stock_mount]    Script Date: 4/7/2019 7:33:53 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER FUNCTION [dbo].[get_some_stock_mount](@martID int,@stockID int)
+	returns decimal(18,2)
+	as
+	begin
+		declare @res1 decimal(18,2)
+		declare @res2 decimal(18,2)
+		declare @res3 decimal(18,2)
+		declare @res decimal(18,2)
+		select  @res1 = dbo.get_some_mont_OUT(@martID,@stockID)--³ö¿â
+		select  @res2 = dbo.get_some_month_IN(@martID,@stockID)--Èë¿â
+		select  @res3 = dbo.get_some_month(@martID,@stockID)--ÆÚ³õ
+		SET @res = @res3 + @res2 - @res1
+		
+		return @res
+		
+	end
+GO
+
+

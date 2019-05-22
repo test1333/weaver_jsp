@@ -47,7 +47,7 @@ weaver.general.AccountType.langId.set(lg);
 	String titlename =SystemEnv.getHtmlLabelName(20536,user.getLanguage());
 	String needfav ="1";
 	String needhelp ="";
-    String out_pageId = "swxxlist11";
+    String out_pageId = "swxxlist12";
     String prjid = Util.null2String(request.getParameter("prjid"));
 
 	%>
@@ -115,9 +115,9 @@ weaver.general.AccountType.langId.set(lg);
                 		"<col width=\"10%\" text=\"合同签订日期\" column=\"contractdate\" orderkey=\"contractdate\" />"+ 
                 		"<col width=\"10%\" text=\"到货情况\" column=\"condition\" orderkey=\"condition\" />"+                                         
                 		"<col width=\"8%\" text=\"合同金额\" column=\"amount\" orderkey=\"amount\" />"+ 
-                		"<col width=\"10%\" text=\"申购单编号\" column=\"applyNo\" orderkey=\"applyNo\" />"+ 
+                	//	"<col width=\"10%\" text=\"申购单编号\" column=\"applyNo\" orderkey=\"applyNo\" />"+ 
 						"<col width=\"8%\" text=\"申购额\" column=\"applyamount\" orderkey=\"applyamount\" />"+ 
-						"<col width=\"10%\" text=\"产品名\" column=\"wzmc\" orderkey=\"wzmc\" />"+                                                          
+						//"<col width=\"10%\" text=\"产品名\" column=\"wzmc\" orderkey=\"wzmc\" />"+                                                          
 						"</head>"+
 		 "</table>";
 	//showExpExcel="false"

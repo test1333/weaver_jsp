@@ -1,0 +1,2 @@
+crk_wl
+select id,WLname,WLname from uf_materialDatas where id in (select t.wlmc from  (select a.wlmc,  (select  [dbo].[get_some_stock_mount](a.wlmc,a.ckid,CONVERT(varchar(100), CONVERT(varchar(10),dateadd(dd,-day(getdate())+1,getdate()) ,120)),CONVERT(CHAR(10),DATEADD(m,1,DATEADD(dd,-DAY(GETDATE())+1,GETDATE())),120))) as num from uf_stock a where a.CKID=$CK$ ) t  where t.num>0 group by t.wlmc)

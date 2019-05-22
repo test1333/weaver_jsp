@@ -1,0 +1,35 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_payReqView]    Script Date: 4/7/2019 7:01:13 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+--id 流程id,requestid 付款请求id,sqr 付款申请人,sqrbm 申请人部门,skrmc 收款人名称,
+--skyhmc 收款银行名称,skyhzh 收款银行账号,fkqx 付款期限,fktj 付款条件,zffs 支付方式,
+--bcje 本次付款金额总额,requestname
+ALTER view [dbo].[gb_payReqView] as
+select a.id,a.requestId,a.sqr,(select departmentname from HrmDepartment where id =a.sqrbm) as sqrbm,
+(select GYSMC from uf_suppmessForm where id =a.skrmc) as gysmc ,skrmc,
+a.skyhmc,a.skyhzh,a.fkqx,
+(select selectname from Workflow_Selectitem where selectvalue =a.fktj and fieldid=15307) as fktj,
+(select selectname from Workflow_Selectitem where selectvalue =a.zffs and fieldid=15301) as zffs,
+a.bcje,c.requestname
+from formtable_main_265 a
+left join workflow_requestbase c on a.requestId = c.requestid 
+--left join formtable_main_205 d on a.requestId=d.fksqd
+where c.currentnodetype=3 and (a.requestId 
+not in(select fksqd from formtable_main_205_dt1)
+or [dbo].[compare_payamount](a.requestId)<0)
+
+
+
+
+GO
+
+

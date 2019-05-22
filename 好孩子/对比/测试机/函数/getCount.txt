@@ -1,0 +1,22 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[getCount]    Script Date: 4/7/2019 7:36:17 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+--查看是否付款字段是否为空,返回0说明有未付款的，大于0全部付款
+ALTER function [dbo].[getCount](@pkid int)
+returns int
+	as
+	begin
+	declare @res int
+		select @res=count(a.id) from formtable_main_205_dt1 a where a.sffk ='1' and mainid=(select b.id from formtable_main_205 b where b.requestid=@pkid)
+	return @res
+	end
+GO
+
+

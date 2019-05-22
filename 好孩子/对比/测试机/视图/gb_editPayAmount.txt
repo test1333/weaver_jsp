@@ -1,0 +1,22 @@
+USE [ecology]
+GO
+
+/****** Object:  View [dbo].[gb_editPayAmount]    Script Date: 4/7/2019 6:54:14 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER view [dbo].[gb_editPayAmount] as
+select a.id,c.GYSMC,a.fkqx,e.selectname,d.fphm,b.bcfk,b.id as mxid,f.bcfkje,b.fpje,b.fprq from formtable_main_265 a 
+join formtable_main_265_dt1 b on a.id = b.mainid
+join uf_suppmessForm c on c.id = a.skrmc 
+join uf_invoice d on d.id=b.fphm 
+join workflow_selectitem e on e.selectvalue=a.zffs
+left join [dbo].[gb_payAmount] f on f.FPHM_NPP = d.fphm
+where e.fieldid= 15301
+
+GO
+
+

@@ -1,0 +1,41 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[fpsfwh]    Script Date: 4/7/2019 7:27:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date, ,>
+-- Description:	<Description, ,>
+-- =============================================
+ALTER FUNCTION [dbo].[fpsfwh](@ddh varchar(22),@rid varchar(22))
+
+RETURNS decimal(10,2)
+AS
+BEGIN
+	
+	DECLARE @aa  decimal(10,2)
+	DECLARE @bb decimal(10,2)
+	select @aa=count(id) from uf_invoice_dt1 where 	ddlc = @ddh and rid=@rid
+	
+
+	if @aa>0
+		begin
+			set @bb=1
+		end
+	else 
+		begin
+			set @bb=2
+		end
+	RETURN @bb
+
+END
+
+GO
+
+
