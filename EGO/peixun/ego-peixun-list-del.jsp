@@ -46,12 +46,15 @@ weaver.general.AccountType.langId.set(lg);
 	String needfav ="1";
 	String needhelp ="";
 	boolean flagaccount = weaver.general.GCONST.getMOREACCOUNTLANDING();
-    String out_pageId = "peixunlbdel";
+    String out_pageId = "peixunlbdel1";
 	String pxry = Util.null2String(request.getParameter("pxry"));
 	String beginDate = Util.null2String(request.getParameter("beginDate"));
 	String endDate = Util.null2String(request.getParameter("endDate"));
 	String beginDate1 = Util.null2String(request.getParameter("beginDate1"));
 	String endDate1 = Util.null2String(request.getParameter("endDate1"));
+	String cjr = Util.null2String(request.getParameter("cjr"));
+	String beginDate2 = Util.null2String(request.getParameter("beginDate2"));
+	String endDate2 = Util.null2String(request.getParameter("endDate2"));
 	String department =Util.null2String(request.getParameter("department"));
 	String departmentStr = "";
     String sql1 = "select departmentname from HrmDepartment where id in ("+department+")";
@@ -179,6 +182,34 @@ weaver.general.AccountType.langId.set(lg);
 					<wea:item>
 					<input name="colist" id="colist" class="InputStyle" type="text" value="<%=colist%>"/>
 					</wea:item>
+					<%if(lg==7){%>
+						<wea:item>创建人</wea:item>
+						<%}else{%>
+						<wea:item>creater</wea:item>
+					<%}%>
+						<wea:item>
+						<brow:browser viewType="0"  name="cjr" browserValue="<%=cjr%>"
+						browserOnClick=""
+						browserUrl="/systeminfo/BrowserMain.jsp?url=/hrm/resource/ResourceBrowser.jsp?selectedids="
+						hasInput="true" isSingle="false" hasBrowser = "true" isMustInput='1'
+						completeUrl="/data.jsp" width="165px"
+						browserSpanValue="<%=Util.toScreen(ResourceComInfo.getResourcename(cjr),user.getLanguage())%>">
+						</brow:browser>
+              		</wea:item>
+					<%if(lg==7){%>
+						<wea:item>创建日期</wea:item>
+					<%}else{%>
+					<wea:item>createDate</wea:item>
+					<%}%>
+					 <wea:item>
+                    <button type="button" class=Calendar id="selectBeginDate2" onclick="onshowPlanDate('beginDate2','selectBeginDateSpan2')"></BUTTON>
+                        <SPAN id=selectBeginDateSpan2 ><%=beginDate2%></SPAN>
+                        <INPUT type="hidden" name="beginDate2" id="beginDate2" value="<%=beginDate2%>">
+                    &nbsp;-&nbsp;
+                    <button type="button" class=Calendar id="selectEndDate2" onclick="onshowPlanDate('endDate2','endDateSpan2')"></BUTTON>
+                        <SPAN id=endDateSpan2><%=endDate2%></SPAN>
+                        <INPUT type="hidden" name="endDate2" id="endDate2" value="<%=endDate2%>">
+                	</wea:item>
 
 
 				</wea:group>
@@ -195,7 +226,7 @@ weaver.general.AccountType.langId.set(lg);
 		<tr>
 		<td>
 		<%
-		String backfields = " id,lastname,workcode,field11,field10,field12,field2,departmentcode,departmentname,jobtitlename,CourseList,Trainingcategory,year,starttime,endtime,xs,Trainingcenter,certificate,Attendance,fei,Cost,status";
+		String backfields = " id,lastname,workcode,field11,field10,field12,field2,departmentcode,departmentname,jobtitlename,CourseList,Trainingcategory,year,starttime,endtime,xs,Trainingcenter,certificate,Attendance,fei,Cost,status,modedatacreater,modedatacreatedate";
 		String fromSql  =  " from v_peixun_list_del ";
 		String sqlWhere =  " 1=1 ";
 		
@@ -225,6 +256,15 @@ weaver.general.AccountType.langId.set(lg);
 		if(!"".equals(colist)){
 			sqlWhere+=" and upper(CourseList) like upper('%"+colist+"%') ";
 		}
+		if(!"".equals(cjr)){
+			sqlWhere = sqlWhere+" and modedatacreater='"+cjr+"'";
+		}
+		if(!"".equals(beginDate2)){
+			sqlWhere = sqlWhere+" and modedatacreatedate >='"+beginDate2+"'";
+		}
+		if(!"".equals(endDate2)){
+			sqlWhere = sqlWhere+" and modedatacreatedate <='"+endDate2+"'";
+		}
 		
 
 		//out.print("select "+backfields+fromSql+" where "+sqlWhere);
@@ -236,7 +276,9 @@ weaver.general.AccountType.langId.set(lg);
 		operateString+
 		"			<head>";
 		if(lg==7){
-				tableString +="<col width=\"120px\" text=\"工号\" column=\"workcode\" orderkey=\"workcode\"  />"+ 
+				tableString +="<col width=\"120px\" text=\"创建人\" column=\"modedatacreater\" orderkey=\"modedatacreater\" transmethod='weaver.proj.util.ProjectTransUtil.getResourceNamesWithLink' />"+ 
+							"<col width=\"120px\" text=\"创建日期\" column=\"modedatacreatedate\" orderkey=\"modedatacreatedate\"  />"+ 
+							"<col width=\"120px\" text=\"工号\" column=\"workcode\" orderkey=\"workcode\"  />"+ 
 							"<col width=\"120px\" text=\"名\" column=\"field11\" orderkey=\"field11\"  />"+ 
 							"<col width=\"120px\" text=\"姓\" column=\"field10\" orderkey=\"field10\"  />"+ 
 							"<col width=\"120px\" text=\"合同类型\" column=\"field12\" orderkey=\"field12\"  />"+ 
@@ -262,7 +304,9 @@ weaver.general.AccountType.langId.set(lg);
 						"</head>"+
 		 "</table>";
 		}else{
-			tableString +="<col width=\"120px\" text=\"Personnel Number\" column=\"workcode\" orderkey=\"workcode\"  />"+ 
+			tableString +="<col width=\"120px\" text=\"Creater\" column=\"modedatacreater\" orderkey=\"modedatacreater\" transmethod='weaver.proj.util.ProjectTransUtil.getResourceNamesWithLink' />"+ 
+							"<col width=\"120px\" text=\"Create Date\" column=\"modedatacreatedate\" orderkey=\"modedatacreatedate\"  />"+ 
+							"<col width=\"120px\" text=\"Personnel Number\" column=\"workcode\" orderkey=\"workcode\"  />"+ 
 							"<col width=\"120px\" text=\"First Name\" column=\"field11\" orderkey=\"field11\"  />"+ 
 							"<col width=\"120px\" text=\"Last Name\" column=\"field10\" orderkey=\"field10\"  />"+ 
 							"<col width=\"120px\" text=\"Contract Type\" column=\"field12\" orderkey=\"field12\"  />"+ 
@@ -332,6 +376,7 @@ weaver.general.AccountType.langId.set(lg);
 					success: function(data){
 								data=data.replace(/^(\s|\xA0)+|(\s|\xA0)+$/g, '');
 								result=data;
+								alert(result);
 							}
         	});
 			if(result == "1"){

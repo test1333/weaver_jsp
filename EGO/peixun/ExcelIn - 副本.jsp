@@ -77,23 +77,23 @@ RCMenuHeight += RCMenuHeightStep ;
     </TR>
     <TR style="height: 2px"><TD class=Line colSpan=2></TD></TR> 
       <tr> 
-      <td>Month</td> 
+      <td>操作月份 </td> 
       	<td class=Field> <%=dateNowStr%>
       </td>
     </tr>
       <TR style="height: 1px"><TD class=Line colSpan=2></TD></TR> 
 	<tr> 
-      <td>type</td> 
+      <td>导入类型</td> 
       	<td class=Field>
       		<select id="importType" name="importType" style="width: 100px">
-      			<option value="update">New</option>
+      			<option value="update">新增</option>
       		</select>
-      	  <div><font color="FF0000">Explanation: select "update" operation and add new data.</font></div>
+      	  <div><font color="FF0000">说明：选择"更新"操作,在原有的数据上新增</font></div>
       </td>
     </tr>
       <TR style="height: 1px"><TD class=Line colSpan=2></TD></TR> 
            <tr class=spacing> 
-      <td>Excel Files</td>
+      <td>Excel文件</td>
       <td class=Field>
         <input class=inputstyle style="width: 360px" type="file" name="excelfile" onchange='checkinput("excelfile","excelfilespan");this.value=trim(this.value)'><SPAN id=excelfilespan>
               </SPAN>

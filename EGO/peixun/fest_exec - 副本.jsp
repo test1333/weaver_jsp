@@ -1,4 +1,4 @@
-﻿<%@ page import="weaver.general.Util" %>
+<%@ page import="weaver.general.Util" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import=" java.io.IOException"%>
 <%@ page import=" java.io.InputStream"%>
@@ -11,11 +11,10 @@
 <%@ page import=" org.apache.commons.fileupload.FileItem"%>
 <%@ page import=" org.apache.commons.fileupload.FileUploadException"%>
 <%@ page import=" ego.peixun.ExcelImport"%>
-<%@ include file="/systeminfo/init_wev8.jsp" %>
 	
 <%
 	if (!DiskFileUpload.isMultipartContent(request)) {
-		out.println("Can only handle multipart/form-data type data!");
+		out.println("ֻ只能处理multipart/form-data类型的数据!");
 		return;
 	}
 	DiskFileUpload fu = new DiskFileUpload();
@@ -26,10 +25,9 @@
 	try {
 		fileItems = fu.parseRequest(request);
 	}catch (FileUploadException e) {
-		out.println("Error in parsing data");
+		out.println("解析数据出错");
 		return;
 	}
-	int userid = user.getUID();
 	Iterator i = fileItems.iterator();
 	String who_oper = "";
 	Sheet sheet = null;		
@@ -50,18 +48,18 @@
 				Workbook wb = Workbook.getWorkbook(is);
 				sheet = wb.getSheet(0);
 			}catch (Exception e) {
-				out.println("Error storing file");
+				out.println("存储文件时出错");
 				return;
 			}finally { // 总是立即删除保存表单字段内容的临时文件
 				fi.delete();
 			}
 		}
 	}
-	String flag = new ExcelImport().readAndExceSheet(sheet,userid);
+	String flag = new ExcelImport().readAndExceSheet(sheet);
 	if("-1".equals(flag)){
-	out.print("Import failed, please check template.");
+	out.print("导入失败，请检查模板");
 	}else{
-	out.print("Successful operation！");
+	out.print("操作成功");
 	}
 %>
 <script type="text/javascript">
