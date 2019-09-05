@@ -212,7 +212,7 @@ weaver.general.AccountType.langId.set(lg);
 		
 		
 
-		//out.print("select "+backfields+fromSql+" where "+sqlWhere);
+		out.print("select "+backfields+fromSql+" where "+sqlWhere);
 		String orderby =  "keyid desc"  ;
 		String tableString = "";
 		String operateString= "";

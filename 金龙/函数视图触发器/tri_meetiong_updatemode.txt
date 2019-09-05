@@ -1,0 +1,10 @@
+create or replace trigger tri_meetiong_updatemode
+  after UPDATE  on meeting
+  for each row
+
+ 
+when (new.meetingstatus !='4')
+begin
+  insert into uf_meeting_change(hyid,lx,sfcl) values(:new.id,'1','0');
+  
+end;

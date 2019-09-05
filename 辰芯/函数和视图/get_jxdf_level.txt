@@ -3,6 +3,6 @@ returns decimal(10,1)
 as
 begin
 	declare @sl decimal(10,1)
-    select @sl=isnull(cast(sum(1*isnull(a.ygkhqz,0)/100) as numeric(10,1)),0) from formtable_main_51 a,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype=3 and khpjdj = @type and khzqnf=@year and khzq=@zq and jxssbm=@deptid
+    select @sl=isnull(cast(sum(1*isnull(a.ygkhqz,0)/100) as numeric(10,1)),0) from formtable_main_51 a,workflow_requestbase b where a.requestId=b.requestid and b.currentnodetype>0 and khpjdj = @type and khzqnf=@year and khzq=@zq and jxssbm=@deptid
   return @sl;
 end

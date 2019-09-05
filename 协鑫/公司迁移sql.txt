@@ -1,0 +1,51 @@
+---------doc_table_map
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (20,'7593','formtable_main_3982','GSGLXXK');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (21,'7581','formtable_main_3970','DJG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (22,'7602','formtable_main_3991','GSJBXXBG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (23,'7599','formtable_main_3988','GSGDXXBG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (24,'8081','formtable_main_3993','GSZYRYBG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (25,'7600','formtable_main_3989','GSYZXXBG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (26,'7603','formtable_main_3992','GSQTXXBG');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (27,'7597','formtable_main_3986','GSYCXXGL');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (42,'7595','formtable_main_3984','GSNJJLB');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (28,'7591','formtable_main_3980','GSBZ');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (29,'7582','formtable_main_3971','GSWBGD');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (30,'7592','formtable_main_3981','GSCITY');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (31,'7583','formtable_main_3972','GSFRBK');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (32,'7587','formtable_main_3976','GSZYT');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (33,'7588','formtable_main_3977','GSYJLB');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (34,'7586','formtable_main_3975','GSCYXL');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (35,'7584','formtable_main_3973','GSGLBK');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (36,'7585','formtable_main_3974','GSCYDL');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (37,'7598','formtable_main_3987','GSYCTXSJ');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (38,'7596','formtable_main_3985','GSQCCDWTZ');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (39,'7589','formtable_main_3978','GSQXWH');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (40,'7594','formtable_main_3983','GSQCCZYRY');
+insert into doc_table_map (id,WORKFLOWID,BILLTABLENAME,type) values (41,'7590','formtable_main_3979','GSYJTXRY');
+------------权限
+insert into SystemRights (id,rightdesc,righttype) values (2019080701,'公司信息查询','7');
+insert into SystemRightsLanguage (id,languageid,rightname,rightdesc) values (2019080701,7,'公司信息查询','公司信息查询');
+insert into SystemRightsLanguage (id,languageid,rightname,rightdesc) values (2019080701,9,'公司信息查詢','公司信息查詢');
+insert into SystemRightsLanguage (id,languageid,rightname,rightdesc) values (2019080701,8,'CompanyInfo:Query','CompanyInfo:Query');
+insert into SystemRightDetail (id,rightdetailname,rightdetail,rightid) values (2019080701,'公司信息查询','CompanyInfo:Query',2019080701);
+-----------html标签
+insert into htmllabelindex (id,indexdesc) values (3954003,'公司管理');
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954003,'公司管理',7);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954003,'公司管理',9);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954003,'Company Management',8);
+insert into htmllabelindex (id,indexdesc) values (3954004,'公司信息查询');
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954004,'公司信息查询',7);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954004,'公司信息查詢',9);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954004,'CompanyInfo Query',8);
+insert into htmllabelindex (id,indexdesc) values (3954005,'公司预警信息查询');
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954005,'公司预警信息查询',7);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954005,'公司预警信息查詢',9);
+insert into Htmllabelinfo (indexid,labelname,Languageid) values (3954005,'CompanyExInfo Query',8);
+-----------菜单
+insert into LeftMenuInfo
+(ID,LabelID,iconurl,linkaddress,menulevel,parentID,DefAultindex,relatedmoduleID,isCustom,refersubid)
+Values(3954002,3954003,'/images_face/ecologyFace_2/LeftMenuIcon/level3.gif','',1,0,34,13,'0',-1);
+Call LMConfig_U_ByInfoInsert (2,3954002,1);
+Call LMInfo_Insert (3954003,3954004,'/images_face/ecologyFace_2/LeftMenuIcon/level3.gif','/gcl/company/company-info-list.jsp',2,3954002,1,13);
+
+

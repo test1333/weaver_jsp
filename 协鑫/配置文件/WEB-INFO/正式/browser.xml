@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module id="browser" version="1.0.0">
+    <service-point id="baseBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select id,lastname,email from hrmresource where email&lt;&gt;' '" />
+                <set property="searchById" value="select lastname,email from hrmresource where id=?" />
+                <set property="searchByName" value="select id,lastname,email from hrmresource where lastname like ?" />
+                <set property="nameHeader" value="姓名" />
+                <set property="descriptionHeader" value="邮箱" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="baseBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="requestbaseBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select requestid,requestname,creater from workflow_requestbase where workflowid='240' order by requestid desc" />
+                <set property="searchById" value="select requestname,creater from workflow_requestbase where requestid=? " />
+                <set property="searchByName" value="select requestid,requestname,creater from workflow_requestbase where requestname like ? order by requestid desc" />
+                <set property="nameHeader" value="流程名称" />
+                <set property="descriptionHeader" value="创建人id" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="requestbaseBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="jsfsBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '9771' order by id asc " />
+                <set property="searchById" value="select selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '9771' and selectvalue=? " />
+                <set property="searchByName" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '9771' and selecttname like ? order by id asc " />
+                <set property="nameHeader" value="结算方式" />
+                <set property="descriptionHeader" value="描述" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="jsfsBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="yzmcBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18368' order by id asc " />
+                <set property="searchById" value="select selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18368' and selectvalue=? " />
+                <set property="searchByName" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18368' and selecttname like ? order by id asc " />
+                <set property="nameHeader" value="印章名称" />
+                <set property="descriptionHeader" value="描述" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="yzmcBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="fhgsBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18625' order by id asc " />
+                <set property="searchById" value="select selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18625' and selectvalue=? " />
+                <set property="searchByName" value="select selectvalue as id,selectname,selectname as selectdesc from workflow_selectitem where selectvalue &gt; 0 and fieldid = '18625' and selecttname like ? order by id asc " />
+                <set property="nameHeader" value="发货公司" />
+                <set property="descriptionHeader" value="描述" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="fhgsBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="suppliersBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select id,suppliersName,CASE WHEN suppliersStatus='1' THEN '候选' WHEN suppliersStatus='2' THEN '合格' WHEN suppliersStatus='3' THEN '不合格' END AS suppliersStatus from crm_suppliers where suppliersStatus&lt;&gt;'3' order by id desc " />
+                <set property="searchById" value="select suppliersName,CASE WHEN suppliersStatus='1' THEN '候选' WHEN suppliersStatus='2' THEN '合格' WHEN suppliersStatus='3' THEN '不合格' END AS suppliersStatus from crm_suppliers where id in (?) order by id desc " />
+                <set property="searchByName" value="select id,suppliersName,CASE WHEN suppliersStatus='1' THEN '候选' WHEN suppliersStatus='2' THEN '合格' WHEN suppliersStatus='3' THEN '不合格' END AS suppliersStatus from crm_suppliers where suppliersName like ? and suppliersStatus&lt;&gt;'3' order by id desc " />
+                <set property="nameHeader" value="供应商名称" />
+                <set property="descriptionHeader" value="状态" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="suppliersBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="ehrBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="SELECT PSNCODE, PSNNAME || '|' || PSNCODE,DEPTNAME FROM EHR_PSNINFO" />
+                <set property="searchById" value="SELECT  PSNNAME || '|' || PSNCODE,DEPTNAME FROM EHR_PSNINFO WHERE PSNCODE = ?" />
+                <set property="searchByName" value="SELECT PSNCODE, PSNNAME || '|' || PSNCODE,DEPTNAME FROM EHR_PSNINFO WHERE PSNNAME LIKE ?" />
+                <set property="nameHeader" value="姓名|工号" />
+                <set property="descriptionHeader" value="部门" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="ehrBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="companyBrowser" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select datavalue as id,dataname,dataname as datadesc from ic_databook where datatype = 'ConnectedTransactionUnit' and isdel = 0 order by ordernum" />
+                <set property="searchById" value="select dataname,dataname as datadesc from ic_databook where datatype = 'ConnectedTransactionUnit' and isdel = 0 and datavalue = ? order by ordernum" />
+                <set property="searchByName" value="select datavalue as id,dataname,dataname as datadesc from ic_databook where datatype = 'ConnectedTransactionUnit' and isdel = 0 and dataname like ? order by ordernum" />
+                <set property="nameHeader" value="关联单位名称" />
+                <set property="descriptionHeader" value="关联单位名称" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="companyBrowser" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="gcl_hy" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,hy,hy from formtable_main_2800" />
+                <set property="searchById" value="select hy,hy from formtable_main_2800 where id=?" />
+                <set property="searchByName" value="select id,hy,hy from formtable_main_2800 where hy like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=501" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=1081&amp;formId=-2800&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="gcl_hy" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="gcl_jzyt" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,qt,qt from formtable_main_2802" />
+                <set property="searchById" value="select qt,qt from formtable_main_2802 where id=?" />
+                <set property="searchByName" value="select id,qt,qt from formtable_main_2802 where qt like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=1501" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=1582&amp;formId=-2802&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="gcl_jzyt" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="gcl_ynyq" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,dyndyq,dyndyq from formtable_main_2801" />
+                <set property="searchById" value="select dyndyq,dyndyq from formtable_main_2801 where id=?" />
+                <set property="searchByName" value="select id,dyndyq,dyndyq from formtable_main_2801 where dyndyq like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=1001" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=1581&amp;formId=-2801&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="gcl_ynyq" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="GCLIE_projName" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,xmmc,xmmc from formtable_main_3057" />
+                <set property="searchById" value="select xmmc,xmmc from formtable_main_3057 where id=?" />
+                <set property="searchByName" value="select id,xmmc,xmmc from formtable_main_3057 where xmmc like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=5101" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=5082&amp;formId=-3057&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="GCLIE_projName" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="sssjdlgs" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,sjdlgs,sjdlgs from formtable_main_3060" />
+                <set property="searchById" value="select sjdlgs,sjdlgs from formtable_main_3060 where id=?" />
+                <set property="searchByName" value="select id,sjdlgs,sjdlgs from formtable_main_3060 where sjdlgs like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=2502" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=5582&amp;formId=-3060&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="sssjdlgs" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="gcl_khwh" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,khmc,khmc from formtable_main_3056" />
+                <set property="searchById" value="select khmc,khmc from formtable_main_3056 where id=?" />
+                <set property="searchByName" value="select id,khmc,khmc from formtable_main_3056 where khmc like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=2001" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=5081&amp;formId=-3056&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="gcl_khwh" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="qzhcode" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.dangan" />
+                <set property="search" value="select id,code,name from v_fonds" />
+                <set property="searchById" value="select code,name from v_fonds where id =?" />
+                <set property="searchByName" value="select id ,code,name from v_fonds where code like ?" />
+                <set property="nameHeader" value="全宗号" />
+                <set property="descriptionHeader" value="对应公司" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="全宗号" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="Crm_Attachment" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select name,crmid from Crm_Attachment where crmId=?" />
+                <set property="searchById" value="select name,crmid from Crm_Attachment where crmId=?" />
+                <set property="searchByName" value="" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="http://b2b.gcl-power.com/Document/DownloadEN.aspx?CID=" />
+                <set property="from" value="" />
+                <set property="name" value="Crm_Attachment" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="jicheng01" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select bianma,bianma,mingcheng from jicheng_01" />
+                <set property="searchById" value="select bianma,mingcheng from jicheng_01 where bianma =?" />
+                <set property="searchByName" value="select bianma,bianma,mingcheng from jicheng_01 where bianma like ?" />
+                <set property="nameHeader" value="编码" />
+                <set property="descriptionHeader" value="名称" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="集成自定义按钮01" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="jicheng02" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select bianma,bianma,mingcheng from jicheng_02" />
+                <set property="searchById" value="select bianma,mingcheng from jicheng_02 where bianma =?" />
+                <set property="searchByName" value="select bianma,bianma,mingcheng from jicheng_02 where bianma like ?" />
+                <set property="nameHeader" value="编码" />
+                <set property="descriptionHeader" value="名称" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="集成自定义按钮02" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="mj" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,mj,mj from formtable_main_3796" />
+                <set property="searchById" value="select mj,mj from formtable_main_3796 where id=?" />
+                <set property="searchByName" value="select id,mj,mj from formtable_main_3796 where mj like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=3004" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=6084&amp;formId=-3796&amp;billid=" />
+                <set property="from" value="" />
+                <set property="name" value="mj" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="jjcd" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,jjcd,jjcd from formtable_main_3797" />
+                <set property="searchById" value="select jjcd,jjcd from formtable_main_3797 where id=?" />
+                <set property="searchByName" value="select id,jjcd,jjcd from formtable_main_3797 where jjcd like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=3005" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=6085&amp;formId=-3797&amp;billid=" />
+                <set property="from" value="" />
+                <set property="name" value="jjcd" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="zdyz" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select groupid,zm,' ' as a  from xx_getGroups  where owner='$cjr$'" />
+                <set property="searchById" value="select zm, ' ' as a  from xx_getGroups where groupid=?" />
+                <set property="searchByName" value="select groupid,zm,' ' as a from xx_getGroups where zm like ?" />
+                <set property="nameHeader" value="分组名称" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="自定义组" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="hrdept" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select departmentid,dname,' ' as aa from xx_hrdept where subcompanyid1='$cjrbm$'" />
+                <set property="searchById" value="select dname,' ' as aa  from xx_hrdept where departmentid=?" />
+                <set property="searchByName" value="select departmentid,dname,dname from xx_hrdept where dname  like ?" />
+                <set property="nameHeader" value="部门自定义浏览按钮" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="部门自定义浏览按钮" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="hrzdz" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select zjbz,namecn,' ' as am  from xx_gethrzdz  where subcompanyid1 = '$cjrbm$'" />
+                <set property="searchById" value="select  namecn, ' ' as am from xx_gethrzdz where zjbz = ?" />
+                <set property="searchByName" value="select  zjbz , namecn, ' ' as am from xx_gethrzdz where namecn like ?" />
+                <set property="nameHeader" value="组名" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="系统自动组" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="Branch" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="datasource.outdatabase" />
+                <set property="search" value="select  id,fbname,' ' as aa from xx_fbhr_view start with id='$cjrbm$' connect by prior id=supsubcomid " />
+                <set property="searchById" value="select  fbname,' ' as aa from xx_fbhr_view where id = ?" />
+                <set property="searchByName" value="select  id,fbname,' ' as aa from xx_fbhr_view where  fbname like ?  分部名称" />
+                <set property="nameHeader" value="分部名称" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="" />
+                <set property="href" value="" />
+                <set property="from" value="" />
+                <set property="name" value="分部名称" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="miji" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,mj,mj from formtable_main_3796" />
+                <set property="searchById" value="select mj,mj from formtable_main_3796 where id=?" />
+                <set property="searchByName" value="select id,mj,mj from formtable_main_3796 where mj like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=3004" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=6084&amp;formId=-3796&amp;billid=" />
+                <set property="from" value="1" />
+                <set property="name" value="miji" />
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="gwlx" interface="weaver.interfaces.workflow.browser.Browser">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">
+                <set-service property="ds" service-id="" />
+                <set property="search" value="select id,gwlx,gwlx from formtable_main_3877" />
+                <set property="searchById" value="select gwlx,gwlx from formtable_main_3877 where id=?" />
+                <set property="searchByName" value="select id,gwlx,gwlx from formtable_main_3877 where gwlx like ?" />
+                <set property="nameHeader" value="" />
+                <set property="descriptionHeader" value="" />
+                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=3501" />
+                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7081&amp;formId=-3877&amp;billid=" />
+                <set property="from" value="" />
+                <set property="name" value="gwlx" />
+            </construct>
+        </invoke-factory>
+    </service-point>	    <service-point id="gwlx" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,gwlx,gwlx from formtable_main_3877" />                <set property="searchById" value="select gwlx,gwlx from formtable_main_3877 where id=?" />                <set property="searchByName" value="select id,gwlx,gwlx from formtable_main_3877 where gwlx like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=3501" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7081&amp;formId=-3877&amp;billid=" />                <set property="from" value="" />                <set property="name" value="gwlx" />            </construct>        </invoke-factory>    </service-point>    <service-point id="djg" interface="weaver.interfaces.workflow.browser.Browser">	        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,xm,xm from formtable_main_3970" />                <set property="searchById" value="select xm,xm from formtable_main_3970 where id=?" />                <set property="searchByName" value="select id,xm,xm from formtable_main_3970 where xm like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4001" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7581&amp;formId=-3970&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="djg" />            </construct>        </invoke-factory>    </service-point>	<service-point id="wbhzrrgd" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,mc,mc from formtable_main_3971" />                <set property="searchById" value="select mc,mc from formtable_main_3971 where id=?" />                <set property="searchByName" value="select id,mc,mc from formtable_main_3971 where mc like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4002" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7582&amp;formId=-3971&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="wbhzrrgd" />            </construct>        </invoke-factory>    </service-point>	<service-point id="frbk" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,bkmc,bkmc from formtable_main_3972" />                <set property="searchById" value="select bkmc,bkmc from formtable_main_3972 where id=?" />                <set property="searchByName" value="select id,bkmc,bkmc from formtable_main_3972 where bkmc like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4003" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7583&amp;formId=-3972&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="frbk" />            </construct>        </invoke-factory>    </service-point>    <service-point id="glbk" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,bkmc,bkmc from formtable_main_3973" />                <set property="searchById" value="select bkmc,bkmc from formtable_main_3973 where id=?" />                <set property="searchByName" value="select id,bkmc,bkmc from formtable_main_3973 where bkmc like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4004" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7584&amp;formId=-3973&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="glbk" />            </construct>        </invoke-factory>    </service-point>    <service-point id="cydl" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,dlmc,dlmc from formtable_main_3974" />                <set property="searchById" value="select dlmc,dlmc from formtable_main_3974 where id=?" />                <set property="searchByName" value="select id,dlmc,dlmc from formtable_main_3974 where dlmc like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4005" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7585&amp;formId=-3974&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="cydl" />            </construct>        </invoke-factory>    </service-point>    <service-point id="cyxl" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,cyxl,cyxl from formtable_main_3975" />                <set property="searchById" value="select cyxl,cyxl from formtable_main_3975 where id=?" />                <set property="searchByName" value="select id,cyxl,cyxl from formtable_main_3975 where cyxl like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4006" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7586&amp;formId=-3975&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="cyxl" />            </construct>        </invoke-factory>    </service-point>    <service-point id="zyt" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,zyt,zyt from formtable_main_3976" />                <set property="searchById" value="select zyt,zyt from formtable_main_3976 where id=?" />                <set property="searchByName" value="select id,zyt,zyt from formtable_main_3976 where zyt like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4007" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7587&amp;formId=-3976&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="zyt" />            </construct>        </invoke-factory>    </service-point>    <service-point id="yjlb" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,yjlb,yjlb from formtable_main_3977" />                <set property="searchById" value="select yjlb,yjlb from formtable_main_3977 where id=?" />                <set property="searchByName" value="select id,yjlb,yjlb from formtable_main_3977 where yjlb like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4008" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7588&amp;formId=-3977&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="yjlb" />            </construct>        </invoke-factory>    </service-point>    <service-point id="currency" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,bz,bz from formtable_main_3980" />                <set property="searchById" value="select bz,bz from formtable_main_3980 where id=?" />                <set property="searchByName" value="select id,bz,bz from formtable_main_3980 where bz like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4009" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7591&amp;formId=-3980&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="币种" />            </construct>        </invoke-factory>    </service-point>    <service-point id="city" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,cs,cs from formtable_main_3981" />                <set property="searchById" value="select cs,cs from formtable_main_3981 where id=?" />                <set property="searchByName" value="select id,cs,cs from formtable_main_3981 where cs like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4010" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7592&amp;formId=-3981&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="城市" />            </construct>        </invoke-factory>    </service-point>	<service-point id="tzf" interface="weaver.interfaces.workflow.browser.Browser">        <invoke-factory>            <construct class="weaver.interfaces.workflow.browser.BaseBrowser">                <set-service property="ds" service-id="" />                <set property="search" value="select id,gsmc,gsmc from formtable_main_3982" />                <set property="searchById" value="select gsmc,gsmc from formtable_main_3982 where id=?" />                <set property="searchByName" value="select id,gsmc,gsmc from formtable_main_3982 where gsmc like ?" />                <set property="nameHeader" value="" />                <set property="descriptionHeader" value="" />                <set property="outPageURL" value="/formmode/browser/CommonSingleBrowser.jsp?customid=4011" />                <set property="href" value="/formmode/view/AddFormMode.jsp?type=0&amp;modeId=7593&amp;formId=-3982&amp;billid=" />                <set property="from" value="1" />                <set property="name" value="tzf" />            </construct>        </invoke-factory>    </service-point>
+</module>
+

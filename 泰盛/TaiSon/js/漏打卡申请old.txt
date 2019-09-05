@@ -1,0 +1,44 @@
+<script type="text/javascript">
+var startData = "#field16075";//漏打卡日期
+
+
+jQuery(document).ready(function(){  
+    
+    //流程提交校验
+    checkCustomize = function () {
+        
+        //漏打卡日期校验
+        if(getDetailDate(jQuery(startData).val())){
+            window.Dialog.alert("温馨提示：漏打卡申请单开始日期不能晚于 2019-06-01");
+            return false;
+        }
+        
+        
+        return true;
+
+    }
+});
+
+//日期校验函数
+function getDetailDate(setDate){
+    var datenew = setDate.replace(/-/g, '/');
+    var date=new Date(datenew)
+    var year=date.getFullYear(); 
+    var month=date.getMonth()+1;
+    var day=date.getDate();
+    month =(month<10 ? "0"+month:month);
+    day =(day<10 ? "0"+day:day);
+
+    var newDate  = year.toString()+month.toString()+day.toString();
+
+    if(newDate > '20190531'){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+</script>
+
+
+

@@ -1,0 +1,44 @@
+<script type="text/javascript">
+	var hydd = "#field8829";//会议地点
+	var zdyhydd = "#field8831";//自定义会议地点
+	var chry = "#field8856";//参会人员
+	var fyr_dt1 = "#field8867_"//明细1发言人
+	jQuery(document).ready(function () {
+			alert("1");
+		jQuery(hydd).bindPropertyChange(function (){
+			var hydd_val = jQuery(hydd).val();
+			if(hydd_val == ""){
+				jQuery(zdyhydd).removeAttr("readonly");
+			}else{
+				jQuery(zdyhydd).val("");
+				jQuery(zdyhydd).attr("readonly", "readonly");
+			}       
+       
+		})
+		var hydd_val = jQuery(hydd).val();
+		if(hydd_val == ""){
+			jQuery(zdyhydd).removeAttr("readonly");
+		}else{
+			jQuery(zdyhydd).val("");
+			jQuery(zdyhydd).attr("readonly", "readonly");
+		}  
+		
+		checkCustomize = function () {
+			var chry_val = jQuery(chry).val();
+			chry_val = ","+chry_val+",";
+			var indexnum0 = jQuery("#indexnum0").val();
+			for(var index=0; index<indexnum0;index++){
+				if(jQuery(fyr_dt1+index).length>0){
+					var fyr_dt1_val = jQuery(fyr_dt1+index).val();
+					fyr_dt1_val = ","+fyr_dt1_val+",";
+					if(chry_val.indexOf(fyr_dt1_val)<0){
+						window.top.Dialog.alert("明细中发言人必须在参会人员中，请检查");         
+						return false;
+					}
+				}
+			}
+			return true;
+		}
+		
+	})
+</script>

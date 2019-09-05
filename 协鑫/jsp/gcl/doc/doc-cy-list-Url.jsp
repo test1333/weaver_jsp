@@ -34,10 +34,13 @@ scrolling:auto;
 </head> 
 
 <body> 
-
+<%--style="background-color: #7ED321;width: 76px;height: 36px;color: #FFFFFF">
+                新建
+            </button>
+--%>
 <div> 
-&nbsp;&nbsp;<input type = "button" value ="待传阅列表" onclick = "dcy()"/> 
-<input type = "button" value ="已传阅列表" onclick = "ycy()"/> 
+&nbsp;&nbsp;<input type = "button" style="background-color:#CAE8EA" value ="待传阅公文" onclick = "dcy()"/>
+<input type = "button" style="background-color:#CAE8EA" value ="已传阅公文" onclick = "ycy()"/>
 </div> 
 <iframe id = "i" scrolling = "auto" style="overflow-x:hidden; overflow-y:auto;" frameborder="no" border="0" marginwidth="0" marginheight="0" src="/gcl/doc/doc-cy-undo-list.jsp"> 
 </iframe> 

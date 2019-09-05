@@ -1,0 +1,39 @@
+create or replace function f_getData_type(v_start_day varchar2,v_end_day varchar2,v_emp_id varchar2,v_type varchar2)
+
+return number
+as
+    v_holiday_res number;
+    v_count1 number;
+    begin
+      if v_type='cdcs' then
+        select count(1) into v_holiday_res from uf_all_atten_info where  atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and nvl(late_times,0)>0;
+        if v_holiday_res >0 then
+           select count(1) into v_count1 from uf_all_atten_info where  atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and nvl(late_times,0)<=15 and nvl(late_times,0)>0;  
+           if v_count1 <= 2 then 
+            v_holiday_res := v_holiday_res-v_count1;
+           else
+            v_holiday_res := v_holiday_res-2;
+           end if;
+       end if;
+      elsif v_type='ztcs' then
+        select count(1) into v_holiday_res from uf_all_atten_info where  atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and nvl(early_leave_times,0)>0;
+      elsif v_type='txts' then
+        select round(nvl(sum(nvl(b.hours,0)),0),2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=0 and b.dttype=1;
+      elsif v_type='sjts' then
+        select round(nvl(sum(nvl(b.hours,0)),0),2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=0 and b.dttype=0;
+      elsif v_type='bjts' then
+        select round(nvl(sum(nvl(b.hours,0)),0),2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=1 and b.dttype=0;
+      elsif v_type='njts' then
+        select round(nvl(sum(nvl(b.hours,0)),0),2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=1 and b.dttype=2;     
+      elsif v_type='ccts' then
+        select round(nvl(sum(nvl(b.hours,0)),0)/8,2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=2;
+      elsif v_type='gcts' then
+        select round(nvl(sum(nvl(b.hours,0)),0),2)into v_holiday_res from uf_all_atten_info a,uf_all_atten_info_dt1 b where a.id=b.mainid and atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and b.type=3;
+      elsif v_type='qqcs' then
+        select count(1) into v_holiday_res from uf_all_atten_info  where  atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and nvl(isex,-1)='2';
+      elsif v_type='lqcs' then
+        select count(1) into v_holiday_res from uf_all_atten_info  where  atten_day <=v_end_day and atten_day>=v_start_day and emp_id=v_emp_id and nvl(isex,-1)='1';
+     end if;
+
+    return v_holiday_res;
+  end;

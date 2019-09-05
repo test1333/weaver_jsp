@@ -1,0 +1,41 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[ks_what_holiday]    Script Date: 2019/6/5 19:26:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER function [dbo].[ks_what_holiday](@who_day varchar(20))
+-- 1:公休日2:工作日 3 休息日
+	returns int
+as
+  begin
+    declare @holiday_res int,
+    @week_res varchar(30),
+    @changetype int
+    select @week_res=datename(dw,@who_day)
+    -- 1:公休日2:工作日 3 休息日
+    select @changetype=changetype from HrmPubHoliday where holidaydate=@who_day
+    if @changetype=1 or @changetype=2 or @changetype=3
+      begin
+        set @holiday_res=@changetype
+      end
+    else
+      begin
+        if @week_res ='星期六' or @week_res ='星期日' or @week_res ='Saturday' or @week_res ='Sunday'
+          begin
+            set @holiday_res=3
+          end
+        else
+          begin
+            set @holiday_res=2
+          end
+      end
+    return @holiday_res
+  end
+GO
+
+

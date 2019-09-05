@@ -170,7 +170,7 @@ weaver.general.AccountType.langId.set(lg);
 		</FORM>
 		<%
 		String backfields = "rownum,id,name, procode,prjtype,manager,prjbudget,begindate,enddate,status,belongdepart,belongCompany";
-		String fromSql  =  " from (select * from hs_projectinfo order by begindate desc) t1";
+		String fromSql  =  " from (select * from hs_projectinfo order by nvl(begindate,'1900-01-01') desc) t1";
 		String sqlWhere =  " 1=1 and belongCompany='"+subcompany+"' and isdelay='0' ";
 		sqlWhere = sqlWhere + projectUtil.getPrjShareWhereByUser(String.valueOf(userid));
 		if(!"".equals(prjname)){

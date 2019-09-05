@@ -71,11 +71,11 @@ weaver.general.AccountType.langId.set(lg);
 	}
 	//out.print("year"+year+" month"+month);
 	if("".equals(zq)){
-		sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
-		rs.executeSql(sql);
-		if(rs.next()){
-			zq = Util.null2String(rs.getString("selectvalue"));
-		}
+		//sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
+		//rs.executeSql(sql);
+		//if(rs.next()){
+		//	zq = Util.null2String(rs.getString("selectvalue"));
+		//}
 	}else{
 		sql = "select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectvalue='"+zq+"'";
 		rs.executeSql(sql);
@@ -140,7 +140,7 @@ weaver.general.AccountType.langId.set(lg);
 							<option value="" <%if("".equals(zq)){%> selected<%} %>>
 								<%=""%></option>
 							<%
-								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' order by listorder asc";
+								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.cancel='0' order by listorder asc";
 								rs.executeSql(sql);
 								while(rs.next()){
 									String selectname = Util.null2String(rs.getString("selectname"));
@@ -171,7 +171,9 @@ weaver.general.AccountType.langId.set(lg);
 		String backfields = "id,departmentname,dbo.get_jxdf_level('"+year+"','"+zq+"',id,'0') as slevel,dbo.get_jxdf_level('"+year+"','"+zq+"',id,'1') as alevel,dbo.get_jxdf_level('"+year+"','"+zq+"',id,'2') as blevel,dbo.get_jxdf_level('"+year+"','"+zq+"',id,'3') as clevel,dbo.get_jxdf_level('"+year+"','"+zq+"',id,'4') as dlevel,'"+year+"' as year,'"+month+"' as zq ";
 		String fromSql  =  " from HrmDepartment "; 
 		String sqlWhere =  " id in("+deptid+") ";
-		
+		if("".equals(zq)){
+			sqlWhere += " and 1=2 ";
+		}
 		
 		
 

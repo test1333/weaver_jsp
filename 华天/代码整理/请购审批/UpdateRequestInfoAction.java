@@ -45,13 +45,14 @@ public class UpdateRequestInfoAction implements Action{
 	
 	public void updateWLInfo(String wllh,String id,String qgdbh,String qgdxc, String tableName){
 		 RecordSetDataSource rsd = new RecordSetDataSource("Kingdee_fin_new");
+		 RecordSetDataSource rsd1 = new RecordSetDataSource("KIN_REQUEST");
 		 RecordSet rs1 = new RecordSet();
 		 String lh="";
 		 String wlmc = "";
 		 String xh = "";
 		 String gg = "";
 		 String dw = "";
-		 float dqcl = 0;
+		 String dqcl = "0";
 		 String sql="select a.F_101, b.FName,a.F_103 ,b.FModel,c.FUnitID from t_ICItemCustom a,T_ICItemCore b ,t_ICItemBase c where a.FItemID=b.FItemID  and b.FItemID = c.FItemID and b.FNumber='"+wllh+"'";
 		 rsd.executeSql(sql);
 		 if(rsd.next()){
@@ -61,13 +62,15 @@ public class UpdateRequestInfoAction implements Action{
 			 gg =  Util.null2String(rsd.getString("FModel"));
 			 dw =  Util.null2String(rsd.getString("FUnitID"));
 		 }
-		 sql="select SUM(当前存量) as dqcl from tblstocknum where 物料编号='"+wllh+"'";
-		 rsd.executeSql(sql);
-		 if(rsd.next()){
-			 dqcl = rsd.getFloat("dqcl");
+		 sql="select isnull(SUM(isnull(当前存量,0)),0) as dqcl from tblstocknum where 物料编号='"+wllh+"'";
+		 rsd1.executeSql(sql);
+		 if(rsd1.next()){
+			 dqcl = Util.null2String(rsd1.getString("dqcl"));
 		 }
-		 
-		 sql="update "+tableName+"_dt1 set lh='"+lh+"',wlmc='"+wlmc+"',xh='"+xh+"',gg='"+gg+"',dw='"+dw+"',dqcl="+dqcl+" where id="+id;
+		 if("".equals(dqcl)){
+			 dqcl="0";
+		 }
+		 sql="update "+tableName+"_dt1 set lh='"+lh+"',wlmc='"+wlmc+"',xh='"+xh+"',gg='"+gg+"',dw='"+dw+"',dqcl='"+dqcl+"' where id="+id;
 		 rs1.executeSql(sql); 
 		 
 	}

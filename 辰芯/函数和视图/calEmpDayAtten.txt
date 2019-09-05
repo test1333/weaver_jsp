@@ -1,0 +1,425 @@
+USE [ecology]
+GO
+
+/****** Object:  StoredProcedure [dbo].[calEmpDayAtten]    Script Date: 2019/6/5 19:19:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER procedure [dbo].[calEmpDayAtten]
+	-- 人员ID, 考勤日期，正常是否计算   0 -> 正常不计算   1->全部计算
+	@emp_id int,@atten_day varchar(10),@is_normal int 
+as
+	begin
+		declare  @tmp_val int
+		-- 0.0、当天是非工作日，不需要计算考勤，整个存储过程结束   如果需要抓取打卡记录 ，到打卡记录表抓取
+		select  @tmp_val = dbo.ks_what_holiday(@atten_day) 
+		if @tmp_val != 2
+			begin
+				delete from uf_all_atten_info where emp_id = @emp_id and atten_day = @atten_day
+				return 0
+			end
+			
+		declare  @count_cc int
+		-- 1.0、查看这个人是否不参与考勤，如果不参与，整个存储过程结束
+		select @count_cc=count(1) from HrmRoleMembers where roleid = 1041 and resourceid = @emp_id
+	   	if @count_cc > 0
+	   		begin
+	   			delete from uf_all_atten_info where emp_id = @emp_id and atten_day = @atten_day
+	   			return 0
+	   		end
+	   		
+	   	-- 1.1、检查个人的  入离日期【超过范围的删除】，当天不在范围的 整个存储过程结束     暂时先空
+	--	declare  @emp_start_date varchar(10)	-- 人员入职日期
+	--	declare  @emp_end_date varchar(10)	-- 人员离职日期
+	--	select @emp_start_date=??,@emp_end_date=?? from ?? where  ?? = @emp_id
+	--	if len(@emp_start_date) = 10
+	--		begin
+				-- 删除之前的记录
+	--			delete from uf_all_atten_info where emp_id = @emp_id and atten_day < @emp_start_date
+	--		end
+	--	else
+	--		begin
+	--			set @emp_start_date = '1970-01-01'
+	--		end
+			
+	--	if len(@emp_end_date) = 10
+	--		begin
+				-- 删除之后的记录
+	--			delete from uf_all_atten_info where emp_id = @emp_id and atten_day >= @emp_end_date
+	--		end
+	--	else
+	--		begin
+	--			set @emp_end_date = '2099-01-01'
+	--		end
+		-- 不在范围内的  立刻结束
+	--	if @emp_start_date > @atten_day or @emp_end_date < @atten_day
+	--		begin
+	--			return 1
+	--		end
+			
+		-- 1.2、查看考勤表中是否有记录，如果没有需要新增
+		declare  @atten_id int	--考勤记录ID
+		declare @normal_status_all  int
+		set  @atten_id = 0
+		select @count_cc=count(1) from uf_all_atten_info where atten_day = @atten_day and EMP_ID = @emp_id 
+		if @count_cc < 1
+			begin
+				insert into uf_all_atten_info(emp_id,atten_day) values(@emp_id,@atten_day)
+			end
+		select @atten_id=id,@normal_status_all=is_exception from uf_all_atten_info where atten_day = @atten_day and EMP_ID = @emp_id
+		-- 插入异常，立马结束
+		if @atten_id < 1
+			begin
+				return -1
+			end
+		else
+			begin
+				-- 如果是正常 不需要重新计算的，就立马结束
+				if @normal_status_all = 0 and @is_normal = 0
+					begin
+						return 100
+					end
+			end
+			
+		-- 1.3、考勤的时间  
+		declare @am_start_time1 varchar(5)    -- 弹性上班 最早时间
+		declare @am_start_time2 varchar(5)    -- 弹性上班 最晚时间
+		declare @pm_end_time1 varchar(5)     -- 弹性下班 最早时间
+		declare @pm_end_time2 varchar(5)     -- 弹性下班 最晚时间
+		declare @atten_times int  -- 一天上班时间 8 小时   ，因为中饭一小时 目前是9小时
+		declare @atten_ng_time varchar(5)  -- 考勤的跨天 时间点  
+		declare @is_over_day int    -- 是否跨天
+		
+		set @am_start_time1 = '08:00'
+		set @am_start_time1 = '09:00'
+		set @pm_end_time1 = '17:00'
+		set @pm_end_time2 = '18:00'
+		set @atten_times = 9
+		set @atten_ng_time = '04:00'
+		set @is_over_day = 0
+		
+		declare @attenStartTime varchar(5)  -- 上班打卡时间
+		declare @attenEndTime varchar(5)   -- 下班打卡时间
+		
+		set @attenStartTime = ''
+		set @attenEndTime = ''
+		
+		-- 抓取上班打卡时间
+		select  @attenStartTime = MIN(dksj) from uf_signdata where dkrq = @atten_day   and dksj > @atten_ng_time
+			and rygh in(select workcode from hrmresource where id = @emp_id)
+		 -- 先抓取当天下班打卡记录
+		 select  @attenEndTime = MAX(dksj) from uf_signdata where dkrq = @atten_day   and dksj > @atten_ng_time
+			and rygh in(select workcode from hrmresource where id = @emp_id)
+		 -- 再抓取跨天记录，如果有 以此为准
+		select @count_cc = count(1) from uf_signdata where dkrq = dbo.ks_next_n_day(@atten_day,1)   and dksj <= @atten_ng_time
+			and rygh in(select workcode from hrmresource where id = @emp_id)
+		if @count_cc > 0
+			begin
+				select  @attenEndTime = MAX(dksj) from uf_signdata where dkrq = dbo.ks_next_n_day(@atten_day,1)   and dksj <= @atten_ng_time
+					and rygh in(select workcode from hrmresource where id = @emp_id)
+					
+				set @is_over_day = 1
+			end
+			
+		-- 2 计算考勤 时间
+		declare @late_times  int 
+		declare @learly_leave_times int 
+		declare @is_exception int 
+		declare @status_1 int 
+		declare @status_2 int 
+		declare @status_3 int 
+		declare @status_4 int 
+			
+		set @late_times = 0 
+		set @learly_leave_times = 0
+		set @is_exception = 0
+		set @status_1 = 0
+		set @status_2 = 0
+		set @status_3 = 0
+		set @status_4 = 0
+	
+		-- 2.4  一次打卡  
+		if @attenStartTime = @attenEndTime and (@attenStartTime != '' or @attenStartTime is not null)
+			begin
+				set @is_exception = 1
+				set @status_4 = 1  
+			end
+		
+		-- 2.5  一次打卡都没有
+		if (@attenStartTime = '' or @attenStartTime is null)  and (@attenEndTime = '' or @attenEndTime is null)
+			begin
+				set @is_exception = 1
+				set @status_4 = 2 
+			end
+	
+		declare @requestids varchar(300)
+		set @requestids = ''
+		
+		 -- 到这里还正常 后面就不需要处理  ，如果是0  就不需要处理，如果是1，就需要继续处理
+		declare @is_all_flag int 
+		set @is_all_flag = 1
+		
+		set @count_cc = 0
+		-- 4.1 出差申请归档  一旦出差 就认为考勤正常
+		select @count_cc = requestid from formtable_main_77 where ccr = @emp_id and ksrq <= @atten_day and  jsrq >= @atten_day
+			and requestid in(select requestid from workflow_requestbase  where currentnodetype = 3)
+		if @count_cc > 0
+			begin
+				set @requestids = @requestids + ',' + convert(varchar(20),@count_cc)
+				set @is_all_flag = 0
+			end
+		
+		-- 如果请假的话 结合标记  一起去筛选最早上班 和 最晚上班时间；正常标记的话，应该立马结束（为了查找所有的流程，所有的记录都遍历一遍）
+		declare @min_start_time varchar(5)
+		declare @max_end_time varchar(5)
+		-- 默认给打卡时间
+		set @min_start_time = @attenStartTime
+		set @max_end_time = @attenEndTime
+		
+		--  考勤特殊情况  请假只处理 有开始时间 和 结束时间 在上下班访问内的 
+		-- 5.1  请假 (formtable_main_21)归档，并且未取消(formtable_main_28)    关联字段  yxjlc
+		declare my_cursor_01 cursor   FOR 
+			select sqqsrq, sqqssj,sqjsrq,sqjssj,requestid
+				from formtable_main_21 where requestid in(select requestid from workflow_requestbase  where currentnodetype = 3)
+				and requestid not in (select yxjlc from formtable_main_28 where requestid in (select requestid from workflow_requestbase  where currentnodetype = 3))
+				and fqr = @emp_id and sqqsrq <= @atten_day AND sqjsrq >= @atten_day 
+		open my_cursor_01
+		
+		declare @tmp_start_date_1 varchar(10)
+		declare @tmp_start_time_1 varchar(5)
+		declare @tmp_end_date_1 varchar(10)
+		declare @tmp_end_time_1 varchar(5)
+		declare @tmp_requestid int 
+		
+		fetch next from my_cursor_01 into @tmp_start_date_1,@tmp_start_time_1,@tmp_end_date_1,@tmp_end_time_1,@tmp_requestid
+    		while @@FETCH_STATUS = 0 
+			begin
+			--	if @is_all_flag = 1  -- 如果异常再处理  为了查找所有的流程，不检查
+			--		begin
+					set @requestids = @requestids + ',' + convert(varchar(20),@tmp_requestid)
+						-- 5.1.1 如果开始日期和结束日期相同，就是同一天 处理
+						if @tmp_start_date_1 = @tmp_end_date_1
+							begin
+								if @tmp_start_time_1 < @min_start_time
+									begin
+										set @min_start_time = @tmp_start_time_1
+									end
+								if @tmp_end_time_1 > @max_end_time
+									begin
+										set @max_end_time = @tmp_end_time_1
+									end
+							end
+						-- 5.1.2 如果开始日期为当天的   只比较上班时间，下班时间为最晚时间
+						else if @tmp_start_date_1 = @atten_day
+							begin
+								set @max_end_time = @pm_end_time2
+								if @tmp_start_time_1 < @min_start_time
+									begin
+										set @min_start_time = @tmp_start_time_1
+									end
+							end
+						-- 5.1.3 如果结束日期是当天的  只比较下班时间，上班为最早时间
+						else if @tmp_end_date_1 = @atten_day
+							begin
+								set @min_start_time = @am_start_time1
+								if @tmp_end_time_1 > @max_end_time
+									begin
+										set @max_end_time = @tmp_end_time_1
+									end
+							end
+						-- 5.1.4 其余的都是在区间内的
+						else
+							begin
+								set @is_all_flag = 0
+							end
+			--		end
+				fetch next from my_cursor_01 into @tmp_start_date_1,@tmp_start_time_1,@tmp_end_date_1,@tmp_end_time_1,@tmp_requestid
+			end
+		close my_cursor_01  --关闭游标
+    		deallocate my_cursor_01   --释放游标
+		
+		
+		-- 6.1 请假归档，  有取消   	目前处理中间段及其麻烦，只能处理   取消要么开始日期和时间是一致的，要么取消结束日期和时间是一致的
+		declare my_cursor_02 cursor   FOR 
+			select f21.sqqsrq,f21.sqqssj,f21.sqjsrq,f21.sqjssj,f28.sqqsrq,f28.sqqssj,f28.sqjsrq,f28.sqjssj,f21.requestid,f28.requestid
+				from formtable_main_21 f21 
+			join formtable_main_28 f28 on f21.requestid = f28.yxjlc
+			where f21.requestid in(select requestid from workflow_requestbase  where currentnodetype = 3)
+				and f28.requestid in(select requestid from workflow_requestbase  where currentnodetype = 3)
+				and f21.fqr = @emp_id and f21.sqqsrq <= @atten_day AND f21.sqjsrq >= @atten_day 
+		open my_cursor_02
+		
+		declare @tmp_start_date_2 varchar(10)
+		declare @tmp_start_time_2 varchar(5)
+		declare @tmp_end_date_2 varchar(10)
+		declare @tmp_end_time_2 varchar(5)
+		declare @tmp_start_date_3 varchar(10)
+		declare @tmp_start_time_3 varchar(5)
+		declare @tmp_end_date_3 varchar(10)
+		declare @tmp_end_time_3 varchar(5)
+		declare @tmp_requestid_1 int
+		declare @tmp_requestid_2 int
+		
+		fetch next from my_cursor_02 into @tmp_start_date_2,@tmp_start_time_2,@tmp_end_date_2,@tmp_end_time_2,
+						@tmp_start_date_3,@tmp_start_time_3,@tmp_end_date_3,@tmp_end_time_3,@tmp_requestid_1,@tmp_requestid_2
+    		while @@FETCH_STATUS = 0 
+			begin   -- 如果开始日期时间和结束时间和日期都一致，就不需要处理
+				set @requestids = @requestids + ',' + convert(varchar(20),@tmp_requestid_1) + ',' + convert(varchar(20),@tmp_requestid_2)
+				if @tmp_start_date_2 + ' ' + @tmp_start_time_2 = @tmp_end_date_2 + ' ' + @tmp_end_time_2   -- 开始日期和时间 都一致的
+					begin
+						if @tmp_start_date_3 + ' ' + @tmp_start_time_3 != @tmp_end_date_3 + ' ' + @tmp_end_time_3
+							begin
+								 -- 请假 真正的开始时间为销假的结束时间，   真正的结束时间还是之前的    （拿这个做四种情况判断 就OK了）
+								 if @tmp_end_date_3 = @tmp_end_date_2
+									begin
+										if @tmp_end_time_3 < @min_start_time
+											begin
+												set @min_start_time = @tmp_end_time_3
+											end
+										if @tmp_end_time_2 > @max_end_time
+											begin
+												set @max_end_time = @tmp_end_time_2
+											end
+									end
+								-- 5.1.2 如果开始日期为当天的   只比较上班时间，下班时间为最晚时间
+								else if @tmp_end_date_3 = @atten_day
+									begin
+										set @max_end_time = @pm_end_time2
+										if @tmp_end_time_3 < @min_start_time
+											begin
+												set @min_start_time = @tmp_end_time_3
+											end
+									end
+								-- 5.1.3 如果结束日期是当天的  只比较下班时间，上班为最早时间
+								else if @tmp_end_date_2 = @atten_day
+									begin
+										set @min_start_time = @am_start_time1
+										if @tmp_end_time_2 > @max_end_time
+											begin
+												set @max_end_time = @tmp_end_time_2
+											end
+									end
+								-- 5.1.4 其余的都是在区间内的
+								else
+									begin
+										set @is_all_flag = 0
+									end
+							end
+					end
+				if @tmp_start_date_3 + ' ' + @tmp_start_time_3 = @tmp_end_date_3 + ' ' + @tmp_end_time_3   -- 结束日期和时间一致的
+					begin
+						if @tmp_start_date_2 + ' ' + @tmp_start_time_2 != @tmp_end_date_2 + ' ' + @tmp_end_time_2 
+							begin
+								-- 请假 真正的开始时间还是之前的  真正的结束时间为销假的开始时间 （拿这个做四种情况判断 就OK了）
+								 if @tmp_start_date_2 = @tmp_start_date_3
+									begin
+										if @tmp_start_time_2 < @min_start_time
+											begin
+												set @min_start_time = @tmp_start_time_2
+											end
+										if @tmp_start_time_3 > @max_end_time
+											begin
+												set @max_end_time = @tmp_start_time_3
+											end
+									end
+								-- 5.1.2 如果开始日期为当天的   只比较上班时间，下班时间为最晚时间
+								else if @tmp_start_date_2 = @atten_day
+									begin
+										set @max_end_time = @pm_end_time2
+										if @tmp_start_time_2 < @min_start_time
+											begin
+												set @min_start_time = @tmp_start_time_2
+											end
+									end
+								-- 5.1.3 如果结束日期是当天的  只比较下班时间，上班为最早时间
+								else if @tmp_start_date_3 = @atten_day
+									begin
+										set @min_start_time = @am_start_time1
+										if @tmp_start_time_3 > @max_end_time
+											begin
+												set @max_end_time = @tmp_start_time_3
+											end
+									end
+								-- 5.1.4 其余的都是在区间内的
+								else
+									begin
+										set @is_all_flag = 0
+									end
+							end 
+					end
+				fetch next from my_cursor_02 into @tmp_start_date_2,@tmp_start_time_2,@tmp_end_date_2,@tmp_end_time_2,
+						@tmp_start_date_3,@tmp_start_time_3,@tmp_end_date_3,@tmp_end_time_3,@tmp_requestid_1,@tmp_requestid_2
+			end
+		close my_cursor_02  --关闭游标
+    		deallocate my_cursor_02   --释放游标
+			
+		if @is_all_flag = 0  -- 正常的话 重置所有标记
+			begin
+				set @late_times = 0 
+				set @learly_leave_times = 0
+				set @is_exception = 0
+				set @status_1 = 0
+				set @status_2 = 0
+				set @status_3 = 0
+				set @status_4 = 0			
+			end
+		else
+			begin
+						-- 2.1 计算迟到  超过9点算迟到
+			 		select @late_times=dbo.diffTimeForAll(@am_start_time1,@min_start_time,240)
+			 		if @late_times > 15
+			 			begin
+			 				set @is_exception = 1
+			 				set @status_1 = 2
+			 			end
+					else if @late_times > 0 and @late_times <= 15
+						begin
+							set @is_exception = 1
+			 				set @status_1 = 1
+						end
+					else 
+						begin
+							set @late_times = 0
+						end
+					-- 2.2 计算早退  早于17点算 早退，跨天下班一定是正常的
+					if @is_over_day = 0
+						begin
+							select @learly_leave_times=dbo.diffTimeForAll(@max_end_time,@pm_end_time1,240)
+							if @learly_leave_times > 0 
+								begin
+									set @is_exception = 1
+			 						set @status_2 = 1
+								end
+							else
+								begin
+									set @learly_leave_times = 0
+								end
+						end
+					-- 2.3 计算是否满8小时 跨天是正常的   -- 前面不计算，到后面计算
+					declare @all_work_time int
+					if @is_over_day = 0 and (@min_start_time != '' or @min_start_time is not null) 
+						and (@max_end_time != '' or @max_end_time is not null) 
+						begin
+							select @all_work_time=dbo.diffTimeForAll(@min_start_time,@max_end_time,2000)
+							if @all_work_time < @atten_times*60
+								begin
+									set @is_exception = 1
+									set @status_3 = 1
+								end
+						 end
+			end
+			
+		-- 更新语句信息
+		update uf_all_atten_info set  begin_time_start = @am_start_time1, begin_time_end = @am_start_time1 , end_time_start=@pm_end_time1, end_time_end=@pm_end_time2,
+			atten_start_time = @attenStartTime, atten_end_time = @attenEndTime, 
+			late_times = @late_times,early_leave_times = @learly_leave_times,is_over_day = @is_over_day, 
+			is_exception = @is_exception, status_1 = @status_1,status_2 = @status_2,status_3 = @status_3,status_4 = @status_4,requestids = @requestids
+		 where id = @atten_id
+	end	 
+GO
+
+

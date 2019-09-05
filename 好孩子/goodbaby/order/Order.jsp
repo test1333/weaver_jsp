@@ -111,6 +111,7 @@ RCMenuHeight += RCMenuHeightStep ;
 //  右侧鼠标 放上可以点击
 String  operateString= "";
 tableString =" <table tabletype=\"checkbox\" pagesize=\""+ PageIdConst.getPageSize(tmc_pageId,user.getUID(),PageIdConst.HRM)+"\" pageId=\""+tmc_pageId +"\">"+
+		" <checkboxpopedom  id=\"checkbox\" popedompara=\"column:requestid\" showmethod=\"goodbaby.order.CheckCanCreate.CheckCreate\" />"+
 	"	   <sql backfields=\""+backfields+"\" sqlform=\""+fromSql+"\" sqlwhere=\""+Util.toHtmlForSplitPage(sqlWhere)+"\"  sqlorderby=\""+orderby+"\"  sqlprimarykey=\"b.requestid\" sqlsortway=\"desc\" sqlisdistinct=\"false\"/>"+	
     operateString+
     "			<head>";

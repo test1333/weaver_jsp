@@ -1,0 +1,31 @@
+USE [ecology]
+GO
+
+ Object  UserDefinedFunction [dbo].[diffTimeForAll]    Script Date 201965 192538 
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER function [dbo].[diffTimeForAll](@tmp_time_1 varchar(30),@tmp_time_2 varchar(30),@flag int)
+	returns int
+as
+begin
+	declare @times int
+	set @times=0
+	
+	if @tmp_time_1 is not null and @tmp_time_2 is not null
+		begin
+			select @times = CAST(DATEDIFF(mi,@tmp_time_1,@tmp_time_2) as int)
+			
+			if @times  @flag
+				begin
+					set @times = @flag
+				end
+		end
+	return @times
+end
+GO
+
+

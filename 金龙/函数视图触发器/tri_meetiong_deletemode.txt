@@ -1,0 +1,8 @@
+create or replace trigger tri_meetiong_deletemode
+  after UPDATE  of meetingstatus on meeting
+  for each row
+
+ when (new.meetingstatus='4')
+begin
+  insert into uf_meeting_change(hyid,lx,sfcl) values(new.id,'0','0');
+end;

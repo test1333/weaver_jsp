@@ -1,0 +1,12 @@
+@charset "GBK";
+.ModeR, .ModeG, .ModeO, .ModeB, .ModeORed{width:20px;height:20px;line-height:19px;display:block;font-size:0px;}
+
+.ModeR{background:url(../images/IconBg.png) no-repeat center -20px;}
+
+.ModeG{background:url(../images/IconBg.png) no-repeat center -40px;}
+
+.ModeO{background:url(../images/IconBg.png) no-repeat center 0px;}
+
+.ModeB{background:url(../images/IconBg.png) no-repeat center -60px;}
+
+.ModeORed{background:url(../images/img03.gif) no-repeat center -3px;}

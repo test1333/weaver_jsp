@@ -1,0 +1,3 @@
+ALTER view [dbo].[gb_payAmount] as
+select fksqd,sum(isnull(SJFKJE_NPP,JHFKJE_NPP)) bcfkje,max(FPHM_NPP) as FPHM_NPP
+from formtable_main_275_dt1 group by fksqd

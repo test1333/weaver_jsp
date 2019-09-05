@@ -1,0 +1,13 @@
+create or replace trigger tri_meetiong_deletemode
+  after UPDATE  of meetingstatus on meeting
+  for each row
+
+ when (new.meetingstatus='4')
+declare
+ v_billid number:=0;
+
+begin
+   select id into v_billid from uf_qdym where hymc=:new.id;
+   delete from uf_qdym_dt1 where mainid=v_billid;
+   delete from uf_qdym where hymc=:new.id;
+end;

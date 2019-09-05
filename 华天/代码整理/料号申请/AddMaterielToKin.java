@@ -36,7 +36,7 @@ public class AddMaterielToKin implements Action {
 		}
 		String mainId = "";
 		sql = "select id from " + tableName + " where requestid= " + requestid;
-		//log.writeLog("开始新增物料sql" + sql);
+		log.writeLog("开始新增物料requestid:"+requestid+" sql" + sql);
 		rs.executeSql(sql);
 		if (rs.next()) {
 			mainId = Util.null2String(rs.getString("id"));
@@ -75,8 +75,10 @@ public class AddMaterielToKin implements Action {
 				cpjyfs = "0";
 			}
 			if(!"".equals(fitemid)){
+				log.writeLog("update物料requestid:"+requestid+" fitemid" + fitemid);
 				updateInfo(fitemid,lh,wlsx);
 			}else{
+				log.writeLog("insert物料requestid:"+requestid+" fitemid");
 				fitemid = getFitemId();
 				t_ICItemCustom(fitemid,lh,xh);
 				InsertTItem(fitemid,zxfl,dm,pm);
@@ -87,6 +89,7 @@ public class AddMaterielToKin implements Action {
 				updateTICItem(fitemid,wlsx,cpjyfs);
 			}
 			sql_detail = "update "+tableName+"_dt1 set FItemID='"+fitemid+"',lhold='"+lh+"' where id="+deatilid;
+			log.writeLog("物料requestid:"+requestid+" sql_detail "+sql_detail);
 			rs_detail.executeSql(sql_detail);
 			
 		}
@@ -201,7 +204,7 @@ public class AddMaterielToKin implements Action {
 		 String sql="insert into T_ICItemCore(FItemID,FModel,FName,FDeleted,FShortNumber,FNumber,FParentID,FBrNo,FTopID,FForSale,FOrderPrice,FPerWastage)" +
 		  		"values("+fitemid+",'"+gz+"','"+pm+"',1,'"+dm+"','"+FNumber+"',"+FParentID+",'0',0,0,0,0)";
 		  log.writeLog("往金蝶T_ICItemCore插入数据sql: " + sql);
-		  rsd.executeSql(sql);	
+		  rsd.executeSql(sql);	 
 	
 	}
 	
@@ -239,7 +242,7 @@ public class AddMaterielToKin implements Action {
 		 		"FSaleAcctID,FCostAcctID,FAPAcctID,FGoodSpec,FCostProject,FIsSnManage,FStockTime,FBookPlan,FBeforeExpire,FTaxRate,FAdminAcctID," +
 		 		"FIsSpecialTax,FSOHighLimit,FSOLowLimit,FOIHighLimit,FOILowLimit,FCheckCycUnit,FStockPrice,FClass,FDepartment,FCBBmStandardID," +
 		 		"FCBRestore,FPickHighLimit,FPickLowLimit)" +
-		  		"values("+fitemid+",0,1,0,0,1,0,1,0,0,0,0,0,0,76,0,8,1106,1526,1553,1090,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,0,0,1,0,0)";
+		  		"values("+fitemid+",0,1,0,0,1,0,1,0,0,0,0,0,0,76,0,8,1106,1526,1553,1090,0,0,0,0,0,0,16,0,0,0,0,0,0,0,0,0,0,0,1,0,0)";
 		  log.writeLog("往金蝶T_ICItemCore插入数据sql: " + sql);
 		  rsd.executeSql(sql);	
 	

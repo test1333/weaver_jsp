@@ -1,0 +1,8 @@
+
+ALTER VIEW [dbo].[gb_payFlowView] AS 
+
+select a.*,dbo.getCount(a.requestId) as no 
+from  formtable_main_275 a , workflow_requestbase b 
+ where   a.requestId=b.requestid and b.currentnodetype=3
+
+

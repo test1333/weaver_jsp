@@ -1,0 +1,23 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[ks_next_n_day]    Script Date: 2019/6/5 19:26:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER function [dbo].[ks_next_n_day](@atten_time varchar(10),@next_n int)
+--计算当前日期的后n天
+   returns varchar(10)
+as
+  begin
+	declare @tmpDay varchar(10)
+	select @tmpDay = CONVERT(varchar(10),dateadd(dd,@next_n,@tmpDay),23)
+	return @tmpDay
+  end
+GO
+
+

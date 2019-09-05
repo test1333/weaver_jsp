@@ -1,0 +1,52 @@
+USE [ecology]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[checkDRname]    Script Date: 06/04/2019 09:25:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+ALTER function [dbo].[checkDRname](@sqr varchar(30),@rqid varchar(30),@requestid varchar(30))
+returns varchar(5)
+as
+begin
+  declare @result varchar(5),
+          @count int,
+          @hasruku varchar(5),
+          @money decimal(12,2),
+          @
+  set @result='E'
+  set @count = 0
+  set @hasruku = 'E'
+  set @money = 0
+  select @count=COUNT(1) from workflow_requestbase a  where a.requestid=@requestid and a.workflowid=59 and a.currentnodetype>=3
+  if @count >0
+   begin
+		SELECT  @money=isnull(SUM(ISNULL(bczfje, 0)),0) 
+                            FROM          dbo.formtable_main_61
+                            where  requestId not in(@rqid)
+                              and  qxzdd2=@requestid
+        select   @count=COUNT(1) from dbo.uf_orders a where  a.requestId=@requestid and a.lastversion='1' and a.shqr=@sqr and a.hj>@money             
+		
+	 if @count > 0 
+	  begin
+	   set @result='S'
+
+	  end
+   end
+
+
+ 
+return @result
+end
+
+
+
+GO
+
+

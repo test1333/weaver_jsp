@@ -1,0 +1,9 @@
+create or replace trigger tri_meetiong_updatemode
+  after UPDATE  on meeting
+  for each row
+
+ 
+when (new.meetingstatus !='4')
+begin
+   update uf_qdym set hydd=:new.address,kssj=:new.begindate||' '||:new.begintime,jssj=:new.enddate||' '||:new.endtime,chry=:new.hrmmembers,ksrq=:new.begindate,kssj1=:new.begintime where  hymc=:new.id;
+end;

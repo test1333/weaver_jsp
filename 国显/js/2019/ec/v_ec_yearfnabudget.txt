@@ -1,0 +1,45 @@
+create or replace view v_ec_yearfnabudget as
+select (select codename from fnabudgetfeetype where id = t.kmid) as kmcode,
+       kmid,
+       fnayear,
+       (select code from fnacostcenter where id = t.cbzxid) as cbzxcode,
+       cbzxid,
+       nvl(sum(nvl(budgetaccount, 0)), 0) as budgetaccount,
+       nvl(sum(nvl(yyje, 0)), 0) as yyje,
+       nvl(sum(nvl(kyje, 0)), 0) as kyje
+  from (select aa. kmid,
+               nvl(a.budgetaccount, 0) as budgetaccount,
+               aa.fnayear,
+               aa.budgetorganizationid as cbzxid,
+               get_fna_yyje(aa.budgetorganizationid,
+                            aa.kmid,
+                            aa.budgetperiods,
+                            aa.periodsid) as yyje,
+               nvl(a.budgetaccount, 0) - nvl(get_fna_yyje(aa.budgetorganizationid,
+                                                          aa.kmid,
+                                                          aa.budgetperiods,
+                                                          aa.periodsid),
+                                             0) as kyje
+        
+          from (select *
+                  from (select id as budgetinfoid,
+                               budgetorganizationid,
+                               budgetperiods
+                          from fnabudgetinfo
+                         where status = 1
+                           and organizationtype = '18004'
+                           and budgetperiods in
+                               (select id from FnaYearsPeriods where status = 1)) a,
+                       (select fnayear, periodsid
+                          from FnaYearsPeriodsList
+                         where isactive = 1
+                           and fnayearid in
+                               (select id from FnaYearsPeriods where status = 1)) b,
+                       (select id as kmid, codename
+                          from fnabudgetfeetype
+                         where archive = '0') c) aa
+          left join FnaBudgetInfoDetail a
+            on aa.kmid = a.budgettypeid
+           and aa.budgetinfoid = a.budgetinfoid
+           and aa.periodsid = a.budgetperiodslist) t
+ group by kmid, fnayear, cbzxid

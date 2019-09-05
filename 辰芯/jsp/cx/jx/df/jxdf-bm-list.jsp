@@ -74,11 +74,11 @@ weaver.general.AccountType.langId.set(lg);
 	}
 	//out.print("year"+year+" month"+month);
 	if("".equals(zq)){
-		sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
-		rs.executeSql(sql);
-		if(rs.next()){
-			zq = Util.null2String(rs.getString("selectvalue"));
-		}
+		//sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
+		//rs.executeSql(sql);
+		//if(rs.next()){
+		//	zq = Util.null2String(rs.getString("selectvalue"));
+		//}
 	}else{
 		sql = "select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectvalue='"+zq+"'";
 		rs.executeSql(sql);
@@ -162,12 +162,10 @@ weaver.general.AccountType.langId.set(lg);
 						<select class="e8_btn_top middle" name="status" id="status">
 							<option value="" <%if("".equals(status)){%> selected<%} %>>
 								<%=""%></option>
-							<option value="已评价" <%if("已评价".equals(status)){%> selected<%} %>>
-								<%="已评价"%></option>
-							<option value="评价中" <%if("评价中".equals(status)){%> selected<%} %>>
-								<%="评价中"%></option>	
-							<option value="未评价" <%if("未评价".equals(status)){%> selected<%} %>>
-								<%="未评价"%></option>														
+							<option value="已打分" <%if("已打分".equals(status)){%> selected<%} %>>
+								<%="已打分"%></option>
+							<option value="打分中" <%if("打分中".equals(status)){%> selected<%} %>>
+								<%="打分中"%></option>														
 						</select>
 					</wea:item>
 					<wea:item>人员</wea:item>
@@ -196,11 +194,12 @@ weaver.general.AccountType.langId.set(lg);
 		
 		<%
 		String backfields = " ryid,lastname,workcode,sjbm,jobtitle,(select jobtitlename from hrmjobtitles where id=a.jobtitle) as titlename,erjm,status,year,zq,requestid,keyid,bdbh,SJDF,qz ";
-		String fromSql  =  " from (select d.id as ryid,d.lastname,d.workcode,a.sjbm,d.jobtitle,a.erjm,case when c.currentnodetype='3' then '已评价' else '评价中' end as status,a.khzqnf as year,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='khzq' and tc.selectvalue=b.khzq) as zq,b.requestid,convert(varchar(20),b.requestid) as keyid,b.bdbh,b.SJDF,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='zbqz' and tc.selectvalue=b.zbqz and (ta.detailtable is null or ta.detailtable='')) as qz from uf_xmjxmx a,"+tablename+" b,workflow_requestbase c,hrmresource d  where a.mxid=b.mxid and b.requestid=c.requestid and a.fqr=d.id  and a.zblyxm in("+xmid+") and d.status&lt;5 and a.khzqnf='"+year+"' and a.khzq='"+zq+"' "+
-							" 		union all "+
-							" 		select d.id as ryid,d.lastname,d.workcode,a.sjbm,d.jobtitle,a.erjm,'未评价' as status,'"+year+"' as year,'"+month+"' as zq,'' as requestid,convert(varchar(20),a.fqr)+'_'+convert(varchar(20),a.id) as keyid,'' as bdbh,null as sjdf,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_xmjxmx' and ta.fieldname='zbqz'  and tc.selectvalue=a.zbqz  and (ta.detailtable is null or ta.detailtable='') )as qz from uf_xmjxmx a,hrmresource d  where  a.fqr=d.id  and a.zblyxm in("+xmid+") and d.status&lt;5 and a.khzqnf='"+year+"' and a.khzq='"+zq+"' and not exists (select 1 from "+tablename+" where mxid=a.mxid ) "+						
-								" ) a"; 
+		String fromSql  =  " from (select d.id as ryid,d.lastname,d.workcode,a.sjbm,d.jobtitle,a.erjm,case when c.currentnodetype='3' then '已打分' else '打分中' end as status,a.khzqnf as year,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='khzq' and tc.selectvalue=b.khzq) as zq,b.requestid,convert(varchar(20),b.requestid) as keyid,b.bdbh,b.SJDF,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='zbqz' and tc.selectvalue=b.zbqz and (ta.detailtable is null or ta.detailtable='')) as qz from uf_xmjxmx a,"+tablename+" b,workflow_requestbase c,hrmresource d  where a.mxid=b.mxid and b.requestid=c.requestid and a.fqr=d.id  and a.zblyxm in("+xmid+") and d.status&lt;5 and a.khzqnf='"+year+"' and a.khzq='"+zq+"' "+
+							" ) a"; 
 		String sqlWhere =  " 1=1 ";
+		if("".equals(zq)){
+			sqlWhere += " and 1=2 ";
+		}
 		if(!"".equals(status)){
 			sqlWhere += " and a.status='"+status+"' ";
 		}

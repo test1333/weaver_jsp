@@ -76,7 +76,7 @@
 				"                           <INFO>\r\n" + 
 				"                              <FUNNAM>DCPAYREQ</FUNNAM>\r\n" + 
 				"                              <DATTYP>2</DATTYP>\r\n" + 
-				"                              <LGNNAM>学科园科兴学5321</LGNNAM>\r\n" + 
+				"                              <LGNNAM>学科园科兴学532</LGNNAM>\r\n" + 
 				"                           </INFO>\r\n" + 
 				"                           <SDKPAYRQX>\r\n" + 
 				"                              <BUSCOD>N02030</BUSCOD>\r\n" + //业务类别 N02030:支付 N02040:集团支付
@@ -103,7 +103,7 @@
 				"                           </DCPAYREQX>  \r\n" + 
 				"                        </CMBSDKPGK>";
                 out.print(parm);
-                result = postConnection("http://192.168.7.36:8080", parm);
+                result = postConnection("http://192.168.7.201:8080", parm);
                 //result = new String(result.getBytes("GBK"),"UTF-8");
                 out.print(result);
 

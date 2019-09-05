@@ -50,7 +50,7 @@ weaver.general.AccountType.langId.set(lg);
 	String titlename =SystemEnv.getHtmlLabelName(20536,user.getLanguage());
 	String needfav ="1";
 	String needhelp ="";
-	String tablename = "formtable_main_50";
+	String tablename = "formtable_main_127";
 	boolean flagaccount = weaver.general.GCONST.getMOREACCOUNTLANDING();
     String out_pageId = "jxzdcksj";
 	String sql = "";
@@ -73,11 +73,11 @@ weaver.general.AccountType.langId.set(lg);
 	}
 	//out.print("year"+year+" month"+month);
 	if("".equals(zq)){
-		sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
-		rs.executeSql(sql);
-		if(rs.next()){
-			zq = Util.null2String(rs.getString("selectvalue"));
-		}
+		//sql = "select tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectname='"+month+"'";
+		//rs.executeSql(sql);
+		//if(rs.next()){
+		//	zq = Util.null2String(rs.getString("selectvalue"));
+		//}
 	}else{
 		sql = "select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.selectvalue='"+zq+"'";
 		rs.executeSql(sql);
@@ -142,7 +142,7 @@ weaver.general.AccountType.langId.set(lg);
 							<option value="" <%if("".equals(zq)){%> selected<%} %>>
 								<%=""%></option>
 							<%
-								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' order by listorder asc";
+								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='uf_ygjxzbzdk' and ta.fieldname='khzq' and tc.cancel='0' order by listorder asc";
 								rs.executeSql(sql);
 								while(rs.next()){
 									String selectname = Util.null2String(rs.getString("selectname"));
@@ -200,6 +200,9 @@ weaver.general.AccountType.langId.set(lg);
 							" union all "+
 							" select b.id as ryid,b.lastname,b.workcode,a.sjbm,b.jobtitle,a.erjm,case when c.currentnodetype='3' then '已制定' else '制定中' end as status,a.khzqnf as year,(select tc.selectname from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='khzq' and tc.selectvalue=a.khzq) as zq,a.requestid,convert(varchar(20),a.requestid) as keyid,a.bdbh from "+tablename+" a ,hrmresource b,workflow_requestbase c where  a.fqr=b.id and a.requestid=c.requestid and b.departmentid not in("+deptid+") and a.jxssbm in("+deptid+") and a.khzqnf='"+year+"' and a.khzq='"+zq+"' and b.status&lt;5) a"; 
 		String sqlWhere =  " 1=1 ";
+		if("".equals(zq)){
+			sqlWhere += " and 1=2 ";
+		}
 		if(!"".equals(status)){
 			sqlWhere += " and a.status='"+status+"' ";
 		}

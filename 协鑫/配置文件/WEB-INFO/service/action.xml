@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="GB2312"?>
+<module id="action" version="1.0.0">
+    <dependency module-id="datasource" version="1.0.0"/>	
+	<service-point id="WorkflowToNc" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.WorkflowToNc">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="WorkflowToDoc" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.WorkflowToDoc">
+			</construct>
+        </invoke-factory>
+    </service-point>	
+	<service-point id="InviteBidAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLInviteBidAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="PerBidAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLPerBidAction">
+			</construct>
+        </invoke-factory>
+    </service-point>    
+ 
+  <service-point id="TotalContractAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLTotalContractAction">
+			</construct>
+        </invoke-factory>
+    </service-point>     
+	<service-point id="ContractAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLContractAction">
+			</construct>
+        </invoke-factory>
+    </service-point>    
+	<service-point id="ContractPayableAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLContractPayableAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="ContractPayableAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLContractPayableAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="ReturnApproveAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLReturnApproveAction">
+			</construct>
+        </invoke-factory>
+    </service-point>  
+
+    <service-point id="DocGClFileCreationAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gclpower.interfaces.wokflow.action.DocGCLFileAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="PutRecordAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gclpower.interfaces.wokflow.action.PutRecordAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="WriteBackData" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.WriteBackDataAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+        <service-point id="SealInfoAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.seal.SealInfoAction">
+                        </construct>
+        </invoke-factory>
+    </service-point>
+         <service-point id=" BorrowSealAction " interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.seal. BorrowSealAction">
+                            </construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="CreateProjMissionTest" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.shaw.gcl.CreateProjMissionTest">
+            </construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="EditModeDataShareAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.shaw.gcl.EditModeDataShareAction">
+            </construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="CreateBarAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.CreateBarAction" />
+        </invoke-factory>
+    </service-point>
+    <service-point id="WorkflowAttachAddQRCodeAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.docs.action.WorkflowAttachAddQRCodeAction" />
+        </invoke-factory>
+    </service-point>
+	<service-point id="GCLLTAction" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="weaver.interfaces.workflow.action.GCLLTAction">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="InsertIntoCYListForFW" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.doc.workflow.InsertIntoCYListForFW">
+			</construct>
+        </invoke-factory>
+    </service-point>
+     <service-point id="UpdateCyStatus" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.doc.workflow.UpdateCyStatus">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="CircularizeCopyDc" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.circularize.CircularizeCopyDc">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="InsertIntoCYListForCYSub" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.doc.workflow.InsertIntoCYListForCYSub">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	 <service-point id="CopyAttach" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.doc.workflow.CopyAttach">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="AdjustmentHr" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.circularize.AdjustmentHr">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="UpdateCYDate" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.doc.workflow.UpdateCYDate">
+			</construct>
+        </invoke-factory>
+    </service-point>
+	<service-point id="SaveChangeForJCXX" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.company.SaveChangeForJCXX">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="SaveChangeForYzxx" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.company.SaveChangeForYzxx">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="SaveChangeForQtxx" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.company.SaveChangeForQtxx">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="SaveChangeForGDXX" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.company.SaveChangeForGDXX">
+			</construct>
+        </invoke-factory>
+    </service-point>
+    <service-point id="SaveChangeForZYRY" interface="weaver.interfaces.workflow.action.Action">
+        <invoke-factory>
+            <construct class="gcl.company.SaveChangeForZYRY">
+			</construct>
+        </invoke-factory>
+    </service-point>
+</module>
+
