@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>联系我们</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<style type="text/css">
+	*{
+		padding:0px;
+		margin:0px;
+		font-family: "微软雅黑";
+	}
+	html,body{
+		width:100%;
+		height:100%;
+	}
+	.contact{
+		height:100%;	
+	}
+	.head{
+		height:70px;
+		line-height: 70px;
+		font-size: 20px;
+		border-bottom: 1px solid #ebedf0;
+		padding-left: 50px;
+	}
+	.contact_info{
+		border-bottom: 1px solid #ebedf0;
+		padding-bottom: 10px;
+		margin-top:20px;
+		padding-bottom: 20px;
+	}
+	.contact_info div{
+		margin-top:10px;
+		padding-left: 50px;
+	}
+	.contact_text_tips{
+		padding-left: 50px;
+		font-size: 18px;
+		margin-top:20px;
+	}
+	.operation{
+		position:relative;
+		margin-top:10px;
+	}
+	.submit{
+		position:absolute;
+		top:0px;
+		right:50px;
+		margin-left: 50px;
+		width:40px;
+		text-align:center; 
+		height:25px;
+		line-height: 25px;
+		background-color:rgb(5,80,246);
+		color:rgb(255,255,255);
+		cursor: pointer;
+	}
+	.type{
+		position: absolute;
+		top:0px;
+		left:50px;
+		margin-right: 50px;
+	}
+	.info{
+		margin-top:20px;
+		margin-left: 50px;
+		margin-right: 50px;
+		height:200px;
+	}
+	.info textarea{
+		width:100%;
+		height:100%;
+		text-indent: 2px;
+	}
+	#info{
+		resize:none
+	}
+</style>
+<body>
+	<div class= "contact">
+		<div class = "head">联系我们</div>
+		<div class = "content">
+			<div class = "contact_info">
+				<div>您有任何方式通以下方式联系我们</div>
+				<div>
+					电子邮件：
+					970026874@qq.com
+				</div>
+				<div>
+					联系方式：12345678990
+				</div>
+			</div>
+			<div class = "contact_text">
+				<form>
+					<div class = "operation">
+						<div class = "contact_text_tips">欢迎留言</div>
+						<div class = "submit">提交</div>	
+					</div>	
+					<div style="clear: both"></div>
+					<div class = "info">
+						<textarea placeholder="请输入留言内容" id = "info"></textarea>
+					</div>
+					<div>上传附件组件</div>
+				</form> 
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src = "http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		
+		//sunmit 点击事件
+		jQuery(".submit").click(function(){
+			var info = jQuery("#info").val();
+
+			alert(info);
+		})
+		
+	});
+</script>
+</html>

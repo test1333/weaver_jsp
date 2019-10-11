@@ -51,7 +51,7 @@
 }
 .orgchart .verticalNodes>td::before {
   content: '';
-  border: 1px solid rgba(217, 83, 79, 0.8);
+  border: 1px solid #66a7ea;
 }
 .orgchart .verticalNodes>td>ul>li:first-child::before {
   box-sizing: border-box;
@@ -69,7 +69,7 @@
   content: '';
   position: absolute;
   left: -6px;
-  border-color: rgba(217, 83, 79, 0.8);
+  border-color: #66a7ea;
   border-style: solid;
   border-width: 0 0 2px 2px;
 }
@@ -126,23 +126,23 @@
 }
 
 .orgchart .lines .topLine {
-  border-top: 2px solid rgba(217, 83, 79, 0.8);
+  border-top: 2px solid #66a7ea;
 }
 
 .orgchart .lines .rightLine {
-  border-right: 1px solid rgba(217, 83, 79, 0.8);
+  border-right: 1px solid #66a7ea;
   float: none;
   border-radius: 0;
 }
 
 .orgchart .lines .leftLine {
-  border-left: 1px solid rgba(217, 83, 79, 0.8);
+  border-left: 1px solid #66a7ea;
   float: none;
   border-radius: 0;
 }
 
 .orgchart .lines .downLine {
-  background-color: rgba(217, 83, 79, 0.8);
+  background-color: #66a7ea;
   margin: 0 auto;
   height: 20px;
   width: 2px;
@@ -203,15 +203,14 @@
 .orgchart .node .title {
   box-sizing: border-box;
   padding: 2px;
-  width: 130px;
+  width: 180px;
   text-align: center;
-  font-size: 0.75rem;
+  font-size: 20px;
   font-weight: bold;
-  height: 20px;
+  height: 85px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  background-color: rgba(217, 83, 79, 0.8);
+  background-color: #66a7ea;
   color: #fff;
   border-radius: 4px 4px 0 0; 
 }
@@ -240,9 +239,9 @@
 .orgchart .node .content {
   box-sizing: border-box;
   padding: 2px;
-  height: 20px;
-  font-size: 0.625rem;
-  border: 1px solid rgba(217, 83, 79, 0.8);
+  height: 30px;
+  font-size: 20px;
+  border: 1px solid #66a7ea;
   border-radius: 0 0 4px 4px;
   text-align: center;
   background-color: #fff;
@@ -347,7 +346,7 @@
   top: 5px;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;

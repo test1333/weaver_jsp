@@ -1,0 +1,1 @@
+doFieldSQL(" select  sum(field011)  from hrm_paid_leave  where field002 = '$16265$' and field010>=  to_char(SYSDATE,'yyyy-mm-dd') and delflag = '0' ")

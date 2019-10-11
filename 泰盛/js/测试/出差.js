@@ -22,7 +22,7 @@ jQuery(document).ready(function(){
         }
         
 		if(startData_val != "" && endData_val != ""&&startTime_val != "" && endTime_val != ""){
-			if(tab((endData_val+" "+endTime_val),(startData_val+" "+startTime_val))=='0'){
+			if(tab((startData_val+" "+startTime_val),(endData_val+" "+endTime_val))=='1'){
 				window.Dialog.alert("温馨提示:出差结束时间不能小于出差开始时间");
 				 flag = "0";
 				 return;

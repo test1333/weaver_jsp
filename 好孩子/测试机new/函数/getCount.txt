@@ -1,0 +1,11 @@
+ALTER function [dbo].[getCount](@pkid int)
+returns int
+	as
+	begin
+	declare @res int
+		select @res=count(a.id) from formtable_main_275_dt1 a where a.sffk ='1' and mainid=(select b.id from formtable_main_275 b where b.requestid=@pkid)
+	return @res
+	end
+GO
+
+

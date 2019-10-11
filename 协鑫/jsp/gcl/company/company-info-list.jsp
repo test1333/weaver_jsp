@@ -152,7 +152,7 @@
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
 
             <tr>
-                 <TD >类型</TD>
+                 <TD >公司类型</TD>
                 <td class=Field>
                     <select class="InputStyle styled" name="gslx" id="gslx">
 							<option value="" <%if("".equals(gslx)){%> selected<%} %>>
@@ -254,7 +254,7 @@
                 </td>
             </tr>
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
-               <TD>一级类别</TD>
+               <TD>板块</TD>
                 <td class=Field>
                  <BUTTON class=Browser type="button" onClick="onShowBrowserYjlb()">
                   </BUTTON>
@@ -273,7 +273,7 @@
 </div>
 
                 <%
-                    String backfields = " id,yjlb,tyshxydm,gsmc as mc,(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='"+tablename+"' and a.fieldname='gslx' and c.selectvalue=a.gslx ) as gslx,bgdz,(select xm from "+tablenameDJG+" where id=a.fddbr) as fddbr,zczbwy,zcrq,djgexp as djg,gsmcexp as gsmc,dzycexp as dzyc,id as lxr,njexp as nj,dwtzexp as dwtj,flwsexp as flws,id as cz";
+                    String backfields = " id,yjlb,tyshxydm,gsmc as mc,(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='"+tablename+"' and a.fieldname='gslx' and c.selectvalue=a.gslx ) as gslx,bgdz,(select xm from "+tablenameDJG+" where id=a.fddbr) as fddbr,zczbwy,zcrq,djgexp as djg,gsmcexp as gsmc,dzycexp as dzyc,id as lxr,njexp as nj,dwtzexp as dwtj,flwsexp as flws,id as cz,zcdz";
                         String fromSql = " from "+tablename+" a ";
                     String sqlWhere = " 1=1 ";
                     if(!"1".equals(ryid)){
@@ -344,8 +344,8 @@
                             "			<head>" +
                             " 	<col width=\"8%\" text=\"统一社会信用代码\" column=\"tyshxydm\" orderkey=\"tyshxydm\" />" +
                             " 	<col width=\"14%\" text=\"名称\" column=\"mc\" orderkey=\"mc\" linkvaluecolumn=\"id\" linkkey=\"billid\" href=\"/formmode/view/AddFormMode.jsp?type=0&amp;modeId=" + modeid + "&amp;formId=" + formid + "&amp;opentype=0\" target=\"_fullwindow\"/>" +
-                            " 	<col width=\"6%\" text=\"类型\" column=\"gslx\" orderkey=\"gslx\"  />" +
-                            " 	<col width=\"10%\" text=\"住所\" column=\"bgdz\" orderkey=\"bgdz\"  />" +
+                            " 	<col width=\"6%\" text=\"公司类型\" column=\"gslx\" orderkey=\"gslx\"  />" +
+                            " 	<col width=\"10%\" text=\"住所\" column=\"zcdz\" orderkey=\"zcdz\"  />" +
                             " 	<col width=\"8%\" text=\"法定代表人\" column=\"fddbr\" orderkey=\"fddbr\"  />" +
                             " 	<col width=\"8%\" text=\"注册资本（万元）\" column=\"zczbwy\" orderkey=\"zczbwy\"  />" +
                             " 	<col width=\"6%\" text=\"成立日期\" column=\"zcrq\" orderkey=\"zcrq\" />" +
@@ -364,7 +364,7 @@
                     //showExpExcel="true"
                 %>
             <div>
-                <wea:SplitPageTag tableString="<%=tableString%>" mode="run"  isShowTopInfo="false" isShowBottomInfo="true"/>
+                <wea:SplitPageTag tableString="<%=tableString%>" mode="run"   isShowBottomInfo="true"/>
             </div>
  </td>
 </tr>

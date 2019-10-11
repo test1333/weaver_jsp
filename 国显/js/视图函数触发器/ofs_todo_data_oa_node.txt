@@ -1,10 +1,12 @@
 create or replace trigger ofs_todo_data_oa_node
-  before UPDATE  of nodename on ofs_todo_data
+  after UPDATE  of isremark on ofs_todo_data
   for each row
+when (new.isremark='4')
 declare
 PRAGMA  AUTONOMOUS_TRANSACTION;
 begin
-  update ofs_todo_data set nodename=:new.nodename where flowid=:new.flowid;
+  update ofs_todo_data set nodename=:new.nodename where flowid=:new.flowid and id <> :new.id;
+
   COMMIT;
 
 end;

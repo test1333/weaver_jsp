@@ -1,0 +1,13 @@
+ALTER FUNCTION [dbo].[get_some_month_IN](@martID int,@stockID int)
+	returns decimal(18,2)
+	as
+	begin
+		declare @res decimal(18,2)
+		select  @res = ISnull(SUM(rksl),0) from uf_stock where CKID=@stockID and wlmc=@martID  and rkly=0
+		
+		return @res
+		
+	end
+GO
+
+

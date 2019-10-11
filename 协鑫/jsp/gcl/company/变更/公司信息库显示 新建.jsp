@@ -9,50 +9,50 @@
                 <colgroup><col width="10%"></col><col width="15%"></col><col width="10%"></col><col width="15%"></col><col width="10%"></col><col width="15%"></col><col width="10%"></col><col width="15%"></col></colgroup>
                 <tbody>
                     <tr>
-                        <td class="fname"><input id="$label869619$" class="Label" name="label869619" value="统一社会信用代码" type="text" /></td>
-                        <td class="fvalue"><input id="$field869619$" class="InputStyle" name="field869619" value="[可编辑]统一社会信用代码" type="text" /></td>
-                        <td class="fname"><input id="$label869599$" class="Label" name="label869599" value="公司名称（中文）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869599$" class="InputStyle" name="field869599" value="[可编辑]公司名称（中文）" type="text" /></td>
+                        <td class="fname"><input id="$label1775222$" class="Label" name="label1775222" value="统一社会信用代码" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775222$" class="InputStyle" name="field1775222" value="[必填]统一社会信用代码" type="text" /></td>
+                        <td class="fname"><input id="$label1775210$" class="Label" name="label1775210" value="公司名称（中文）" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775210$" class="InputStyle" name="field1775210" value="[必填]公司名称（中文）" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869600$" class="Label" name="label869600" value="公司名称（英文）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869600$" class="InputStyle" name="field869600" value="[可编辑]公司名称（英文）" type="text" /></td>
-                        <td class="fname"><input id="$label869601$" class="Label" name="label869601" value="公司简称" type="text" /></td>
-                        <td class="fvalue"><input id="$field869601$" class="InputStyle" name="field869601" value="[可编辑]公司简称" type="text" /></td>
+                        <td class="fname"><input id="$label1775211$" class="Label" name="label1775211" value="公司名称（英文）" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775211$" class="InputStyle" name="field1775211" value="[可编辑]公司名称（英文）" type="text" /></td>
+                        <td class="fname"><input id="$label1775212$" class="Label" name="label1775212" value="公司简称" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775212$" class="InputStyle" name="field1775212" value="[可编辑]公司简称" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869627$" class="Label" name="label869627" value="注册日期" type="text" /></td>
-                        <td class="fvalue"><input id="$field869627$" class="InputStyle" name="field869627" value="[可编辑]注册日期" type="text" /></td>
-                        <td class="fname"><input id="$label869669$" class="Label" name="label869669" value="注册类型" type="text" /></td>
-                        <td class="fvalue"><input id="$field869669$" class="InputStyle" name="field869669" value="[可编辑]注册类型" type="text" /></td>
+                        <td class="fname"><input id="$label1775227$" class="Label" name="label1775227" value="注册日期" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775227$" class="InputStyle" name="field1775227" value="[可编辑]注册日期" type="text" /></td>
+                        <td class="fname"><input id="$label1775268$" class="Label" name="label1775268" value="注册类型" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775268$" class="InputStyle" name="field1775268" value="[可编辑]注册类型" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869637$" class="Label" name="label869637" value="法定代表人" type="text" /></td>
-                        <td class="fvalue"><input id="$field869637$" class="InputStyle" name="field869637" value="[可编辑]法定代表人" type="text" /></td>
-                        <td class="fname"><input id="$label869604$" class="Label" name="label869604" value="公司状态" type="text" /></td>
-                        <td class="fvalue"><input id="$field869604$" class="InputStyle" name="field869604" value="[可编辑]公司状态" type="text" /></td>
+                        <td class="fname"><input id="$label1775236$" class="Label" name="label1775236" value="法定代表人" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775236$" class="InputStyle" name="field1775236" value="[可编辑]法定代表人" type="text" /></td>
+                        <td class="fname"><input id="$label1775214$" class="Label" name="label1775214" value="公司状态" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775214$" class="InputStyle" name="field1775214" value="[必填]公司状态" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869623$" class="Label" name="label869623" value="注册资本（万元）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869623$" class="InputStyle" name="field869623" value="[可编辑]注册资本（万元）" type="text" /></td>
-                        <td class="fname">&nbsp;<input id="$label871114$" class="Label" name="label871114" value="币种" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871114$" class="InputStyle" name="field871114" value="[可编辑]币种" type="text" /></td>
+                        <td class="fname"><input id="$label1775225$" class="Label" name="label1775225" value="注册资本（万元）" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775225$" class="InputStyle" name="field1775225" value="[可编辑]注册资本（万元）" type="text" /></td>
+                        <td class="fname"><input id="$label1775300$" class="Label" name="label1775300" value="币种" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775300$" class="InputStyle" name="field1775300" value="[可编辑]币种" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869618$" class="Label" name="label869618" value="注册地境内/境外" type="text" /></td>
-                        <td class="fvalue"><input id="$field869618$" class="InputStyle" name="field869618" value="[可编辑]注册地境内/境外" type="text" /></td>
-                        <td class="fname"><input id="$label869631$" class="Label" name="label869631" value="注册地址" type="text" /></td>
-                        <td class="fvalue"><input id="$field869631$" class="InputStyle" name="field869631" value="[可编辑]注册地址" type="text" /></td>
+                        <td class="fname"><input id="$label1775221$" class="Label" name="label1775221" value="注册地境内/境外" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775221$" class="InputStyle" name="field1775221" value="[可编辑]注册地境内/境外" type="text" /></td>
+                        <td class="fname"><input id="$label1775231$" class="Label" name="label1775231" value="注册地址" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775231$" class="InputStyle" name="field1775231" value="[可编辑]注册地址" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869620$" class="Label" name="label869620" value="登记机关" type="text" /></td>
-                        <td class="fvalue"><input id="$field869620$" class="InputStyle" name="field869620" value="[可编辑]登记机关" type="text" /></td>
-                        <td class="fname"><input id="$label869630$" class="Label" name="label869630" value="经营期限" type="text" /></td>
-                        <td class="fvalue"><input id="$field869670$" class="InputStyle" name="field869670" value="[可编辑]经营期限方式" type="text" /><input id="$field869630$" class="InputStyle" name="field869630" value="[可编辑]经营期限" type="text" />-<input id="$field869633$" class="InputStyle" name="field869633" value="[可编辑]经营期限" type="text" /></td>
+                        <td class="fname"><input id="$label1775223$" class="Label" name="label1775223" value="登记机关" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775223$" class="InputStyle" name="field1775223" value="[可编辑]登记机关" type="text" /></td>
+                        <td class="fname"><input id="$label1775230$" class="Label" name="label1775230" value="经营期限" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775269$" class="InputStyle" name="field1775269" value="[可编辑]经营期限方式" type="text" /><input id="$field1775230$" class="InputStyle" name="field1775230" value="[可编辑]经营期限" type="text" />-<input id="$field1775233$" class="InputStyle" name="field1775233" value="[可编辑]经营期限" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869629$" class="Label" name="label869629" value="经营范围 " type="text" /></td>
-                        <td class="fvalue" colspan="3"><input id="$field869629$" class="InputStyle" name="field869629" value="[可编辑]经营范围" type="text" /></td>
+                        <td class="fname"><input id="$label1775229$" class="Label" name="label1775229" value="经营范围 " type="text" /></td>
+                        <td class="fvalue" colspan="3"><input id="$field1775229$" class="InputStyle" name="field1775229" value="[必填]经营范围" type="text" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,16 +78,16 @@
                                         <colgroup><col width="25%"></col><col width="25%"></col><col width="25%"></col><col width="25%"></col></colgroup>
                                         <tbody>
                                             <tr class="header detailtitle">
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869634$" class="Label" name="label869634" value="投资方" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label871124$" class="Label" name="label871124" value="外部或自然人股东" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label870605$" class="Label" name="label870605" value="投资比例" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869636$" class="Label" name="label869636" value="认缴出资额" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775234$" class="Label" name="label1775234" value="投资方" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775302$" class="Label" name="label1775302" value="外部或自然人股东" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775281$" class="Label" name="label1775281" value="投资比例(%)" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775235$" class="Label" name="label1775235" value="认缴出资额" type="text" /></td>
                                             </tr>
                                             <tr>
-                                                <td class="detailtable"><input id="$field869634$" class="InputStyle" name="field869634" value="[可编辑]投资方" type="text" /></td>
-                                                <td class="detailtable"><input id="$field871124$" class="InputStyle" name="field871124" value="[可编辑]外部或自然人股东" type="text" /></td>
-                                                <td class="detailtable"><input id="$field870605$" class="InputStyle" name="field870605" value="[可编辑]投资比例" type="text" />%</td>
-                                                <td class="detailtable"><input id="$field869636$" class="InputStyle" name="field869636" value="[可编辑]认缴出资额" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775234$" class="InputStyle" name="field1775234" value="[可编辑]投资方" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775302$" class="InputStyle" name="field1775302" value="[可编辑]外部或自然人股东" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775281$" class="InputStyle" name="field1775281" value="[可编辑]投资比例" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775235$" class="InputStyle" name="field1775235" value="[可编辑]认缴出资额" type="text" /></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -112,16 +112,16 @@
                             <colgroup><col width="20%"></col><col width="30%"></col></colgroup>
                             <tbody>
                                 <tr>
-                                    <td class="fname"><input id="$label869638$" class="Label" name="label869638" value="董事长" type="text" /></td>
-                                    <td class="fvalue"><input id="$field869638$" class="InputStyle" name="field869638" value="[可编辑]董事长" type="text" /></td>
+                                    <td class="fname"><input id="$label1775237$" class="Label" name="label1775237" value="董事长" type="text" /></td>
+                                    <td class="fvalue"><input id="$field1775237$" class="InputStyle" name="field1775237" value="[可编辑]董事长" type="text" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="fname"><input id="$label871115$" class="Label" name="label871115" value="副董事长" type="text" /></td>
-                                    <td class="fvalue"><input id="$field871115$" class="InputStyle" name="field871115" value="[可编辑]副董事长" type="text" /></td>
+                                    <td class="fname"><input id="$label1775301$" class="Label" name="label1775301" value="副董事长" type="text" /></td>
+                                    <td class="fvalue"><input id="$field1775301$" class="InputStyle" name="field1775301" value="[可编辑]副董事长" type="text" /></td>
                                 </tr>
                                 <tr>
-                                    <td class="fname"><input id="$label869639$" class="Label" name="label869639" value="总经理" type="text" /></td>
-                                    <td class="fvalue"><input id="$field869639$" class="InputStyle" name="field869639" value="[可编辑]总经理" type="text" /></td>
+                                    <td class="fname"><input id="$label1775238$" class="Label" name="label1775238" value="总经理" type="text" /></td>
+                                    <td class="fvalue"><input id="$field1775238$" class="InputStyle" name="field1775238" value="[可编辑]总经理" type="text" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,17 +136,15 @@
                                 <tr>
                                     <td colspan="2">
                                     <table id="oTable1" class="ListStyle detailtable" style="width: 100%" name="oTable1">
-                                        <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                                        <colgroup><col width="34%"></col></colgroup>
                                         <tbody>
                                             <tr class="header detailtitle">
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869645$" class="Label" name="label869645" value="董事" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869646$" class="Label" name="label869646" value="开始日期" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869647$" class="Label" name="label869647" value="结束日期" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775244$" class="Label" name="label1775244" value="董事" type="text" /></td>
+                                               
                                             </tr>
                                             <tr>
-                                                <td class="detailtable"><input id="$field869645$" class="InputStyle" name="field869645" value="[可编辑]董事" type="text" /></td>
-                                                <td class="detailtable"><input id="$field869646$" class="InputStyle" name="field869646" value="[可编辑]开始日期" type="text" /></td>
-                                                <td class="detailtable"><input id="$field869647$" class="InputStyle" name="field869647" value="[可编辑]结束日期" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775244$" class="InputStyle" name="field1775244" value="[可编辑]董事" type="text" /></td>
+                                                
                                             </tr>
                                         </tbody>
                                     </table>
@@ -165,17 +163,15 @@
                                 <tr>
                                     <td colspan="2">
                                     <table id="oTable2" class="ListStyle detailtable" style="width: 100%" name="oTable2">
-                                        <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                                        <colgroup><col width="34%"></col></colgroup>
                                         <tbody>
                                             <tr class="header detailtitle">
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869648$" class="Label" name="label869648" value="监事" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869649$" class="Label" name="label869649" value="开始日期" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label869650$" class="Label" name="label869650" value="结束日期" type="text" /></td>
+                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775247$" class="Label" name="label1775247" value="监事" type="text" /></td>
+                                                
                                             </tr>
                                             <tr>
-                                                <td class="detailtable"><input id="$field869648$" class="InputStyle" name="field869648" value="[可编辑]监事" type="text" /></td>
-                                                <td class="detailtable"><input id="$field869649$" class="InputStyle" name="field869649" value="[可编辑]开始日期" type="text" /></td>
-                                                <td class="detailtable"><input id="$field869650$" class="InputStyle" name="field869650" value="[可编辑]结束日期" type="text" /></td>
+                                                <td class="detailtable"><input id="$field1775247$" class="InputStyle" name="field1775247" value="[可编辑]监事" type="text" /></td>
+                                               
                                             </tr>
                                         </tbody>
                                     </table>
@@ -188,7 +184,6 @@
                     </tr>
                 </tbody>
             </table>
-            
             <div>&nbsp;</div>
             <div align="left"><span style="text-decoration: underline; text-decoration-color: blue"><font size="4">&nbsp;&nbsp;其他信息&nbsp;&nbsp;</font></span></div>
             <div style="height: 2px">&nbsp;</div>
@@ -196,76 +191,76 @@
                 <colgroup><col width="10%"></col><col width="40%"></col><col width="10%"></col><col width="40%"></col></colgroup>
                 <tbody>
                     <tr>
-                        <td class="fname"><input id="$label871113$" class="Label" name="label871113" value="国家" type="text" /></td>
-                        <td class="fvalue"><input id="$field871113$" class="InputStyle" name="field871113" value="[只读]国家" type="text" /></td>
-                        <td class="fname"><input id="$label871112$" class="Label" name="label871112" value="省份" type="text" /></td>
-                        <td class="fvalue"><input id="$field871112$" class="InputStyle" name="field871112" value="[只读]省份" type="text" /></td>
+                        <td class="fname"><input id="$label1775299$" class="Label" name="label1775299" value="国家" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775299$" class="InputStyle" name="field1775299" value="[只读]国家" type="text" /></td>
+                        <td class="fname"><input id="$label1775298$" class="Label" name="label1775298" value="省份" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775298$" class="InputStyle" name="field1775298" value="[只读]省份" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label871111$" class="Label" name="label871111" value="城市" type="text" /></td>
-                        <td class="fvalue"><input id="$field871111$" class="InputStyle" name="field871111" value="[可编辑]城市" type="text" /></td>
-                        <td class="fname"><input id="$label869632$" class="Label" name="label869632" value="办公地址" type="text" /></td>
-                        <td class="fvalue"><input id="$field869632$" class="InputStyle" name="field869632" value="[可编辑]办公地址" type="text" /></td>
+                        <td class="fname"><input id="$label1775297$" class="Label" name="label1775297" value="城市" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775297$" class="InputStyle" name="field1775297" value="[可编辑]城市" type="text" /></td>
+                        <td class="fname"><input id="$label1775232$" class="Label" name="label1775232" value="办公地址" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775232$" class="InputStyle" name="field1775232" value="[可编辑]办公地址" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869603$" class="Label" name="label869603" value="公司类型" type="text" /></td>
-                        <td class="fvalue"><input id="$field869603$" class="InputStyle" name="field869603" value="[可编辑]公司类型" type="text" /></td>
-                        <td class="fname">&nbsp;<input id="$label871106$" class="Label" name="label871106" value="一级类别" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871106$" class="InputStyle" name="field871106" value="[可编辑]一级类别" type="text" /></td>
+                        <td class="fname"><input id="$label1775213$" class="Label" name="label1775213" value="公司类型" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775213$" class="InputStyle" name="field1775213" value="[必填]公司类型" type="text" /></td>
+                        <td class="fname"><input id="$label1815145$" class="Label" name="label1815145" value="板块" type="text" /></td>
+                        <td class="fvalue"><input id="$field1815145$" class="InputStyle" name="field1815145" value="[必填]板块" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname">&nbsp;<input id="$label871109$" class="Label" name="label871109" value="法人板块" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871109$" class="InputStyle" name="field871109" value="[可编辑]法人板块" type="text" /></td>
-                        <td class="fname">&nbsp;<input id="$label871110$" class="Label" name="label871110" value="管理板块" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871110$" class="InputStyle" name="field871110" value="[可编辑]管理板块" type="text" /></td>
+                        <td class="fname"><input id="$label1775295$" class="Label" name="label1775295" value="法人板块" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775295$" class="InputStyle" name="field1775295" value="[可编辑]法人板块" type="text" /></td>
+                        <td class="fname"><input id="$label1775296$" class="Label" name="label1775296" value="管理板块" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775296$" class="InputStyle" name="field1775296" value="[可编辑]管理板块" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869612$" class="Label" name="label869612" value="业务类型" type="text" /></td>
-                        <td class="fvalue"><input id="$field869612$" class="InputStyle" name="field869612" value="[可编辑]业务类型" type="text" /></td>
-                        <td class="fname">&nbsp;<input id="$label871105$" class="Label" name="label871105" value="产业大类" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871105$" class="InputStyle" name="field871105" value="[可编辑]产业大类" type="text" /></td>
+                        <td class="fname"><input id="$label1775216$" class="Label" name="label1775216" value="业务类型" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775216$" class="InputStyle" name="field1775216" value="[可编辑]业务类型" type="text" /></td>
+                        <td class="fname"><input id="$label1775291$" class="Label" name="label1775291" value="产业大类" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775291$" class="InputStyle" name="field1775291" value="[可编辑]产业大类" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname">&nbsp;<input id="$label871107$" class="Label" name="label871107" value="产业细类" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871107$" class="InputStyle" name="field871107" value="[可编辑]产业细类" type="text" /></td>
-                        <td class="fname">&nbsp;<input id="$label871108$" class="Label" name="label871108" value="子业态" type="text" /></td>
-                        <td class="fvalue">&nbsp;<input id="$field871108$" class="InputStyle" name="field871108" value="[可编辑]子业态" type="text" /></td>
+                        <td class="fname"><input id="$label1775293$" class="Label" name="label1775293" value="产业细类" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775293$" class="InputStyle" name="field1775293" value="[可编辑]产业细类" type="text" /></td>
+                        <td class="fname"><input id="$label1775294$" class="Label" name="label1775294" value="子业态" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775294$" class="InputStyle" name="field1775294" value="[可编辑]子业态" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869613$" class="Label" name="label869613" value="持股比例（板块持有）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869613$" class="InputStyle" name="field869613" value="[可编辑]持股比例（板块持有）" type="text" /></td>
-                        <td class="fname"><input id="$label869615$" class="Label" name="label869615" value="持股比例（集团最终）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869615$" class="InputStyle" name="field869615" value="[可编辑]持股比例（集团最终）" type="text" /></td>
+                        <td class="fname"><input id="$label1779607$" class="Label" name="label1779607" value="持股比例（板块持有）%" type="text" /></td>
+                        <td class="fvalue"><input id="$field1779607$" class="InputStyle" name="field1779607" value="[可编辑]持股比例（板块持有）%" type="text" /></td>
+                        <td class="fname"><input id="$label1779609$" class="Label" name="label1779609" value="持股比例（集团最终）%" type="text" /></td>
+                        <td class="fvalue"><input id="$field1779609$" class="InputStyle" name="field1779609" value="[可编辑]持股比例（集团最终）%" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869614$" class="Label" name="label869614" value="持股比例（集团持板块）" type="text" /></td>
-                        <td class="fvalue"><input id="$field869614$" class="InputStyle" name="field869614" value="[可编辑]持股比例（集团持板块）" type="text" /></td>
-                        <td class="fname"><input id="$label869616$" class="Label" name="label869616" value="协鑫方母公司层面" type="text" /></td>
-                        <td class="fvalue"><input id="$field869616$" class="InputStyle" name="field869616" value="[可编辑]协鑫方母公司层面" type="text" /></td>
+                        <td class="fname"><input id="$label1779608$" class="Label" name="label1779608" value="持股比例（集团持板块）%" type="text" /></td>
+                        <td class="fvalue"><input id="$field1779608$" class="InputStyle" name="field1779608" value="[可编辑]持股比例（集团持板块）%" type="text" /></td>
+                        <td class="fname"><input id="$label1775220$" class="Label" name="label1775220" value="协鑫方母公司层面" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775220$" class="InputStyle" name="field1775220" value="[可编辑]协鑫方母公司层面" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869640$" class="Label" name="label869640" value="财务负责人" type="text" /></td>
-                        <td class="fvalue"><input id="$field869640$" class="InputStyle" name="field869640" value="[可编辑]财务负责人" type="text" /></td>
-                        <td class="fname"><input id="$label869671$" class="Label" name="label869671" value="联络人" type="text" /></td>
-                        <td class="fvalue"><input id="$field869671$" class="InputStyle" name="field869671" value="[可编辑]联络人" type="text" /></td>
+                        <td class="fname"><input id="$label1775239$" class="Label" name="label1775239" value="财务负责人" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775239$" class="InputStyle" name="field1775239" value="[可编辑]财务负责人" type="text" /></td>
+                        <td class="fname"><input id="$label1775270$" class="Label" name="label1775270" value="联络人" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775270$" class="InputStyle" name="field1775270" value="[必填]联络人" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869663$" class="Label" name="label869663" value="SAP公司编码" type="text" /></td>
-                        <td class="fvalue"><input id="$field869663$" class="InputStyle" name="field869663" value="[可编辑]SAP公司编码" type="text" /></td>
-                        <td class="fname"><input id="$label869664$" class="Label" name="label869664" value="是否有账套" type="text" /></td>
-                        <td class="fvalue"><input id="$field869664$" class="InputStyle" name="field869664" value="[可编辑]是否有账套" type="text" /></td>
+                        <td class="fname"><input id="$label1775262$" class="Label" name="label1775262" value="SAP公司编码" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775262$" class="InputStyle" name="field1775262" value="[可编辑]SAP公司编码" type="text" /></td>
+                        <td class="fname"><input id="$label1775263$" class="Label" name="label1775263" value="是否有账套" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775263$" class="InputStyle" name="field1775263" value="[可编辑]是否有账套" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869665$" class="Label" name="label869665" value="ERP系统" type="text" /></td>
-                        <td class="fvalue"><input id="$field869665$" class="InputStyle" name="field869665" value="[可编辑]ERP系统" type="text" /></td>
-                        <td class="fname"><input id="$label869666$" class="Label" name="label869666" value="ERP系统编码" type="text" /></td>
-                        <td class="fvalue"><input id="$field869666$" class="InputStyle" name="field869666" value="[可编辑]ERP系统编码" type="text" /></td>
+                        <td class="fname"><input id="$label1775264$" class="Label" name="label1775264" value="ERP系统" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775264$" class="InputStyle" name="field1775264" value="[可编辑]ERP系统" type="text" /></td>
+                        <td class="fname"><input id="$label1775265$" class="Label" name="label1775265" value="ERP系统编码" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775265$" class="InputStyle" name="field1775265" value="[可编辑]ERP系统编码" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label869667$" class="Label" name="label869667" value="是否已接入财务共享" type="text" /></td>
-                        <td class="fvalue"><input id="$field869667$" class="InputStyle" name="field869667" value="[可编辑]是否已接入财务共享" type="text" /></td>
-                        <td class="fname"><input id="$label869668$" class="Label" name="label869668" value="接入时间" type="text" /></td>
-                        <td class="fvalue"><input id="$field869668$" class="InputStyle" name="field869668" value="[可编辑]接入时间" type="text" /></td>
+                        <td class="fname"><input id="$label1775266$" class="Label" name="label1775266" value="是否已接入财务共享" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775266$" class="InputStyle" name="field1775266" value="[可编辑]是否已接入财务共享" type="text" /></td>
+                        <td class="fname"><input id="$label1775267$" class="Label" name="label1775267" value="接入时间" type="text" /></td>
+                        <td class="fvalue"><input id="$field1775267$" class="InputStyle" name="field1775267" value="[可编辑]接入时间" type="text" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -274,9 +269,41 @@
         </tr>
     </tbody>
 </table>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<!--tempcss start-->
+<!-- script代码，如果需要引用js文件，请使用与HTML中相同的方式。 --><script type="text/javascript">
+var tzbl_dt1 = "#field1775281_";
+
+jQuery(document).ready(function(){
+	checkCustomize = function(){ 
+		
+		var indexnum1 = jQuery("#indexnum0").val();
+		var sumbl = "0";
+		for (var index= 0; index < indexnum1; index++) {   
+		    if (jQuery(tzbl_dt1 + index).length > 0) {
+		 	   	   var tzbl_dt1_val = jQuery(tzbl_dt1 + index).val();
+				   if(tzbl_dt1_val == ""){
+					  tzbl_dt1_val = "0";   
+				   }
+				   sumbl = accAdd(tzbl_dt1_val,sumbl);
+			 	    
+		 	}
+		}
+		if(Number(sumbl)>Number("100")){
+			alert("投资比例合计不能超过100%，请检查");
+			return false;
+		}
+		return true;
+		 
+	}	
+});	
+function accAdd(arg1,arg2){
+    var r1,r2,m; try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+    m=Math.pow(10,Math.max(r1,r2))
+    return (arg1*m+arg2*m)/m
+}
+
+
+</script><!--tempcss start-->
 <p>
 <link rel="stylesheet" type="text/css" href="/css/crmcss/lanlv.css" /></p>
 <!--tempcss end-->

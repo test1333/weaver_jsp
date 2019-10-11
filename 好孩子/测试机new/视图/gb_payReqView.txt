@@ -1,0 +1,16 @@
+
+ALTER view [dbo].[gb_payReqView] as
+select a.id,a.requestId,a.sqr,(select departmentname from HrmDepartment where id =a.sqrbm) as sqrbm,
+(select GYSMC from uf_suppmessForm where id =a.skrmc) as gysmc ,skrmc,
+a.skyhmc,a.skyhzh,a.fkqx,
+(select selectname from Workflow_Selectitem where selectvalue =a.fktj and fieldid=14710) as fktj,
+(select selectname from Workflow_Selectitem where selectvalue =a.zffs and fieldid=14706) as zffs,
+a.bcje,c.requestname
+from formtable_main_273 a
+left join workflow_requestbase c on a.requestId = c.requestid 
+--left join formtable_main_275 d on a.requestId=d.fksqd
+where c.currentnodetype=3 and (a.requestId 
+not in(select fksqd from formtable_main_275_dt1)
+or [dbo].[compare_payamount](a.requestId)<0)
+
+

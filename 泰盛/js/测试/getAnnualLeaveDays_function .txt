@@ -1,0 +1,25 @@
+create or replace function getAnnualLeaveDays_function ( i_userid in varchar2, i_type in  varchar2 )
+return NUMBER is
+       returntime NUMBER;
+       allafterdays NUMBER;
+begin
+    if i_type = 1 then
+       select (baseamount+extraAmount+baseAmount2+extraAmount2-usedamount-usedAmount2) into returntime from kq_balanceOfLeave where leaverulesid=2 and resourceid=i_userid and status=0 and belongyear=to_char(sysdate, 'yyyy' );
+            select nvl(sum(nvl(qjts,0)),0) into allafterdays  from formtable_main_251 main  join workflow_requestbase work on main.requestid =work.requestid
+            where sqr = i_userid and work.currentnodetype in (1,2)  and qjlx = '2';
+
+            returntime := returntime-allafterdays;
+    elsif i_type = 2 then
+             select (baseamount+extraAmount+baseAmount2+extraAmount2-usedamount-usedAmount2) into returntime from kq_balanceOfLeave where leaverulesid=5 and resourceid=i_userid and status=0 ;
+              select round(nvl(sum(nvl(bcqjts1,0)),0) /8,2) into allafterdays  from formtable_main_256 main  join workflow_requestbase work on main.requestid =work.requestid
+            where sqr = i_userid and work.currentnodetype in (1,2)  and qjlx = '5';
+
+            returntime := returntime-allafterdays;
+    end if;
+
+
+			return returntime;
+
+end;
+
+ 

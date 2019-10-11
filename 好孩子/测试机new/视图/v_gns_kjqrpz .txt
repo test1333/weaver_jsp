@@ -1,0 +1,2 @@
+ALTER view [dbo].[v_gns_kjqrpz] as
+select max(id) as id,convert(varchar(30),pklcid)+'_'+convert(varchar(20),pcno) as keyid, pklcid,pcno, sum(bcyf) as bcyf,sum(bcsf) as bcsf ,(select yhzh from uf_yhzhdzb where id=max(xzyh)) as xzyh,(select yhmc from uf_yhzhdzb where id=max(xzyh)) as yhmc,(select buydl from uf_buydl where id=max(isnull(cgdl,0))) as cgdl,case when max(pzzt)='1' then '已生成' else '未生成' end as pzzt,max(scr) as scr,max(scsj) as scsj,max(kjqrqq) as kjqrqq from uf_fkzjb where pklcid is not null and pcno is not null group by pklcid,pcno

@@ -8,16 +8,16 @@
                 <colgroup><col width="20%"></col><col width="80%"></col></colgroup>
                 <tbody>
                     <tr>
-                        <td class="fname"><input id="$label870159$" class="Label" name="label870159" value="董事长" type="text" /></td>
-                        <td class="fvalue"><input id="$field870159$" class="InputStyle" name="field870159" value="[只读]董事长" type="text" /></td>
+                        <td class="fname"><input id="$label1776108$" class="Label" name="label1776108" value="董事长" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776108$" class="InputStyle" name="field1776108" value="[只读]董事长" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label871129$" class="Label" name="label871129" value="副董事长" type="text" /></td>
-                        <td class="fvalue"><input id="$field871129$" class="InputStyle" name="field871129" value="[只读]副董事长" type="text" /></td>
+                        <td class="fname"><input id="$label1776127$" class="Label" name="label1776127" value="副董事长" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776127$" class="InputStyle" name="field1776127" value="[只读]副董事长" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label870158$" class="Label" name="label870158" value="总经理" type="text" /></td>
-                        <td class="fvalue"><input id="$field870158$" class="InputStyle" name="field870158" value="[只读]总经理" type="text" /></td>
+                        <td class="fname"><input id="$label1776107$" class="Label" name="label1776107" value="总经理" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776107$" class="InputStyle" name="field1776107" value="[只读]总经理" type="text" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -35,17 +35,15 @@
                     <tr>
                         <td colspan="2">
                         <table id="oTable0" class="ListStyle detailtable" style="width: 100%" name="oTable0">
-                            <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                            <colgroup><col width="34%"></col></colgroup>
                             <tbody>
                                 <tr class="header detailtitle">
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870169$" class="Label" name="label870169" value="董事" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870170$" class="Label" name="label870170" value="开始日期" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870168$" class="Label" name="label870168" value="结束日期" type="text" /></td>
+                                    <td class="detailtitle" nowrap="nowrap"><input id="$label1776112$" class="Label" name="label1776112" value="董事" type="text" /></td>
+                                   
                                 </tr>
                                 <tr>
-                                    <td class="detailtable"><input id="$field870169$" class="InputStyle" name="field870169" value="[只读]董事" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870170$" class="InputStyle" name="field870170" value="[只读]开始日期" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870168$" class="InputStyle" name="field870168" value="[只读]结束日期" type="text" /></td>
+                                    <td class="detailtable"><input id="$field1776112$" class="InputStyle" name="field1776112" value="[只读]董事" type="text" /></td>
+                                   
                                 </tr>
                             </tbody>
                         </table>
@@ -61,16 +59,16 @@
                 <colgroup><col width="20%"></col><col width="80%"></col></colgroup>
                 <tbody>
                     <tr>
-                        <td class="fname"><input id="$label870160$" class="Label" name="label870160" value="董事长new" type="text" /></td>
-                        <td class="fvalue"><input id="$field870160$" class="InputStyle" name="field870160" value="[可编辑]董事长new" type="text" /></td>
+                        <td class="fname"><input id="$label1776109$" class="Label" name="label1776109" value="董事长new" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776109$" class="InputStyle" name="field1776109" value="[可编辑]董事长new" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label871130$" class="Label" name="label871130" value="副董事长" type="text" /></td>
-                        <td class="fvalue"><input id="$field871130$" class="InputStyle" name="field871130" value="[可编辑]副董事长" type="text" /></td>
+                        <td class="fname"><input id="$label1776128$" class="Label" name="label1776128" value="副董事长" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776128$" class="InputStyle" name="field1776128" value="[可编辑]副董事长" type="text" /></td>
                     </tr>
                     <tr>
-                        <td class="fname"><input id="$label870161$" class="Label" name="label870161" value="总经理呢我" type="text" /></td>
-                        <td class="fvalue"><input id="$field870161$" class="InputStyle" name="field870161" value="[可编辑]总经理呢我" type="text" /></td>
+                        <td class="fname"><input id="$label1776110$" class="Label" name="label1776110" value="总经理呢我" type="text" /></td>
+                        <td class="fvalue"><input id="$field1776110$" class="InputStyle" name="field1776110" value="[可编辑]总经理呢我" type="text" /></td>
                     </tr>
                 </tbody>
             </table>
@@ -88,17 +86,15 @@
                     <tr>
                         <td colspan="2">
                         <table id="oTable1" class="ListStyle detailtable" style="width: 100%" name="oTable1">
-                            <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                            <colgroup><col width="34%"></col></colgroup>
                             <tbody>
                                 <tr class="header detailtitle">
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870171$" class="Label" name="label870171" value="董事" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870172$" class="Label" name="label870172" value="开始日期" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870173$" class="Label" name="label870173" value="结束日期" type="text" /></td>
+                                    <td class="detailtitle" nowrap="nowrap"><input id="$label1776114$" class="Label" name="label1776114" value="董事" type="text" /></td>
+                                    
                                 </tr>
                                 <tr>
-                                    <td class="detailtable"><input id="$field870171$" class="InputStyle" name="field870171" value="[可编辑]董事" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870172$" class="InputStyle" name="field870172" value="[可编辑]开始日期" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870173$" class="InputStyle" name="field870173" value="[可编辑]结束日期" type="text" /></td>
+                                    <td class="detailtable"><input id="$field1776114$" class="InputStyle" name="field1776114" value="[可编辑]董事" type="text" /></td>
+                                    
                                 </tr>
                             </tbody>
                         </table>
@@ -124,17 +120,15 @@
                     <tr>
                         <td colspan="2">
                         <table id="oTable2" class="ListStyle detailtable" style="width: 100%" name="oTable2">
-                            <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                            <colgroup><col width="34%"></col></colgroup>
                             <tbody>
                                 <tr class="header detailtitle">
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870174$" class="Label" name="label870174" value="监事" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870175$" class="Label" name="label870175" value="开始日期" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870176$" class="Label" name="label870176" value="结束日期" type="text" /></td>
+                                    <td class="detailtitle" nowrap="nowrap"><input id="$label1776117$" class="Label" name="label1776117" value="监事" type="text" /></td>
+                                   
                                 </tr>
                                 <tr>
-                                    <td class="detailtable"><input id="$field870174$" class="InputStyle" name="field870174" value="[只读]监事" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870175$" class="InputStyle" name="field870175" value="[只读]开始日期" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870176$" class="InputStyle" name="field870176" value="[只读]结束日期" type="text" /></td>
+                                    <td class="detailtable"><input id="$field1776117$" class="InputStyle" name="field1776117" value="[只读]监事" type="text" /></td>
+                                   
                                 </tr>
                             </tbody>
                         </table>
@@ -159,17 +153,15 @@
                     <tr>
                         <td colspan="2">
                         <table id="oTable3" class="ListStyle detailtable" style="width: 100%" name="oTable3">
-                            <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                            <colgroup><col width="34%"></col></colgroup>
                             <tbody>
                                 <tr class="header detailtitle">
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870177$" class="Label" name="label870177" value="监事" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870178$" class="Label" name="label870178" value="开始日期" type="text" /></td>
-                                    <td class="detailtitle" nowrap="nowrap"><input id="$label870179$" class="Label" name="label870179" value="结束日期" type="text" /></td>
+                                    <td class="detailtitle" nowrap="nowrap"><input id="$label1776120$" class="Label" name="label1776120" value="监事" type="text" /></td>
+                                   
                                 </tr>
                                 <tr>
-                                    <td class="detailtable"><input id="$field870177$" class="InputStyle" name="field870177" value="[可编辑]监事" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870178$" class="InputStyle" name="field870178" value="[可编辑]开始日期" type="text" /></td>
-                                    <td class="detailtable"><input id="$field870179$" class="InputStyle" name="field870179" value="[可编辑]结束日期" type="text" /></td>
+                                    <td class="detailtable"><input id="$field1776120$" class="InputStyle" name="field1776120" value="[可编辑]监事" type="text" /></td>
+                                   
                                 </tr>
                             </tbody>
                         </table>

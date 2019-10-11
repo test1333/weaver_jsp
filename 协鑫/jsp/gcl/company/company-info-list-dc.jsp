@@ -50,8 +50,8 @@
     er.addStringValue("公司类型", "Header"); 
     er.addStringValue("公司状态", "Header"); 
     er.addStringValue("注销进展状态", "Header"); 
-    er.addStringValue("业务类型", "Header"); 
-    er.addStringValue("一级类别", "Header"); 
+    //er.addStringValue("业务类型", "Header"); 
+    er.addStringValue("板块", "Header"); 
     er.addStringValue("法人板块", "Header"); 
     er.addStringValue("管理板块", "Header"); 
     er.addStringValue("产业大类", "Header"); 
@@ -67,7 +67,7 @@
     er.addStringValue("协鑫方母公司层面", "Header"); 
     er.addStringValue("注册地境内/境外", "Header"); 
     er.addStringValue("登记机关", "Header"); 
-    er.addStringValue("投资总额", "Header"); 
+    //er.addStringValue("投资总额", "Header"); 
     er.addStringValue("注册资本（万元）", "Header"); 
     er.addStringValue("实收资本（万元）", "Header"); 
     er.addStringValue("注册日期", "Header"); 
@@ -99,7 +99,7 @@
                 " (select bkmc from "+tablenameFrbk+" where id=t.frbk) as frbk,"+
                 " (select bkmc from "+tablenameGLBK+" where id=t.glbk) as glbk,"+
                 " (select dlmc from "+tablenameCYDL+" where id=t.cydl) as cydl,"+
-                " (select cyxl from "+tablenameCYXL+" where id=t.cyxl) as cylx,"+
+                " (select cyxl from "+tablenameCYXL+" where id=t.cyxl) as cyxl,"+
                 " (select zyt from "+tablenameZYT+" where id=t.zyt) as zyt,guojia,shengfeng,"+
                 " (select cs from "+tablenameCITY+" where id=t.city) as city,"+
                 " (select bz from "+tablenameBz+" where id=t.zczbbz) as zczbbz,cgblbk,cgbljt,cggbljtzz,"+
@@ -125,7 +125,7 @@
         er.addStringValue(Util.null2String(rs.getString("gslx")));
         er.addStringValue(Util.null2String(rs.getString("gszt")));
         er.addStringValue(Util.null2String(rs.getString("zxjzzt")));
-        er.addStringValue(Util.null2String(rs.getString("ywlx")));
+       // er.addStringValue(Util.null2String(rs.getString("ywlx")));
         er.addStringValue(Util.null2String(rs.getString("yjlb")));
         er.addStringValue(Util.null2String(rs.getString("frbk")));
         er.addStringValue(Util.null2String(rs.getString("glbk")));
@@ -142,7 +142,7 @@
         er.addStringValue(Util.null2String(rs.getString("xxfmgscm")));
         er.addStringValue(Util.null2String(rs.getString("zcdjnw")));    
         er.addStringValue(Util.null2String(rs.getString("djjg")));
-        er.addStringValue(Util.null2String(rs.getString("tzze")));
+        //er.addStringValue(Util.null2String(rs.getString("tzze")));
         er.addStringValue(Util.null2String(rs.getString("zczbwy")));
         er.addStringValue(Util.null2String(rs.getString("sszb")));
         er.addStringValue(Util.null2String(rs.getString("zcrq")));
@@ -175,7 +175,7 @@
 	er.addStringValue("投资方", "Header"); 
     er.addStringValue("外部或自然人股东", "Header"); 
     er.addStringValue("投资比例(%)", "Header"); 
-    er.addStringValue("认缴金额", "Header"); 
+    //er.addStringValue("认缴金额", "Header"); 
     if(!"".equals(mainids)){
          count = 1;
          String mainidarr[] = mainids.split(",");
@@ -189,7 +189,7 @@
                  er.addStringValue(Util.null2String(rs.getString("tzf"))); 
                  er.addStringValue(Util.null2String(rs.getString("wbhzrrgd"))); 
                  er.addStringValue(Util.null2String(rs.getString("tzbl")));
-                 er.addStringValue(Util.null2String(rs.getString("rjcze")));
+                 //er.addStringValue(Util.null2String(rs.getString("rjcze")));
                  count++;
              }
          }
@@ -201,8 +201,8 @@
     er.addStringValue("公司名称", "Header"); 
 	er.addStringValue("董事/监事", "Header"); 
     er.addStringValue("类型", "Header"); 
-    er.addStringValue("开始日期", "Header"); 
-    er.addStringValue("结束日期", "Header"); 
+    //er.addStringValue("开始日期", "Header"); 
+   // er.addStringValue("结束日期", "Header"); 
     if(!"".equals(mainids)){
          count = 1;
          String mainidarr[] = mainids.split(",");
@@ -215,8 +215,8 @@
                  er.addStringValue(Util.null2String(rs.getString("gsmc"))); 
                  er.addStringValue(Util.null2String(rs.getString("ds"))); 
                  er.addStringValue("董事"); 
-                 er.addStringValue(Util.null2String(rs.getString("ksrq")));
-                 er.addStringValue(Util.null2String(rs.getString("jsrq")));
+                 //er.addStringValue(Util.null2String(rs.getString("ksrq")));
+                 //er.addStringValue(Util.null2String(rs.getString("jsrq")));
                  count++;
              }
              sql = "select a.gsmc,(select xm from "+tablenameDJG+" where id=b.js) as js,ksrq,jsrq   from "+tablename+" a,"+tablename+"_dt3 b where a.id=b.mainid and b.mainid="+mainid;
@@ -227,8 +227,8 @@
                  er.addStringValue(Util.null2String(rs.getString("gsmc"))); 
                  er.addStringValue(Util.null2String(rs.getString("js"))); 
                  er.addStringValue("监事"); 
-                 er.addStringValue(Util.null2String(rs.getString("ksrq")));
-                 er.addStringValue(Util.null2String(rs.getString("jsrq")));
+                 //er.addStringValue(Util.null2String(rs.getString("ksrq")));
+                 //er.addStringValue(Util.null2String(rs.getString("jsrq")));
                  count++;
              }
          }

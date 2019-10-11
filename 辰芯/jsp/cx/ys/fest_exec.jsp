@@ -61,7 +61,7 @@
 	if("-1".equals(result)){
 		result="导入失败，请检查模板";
 	}else if("1".equals(result)){
-		result="导入成功";
+		result="导入成功，请在权限更新页面更新导入的数据权限";
 	}
 	out.print(result);
 %>

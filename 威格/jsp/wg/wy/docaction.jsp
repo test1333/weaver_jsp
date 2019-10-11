@@ -2,6 +2,7 @@
 <%@ page import="java.io.*" %>
 <%@ page import="java.util.*" %>
 <%@ page import="java.net.*" %>
+<%@ page import="weaver.general.BaseBean" %>
 <jsp:useBean id="rs" class="weaver.conn.RecordSet" scope="page"/>
 <%!
     public String postConnection(String url, String param) throws Exception {
@@ -83,7 +84,7 @@
 				"                              <BUSMOD>00001</BUSMOD>\r\n" + 
 				"                           </SDKPAYRQX>\r\n" + 
 				"                           <DCPAYREQX>\r\n" + 
-				"                              <YURREF>201905130003</YURREF>\r\n" + //业务号
+				"                              <YURREF>EX-201906190023_16</YURREF>\r\n" + //业务号
 				"                              <DBTACC>755915711310210</DBTACC>\r\n" + //付款账号
 				"                              <DBTBBK>75</DBTBBK>\r\n" + //地区
 				"                              <BNKFLG>N</BNKFLG>\r\n" + //Y：招行；N：非招行；
@@ -103,8 +104,11 @@
 				"                           </DCPAYREQX>  \r\n" + 
 				"                        </CMBSDKPGK>";
                 out.print(parm);
-                result = postConnection("http://192.168.7.201:8080", parm);
+                result = postConnection("http://192.168.7.26:8080", parm);
                 //result = new String(result.getBytes("GBK"),"UTF-8");
+				BaseBean log = new BaseBean();
+				log.writeLog("parmaaa:"+parm);
+				log.writeLog("resultaaa:"+result);
                 out.print(result);
 
 %>
