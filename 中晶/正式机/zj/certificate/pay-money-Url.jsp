@@ -23,6 +23,15 @@ $(function(){
         staticOnLoad:true
     });
 }); 
+
+function hiddenbutton(){
+	  jQuery("#hbdj").hide();
+	  jQuery("#dbfk").hide();
+}
+function showbutton(){
+	  jQuery("#hbdj").show();
+	  jQuery("#dbfk").show();
+}
 </script>
 
 <%

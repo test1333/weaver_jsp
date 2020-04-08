@@ -1,0 +1,71 @@
+create function f_get_gnsbb_rkyfzkzl(@i_yjcbzx varchar(100),@i_xtgys varchar(20),@i_type varchar(20),@i_dt_type varchar(20))
+     returns decimal(10,2)
+as
+begin
+     declare 
+		@qcje decimal(10,2),
+		@qmje decimal(10,2),
+        @result decimal(10,2)
+     if @i_type = 0 -- 期初
+		begin
+		   select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,2))) a
+		end
+	 else if @i_type = 1  --期末
+	    begin
+	     select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1))) a
+	    end  
+	 else if @i_type = 2  --期末-期初
+	    begin
+		    select @qcje=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,2))) a
+		    select @qmje=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1))) a
+			set @result = @qmje-@qcje
+	    end  
+	else
+		begin
+		    if @i_dt_type = 1  --<=30
+				begin
+				    select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=30 )) a
+				end
+			else if	@i_dt_type = 2  --31-60
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=60 and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>30 )) a
+				end
+			else if	@i_dt_type = 3  --61-90
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=90 and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>60 )) a
+				end
+			else if	@i_dt_type = 4  --91-120
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=120 and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>90 )) a
+				end
+			else if	@i_dt_type = 5  --121-180
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=180 and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>120 )) a
+				end
+			else if	@i_dt_type = 6  --181-240
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))<=240 and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>180 )) a
+				end
+			else if	@i_dt_type = 7  --241-1年
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and fprq>=convert(varchar(20),dateAdd(yy,-1,getdate()),23) and DATEDIFF(DAY, fprq, CONVERT(varchar(10),GETDATE(),120))>240 )) a
+				end
+			else if	@i_dt_type = 8  --1年-2年
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and fprq>=convert(varchar(20),dateAdd(yy,-2,getdate()),23)  and fprq<convert(varchar(20),dateAdd(yy,-1,getdate()),23) )) a
+				end
+			else if	@i_dt_type = 9  --2年-3年
+				begin
+					select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and fprq>=convert(varchar(20),dateAdd(yy,-3,getdate()),23)  and fprq<convert(varchar(20),dateAdd(yy,-2,getdate()),23) )) a
+				end
+			else if	@i_dt_type = 10  --3年以上
+				begin
+				select @result=isnull(sum(isnull(je,0.00)),0.00) from (select cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=a.id) as numeric(12,2)) as je from uf_invoice a where id in (select id from v_gnsbb_yfzkzl where yjcbzx=@i_yjcbzx and gys=@i_xtgys and type in(0,1) and fprq<convert(varchar(20),dateAdd(yy,-3,getdate()),23) )) a
+				end
+			else
+				begin
+					set @result=0.00
+				end
+		end  
+	return @result
+end

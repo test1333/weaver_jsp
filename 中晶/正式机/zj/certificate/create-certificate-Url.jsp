@@ -23,6 +23,13 @@ $(function(){
         staticOnLoad:true
     });
 }); 
+
+function hiddenbutton(){
+	  jQuery("#scpz").hide();
+}
+function showbutton(){
+	  jQuery("#scpz").show();
+}
 </script>
 
 <%

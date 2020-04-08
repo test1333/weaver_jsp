@@ -1,0 +1,15 @@
+ecodeSDK.overwritePropsFnQueueMapSet('WeaTop', {
+    fn:(Com,newProps,name)=>{
+
+        const { pathname, hash } = window.location;
+
+         if (pathname === '/spa/meeting/static/index.html' && hash.indexOf('#/main/meeting/RoomPlan') >= 0 ){
+            
+             //console.log("222");
+            const { Button } = antd;
+            Com.buttons.unshift(<Button type="primary" onClick={()=>{window.location.href="/wui/index.html#/main"}}>回到首页</Button>);
+         }
+    }
+
+
+}) 

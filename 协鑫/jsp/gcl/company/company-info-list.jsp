@@ -35,6 +35,7 @@
     DocUtil du = new DocUtil();
     String tablename = du.getBillTableName("GSGLXXK");
     String tablenameDJG = du.getBillTableName("DJG");
+    String tablenameYJLB = du.getBillTableName("GSYJLB");
     String formid = "";
     String modeid = "";
     String sql = "select id from workflow_bill where tablename='" + tablename + "'";
@@ -66,6 +67,7 @@
     String city = Util.null2String(request.getParameter("city"));
     String cityname = "";
     String yjlb = Util.null2String(request.getParameter("yjlb"));
+    String dsz = Util.null2String(request.getParameter("dsz"));
     String yjlbname = "";
     CompanyChangeUtil ccu = new CompanyChangeUtil();
     cityname = ccu.getCityName(city);
@@ -143,33 +145,41 @@
             </TR>-->
             <TR class=Spacing style="height:1px;"> <TD class=Line1 colSpan=4 ></TD> </TR>
             <tr>
+                <TD >公司名称</TD>
+                <td class=Field><input class=inputstyle id='gsmc' name=gsmc size="20" value="<%=gsmc%>">
+                </td>
                   <TD >统一社会信用代码</TD>
                     <td class=Field><input class=inputstyle id='tyshxydm' name=tyshxydm size="20" value="<%=tyshxydm%>"></td>
-                    <TD >名称</TD>
-                    <td class=Field><input class=inputstyle id='gsmc' name=gsmc size="20" value="<%=gsmc%>">
-                    </td>
+                    
             </tr>
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
-
-            <tr>
-                 <TD >公司类型</TD>
+            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
+               <TD>板块</TD>
                 <td class=Field>
-                    <select class="InputStyle styled" name="gslx" id="gslx">
-							<option value="" <%if("".equals(gslx)){%> selected<%} %>>
-								<%=""%></option>
-							<%
-								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='gslx' and tc.cancel='0' order by listorder asc";
-								rs.executeSql(sql);
-								while(rs.next()){
-									String selectname = Util.null2String(rs.getString("selectname"));
-									String selectvalue = Util.null2String(rs.getString("selectvalue"));
-							%>
-								<option value="<%=selectvalue%>" <%if(selectvalue.equals(gslx)){%> selected<%} %>>
-								<%=selectname%></option>
-							<%
-								}
-							%>
-					</select>
+                 <BUTTON class=Browser type="button" onClick="onShowBrowserYjlb()">
+                  </BUTTON>
+                 <SPAN id=yjlbspan><%=yjlbname%></SPAN>
+                 <INPUT id=yjlb type=hidden name=yjlb temptitle="板块" viewtype="0"
+                                                         value="<%=yjlb%>"> 
+                </td>
+                <TD>城市</TD>
+                <td class=Field>
+                 <BUTTON class=Browser type="button" onClick="onShowBrowserCity()">
+                  </BUTTON>
+                 <SPAN id=cityspan><%=cityname%></SPAN>
+                 <INPUT id=city type=hidden name=city temptitle="城市" viewtype="0"
+                                                         value="<%=city%>"> 
+                </td>
+            </tr>
+            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
+            <tr>
+                <TD>管理板块</TD>
+                <td class=Field>
+                 <BUTTON class=Browser type="button" onClick="onShowBrowserGlbk()">
+                  </BUTTON>
+                 <SPAN id=glbkspan><%=glbkname%></SPAN>
+                 <INPUT id=glbk type=hidden name=glbk temptitle="管理板块" viewtype="0"
+                                                         value="<%=glbk%>"> 
                 </td>
                 <TD>住所</TD>
                 <td class=Field><input class=inputstyle id='bgdz' name=bgdz size="20" value="<%=bgdz%>">
@@ -178,11 +188,17 @@
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
 
             <tr>
+            <TD>法人板块</TD>
+                <td class=Field>
+                 <BUTTON class=Browser type="button" onClick="onShowBrowserFrbk()">
+                  </BUTTON>
+                 <SPAN id=frbkspan><%=frbkname%></SPAN>
+                 <INPUT id=frbk type=hidden name=frbk temptitle="法人板块" viewtype="0"
+                                                         value="<%=frbk%>"> 
+                </td>
                <TD>法定代表人</TD>
                 <td class=Field><input class=inputstyle id='fddbr' name=fddbr size="20" value="<%=fddbr%>"></td>
-                <TD>注册资本</TD>
-                <td class=Field><input class=inputstyle id='zczbwy' name=zczbwy size="20" value="<%=zczbwy%>">
-                </td>
+               
             </tr>
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
 
@@ -206,64 +222,56 @@
 							%>
 					</select>
                 </td>
-                <TD>董事</TD>
+                <TD>董事长</TD>
+                <td class=Field><input class=inputstyle id='dsz' name=dsz size="20" value="<%=dsz%>">
+                </td>
+            </tr>
+           
+            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
+
+            <tr>
+          
+               
+                <TD >公司类型</TD>
+                <td class=Field>
+                    <select class="InputStyle styled" name="gslx" id="gslx">
+							<option value="" <%if("".equals(gslx)){%> selected<%} %>>
+								<%=""%></option>
+							<%
+								sql = "select tc.selectname,tc.selectvalue from workflow_billfield ta, workflow_bill tb,workflow_selectitem tc where ta.billid=tb.id and tc.fieldid=ta.id  and tb.tablename='"+tablename+"' and ta.fieldname='gslx' and tc.cancel='0' order by listorder asc";
+								rs.executeSql(sql);
+								while(rs.next()){
+									String selectname = Util.null2String(rs.getString("selectname"));
+									String selectvalue = Util.null2String(rs.getString("selectvalue"));
+							%>
+								<option value="<%=selectvalue%>" <%if(selectvalue.equals(gslx)){%> selected<%} %>>
+								<%=selectname%></option>
+							<%
+								}
+							%>
+					</select>
+                </td>
+                 <TD>董事</TD>
                 <td class=Field><input class=inputstyle id='ds' name=ds size="20" value="<%=ds%>">
                 </td>
+               
             </tr>
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
 
             <tr>
-               <TD>监事</TD>
+             <TD>经营范围</TD>
+                <td class=Field><input class=inputstyle id='jyfw' name=jyfw size="20" value="<%=jyfw%>"></td>
+             <TD>监事</TD>
                 <td class=Field><input class=inputstyle id='js' name=js size="20" value="<%=js%>"></td>
-                <TD>总经理</TD>
+               
+                
+            </tr>
+            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
+                <td></td>
+                <td></td>
+                 <TD>总经理</TD>
                 <td class=Field><input class=inputstyle id='zjl' name=zjl size="20" value="<%=zjl%>">
                 </td>
-            </tr>
-            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
-
-            <tr>
-               <TD>法人板块</TD>
-                <td class=Field>
-                 <BUTTON class=Browser type="button" onClick="onShowBrowserFrbk()">
-                  </BUTTON>
-                 <SPAN id=frbkspan><%=frbkname%></SPAN>
-                 <INPUT id=frbk type=hidden name=frbk temptitle="法人板块" viewtype="0"
-                                                         value="<%=frbk%>"> 
-                </td>
-                <TD>管理板块</TD>
-                <td class=Field>
-                 <BUTTON class=Browser type="button" onClick="onShowBrowserGlbk()">
-                  </BUTTON>
-                 <SPAN id=glbkspan><%=glbkname%></SPAN>
-                 <INPUT id=glbk type=hidden name=glbk temptitle="管理板块" viewtype="0"
-                                                         value="<%=glbk%>"> 
-                </td>
-            </tr>
-            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
-
-            <tr>
-                <TD>经营范围</TD>
-                <td class=Field><input class=inputstyle id='jyfw' name=jyfw size="20" value="<%=jyfw%>"></td>
-                <TD>城市</TD>
-                <td class=Field>
-                 <BUTTON class=Browser type="button" onClick="onShowBrowserCity()">
-                  </BUTTON>
-                 <SPAN id=cityspan><%=cityname%></SPAN>
-                 <INPUT id=city type=hidden name=city temptitle="城市" viewtype="0"
-                                                         value="<%=city%>"> 
-                </td>
-            </tr>
-            <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
-               <TD>板块</TD>
-                <td class=Field>
-                 <BUTTON class=Browser type="button" onClick="onShowBrowserYjlb()">
-                  </BUTTON>
-                 <SPAN id=yjlbspan><%=yjlbname%></SPAN>
-                 <INPUT id=yjlb type=hidden name=yjlb temptitle="一级类别" viewtype="0"
-                                                         value="<%=yjlb%>"> 
-                </td>
-                <td></td>
-                <td></td>
             </tr>
             <TR style="height:1px;"> <TD class=Line colSpan=4></TD> </TR>
     </table>
@@ -273,7 +281,7 @@
 </div>
 
                 <%
-                    String backfields = " id,yjlb,tyshxydm,gsmc as mc,(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='"+tablename+"' and a.fieldname='gslx' and c.selectvalue=a.gslx ) as gslx,bgdz,(select xm from "+tablenameDJG+" where id=a.fddbr) as fddbr,zczbwy,zcrq,djgexp as djg,gsmcexp as gsmc,dzycexp as dzyc,id as lxr,njexp as nj,dwtzexp as dwtj,flwsexp as flws,id as cz,zcdz";
+                    String backfields = " id,yjlb,(select yjlb from "+tablenameYJLB+" where id=a.yjlb) as yjlbname,tyshxydm,gsmc as mc,(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='"+tablename+"' and a.fieldname='gslx' and c.selectvalue=a.gslx ) as gslx,bgdz,(select xm from "+tablenameDJG+" where id=a.fddbr) as fddbr,zczbwy,zcrq,djgexp as djg,gsmcexp as gsmc,dzycexp as dzyc,id as lxr,njexp as nj,dwtzexp as dwtj,flwsexp as flws,id as cz,zcdz";
                         String fromSql = " from "+tablename+" a ";
                     String sqlWhere = " 1=1 ";
                     if(!"1".equals(ryid)){
@@ -297,7 +305,7 @@
                     }
               
                      if(!"".equals(fddbr)){
-                        sqlWhere = sqlWhere + " and fddbr=(select id from "+tablenameDJG+" where xm='"+fddbr+"') ";
+                        sqlWhere = sqlWhere + " and fddbr in (select id from "+tablenameDJG+" where xm like '%"+fddbr+"%') ";
                     }
                      if(!"".equals(zczbwy)){
                         sqlWhere = sqlWhere + " and zczbwy='"+zczbwy+"'";
@@ -306,13 +314,16 @@
                         sqlWhere = sqlWhere + " and gszt='"+gszt+"'";
                     }
                      if(!"".equals(ds)){
-                        sqlWhere = sqlWhere + " and exists(select 1 from "+tablename+"_dt2 where mainid=a.id and ds=(select id from "+tablenameDJG+" where xm='"+ds+"')) ";
+                        sqlWhere = sqlWhere + " and exists(select 1 from "+tablename+"_dt2 where mainid=a.id and ds in (select id from "+tablenameDJG+" where xm like '%"+ds+"%')) ";
                     }
                     if(!"".equals(js)){
-                        sqlWhere = sqlWhere + " and exists(select 1 from "+tablename+"_dt3 where mainid=a.id and js=(select id from "+tablenameDJG+" where xm='"+js+"')) ";
+                        sqlWhere = sqlWhere + " and exists(select 1 from "+tablename+"_dt3 where mainid=a.id and js in (select id from "+tablenameDJG+" where xm like '%"+js+"%')) ";
                     }
                      if(!"".equals(zjl)){
-                        sqlWhere = sqlWhere + " and zjl=(select id from "+tablenameDJG+" where xm='"+zjl+"') ";
+                        sqlWhere = sqlWhere + " and zjl in (select id from "+tablenameDJG+" where xm like '%"+zjl+"%') ";
+                    }
+                    if(!"".equals(dsz)){
+                        sqlWhere = sqlWhere + " and dsz in (select id from "+tablenameDJG+" where xm like '%"+dsz+"%') ";
                     }
                      if(!"".equals(frbk)){
                         sqlWhere = sqlWhere + " and frbk='"+frbk+"' ";
@@ -329,7 +340,7 @@
                     if(!"".equals(yjlb)){
                         sqlWhere = sqlWhere + " and yjlb='"+yjlb+"'";
                     }
-                    //out.println("select "+ backfields + fromSql + " where " + sqlWhere);
+                   // out.println("select "+ backfields + fromSql + " where " + sqlWhere);
                     if("".equals(bjyjlbids)){
                         bjyjlbids ="-101";
                     }
@@ -342,8 +353,9 @@
                     tableString = " <table  tabletype=\"none\" pagesize=\"" + perpage + "\" >" +
                             "	   <sql backfields=\"" + backfields + "\" sqlform=\"" + fromSql + "\" sqlwhere=\"" + Util.toHtmlForSplitPage(sqlWhere) + "\" sqlorderby=\"" + orderby + "\" sqlprimarykey=\"id\" sqlsortway=\"desc\" />" +
                             "			<head>" +
+                            " 	<col width=\"6%\" text=\"板块\" column=\"yjlbname\" orderkey=\"yjlbname\"  />" +
                             " 	<col width=\"8%\" text=\"统一社会信用代码\" column=\"tyshxydm\" orderkey=\"tyshxydm\" />" +
-                            " 	<col width=\"14%\" text=\"名称\" column=\"mc\" orderkey=\"mc\" linkvaluecolumn=\"id\" linkkey=\"billid\" href=\"/formmode/view/AddFormMode.jsp?type=0&amp;modeId=" + modeid + "&amp;formId=" + formid + "&amp;opentype=0\" target=\"_fullwindow\"/>" +
+                            " 	<col width=\"13%\" text=\"公司名称\" column=\"mc\" orderkey=\"mc\" linkvaluecolumn=\"id\" linkkey=\"billid\" href=\"/formmode/view/AddFormMode.jsp?type=0&amp;modeId=" + modeid + "&amp;formId=" + formid + "&amp;opentype=0\" target=\"_fullwindow\"/>" +
                             " 	<col width=\"6%\" text=\"公司类型\" column=\"gslx\" orderkey=\"gslx\"  />" +
                             " 	<col width=\"10%\" text=\"住所\" column=\"zcdz\" orderkey=\"zcdz\"  />" +
                             " 	<col width=\"8%\" text=\"法定代表人\" column=\"fddbr\" orderkey=\"fddbr\"  />" +

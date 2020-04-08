@@ -150,7 +150,7 @@ weaver.general.AccountType.langId.set(lg);
 			</div>
 		</FORM>
 		<%
-		String backfields = "rownum,id,year,department,budget,amount,case when nvl(budget,0) =0 then 0 else round(nvl(amount,0)/budget,2)*100 end||'%' as fsl,(select nvl(sum(nvl(t2.usedmoney,0)),0) from hs_projectinfo t,uf_prj_usedmoney t1,uf_prj_usedmoney_dt1 t2 where t.id=t1.prjid and t1.id=t2.mainid and t2.year=a.year and t.belongdepart=a.department) as amounthq";
+		String backfields = "rownum,id,year,department,budget,amount,case when nvl(budget,0) =0 then 0 else round(nvl(amount,0)/budget,2)*100 end||'%' as fsl,(select nvl(sum(nvl(t2.usedmoney,0)),0) from hs_projectinfo t,uf_prj_usedmoney t1,uf_prj_usedmoney_dt1 t2 where t.id=t1.prjid and t1.id=t2.mainid and t2.year=a.year and t.belongdepart=a.department and t.status not in('删除')) as amounthq";
 		String fromSql  =  " from (select max(id) as id,year,department,nvl(sum(nvl(budget,0)),0) as budget,nvl(sum(nvl(amount,0)),0) as amount from uf_prj_depbudget group by department,year order by id desc) a";
 		String sqlWhere =  " 1=1  ";
 		if(userid !=1 && "-1".equals(cansee)){

@@ -1,0 +1,5 @@
+alter view v_cw_fpshst as 
+select a.requestid,b.id as dtid ,convert(varchar(100),a.requestid)+'_'+convert(varchar(100),b.id)+'_1' as keyid,c.workflowid,c.lastoperatedate,c.requestmark,d.userid_new,a.sqr,sqryx,a.cbzx1,(select cbzxbmmc from uf_cbzx where id=a.cbzx1) as cbzxbmmc
+,(select gszt from uf_cbzx where id=a.cbzx1) as gszt,d.invoiceType,(select kjkm_Jtm from uf_cbzx where id=a.cbzx1) as km,'交通费' as ywlx,b.sjbxje-b.se as je,b.se,b.kdkje,b.bz
+from formtable_main_326 a,formtable_main_326_dt1 b,workflow_requestbase c,fnainvoiceledger d 
+where a.id=b.mainid and a.requestid=c.requestid and b.fphm=d.id and c.currentnodetype=3

@@ -1,0 +1,9 @@
+2020-02-06 22:39:24,019 INFO [com.weaver.ecology.search.util.SysConfigure] - 初始化Log4j成功>>>
+2020-02-06 22:39:24,020 INFO [com.weaver.ecology.search.util.SysConfigure] - 加载配置文件{searchConf.properties}完成!
+2020-02-06 22:39:24,080 INFO [com.weaver.ecology.search.util.SysConfigure] - 系统数据库类型:oracle
+2020-02-06 22:39:24,841 INFO [com.weaver.ecology.search.util.SysConfigure] - 缓存文档'主类,分类,子类'完成!
+2020-02-06 22:39:24,857 INFO [com.weaver.ecology.search.util.SysConfigure] - 缓存语言资源标签完成!
+2020-02-06 22:39:24,864 INFO [com.weaver.ecology.search.util.IndexDbMng] - 初始化索引库管理完成,当前共有索引库:2
+2020-02-06 22:39:24,865 INFO [com.weaver.ecology.search.util.SearchInitServlet] - SearchInitServlet init in /usr/WEAVER/ecology/
+2020-02-06 22:39:24,865 INFO [com.weaver.ecology.search.util.SearchInitServlet] - 初始化自动索引功能:未启用!
+2020-02-06 22:39:24,865 INFO [com.weaver.ecology.search.util.SearchInitServlet] - 搜索系统初始化完成!

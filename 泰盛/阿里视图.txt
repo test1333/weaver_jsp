@@ -1,0 +1,12 @@
+create or replace view v_trip_flight_order_list as 
+select requestid,passenger_name as cjr,dep_city as cfcs,arr_city as ddcs, substr(dep_date,0,10) as cfrq, substr(ret_date,0,10) as ddrq,trip_type as xclx,cabin_class as cwlx,status as ddzt,flight_no as hbh,b.price as je,b.pay_type as jsfs from alitrip_flight_order_list a left join alitrip_price_list b on a.orderid=b.orderid
+
+
+create or replace view v_trip_hotel_order_list as 
+select requestid,guest as rzgk,city as jdszcs,hotel_name as jdmc, substr(check_in,0,10) as rzsj, substr(check_out,0,10) as ldsj,room_type as fx,order_type_desc as ddlx,order_status_desc as ddzt,b.price as je,b.pay_type as jsfs from alitrip_hotel_order_list a left join alitrip_price_list b on a.orderid=b.orderid
+
+create or replace view v_trip_train_order_list as 
+select requestid,rider_name as ckmc,dep_station as cfz,arr_station as ddz, substr(dep_time,0,10) as cfsj, substr(arr_time,0,10) as ddsj,train_number as cc,train_type as cclx,seat_type as zwlx,ticket_no12306 as ph12306,dep_city as cfcs,arr_city as ddcs,status as ddzt,b.price as je,b.pay_type as jsfs  from alitrip_train_order_list a left join alitrip_price_list b on a.orderid=b.orderid
+
+create or replace view v_trip_vehicle_order_list as 
+select requestid,user_name as ydr,real_from_city_name as cfcs,real_to_city_name as mdcs,from_address as cfd,to_address as mdd,memo as dcsy, car_level as lxjb,car_info as cllx,substr(taken_time,0,10) as ckscsj, substr(driver_confirm_time,0,10) as sjddsj,travel_distance as xsgls,service_type as dcfwlx,business_category as ycyy,order_status as ddzt,b.price as je,b.pay_type as jsfs from alitrip_vehicle_order_list a left join alitrip_price_list b on a.orderid=b.orderid

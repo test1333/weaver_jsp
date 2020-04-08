@@ -181,7 +181,7 @@ weaver.general.AccountType.langId.set(lg);
 		</FORM>
 		<%
 		String backfields = "rownum,id,name, procode,prjtype,manager,prjbudget,begindate,enddate,status,belongdepart,belongCompany,case when isdelay='0' then '是' else '否' end as isdelay";
-		String fromSql  =  " from (select * from hs_projectinfo order by nvl(begindate,'1900-01-01') desc) t1";
+		String fromSql  =  " from (select * from hs_projectinfo where status not in('删除') order by nvl(begindate,'1900-01-01') desc) t1";
 		String sqlWhere =  " 1=1 and belongCompany='"+subcompany+"'";
 		sqlWhere = sqlWhere + projectUtil.getPrjShareWhereByUser(String.valueOf(userid));
 		if(!"".equals(prjname)){

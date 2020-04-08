@@ -110,7 +110,7 @@ weaver.general.AccountType.langId.set(lg);
 		<%
 		String backfields = "t.id,t.name,t.procode,t3.usedmoney ";
 		String fromSql  =  " from hs_projectinfo t,uf_project_type t1,uf_prj_usedmoney t2,uf_prj_usedmoney_dt1 t3";
-		String sqlWhere =  " t.id=t2.prjid and t2.id=t3.mainid and t.prjtype=t1.id and t.belongdepart='"+department+"' and t3.year='"+year+"'  ";
+		String sqlWhere =  " t.id=t2.prjid and t2.id=t3.mainid and t.prjtype=t1.id and t.status not in('删除') and t.belongdepart='"+department+"' and t3.year='"+year+"'  ";
 		
 		//out.print("select "+backfields+fromSql+" where "+sqlWhere);
 		String orderby =  " t.id "  ;

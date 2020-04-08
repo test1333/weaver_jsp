@@ -285,7 +285,9 @@
         var bz = "<%=bz%>";
         if (vid == "") return;
         // alert(vid);
-        var url = "/goodbaby/daisy/payment/payReqList/paydtList_url.jsp?fkqx=" + fkqx + "&bz=" + bz + "&gysmc=" + vid + "&com=" + com;
+          var gysmc = vid.split("+")[0];
+        var comspan = vid.split("+")[1];
+        var url = "/goodbaby/daisy/payment/payReqList/paydtList_url.jsp?fkqx=" + fkqx + "&bz=" + bz + "&gysmc=" + gysmc + "&com=" + comspan;
         var title = "付款";
         openDialog(url, title);
     }

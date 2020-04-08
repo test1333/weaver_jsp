@@ -1,0 +1,9 @@
+create view v_jx_ygtrxx as 
+select id,xm,(select id from hrmresource where workcode=a.gh) as xm1,nf,'1' as jd,nbdd,rltrbl,1 as ys,yf  from uf_ygtrxx a where yf in(0,1,2)
+union all 
+select id,xm,(select id from hrmresource where workcode=a.gh) as xm1,nf,'2' as jd,nbdd,rltrbl,1 as ys,yf  from uf_ygtrxx a where yf in(3,4,5)
+union all 
+select id,xm,(select id from hrmresource where workcode=a.gh) as xm1,nf,'3' as jd,nbdd,rltrbl,1 as ys,yf  from uf_ygtrxx a where yf in(6,7,8)
+union all 
+select id,xm,(select id from hrmresource where workcode=a.gh) as xm1,nf,'4' as jd,nbdd,rltrbl,1 as ys,yf  from uf_ygtrxx a where yf in(9,10,11)
+

@@ -1,0 +1,8 @@
+流程撤销接口说明：
+接口地址：http://127.0.0.1:8999/services/CancelRequestService?wsdl
+方法名：cancelRequest
+方法参数： requestid  //OA流程requestid
+	
+返回值格式 ：
+{"MSG_TYPE":"S","MSG_CONTENT":"撤销成功"}
+说明：MSG_TYPE 执行结果 E 失败 S成功       MSG_CONTENT 执行结果描述

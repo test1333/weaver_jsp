@@ -1,0 +1,13 @@
+create or replace function getleaveSFKY( startdate in varchar2,endDate in varchar2,leavetype in varchar2 )
+return varchar2 is
+       returntime varchar2(100) = 0;
+begin
+
+      select  trunc(to_date(endDate,'yyyy-mm-dd'),'MM')- trunc(to_date(startdate,'yyyy-mm-dd'),'MM') into  returntime from dual;
+
+       if  leavetype = 3 or leavetype = 4 or  leavetype = 8 or  leavetype = 7 or  leavetype = 6 then
+           returntime = 0;
+       end if;
+       return returntime;
+
+end;

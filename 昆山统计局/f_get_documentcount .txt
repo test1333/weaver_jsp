@@ -1,0 +1,57 @@
+alter  function dbo.f_get_documentcount (@i_ryid varchar(20),@i_yf varchar(100),@i_nf varchar(20),@i_ks varchar(20),@i_type varchar(20),@i_dt_type varchar(20))
+     returns int
+as
+begin
+     declare 
+        @result int
+      if  @i_type = 0 --姓名
+       begin
+		 if @i_nf = ''
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where xm=@i_ryid and lb = @i_dt_type 
+		   end
+		 else
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where xm=@i_ryid and lb = @i_dt_type  and nf=@i_nf	
+		   end
+      
+       end
+       else if  @i_type = 1 --科室
+        begin
+		 if @i_nf = ''
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where ks=@i_ks and lb = @i_dt_type 
+		   end
+		 else
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where ks=@i_ks and lb = @i_dt_type  and nf=@i_nf	
+		   end
+      
+       end
+      else if  @i_type = 2 --月份
+        begin
+		 if @i_nf = ''
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where yf=@i_yf and lb = @i_dt_type 
+		   end
+		 else
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where yf=@i_yf and lb = @i_dt_type  and nf=@i_nf	
+		   end
+      
+       end
+      else if  @i_type = 3 --年份
+        begin
+		 if @i_nf = ''
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where lb = @i_dt_type 
+		   end
+		 else
+		   begin
+			select @result=COUNT(1) from uf_Documentreport where lb = @i_dt_type  and nf=@i_nf	
+		   end
+      
+       end
+        
+    return @result
+end

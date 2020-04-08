@@ -132,17 +132,13 @@
                                 <tr>
                                     <td colspan="2">
                                     <table id="oTable1" class="ListStyle detailtable" style="width: 100%" name="oTable1">
-                                        <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                                        <colgroup><col width="34%"></col></colgroup>
                                         <tbody>
                                             <tr class="header detailtitle">
                                                 <td class="detailtitle" nowrap="nowrap"><input id="$label1775244$" class="Label" name="label1775244" value="董事" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775245$" class="Label" name="label1775245" value="开始日期" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775246$" class="Label" name="label1775246" value="结束日期" type="text" /></td>
                                             </tr>
                                             <tr>
                                                 <td class="detailtable"><input id="$field1775244$" class="InputStyle" name="field1775244" value="董事" type="text" /></td>
-                                                <td class="detailtable"><input id="$field1775245$" class="InputStyle" name="field1775245" value="开始日期" type="text" /></td>
-                                                <td class="detailtable"><input id="$field1775246$" class="InputStyle" name="field1775246" value="结束日期" type="text" /></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -159,17 +155,13 @@
                                 <tr>
                                     <td colspan="2">
                                     <table id="oTable2" class="ListStyle detailtable" style="width: 100%" name="oTable2">
-                                        <colgroup><col width="34%"></col><col width="33%"></col><col width="33%"></col></colgroup>
+                                        <colgroup><col width="34%"></col></colgroup>
                                         <tbody>
                                             <tr class="header detailtitle">
                                                 <td class="detailtitle" nowrap="nowrap"><input id="$label1775247$" class="Label" name="label1775247" value="监事" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775248$" class="Label" name="label1775248" value="开始日期" type="text" /></td>
-                                                <td class="detailtitle" nowrap="nowrap"><input id="$label1775249$" class="Label" name="label1775249" value="结束日期" type="text" /></td>
                                             </tr>
                                             <tr>
                                                 <td class="detailtable"><input id="$field1775247$" class="InputStyle" name="field1775247" value="监事" type="text" /></td>
-                                                <td class="detailtable"><input id="$field1775248$" class="InputStyle" name="field1775248" value="开始日期" type="text" /></td>
-                                                <td class="detailtable"><input id="$field1775249$" class="InputStyle" name="field1775249" value="结束日期" type="text" /></td>
                                             </tr>
                                         </tbody>
                                     </table>

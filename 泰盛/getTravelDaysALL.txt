@@ -1,0 +1,24 @@
+create or replace function getTravelDaysALL( i_userid in varchar2,i_sqrq in varchar2)
+return  number is
+       v_result number(10,2) := 0.00;
+       v_day1 number(10,2) := 0.00;
+       v_day2 number(10,2) := 0.00;
+       v_day3 number(10,2) := 0.00;
+
+begin
+    select  nvl(sum(nvl(bcsjccts,0.00)),0.00) into  v_day1 from formtable_main_250 a,workflow_requestbase b where a.requestid=b.requestid and b.currentnodetype in (1,2,3)
+ and TO_CHAR(to_date(ccksrq,'YYYY-MM-DD'),'YYYY-MM') = to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and TO_CHAR(to_date(ccjsrq,'YYYY-MM-DD'),'YYYY-MM') = to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and a.sqr=i_userid;
+
+ select nvl(sum(getTravelDays(ccksrq,to_char(last_day(to_date(ccksrq,'yyyy-mm-dd')),'yyyy-mm-dd'),cckssj,ccjssj,'1')),0.00)  into  v_day2 from formtable_main_250 a,workflow_requestbase b where a.requestid=b.requestid and b.currentnodetype in (1,2,3)
+ and TO_CHAR(to_date(ccksrq,'YYYY-MM-DD'),'YYYY-MM') = to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and TO_CHAR(to_date(ccjsrq,'YYYY-MM-DD'),'YYYY-MM') <> to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and a.sqr=i_userid;
+  select nvl(sum(getTravelDays(to_char(trunc(to_date(ccjsrq,'yyyy-mm-dd'),'MM'),'yyyy-mm-dd') ,ccjsrq,cckssj,ccjssj,'2')),0.00)  into  v_day3 from formtable_main_250 a,workflow_requestbase b where a.requestid=b.requestid and b.currentnodetype in (1,2,3) and ccksrq>'2019-10-10'
+ and TO_CHAR(to_date(ccksrq,'YYYY-MM-DD'),'YYYY-MM') <> to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and TO_CHAR(to_date(ccjsrq,'YYYY-MM-DD'),'YYYY-MM') = to_char(to_date(i_sqrq,'YYYY-MM-DD'),'yyyy-mm')
+ and a.sqr=i_userid;
+ v_result := v_day1+v_day2+v_day3;
+    return v_result;
+end;

@@ -1,0 +1,4 @@
+alter view v_gnsbb_gysfkjcgje as
+select a.skrmc,d.id,d.xtkh as gys,d.yjcbzx,(select name from CRM_CustomerInfo where id=d.xtkh) as gysmc,(select portalloginid from CRM_CustomerInfo where id=d.xtkh) as gysbh, b.lastoperatedate,d.fprq ,cast(isnull(fpze,0)*(select top 1 isnull(hl,1) from uf_invoice_dt1 where mainid=d.id) as numeric(12,2)) as je,(select count(1) from uf_flow_payinternal t, uf_fkzjb t1 where t.pklcid=t1.pklcid and t.pklcmxid=t1.yfkmxid and t1.flag=1 and t.sfpzpk=0 and t.fkid=a.requestid and t.fph=c.fphm) as qrfk
+from formtable_main_273 a,workflow_requestbase b,formtable_main_273_dt1 c ,uf_invoice d
+where a.requestid=b.requestid and a.id=c.mainid and c.fphm=d.id and  b.currentnodetype>=3

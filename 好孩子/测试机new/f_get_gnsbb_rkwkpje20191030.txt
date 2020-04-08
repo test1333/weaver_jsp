@@ -1,0 +1,71 @@
+alter function f_get_gnsbb_rkwkpje(@i_fykm varchar(20),@i_yjcbzx varchar(100),@i_xtgys varchar(20),@i_ckid varchar(20),@i_type varchar(20),@i_dt_type varchar(20))
+     returns decimal(10,2)
+as
+begin
+     declare 
+		@qcje decimal(10,2),
+		@qmje decimal(10,2),
+        @result decimal(10,2)
+     if @i_type = 0 -- 期初
+		begin
+			select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,2))
+		end
+	 else if @i_type = 1  --期末
+	    begin
+			select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1))
+	    end  
+	 else if @i_type = 2  --期末-期初
+	    begin
+			select @qcje=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,2))
+			select @qmje=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1))
+			set @result = @qmje-@qcje
+	    end  
+	else
+		begin
+		    if @i_dt_type = 1  --<=30
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=30 )
+				end
+			else if	@i_dt_type = 2  --31-60
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=60 and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>30)
+				end
+			else if	@i_dt_type = 3  --61-90
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=90 and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>60)
+				end
+			else if	@i_dt_type = 4  --91-120
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=120 and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>90)
+				end
+			else if	@i_dt_type = 5  --121-180
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=180 and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>120)
+				end
+			else if	@i_dt_type = 6  --181-240
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))<=240 and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>180)
+				end
+			else if	@i_dt_type = 7  --241-1年
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and rkrq>=convert(varchar(20),dateAdd(yy,-1,getdate()),23) and DATEDIFF(DAY, rkrq, CONVERT(varchar(10),GETDATE(),120))>240)
+				end
+			else if	@i_dt_type = 8  --1年-2年
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and rkrq>=convert(varchar(20),dateAdd(yy,-2,getdate()),23)  and rkrq<convert(varchar(20),dateAdd(yy,-1,getdate()),23))
+				end
+			else if	@i_dt_type = 9  --2年-3年
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1) and rkrq>=convert(varchar(20),dateAdd(yy,-3,getdate()),23)  and rkrq<convert(varchar(20),dateAdd(yy,-2,getdate()),23))
+				end
+			else if	@i_dt_type = 10  --3年以上
+				begin
+					select @result=isnull(sum(cast(isnull(wsje,0.00)*isnull(c.hl,1) as numeric(12,2))),0.00) from formtable_main_235 a,formtable_main_235_dt1 b,formtable_main_234 c where  a.id=b.mainid and b.cgsqd=c.requestid and a.requestid in(select requestid from v_gnsbb_rkdwkp where fydm=@i_fykm and yjcbzx=@i_yjcbzx and xtgys=@i_xtgys and shck=@i_ckid and type in(0,1)  and rkrq<convert(varchar(20),dateAdd(yy,-3,getdate()),23))
+				end
+			else
+				begin
+					set @result=0.00
+				end
+		end  
+	return @result
+end

@@ -1,0 +1,59 @@
+ecodeSDK.overwritePropsFnQueueMapSet('WeaNewScrollPagination', {
+    fn:(Com,newProps,name)=>{
+       const { pathname, hash } = window.location;
+         if(pathname === "/spa/cowork/static/index.html" && hash.indexOf('#/main/cowork/main') >= 0 ){
+          
+           if( window.location.href.indexOf('?coworkids=')>0){
+             if(Com.children[0].props.children[0] == undefined){
+               return;
+             }
+              var checkprop = Com.children[0].props.children[0].props;
+              if(checkprop != undefined){
+              //console.log(window.location.href);
+              let coworkid2 = window.location.href.substr(window.location.href.indexOf('?coworkids='));
+              let coworkids = ','+window.location.href.substr(window.location.href.indexOf('?')+11)+',';  
+              var datalist = Com.children[0].props.children[0].props.children[1].props.children.props.children;            
+              if(datalist.length>0){
+                let delid='-1'
+                let i=0;
+                for(let v of datalist){                  
+                    if(coworkids.indexOf(','+v.props.coworkid+',')<0){
+                        delid=delid+','+i
+                    }else{
+                      Com.children[0].props.children[0].props.children[1].props.children.props.children[i].props.coworkid=v.props.coworkid+coworkid2;
+                    }
+                      i=i+1
+                }
+                let arrids = delid.split(",").reverse();
+                for(let v of arrids){
+                  if(v != -1){
+                      Com.children[0].props.children[0].props.children[1].props.children.props.children.splice(v, 1)
+                  }
+                } 
+              }               
+              }
+           }
+            
+         }
+      
+     
+    }
+
+
+})
+ecodeSDK.overwritePropsFnQueueMapSet('WeaLeftRightLayout', {
+    fn:(Com,newProps,name)=>{
+       const { pathname, hash } = window.location;
+         if(pathname === "/spa/cowork/static/index.html" && hash.indexOf('#/main/cowork/main') >= 0 ){      
+           if(window.location.href.indexOf('?coworkids=')>0){
+              //console.log(Com);
+              Com.showBtn=false;
+             
+           } 
+         }
+      
+     
+    }
+
+
+})

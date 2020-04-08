@@ -58,6 +58,7 @@ weaver.general.AccountType.langId.set(lg);
 	GetGNSTableName gg = new GetGNSTableName();
 	String lrktablename = gg.getTableName("RKD");
 	String cgdtablename = gg.getTableName("CGDD");
+	String fksqdtablename = gg.getTableName("FKSQD");
 	String month = "";
 	if("".equals(year)){
 		year = nowyear;
@@ -198,7 +199,7 @@ weaver.general.AccountType.langId.set(lg);
 		<%
 		String backfields = "  c.SJSHSL_1,cast(c.DJ_1*(select 	b.hl from "+cgdtablename+" a,uf_hl b where a.biz=b.id and a.requestid=c.cgsqd)  as numeric(18,4)) as DJ_1 ,cast(c.JE_1*(select 	b.hl from "+cgdtablename+" a,uf_hl b where a.biz=b.id and a.requestid=c.cgsqd)  as numeric(18,2)) as JE_1,(select taxname from uf_tax_rate where id=c.sl) as sl,a.requestid as keyid,a.requestid,b.lastoperatedate,a.cbzx,a.SHCK,a.rkdh,a.shr,a.xtgys,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,(select CKMC from uf_stocks where id=a.shck) as shckmc,(select name from crm_customerinfo where id=a.xtgys) as gys,b.requestnamenew,(select imagefileid from docimagefile where docid=convert(varchar(20),a.pzfj)) as imagefileid,(select imagefilename from docimagefile where docid=convert(varchar(20),a.pzfj)) as imagefilename";
 		String fromSql  =  " from "+lrktablename+" a,workflow_requestbase b,"+lrktablename+"_dt1 c";
-		String sqlWhere =  " a.requestid=b.requestid  and a.id=c.mainid and b.currentnodetype=3 and a.requestid not in(select rid from uf_invoice_dt1 where rid is not null)";
+		String sqlWhere =  " a.requestid=b.requestid  and a.id=c.mainid and b.currentnodetype=3 and (a.requestid not in(select rid from uf_invoice_dt1 where rid is not null) or (select count(1) from "+fksqdtablename+" t,"+fksqdtablename+"_dt1 t1,workflow_requestbase t2 where t.id=t1.mainid and t.requestId=t2.requestid and t2.currentnodeid in(select nodeid from uf_fprzjdpz) and t1.fphm in(select ta1.id from  uf_invoice ta1, uf_invoice_dt1 ta2 where ta1.id=ta2.mainid and ta2.rid=a.requestid))<=0)";
 		
 		//if("".equals(yf) || "".equals(yjcbzx)){
 		//	sqlWhere = sqlWhere + " and 1=2 ";

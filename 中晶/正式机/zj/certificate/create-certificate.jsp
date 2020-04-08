@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ page import="weaver.general.Util"%>
 <%@ page import="java.util.*,weaver.hrm.appdetach.*"%>
 <%@ page import="java.text.SimpleDateFormat"%>
@@ -84,7 +84,7 @@ weaver.general.AccountType.langId.set(lg);
 				<tr>
 					<td></td>
 					<td class="rightSearchSpan" style="text-align:right;">
-					<input type="button" value="生成凭证" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice();"/>
+					<input type="button" value="生成凭证" id="scpz" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice();"/>
 					<!--<span id="advancedSearch" class="advancedSearch"><%=SystemEnv.getHtmlLabelName(21995,user.getLanguage())%></span>-->
 						<span title="<%=SystemEnv.getHtmlLabelName(23036,user.getLanguage())%>" class="cornerMenu"></span>
 					</td>
@@ -159,6 +159,7 @@ weaver.general.AccountType.langId.set(lg);
 	%>
 	<wea:SplitPageTag isShowTopInfo="false" tableString="<%=tableString%>" mode="run"  />
 	<script type="text/javascript">
+	var checkflag = "0";
 		 function onBtnSearchClick() {
 			report.submit();
 		}
@@ -168,6 +169,13 @@ weaver.general.AccountType.langId.set(lg);
   		}
 	
 	   function doservice(){
+		   if(checkflag=="0"){
+			   checkflag = "1";
+		   }else{
+			   return false;
+		   }
+		   var parentWin = window.parent;
+       		 parentWin.hiddenbutton();
 		   	var ids = _xtable_CheckedCheckboxId();
           //alert(ids);
 		  if(ids!=null && ids!=""){
@@ -195,6 +203,8 @@ weaver.general.AccountType.langId.set(lg);
 				window.location.reload();
 			}else{
 				alert("请先选择需要生成凭证的流程");
+				 parentWin.showbutton();
+				    checkflag = "0";
 			}
 	   }
    </script>

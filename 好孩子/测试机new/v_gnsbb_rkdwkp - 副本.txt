@@ -1,0 +1,12 @@
+alter view v_gnsbb_rkdwkp as 
+select a.requestid,dbo.get_gns_fykm(isnull(a.fykm,''),a.cbzx,c.WLMC_1,'1') as fydm,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,(select name from CRM_CustomerInfo where id=a.xtgys) as gysmc ,a.xtgys,(select portalloginid from CRM_CustomerInfo where id=a.xtgys) as gysbh,(select CKMC from uf_stocks where id=a.shck) as shckmc,a.shck,'0' as type ,b.lastoperatedate as rkrq
+from formtable_main_235 a,workflow_requestbase b,formtable_main_235_dt1 c 
+where a.requestid=b.requestid and a.id=c.mainid and b.currentnodetype=3 and a.requestid not in(select rid from uf_invoice_dt1 where rid is not null) and  b.lastoperatedate<CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)
+union all
+select a.requestid,dbo.get_gns_fykm(isnull(a.fykm,''),a.cbzx,c.WLMC_1,'1') as fydm,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,(select name from CRM_CustomerInfo where id=a.xtgys) as gysmc ,a.xtgys,(select portalloginid from CRM_CustomerInfo where id=a.xtgys) as gysbh,(select CKMC from uf_stocks where id=a.shck) as shckmc,a.shck,'1' as type ,b.lastoperatedate as rkrq
+from formtable_main_235 a,workflow_requestbase b,formtable_main_235_dt1 c 
+where a.requestid=b.requestid and a.id=c.mainid and b.currentnodetype=3 and a.requestid not in(select rid from uf_invoice_dt1 where rid is not null) and  b.lastoperatedate>=CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)
+union all
+select distinct a.requestid,dbo.get_gns_fykm(isnull(a.fykm,''),a.cbzx,c.WLMC_1,'1') as fydm,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,(select name from CRM_CustomerInfo where id=a.xtgys) as gysmc ,a.xtgys,(select portalloginid from CRM_CustomerInfo where id=a.xtgys) as gysbh,(select CKMC from uf_stocks where id=a.shck) as shckmc,a.shck,'2' as type ,b.lastoperatedate as rkrq
+from formtable_main_235 a,workflow_requestbase b,formtable_main_235_dt1 c ,uf_invoice_dt1 d,uf_invoice e
+where a.requestid=b.requestid and a.id=c.mainid  and a.requestid=d.rid and e.id=d.mainid and b.currentnodetype=3 and  b.lastoperatedate<CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23) and e.whsj>=CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)

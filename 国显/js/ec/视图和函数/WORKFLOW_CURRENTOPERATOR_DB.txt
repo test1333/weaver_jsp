@@ -1,8 +1,9 @@
+
 create or replace trigger WORKFLOW_CURRENTOPERATOR_DB
   before UPDATE  of viewtype on Workflow_Currentoperator
   for each row
  when (new.isremark='0 ' and new.viewtype='-2' )
 begin
- update ofs_todo_data@dblink_oa set  viewtype=1 where flowid=:old.requestid and receiver=(select loginid from hrmresource where id=:old.userid) and  islasttimes=1 and isremark=0;
+ update ofs_todo_data@dblink_oa set  viewtype=1 where SYSCODE='EC' and flowid=to_char(:old.requestid) and receiver=(select case when nvl(belongto,0)>1 then (select loginid from hrmresource where id=a.belongto) else loginid end from hrmresource a where id=:old.userid) and  islasttimes=1 and isremark=0;
 
 end;

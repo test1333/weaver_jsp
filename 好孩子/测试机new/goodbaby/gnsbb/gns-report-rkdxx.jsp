@@ -48,7 +48,7 @@ weaver.general.AccountType.langId.set(lg);
 	String needfav ="1";
 	String needhelp ="";
 	boolean flagaccount = weaver.general.GCONST.getMOREACCOUNTLANDING();
-    String out_pageId = "gnsreportrkdxx_1";
+    String out_pageId = "gnsreportrkdxx_4";
 	String sql = "";
 	
 	String wlmc = Util.null2String(request.getParameter("wlmc"));
@@ -72,6 +72,15 @@ weaver.general.AccountType.langId.set(lg);
 			month=year+yf;
 		}
 	}
+		String cbzx = Util.null2String(request.getParameter("cbzx"));
+	String cbzxspan = "";
+	 if(!"".equals(cbzx)){
+      sql = "select cbzxbmmc from uf_cbzx where id="+cbzx;
+      rs.executeSql(sql);
+      if(rs.next()){
+          cbzxspan = Util.null2String(rs.getString("cbzxbmmc"));
+      }
+  }
 	GetGNSTableName gg = new GetGNSTableName();
 	String lrktablename = gg.getTableName("RKD");
 	String cgdtablename = gg.getTableName("CGDD");
@@ -189,22 +198,22 @@ weaver.general.AccountType.langId.set(lg);
 					browserUrl='/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.yjcbzx'>
 					</brow:browser>
 			 </wea:item>
-					<wea:item>状态</wea:item>
-					<wea:item>
-						<select class="e8_btn_top middle" name="zt" id="zy">
-							<option value="" <%if("".equals(zt)){%> selected<%} %>>
-								<%=""%></option>
-							<option value="0" <%if("0".equals(zt)){%> selected<%} %>>
-								<%="发起"%></option>
-							<option value="1" <%if("1".equals(zt)){%> selected<%} %>>
-								<%="审批中"%></option>
-							<option value="2" <%if("2".equals(zt)){%> selected<%} %>>
-								<%="审批完成"%></option>
-						
-
-
-						</select>
-					</wea:item>
+				<wea:item>成本中心</wea:item>
+				<wea:item>
+					<brow:browser name='cbzx'
+					viewType='0'
+					browserValue='<%=cbzx%>'
+					isMustInput='1'
+					browserSpanValue='<%=cbzxspan%>'
+					hasInput='true'
+					linkUrl=''
+					completeUrl=''
+					width='60%'
+					isSingle='true'
+					hasAdd='false'
+					browserUrl='/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.cbzx'>
+					</brow:browser>
+			 </wea:item>	
 			
 				<wea:item>物料名称</wea:item>
 				<wea:item>
@@ -283,33 +292,36 @@ weaver.general.AccountType.langId.set(lg);
 		</FORM>
 		
 		<%
-		String backfields = "a.requestid as rkd, a.zjlbm,(SUBSTRING(b.createdate,0,5)+SUBSTRING(b.createdate,6,2)) as cwny, (select CKMC from uf_stocks where id=a.shck) as shckmc,(select t1.cgsqdbh from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=(select dtid from "+cgdtablename+" where requestid=c.cgsqd )) as cgsqdbh,RKDH,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,c.wlbh_1,(select wlmc from uf_materialDatas where id=c.WLMC_1) as WLMC,c.XH1,c.GG1,'' as dw,c.DJ_1,c.SJSHSL_1,c.JE_1,a.SHRQ,a.SHR,(select name from CRM_CustomerInfo where id=a.xtgys) as gysmc,a.SHDW,(select kmbm1 from uf_fykm where id=a.fykm) as fydm,case when b.currentnodetype=3 then '审批完成' when b.currentnodetype=0 then '发起' else '审批中' end as zt,case when (select count(1) from "+fksqdtablename+" t,"+fksqdtablename+"_dt1 t1,workflow_requestbase t2 where t.id=t1.mainid and t.requestId=t2.requestid and t2.currentnodetype>=3 and t1.fphm in(select t.id from  uf_invoice ta1, uf_invoice_dt1 ta2 where ta1.id=ta2.mainid and ta2.rid=a.requestid))>0 then '是' else '否'end as sfrz";
-		String fromSql  =  " from "+lrktablename+" a,workflow_requestbase b,"+lrktablename+"_dt1 c";
-		String sqlWhere =  " a.requestid=b.requestid and a.id=c.mainid  ";
+		String backfields = "a.requestid as rkd, a.zjlbm,(SUBSTRING(b.lastoperatedate,0,5)+SUBSTRING(b.lastoperatedate,6,2)) as cwny, (select CKMC from uf_stocks where id=a.shck) as shckmc,(select t1.cgsqdbh from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=(select dtid from "+cgdtablename+" where requestid=c.cgsqd )) as cgsqdbh,RKDH,(select yjcbzx from uf_cbzx where id=a.cbzx) as yjcbzx,(select cbzxbmmc from uf_cbzx where id=a.cbzx) as CBZX,c.wlbh_1,d.wlmc as WLMC,d.xh,d.GG,(select dw from uf_unitForms where id=d.dw)as dw,c.DJ_1,c.SJSHSL_1,c.JE_1,(select taxname from uf_tax_rate where id=c.sl) as sl,a.SHRQ,a.SHR,(select name from CRM_CustomerInfo where id=a.xtgys) as gysmc,a.SHDW,dbo.get_gns_fykm(isnull(a.fykm,''),a.cbzx,c.WLMC_1,'0') as fymc,dbo.get_gns_fykm(isnull(a.fykm,''),a.cbzx,c.WLMC_1,'1') as fydm,case when b.currentnodetype=3 then '审批完成' when b.currentnodetype=0 then '发起' else '审批中' end as zt,case when (select count(1) from "+fksqdtablename+" t,"+fksqdtablename+"_dt1 t1,workflow_requestbase t2 where t.id=t1.mainid and t.requestId=t2.requestid and t2.currentnodeid in(select nodeid from uf_fprzjdpz) and t1.fphm in(select ta1.id from  uf_invoice ta1, uf_invoice_dt1 ta2 where ta1.id=ta2.mainid and ta2.rid=a.requestid))>0 then '是' else '否'end as sfrz,(select DDBH from "+cgdtablename+" where requestid=c.cgsqd) as ddbh";
+		String fromSql  =  " from "+lrktablename+" a,workflow_requestbase b,"+lrktablename+"_dt1 c,uf_materialDatas d";
+		String sqlWhere =  " a.requestid=b.requestid and a.id=c.mainid and c.WLMC_1=d.id and b.currentnodetype>=3";
 		if(!"".equals(bm)){
 			sqlWhere +=" and a.zjlbm = '"+bm+"' ";
 		}
 		if(!"".equals(yjcbzx)){
 			sqlWhere +=" and (select yjcbzx from uf_cbzx where id=a.cbzx) = '"+yjcbzx+"' ";
 		}
+			if(!"".equals(cbzx)){
+			sqlWhere +=" and a.cbzx = '"+cbzx+"' ";
+		}
 		if(!"".equals(nppxl)){
-			sqlWhere +=" and (select wllx from uf_materialDatas where id=c.WLMC_1) ='"+nppxl+"' ";
+			sqlWhere +=" and d.wllx ='"+nppxl+"' ";
 		}
 		if(!"".equals(nppdl)){
-			sqlWhere +=" and (select (select zml from uf_NPP where id=wllx)  from uf_materialDatas where id=c.WLMC_1) ='"+nppdl+"' ";
+			sqlWhere +=" and (select zml from uf_NPP where id=d.wllx)  ='"+nppdl+"' ";
 		}
-		if(!"".equals(zt)){
-			if("0".equals(zt)){
-				sqlWhere +=" and b.currentnodetype = 0 ";
-			}else if("1".equals(zt)){
-				sqlWhere +=" and b.currentnodetype in(1,2) ";
-			}else{
-				sqlWhere +=" and b.currentnodetype >= 3 ";
-			}
+	//	if(!"".equals(zt)){
+		//	if("0".equals(zt)){
+		//		sqlWhere +=" and b.currentnodetype = 0 ";
+		//	}else if("1".equals(zt)){
+		//		sqlWhere +=" and b.currentnodetype in(1,2) ";
+		//	}else{
+		//		sqlWhere +=" and b.currentnodetype >= 3 ";
+		//	}
 			
-		}
+		//}
 		if(!"".equals(wlmc)){
-			sqlWhere +=" and (select wlmc from uf_materialDatas where id=c.WLMC_1) like '%"+wlmc+"%' ";
+			sqlWhere +=" and d.wlmc like '%"+wlmc+"%' ";
 		}
 		if(!"".equals(beginDate)){
 			sqlWhere +=" and a.SHRQ >='"+beginDate+"' ";
@@ -319,7 +331,7 @@ weaver.general.AccountType.langId.set(lg);
 		}
 
 		if(!"".equals(month)){
-			sqlWhere +=" and (SUBSTRING(b.createdate,0,5)+SUBSTRING(b.createdate,6,2)) ='"+month+"' ";
+			sqlWhere +=" and (SUBSTRING(b.lastoperatedate,0,5)+SUBSTRING(b.lastoperatedate,6,2)) ='"+month+"' ";
 		}
 		
 		
@@ -342,24 +354,28 @@ weaver.general.AccountType.langId.set(lg);
 		  "<col width=\"100px\" text=\"50部门\" column=\"zjlbm\" orderkey=\"zjlbm\"  transmethod=\"weaver.hrm.company.DepartmentComInfo.getDepartmentname\"/>"+
 		  "<col width=\"100px\" text=\"财务年月\" column=\"cwny\" orderkey=\"cwny\"  />"+ 
 			"<col width=\"100px\" text=\"入库仓库\" column=\"shckmc\" orderkey=\"shckmc\" />"+ 
-			"<col width=\"100px\" text=\"采购申请编号/合同编号\" column=\"cgsqdbh\" orderkey=\"cgsqdbh\"  />"+ 
-			"<col width=\"100px\" text=\"入库单编号\" column=\"RKDH\" orderkey=\"RKDH\"  />"+ 
+			"<col width=\"120px\" text=\"采购申请编号\" column=\"cgsqdbh\" orderkey=\"cgsqdbh\"  />"+ 
+			"<col width=\"120px\" text=\"采购订单编号\" column=\"ddbh\" orderkey=\"ddbh\"  />"+ 
+			"<col width=\"120px\" text=\"入库单编号\" column=\"RKDH\" orderkey=\"RKDH\"  />"+ 
 			"<col width=\"100px\" text=\"一级成本中心\" column=\"yjcbzx\" orderkey=\"yjcbzx\"  />"+ 
+			"<col width=\"100px\" text=\"成本中心\" column=\"cbzx\" orderkey=\"cbzx\"  />"+ 
 			"<col width=\"100px\" text=\"物料代码\" column=\"wlbh_1\" orderkey=\"wlbh_1\"  />"+ 
 			"<col width=\"100px\"  text=\"物料名称\" column=\"WLMC\" orderkey=\"WLMC\"  />"+
-			"<col width=\"100px\"  text=\"型号\" column=\"XH1\" orderkey=\"XH1\" />"+
-			"<col width=\"100px\" text=\"规格\" column=\"GG1\" orderkey=\"GG1\"  />"+ 
+			"<col width=\"100px\"  text=\"型号\" column=\"xh\" orderkey=\"xh\" />"+
+			"<col width=\"100px\" text=\"规格\" column=\"GG\" orderkey=\"GG\"  />"+ 
 			"<col width=\"100px\" text=\"单位\" column=\"dw\" orderkey=\"dw\"  />"+ 	
 			"<col width=\"100px\" text=\"P0/单价\" column=\"DJ_1\" orderkey=\"DJ_1\"  />"+ 		
 			"<col width=\"100px\" text=\"入库数量\" column=\"SJSHSL_1\" orderkey=\"SJSHSL_1\"  />"+ 
 			"<col width=\"100px\" text=\"金额\" column=\"JE_1\" orderkey=\"JE_1\"  />"+ 
+			"<col width=\"100px\" text=\"税率\" column=\"sl\" orderkey=\"sl\"  />"+ 
 			"<col width=\"100px\" text=\"入库日期\" column=\"SHRQ\" orderkey=\"SHRQ\"  />"+ 
-			"<col width=\"100px\" text=\"申请人\" column=\"SHR\" orderkey=\"SHR\"  />"+ 
+			"<col width=\"100px\" text=\"申请人\" column=\"SHR\" orderkey=\"SHR\"  transmethod='weaver.proj.util.ProjectTransUtil.getResourceNamesWithLink'/>"+ 
 			"<col width=\"100px\" text=\"状态\" column=\"zt\" orderkey=\"zt\"  />"+ 
 			"<col width=\"100px\" text=\"供应商名称\" column=\"gysmc\" orderkey=\"gysmc\"  />"+ 
 			"<col width=\"100px\" text=\"收货地址 \" column=\"SHDW\" orderkey=\"SHDW\"  />"+ 		
 			"<col width=\"100px\" text=\"退货单号\" column=\"rkd\" orderkey=\"rkd\"  transmethod=\"goodbaby.gns.bb.BbTransUtil.getAllThdh\" />"+ 	
-			"<col width=\"100px\" text=\"费用代码\" column=\"fydm\" orderkey=\"fydm\"  />"+ 
+			"<col width=\"100px\" text=\"科目名称\" column=\"fymc\" orderkey=\"fymc\"  />"+ 
+		"<col width=\"100px\" text=\"科目代码\" column=\"fydm\" orderkey=\"fydm\"  />"+ 
 			"<col width=\"100px\" text=\"是否入账\" column=\"sfrz\" orderkey=\"sfrz\"  />"+ 
 						"</head>"+
 		 "</table>";

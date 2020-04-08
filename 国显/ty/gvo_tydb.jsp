@@ -93,9 +93,9 @@
 			updateFatherVal(recordCount); 
 		}
 		
-		function updateFatherVal(recordCount){
-			parent.reloadLeftNum();
-		}
+		// function updateFatherVal(recordCount){
+		// 	parent.reloadLeftNum();
+		// }
 		</script>
 	</head>
 <%!
@@ -153,6 +153,8 @@
 		String isFromMessage = Util.null2String(request.getParameter("isFromMessage"));
 		String processing = Util.null2String(request.getParameter("processing"));
 		String scope = Util.null2String(request.getParameter("viewScope"));
+
+		//out.print(scope);
 		//System.out.println("类型："+scope);
 		String urlType = "";
 		if(scope.equals("doing")){
@@ -232,6 +234,7 @@
 		//add by xhheng @20050414 for TD 1545
 		int iswaitdo = Util.getIntValue(request.getParameter("iswaitdo"), 0);
 		int isovertime = Util.getIntValue(request.getParameter("isovertime"), 0);
+		fromself = "1";
 		if (fromself.equals("1")) {
 			SearchClause.resetClause(); //added by xwj for td2045 on2005-05-26 
 			workflowtype = Util.null2String(request.getParameter("workflowtype"));
@@ -606,34 +609,34 @@ userlist.add(Belongtoid + "");
 			}
 		} else {
 
-			if (!Util.null2String(SearchClause.getWhereClause()).equals("")) {
-				String tempstr = SearchClause.getWhereClause();
-				if (tempstr.indexOf("t1.workflowid") != -1) {
-					startIndex = tempstr.indexOf("t1.workflowid") + 13;//added by xwj for td2045 on 2005-05-26
-					if (tempstr.indexOf("and") != -1) {
-						if (tempstr.indexOf("(t1.deleted=0") != -1) {
-							int startIndex1 = tempstr.indexOf("and");
-							int startIndex2 = tempstr.indexOf("and", startIndex1 + 1);
-							strworkflowid = tempstr.substring(startIndex, startIndex2);
-						} else {
-							strworkflowid = tempstr.substring(startIndex, tempstr.indexOf("and"));
-						}
-						if (strworkflowid.indexOf("(") != -1 && strworkflowid.indexOf(")") == -1)
-							strworkflowid += ")";
-					} else
-						strworkflowid = tempstr.substring(startIndex, tempstr.indexOf(")") + 1);
-					if (strworkflowid.indexOf("(") != -1 && strworkflowid.indexOf(")") == -1)
-						strworkflowid += ")";
-				}
-			} else {
-				if (!workflowid.equals("")) {
-                    if(workflowid.indexOf("-")!=-1){
-                        strworkflowid = " in (" + workflowid + ")";
-                    }else {
-                        strworkflowid = " in (" + WorkflowVersion.getAllVersionStringByWFIDs(workflowid) + ")";
-                    }
-                }
-			}
+			//if (!Util.null2String(SearchClause.getWhereClause()).equals("")) {
+			//	String tempstr = SearchClause.getWhereClause();
+			//	if (tempstr.indexOf("t1.workflowid") != -1) {
+			//		startIndex = tempstr.indexOf("t1.workflowid") + 13;//added by xwj for td2045 on 2005-05-26
+			//		if (tempstr.indexOf("and") != -1) {
+			//			if (tempstr.indexOf("(t1.deleted=0") != -1) {
+			//				int startIndex1 = tempstr.indexOf("and");
+			//				int startIndex2 = tempstr.indexOf("and", startIndex1 + 1);
+			//				strworkflowid = tempstr.substring(startIndex, startIndex2);
+			//			} else {
+			//				strworkflowid = tempstr.substring(startIndex, tempstr.indexOf("and"));
+			//			}
+			//			if (strworkflowid.indexOf("(") != -1 && strworkflowid.indexOf(")") == -1)
+			//				strworkflowid += ")";
+			//		} else
+			//			strworkflowid = tempstr.substring(startIndex, tempstr.indexOf(")") + 1);
+			//		if (strworkflowid.indexOf("(") != -1 && strworkflowid.indexOf(")") == -1)
+			//			strworkflowid += ")";
+			//	}
+			//} else {
+			//	if (!workflowid.equals("")) {
+            //        if(workflowid.indexOf("-")!=-1){
+             //           strworkflowid = " in (" + workflowid + ")";
+            //        }else {
+            //            strworkflowid = " in (" + WorkflowVersion.getAllVersionStringByWFIDs(workflowid) + ")";
+            //        }
+            //    }
+			//}
 		}
 
 		if (strworkflowid.equals("")) {
@@ -673,6 +676,7 @@ userlist.add(Belongtoid + "");
 				hascreatedate = true;
 				hasreceivedpersons = true;
 				hasshowsysname = true ;
+				hasrequestlevel = true;
 		}else if(scope.equals("done")||scope.equals("complete")){
 				hasrequestname = true;
 				hasworkflowname = true;
@@ -680,6 +684,7 @@ userlist.add(Belongtoid + "");
 				hasreceivetime = true;
 				hascurrentnode = true;
 				hasreceivedpersons = true;
+				hasrequestlevel = true;
 				if(ofso.getShowdone().equals("1")){
 					hasshowsysname = true ;
 				}
@@ -690,6 +695,7 @@ userlist.add(Belongtoid + "");
 				hascurrentnode = true;
 				hasreceivedpersons = true;
 				hasshowsysname = true ;
+				hasrequestlevel = true;
 		}else{
 				hasrequestname = true;
 				hasworkflowname = true;
@@ -697,6 +703,7 @@ userlist.add(Belongtoid + "");
 				hascreatedate = true;
 				hascurrentnode = true;
 				hasreceivedpersons = true;
+				hasrequestlevel = true;
 		}
 
 		//update by fanggsh 20060711 for TD4532 begin
@@ -724,7 +731,7 @@ userlist.add(Belongtoid + "");
 			RCMenuHeight += RCMenuHeightStep;
 		}
 		
-		String pageId = "gvo_tydb1";
+		String pageId = "gvo_tydb120181127";
 		
 	%>
 		<%@ include file="/systeminfo/TopTitle_wev8.jsp" %>
@@ -1160,15 +1167,15 @@ userlist.add(Belongtoid + "");
 													// 处理已办排序 end
 													//-------------------------------------------
 													//最外层查询字段
-                                                    String backfields0 = " requestid,requestmark,createdate, createtime,creater, creatertype, workflowid, requestname, requestnamenew, status,requestlevel,currentnodeid,currentnodename,viewtype,userid,receivedate,receivetime,isremark,nodeid,agentorbyagentid,agenttype,isprocessed " + operateDateTimeFieldSql0+",systype,workflowtype";
+                                                    String backfields0 = " requestid,requestmark,createdate, createtime,creater, creatertype, workflowid, requestname, requestnamenew, status,requestlevel,currentnodeid,currentnodename,viewtype,userid,receivedate,receivetime,isremark,nodeid,agentorbyagentid,agenttype,isprocessed " + operateDateTimeFieldSql0+",systype,workflowtype,ofsid";
                                                     //原始查询字段
-                                                    String backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,'' as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype";
+                                                    String backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,'' as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype,0 as ofsid";
                                                     //异构系统查询字段
-                                                    String backfieldsOs = " requestid,'' as requestmark,createdate, createtime,creatorid as creater, 0 as creatertype, workflowid, requestname, requestname as requestnamenew, '' as status,-1 as requestlevel,-1 as currentnodeid,nodename as currentnodename ,viewtype,userid,receivedate,receivetime,isremark,0 as nodeid, -1 as agentorbyagentid,'0' as agenttype,'0' as isprocessed " + operateDateTimeFieldSqlOs +",'1' as systype, sysid as workflowtype";
+                                                    String backfieldsOs = " requestid,'' as requestmark,createdate, createtime,creatorid as creater, 0 as creatertype, workflowid, requestname, requestname as requestnamenew, '' as status,nvl(requestlevel,0) as requestlevel,-1 as currentnodeid,nodename as currentnodename ,viewtype,userid,receivedate,receivetime,isremark,0 as nodeid, -1 as agentorbyagentid,'0' as agenttype,'0' as isprocessed " + operateDateTimeFieldSqlOs +",'1' as systype, sysid as workflowtype,id as ofsid";
 													
 													String fromSql = " from workflow_requestbase t1,workflow_currentoperator t2 ";//xxxxx
 													String sqlWhere = sqlwhere;
-													String para2 = "column:requestid+column:workflowid+column:viewtype+" + isovertime + "+" + user.getLanguage() + "+column:nodeid+column:isremark+" + user.getUID() + "+column:agentorbyagentid+column:agenttype+column:isprocessed+column:userid+"+myrequest+"+column:creater";
+													String para2 = "column:requestid+column:workflowid+column:viewtype+" + isovertime + "+" + user.getLanguage() + "+column:nodeid+column:isremark+" + user.getUID() + "+column:agentorbyagentid+column:agenttype+column:isprocessed+column:userid+"+myrequest+"+column:creater+column:ofsid";
 													String para4 = user.getLanguage() + "+" + user.getUID() + "+column:userid";
 													if (!docids.equals("")) {
 														fromSql = fromSql + ",workflow_form t4 ";
@@ -1275,14 +1282,15 @@ userlist.add(Belongtoid + "");
 													os_currentnodeorderby = "t1.currentnodename";
 													os_currentnodeotherpara = "column:requestid+column:currentnodename";
 													if (RecordSet.getDBType().equals("oracle")) {
-														backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,to_char(nodeid) as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype";
+														backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,to_char(nodeid) as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype,0 as ofsid";
 													}else{
-														backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,cast(nodeid as nvarchar) as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype";
+														backfields = " t1.requestid,t1.requestmark,t1.createdate, t1.createtime,t1.creater, t1.creatertype, t1.workflowid, t1.requestname, t1.requestnamenew, t1.status,t1.requestlevel,t1.currentnodeid,cast(nodeid as nvarchar) as currentnodename,t2.viewtype,t2.userid,t2.receivedate,t2.receivetime,t2.isremark,t2.nodeid,t2.agentorbyagentid,t2.agenttype,t2.isprocessed " + operateDateTimeFieldSql+" ,'0' as systype,t2.workflowtype,0 as ofsid";
 													}
 													
-	                                                para2 = "column:requestid+column:workflowid+column:viewtype+" + isovertime + "+" + user.getLanguage() + "+column:nodeid+column:isremark+" + user.getUID() + "+column:agentorbyagentid+column:agenttype+column:isprocessed+column:userid+"+myrequest+"+column:creater+column:systype+column:workflowtype";
-                                                    fromSql = " from (select "+backfields0+" from (select "+backfields+" "+fromSql+""+sqlWhere+" and t2.isremark not in(2,4,8,9) and t2.islasttimes=1 and t1.workflowid not in(641,13,1,2,3,4,9,741) and  nvl(t2.takisremark,0) not in(-2) union (select distinct "+backfieldsOs+" from ofs_todo_data "+sqlwhereos+" and islasttimes=1 and isremark=0) ) t1 ) t1 ";
-                                                    orderby = " receivedate ,receivetime ";
+	                                                para2 = "column:requestid+column:workflowid+column:viewtype+" + isovertime + "+" + user.getLanguage() + "+column:nodeid+column:isremark+" + user.getUID() + "+column:agentorbyagentid+column:agenttype+column:isprocessed+column:userid+"+myrequest+"+column:creater+column:systype+column:workflowtype+column:ofsid";
+                                                    //fromSql = " from (select "+backfields0+" from (select "+backfields+" "+fromSql+""+sqlWhere+" and t2.isremark not in(2,4,8,9) and t2.islasttimes=1 and t1.workflowid not in(641,13,1,2,3,4,9,741) and  nvl(t2.takisremark,0) not in(-2) union (select distinct "+backfieldsOs+" from ofs_todo_data "+sqlwhereos+" and islasttimes=1 and isremark=0) ) t1 ) t1 ";
+                                                    fromSql = " from (select "+backfields0+" from (select "+backfields+" "+fromSql+""+sqlWhere+" and t2.isremark not in(2,4,8,9) and t2.islasttimes=1 and t1.workflowid not in(641,13,1,2,3,4,9,741,125262) and  nvl(t2.takisremark,0) not in(-2) union all(select  "+backfieldsOs+" from ofs_todo_data "+sqlwhereos+" and islasttimes=1 and isremark=0) ) t1 ) t1 ";
+                                                    orderby = " requestlevel ,receivedate ,receivetime ";
 													//out.print("select "+backfields0+fromSql);
                                                     //System.out.println(sqlwhereos);
                                                     temptableString = " <sql backfields=\"" + backfields0 + "\" sqlform=\"" + Util.toHtmlForSplitPage(fromSql) + "\" sqlwhere=\"\"  sqlorderby=\"" + orderby	+ "\"  sqlprimarykey=\"t1.requestid\" sqlsortway=\"Desc\" sqlisdistinct=\"false\" />";
@@ -1298,6 +1306,9 @@ userlist.add(Belongtoid + "");
 		                                                                + "\" column=\"workflowtype\"  orderkey=\"workflowtype\" transmethod=\"weaver.workflow.request.todo.RequestUtil.getSysname\" otherpara=\""+showname+"\" />";
                                                         }
                                                     }
+
+                                                    //sq 
+                                                    System.out.println("开启统一待办=select  " + backfields0 + " " + fromSql);
                                                 }else{
                                                     temptableString = " <sql backfields=\"" + backfields + "\" sqlform=\"" + fromSql + "\" sqlwhere=\"" + Util.toHtmlForSplitPage(sqlWhere) + "\"  sqlorderby=\"" + orderby	+ "\"  sqlprimarykey=\"t1.requestid\" sqlsortway=\"Desc\" sqlisdistinct=\"false\" />";
                                                 }
@@ -1344,7 +1355,7 @@ userlist.add(Belongtoid + "");
 													if (isMultiSubmit && iswaitdo == 1) {
 														if( "1".equals(belongtoshow)){
                                                                     tableString = " <table instanceid=\"workflowRequestListTable\" pageId=\""+pageId+"\"   tabletype=\"checkbox\" pagesize=\""
-                                                                            + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >"
+                                                                            + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >"
                                                                             + " <checkboxpopedom  id=\"checkbox\"  popedompara=\"column:workflowid+column:isremark+column:requestid+column:nodeid+column:userid\" showmethod=\"weaver.general.WorkFlowTransMethod.getWFSearchResultCheckBox\" />" ;
 
                                                                     tableString += temptableString ;
@@ -1357,7 +1368,7 @@ userlist.add(Belongtoid + "");
                                                                                 + para2 + "\"  pkey=\"requestname+weaver.general.WorkFlowTransMethod.getWfNewLinkWithTitle\" />";
 																}else{
 														tableString = " <table instanceid=\"workflowRequestListTable\" pageId=\""+pageId+"\"   tabletype=\"checkbox\" pagesize=\""
-																+ PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID())
+																+ PageIdConst.getPageSize(pageId,user.getUID())
 																+ "\" >"
 																+ " <checkboxpopedom  id=\"checkbox\"  popedompara=\"column:workflowid+column:isremark+column:requestid+column:nodeid+column:userid\" showmethod=\"weaver.general.WorkFlowTransMethod.getWFSearchResultCheckBox\" />";
 														tableString += temptableString ;
@@ -1388,10 +1399,7 @@ userlist.add(Belongtoid + "");
 														tableString += "<col width=\"8%\" display=\""+hasstatus +"\"  text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 														tableString += "<col width=\"15%\" display=\""+hasreceivedpersons +"\"  text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\" otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-														tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+											
 														tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\"  text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 														tableString += temptablerowString ;														
 														tableString += "			</head>" + "</table>";
@@ -1411,7 +1419,7 @@ userlist.add(Belongtoid + "");
 																	+ para2 + "\"  pkey=\"requestname+weaver.general.WorkFlowTransMethod.getWfNewLinkWithTitle\"  />";
 																}else{
 														tableString = " <table instanceid=\"workflowRequestListTable\" pageId=\""+pageId+"\"   tabletype=\"checkbox\" pagesize=\""
-																+ PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID())
+																+ PageIdConst.getPageSize(pageId,user.getUID())
 																+ "\" >"
 																+ " <checkboxpopedom  id=\"checkbox\"  popedompara=\"column:viewtype+column:isremark+column:isprocessed\" showmethod=\"weaver.general.WorkFlowTransMethod.getWFSearchRstCkBoxForMsg\" />";
 														tableString += temptableString ;
@@ -1442,17 +1450,14 @@ userlist.add(Belongtoid + "");
 														tableString += "<col width=\"8%\" display=\""+hasstatus +"\"  text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 														tableString += "<col width=\"15%\" display=\""+hasreceivedpersons +"\"  text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\" otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-														tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+														
 														tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\"  text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 														tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
 													}else if("myall".equals(myrequest) || "myreqeustbywftype".equals(myrequest) || "myreqeustbywfid".equals(myrequest)){
 														if("1".equals(belongtoshow)){
 															sqlWhere += " and t1.creater = t2.userid" ;
-														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 														tableString += temptableString ;
                                                         tableString += operateString	+ "			<head>";
 														
@@ -1462,7 +1467,7 @@ userlist.add(Belongtoid + "");
 																	+ para2 + "\"  pkey=\"requestname+weaver.general.WorkFlowTransMethod.getWfNewLinkWithTitle\"  />";
 																}else{
 
-														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 														tableString += temptableString ;
                                                         tableString += operateString	+ "			<head>";
 														
@@ -1491,17 +1496,14 @@ userlist.add(Belongtoid + "");
 																	tableString += " <col width=\"8%\" display=\""+hasstatus +"\"    text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 															tableString += " <col width=\"15%\" display=\""+hasreceivedpersons +"\"   text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\"  otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-															tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+															
 															tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\" text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 															tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
 													}else {
 														//System.out.println("--1301----------------------------------------------------------------------------------");
 														if( "1".equals(belongtoshow)){
-																tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+																tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 																tableString += temptableString ;
 																tableString  += operateString  + "			<head>";
 																
@@ -1510,7 +1512,7 @@ userlist.add(Belongtoid + "");
 																			+ "\" column=\"requestname\" orderkey=\"t1.requestname\" linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_fullwindow\" transmethod=\"weaver.general.WorkFlowTransMethod.getWfNewLinkWithTitle2\"  otherpara=\""
 																			+ para2 + "\"  pkey=\"requestname+weaver.general.WorkFlowTransMethod.getWfNewLinkWithTitle\"  />";
 														}else{
-																tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+																tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 																tableString += temptableString ;
 																tableString  += operateString  + "			<head>";
 
@@ -1540,10 +1542,7 @@ userlist.add(Belongtoid + "");
 																	tableString += " <col width=\"8%\" display=\""+hasstatus +"\"    text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 															tableString += " <col width=\"15%\" display=\""+hasreceivedpersons +"\"   text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\"  otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-															tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+															
 															tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\" text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 															tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
@@ -1591,7 +1590,7 @@ userlist.add(Belongtoid + "");
 											        //System.out.println("sqlForm"+fromSql);
 													if (isMultiSubmit && iswaitdo == 1) {
 														tableString = " <table instanceid=\"workflowRequestListTable\" pageId=\""+pageId+"\"   tabletype=\"checkbox\" pagesize=\""
-																+ PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID())
+																+ PageIdConst.getPageSize(pageId,user.getUID())
 																+ "\" >"
 																+ " <checkboxpopedom  id=\"checkbox\"  popedompara=\"column:workflowid+column:isremark+column:requestid+column:nodeid+column:userid\" showmethod=\"weaver.general.WorkFlowTransMethod.getWFSearchResultCheckBox\" />";
 														tableString += temptableString ;
@@ -1621,17 +1620,14 @@ userlist.add(Belongtoid + "");
 														tableString += "<col width=\"8%\" display=\""+hasstatus +"\"  text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 														tableString += "<col width=\"15%\" display=\""+hasreceivedpersons +"\"  text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\" otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-														tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+														
 														tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\"  text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 														tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
 													} else if("1".equals(isFromMessage)){
 														//System.out.println("--12225----------------------------------------------------------------------------------");
 														tableString = " <table instanceid=\"workflowRequestListTable\" pageId=\""+pageId+"\"   tabletype=\"checkbox\" pagesize=\""
-																+ PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID())
+																+ PageIdConst.getPageSize(pageId,user.getUID())
 																+ "\" >"
 																+ " <checkboxpopedom  id=\"checkbox\"  popedompara=\"column:viewtype+column:isremark+column:isprocessed\" showmethod=\"weaver.general.WorkFlowTransMethod.getWFSearchRstCkBoxForMsg\" />";
 														tableString += temptableString ;
@@ -1660,15 +1656,12 @@ userlist.add(Belongtoid + "");
 														tableString += "<col width=\"8%\" display=\""+hasstatus +"\"  text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 														tableString += "<col width=\"15%\" display=\""+hasreceivedpersons +"\"  text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\" otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-														tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+														
 														tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\"  text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 														tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
 													}else if("myall".equals(myrequest) || "myreqeustbywftype".equals(myrequest) || "myreqeustbywfid".equals(myrequest)){
-														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 														tableString += temptableString ;
 														tableString	+= operateString	+ "			<head>";
 
@@ -1697,15 +1690,12 @@ userlist.add(Belongtoid + "");
 																	tableString += " <col width=\"8%\" display=\""+hasstatus +"\"    text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 															tableString += " <col width=\"15%\" display=\""+hasreceivedpersons +"\"   text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\"  otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-															tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+															
 															tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\" text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 															tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
 													}else {
-														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(PageIdConst.getWFPageId(urlType),user.getUID()) + "\" >";
+														tableString = " <table instanceid=\"workflowRequestListTable\" tabletype=\"none\" pageId=\""+pageId+"\" cssHandler=\"com.weaver.cssRenderHandler.request.CheckboxColorRender\" pagesize=\"" + PageIdConst.getPageSize(pageId,user.getUID()) + "\" >";
 															tableString	+= temptableString ;
 															tableString	+= operateString + "			<head>";
 															tableString += " <col width=\"19%\" display=\""+hasrequestname+"\"  text=\""
@@ -1733,10 +1723,7 @@ userlist.add(Belongtoid + "");
 																	tableString += " <col width=\"8%\" display=\""+hasstatus +"\"    text=\"" + SystemEnv.getHtmlLabelName(1335, user.getLanguage()) + "\" column=\"status\" orderkey=\"t1.status\" />";
 															tableString += " <col width=\"15%\" display=\""+hasreceivedpersons +"\"   text=\"" + SystemEnv.getHtmlLabelName(16354, user.getLanguage()) + "\" column=\"requestid\"  otherpara=\"" + para4
 																	+ "\" transmethod=\"weaver.general.WorkFlowTransMethod.getUnOperators\"/>";
-															tableString += "<col width=\"6%\" display=\"false\"  text=\""
-																	+ SystemEnv.getHtmlLabelName(19363, user.getLanguage())
-																	+ "\" column=\"requestid\" orderkey=\"t1.requestid\"  linkkey=\"requestid\" linkvaluecolumn=\"requestid\" target=\"_self\" transmethod=\"weaver.general.WorkFlowTransMethod.getSubWFLink\"  otherpara=\""
-																	+ user.getLanguage() + "\"/>";
+															
 															tableString += "<col width=\"15%\" display=\""+hasrequestmark +"\" orderkey=\"t1.requestmark\" text=\"" + SystemEnv.getHtmlLabelName( 19502 , user.getLanguage()) + "\" column=\"requestmark\"/>";
 															tableString += temptablerowString ;
 														tableString += "			</head>" + "</table>";
@@ -1745,7 +1732,16 @@ userlist.add(Belongtoid + "");
 
 
 }
-														
+												int countnum1 = 0;
+												baseBean.writeLog("testaaaa","select count(1) as count "+fromSql);
+												boolean exeresult=RecordSet.execute("select count(1) as count "+fromSql);
+
+												if(RecordSet.next()){
+													countnum1 = RecordSet.getInt("count");
+												}	
+												if(!exeresult){
+													countnum1 = 1;
+												}	
 												%><wea:SplitPageTag isShowTopInfo="false" tableString='<%=tableString%>' mode="run"  />
 											</td>
 										</tr>
@@ -1763,6 +1759,29 @@ userlist.add(Belongtoid + "");
 			
 			</FORM>
 		<SCRIPT language="javascript">
+		var flagflash = 1;
+		function updateFatherVal(recordCount){
+			var countnum1 = "<%=countnum1%>";
+			
+			
+			//if(typeof(recordCount) == undefined){
+				//alert("2222");
+				//setTimeout('reload111()','1000');
+			//}
+		    if(recordCount != countnum1){
+				if(flagflash==1){
+					//reload111();
+				setTimeout('OnSearch()','500');
+				}
+				flagflash++;
+			}
+			
+		}
+		function reload111(){
+			alert(flagflash);
+			window.location.reload();
+			return;
+		}
 		function rightMenuSearch(){
 			if(jQuery("#advancedSearchOuterDiv").css("display")!="none"){
 				OnSearch();

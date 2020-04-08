@@ -73,6 +73,15 @@ weaver.general.AccountType.langId.set(lg);
 	String bm = Util.null2String(request.getParameter("bm"));
 	String nppdl = Util.null2String(request.getParameter("nppdl"));
 	String nppxl = Util.null2String(request.getParameter("nppxl"));
+	String cbzx = Util.null2String(request.getParameter("cbzx"));
+	String cbzxspan = "";
+	 if(!"".equals(cbzx)){
+      sql = "select cbzxbmmc from uf_cbzx where id="+cbzx;
+      rs.executeSql(sql);
+      if(rs.next()){
+          cbzxspan = Util.null2String(rs.getString("cbzxbmmc"));
+      }
+  }
 	GetGNSTableName gg = new GetGNSTableName();
 	String lrktablename = gg.getTableName("RKD");
 	String cgddtablename = gg.getTableName("CGDD");
@@ -200,6 +209,22 @@ weaver.general.AccountType.langId.set(lg);
 					browserUrl='/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.yjcbzx'>
 					</brow:browser>
 			 </wea:item>
+			 	<wea:item>成本中心</wea:item>
+				<wea:item>
+					<brow:browser name='cbzx'
+					viewType='0'
+					browserValue='<%=cbzx%>'
+					isMustInput='1'
+					browserSpanValue='<%=cbzxspan%>'
+					hasInput='true'
+					linkUrl=''
+					completeUrl=''
+					width='60%'
+					isSingle='true'
+					hasAdd='false'
+					browserUrl='/systeminfo/BrowserMain.jsp?url=/interface/CommonBrowser.jsp?type=browser.cbzx'>
+					</brow:browser>
+			 </wea:item>
 					<wea:item>状态</wea:item>
 					<wea:item>
 						<select class="e8_btn_top middle" name="zt" id="zy">
@@ -254,8 +279,8 @@ weaver.general.AccountType.langId.set(lg);
 		</FORM>
 		
 		<%
-		String backfields = "b.zjlbm,b.requestid,(select buydl from uf_buydl where id=b.cgdl) as cgdl,b.wllx,(select yjcbzx from uf_cbzx where id=b.cbzx) as yjcbzx,(select cbzxbmmc from uf_cbzx where id=b.cbzx) as CBZX,(select kmmc from uf_fykm where id=b.fykm) as fykm,(select selectname from workflow_billfield a, workflow_bill t,workflow_selectitem c where a.billid=t.id and c.fieldid=a.id  and t.tablename='"+cgsqtablename+"' and a.fieldname='SFYYS' and selectvalue=(select t1.SFYYS from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=b.dtid)) as SFYYS,(select t1.cgsqdbh from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=b.dtid "+
-					" ) as cgsqdbh,b.DDBH ,b.WLBM,(select wlmc from uf_materialDatas where id=b.WLMC) as WLMC,(select pp from uf_gfdzb where id=b.pinpai) as pinpai,b.XH,b.GG,(select dw from uf_unitForms where id=b.dw) as DW,b.DJ, b.CGSL,b.HJYBJE,(select bz1 from uf_hl where id=b.BIZ) as biz,b.HL,a.createdate "+
+		String backfields = "b.zjlbm,b.requestid,(select (select bmenu from uf_NPP where id=wllx)  from uf_materialDatas where id=b.WLMC) as wllxname,(select buydl from uf_buydl where id=b.cgdl) as cgdl,b.wllx,(select yjcbzx from uf_cbzx where id=b.cbzx) as yjcbzx,(select cbzxbmmc from uf_cbzx where id=b.cbzx) as CBZX,dbo.get_gns_fykm(isnull(b.fykm,''),b.cbzx,b.WLMC,'0') as fykm,dbo.get_gns_fykm(isnull(b.fykm,''),b.cbzx,b.WLMC,'1') as kmdm,(select selectname from workflow_billfield a, workflow_bill t,workflow_selectitem c where a.billid=t.id and c.fieldid=a.id  and t.tablename='"+cgsqtablename+"' and a.fieldname='SFYYS' and selectvalue=(select t1.SFYYS from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=b.dtid)) as SFYYS,(select t1.cgsqdbh from "+cgsqtablename+" t1,"+cgsqtablename+"_dt1 t2 where t1.id=t2.mainid and t2.id=b.dtid "+
+					" ) as cgsqdbh,b.DDBH ,b.WLBM,(select wlmc from uf_materialDatas where id=b.WLMC) as WLMC,(select pp from uf_gfdzb where id=b.pinpai) as pinpai,b.XH,b.GG,(select dw from uf_unitForms where id=b.dw) as DW,b.DJ, b.CGSL,cast(isnull(b.DJ,0)*isnull(b.CGSL,0) as numeric(10,2)) as HJYBJE,(select taxname from uf_tax_rate where id=b.taxRate) as taxRate,(select bz1 from uf_hl where id=b.BIZ) as biz,b.HL,a.createdate "+
 					" ,YQJHRQ,b.cgsl-(select isnull(sum(isnull(sjshsl_1,0)),0) from "+lrktablename+" t1,"+lrktablename+"_dt1 t2,workflow_requestbase t3 where t1.id=t2.mainid and t3.requestid=t1.requestid and t2.cgsqd=a.requestid and t3.currentnodetype>=3) as wjhsl, (select isnull(sum(isnull(sjshsl_1,0)),0) from "+lrktablename+" t1,"+lrktablename+"_dt1 t2,workflow_requestbase t3 where t1.id=t2.mainid and t3.requestid=t1.requestid and t2.cgsqd=a.requestid and t3.currentnodetype>=3) as rksl "+
 					" ,SQRXX,	(select gysmc from uf_suppmessForm where id=b.gysmc) as GYSMC,'' as sfbgz,case when a.currentnodetype=3 then '审批完成' when a.currentnodetype=0 then '发起' else '审批中' end as zt,SQRXX as cgy,SHDW,SHR,(select mobile from hrmresource where id=b.shr) as shrdh,YSBH,case when b.cgdl='2' then b.wlbm else '' end as gdzcbh,'' as yz,''as gzrq,'' as ysynx,'' as ysynx1,'' as ytzj,'' as jz,'' as cssr,''as czss";
 		String fromSql  =  " from workflow_requestbase a,"+cgddtablename+" b";
@@ -274,6 +299,9 @@ weaver.general.AccountType.langId.set(lg);
 		}
 		if(!"".equals(yjcbzx)){
 			sqlWhere +=" and (select yjcbzx from uf_cbzx where id=b.cbzx) = '"+yjcbzx+"' ";
+		}
+		if(!"".equals(cbzx)){
+			sqlWhere +=" and b.cbzx = '"+cbzx+"' ";
 		}
 		if(!"".equals(zt)){
 			if("0".equals(zt)){
@@ -319,9 +347,11 @@ weaver.general.AccountType.langId.set(lg);
 		tableString +="<col width=\"200px\" text=\"部门\" column=\"sqrxx\" orderkey=\"sqrxx\"  transmethod=\"goodbaby.gns.bb.BbTransUtil.getPersonAllDepartmentName\"/>"+
 		  "<col width=\"100px\" text=\"50部门\" column=\"zjlbm\" orderkey=\"zjlbm\"  transmethod=\"weaver.hrm.company.DepartmentComInfo.getDepartmentname\"/>"+
 		  "<col width=\"100px\" text=\"采购类型\" column=\"cgdl\" orderkey=\"cgdl\"  />"+ 
-			"<col width=\"100px\" text=\"物料类型\" column=\"wllx\" orderkey=\"wllx\" />"+ 
+			"<col width=\"100px\" text=\"物料类型\" column=\"wllxname\" orderkey=\"wllxname\" />"+ 
 			"<col width=\"100px\" text=\"一级成本中心\" column=\"yjcbzx\" orderkey=\"yjcbzx\"  />"+ 
+			"<col width=\"100px\" text=\"成本中心\" column=\"cbzx\" orderkey=\"cbzx\"  />"+ 
 			"<col width=\"100px\" text=\"科目\" column=\"fykm\" orderkey=\"fykm\"  />"+ 
+			"<col width=\"100px\" text=\"科目代码\" column=\"kmdm\" orderkey=\"kmdm\"  />"+ 
 			"<col width=\"100px\" text=\"是否有预算\" column=\"sfyys\" orderkey=\"sfyys\"  />"+ 
 			"<col width=\"100px\" text=\"采购申请编号\" column=\"cgsqdbh\" orderkey=\"cgsqdbh\"  />"+ 
 			"<col width=\"100px\"  text=\"订单编号\" column=\"ddbh\" orderkey=\"ddbh\"  />"+
@@ -334,6 +364,7 @@ weaver.general.AccountType.langId.set(lg);
 			"<col width=\"100px\" text=\"P0/单价\" column=\"DJ\" orderkey=\"DJ\"  />"+ 
 			"<col width=\"100px\" text=\"订单数量\" column=\"cgsl\" orderkey=\"cgsl\"  />"+ 
 			"<col width=\"100px\" text=\"金额\" column=\"hjybje\" orderkey=\"hjybje\"  />"+ 
+			"<col width=\"100px\" text=\"税率\" column=\"taxRate\" orderkey=\"taxRate\"  />"+ 
 			"<col width=\"100px\" text=\"币种\" column=\"biz\" orderkey=\"biz\"  />"+ 
 			"<col width=\"100px\" text=\"汇率\" column=\"hl\" orderkey=\"hl\"  />"+ 		
 			"<col width=\"100px\" text=\"下达日期\" column=\"createdate\" orderkey=\"createdate\"  />"+ 	

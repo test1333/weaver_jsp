@@ -208,7 +208,7 @@ weaver.general.AccountType.langId.set(lg);
 		}
 		
 		String fromSql  =  " from hs_projectinfo t1,hs_project_fielddata t2";
-		String sqlWhere =  " t1.id=t2.prjid and prjtype='"+prb.getPrjtype()+"' ";
+		String sqlWhere =  " t1.id=t2.prjid and t1.status not in('删除') and prjtype='"+prb.getPrjtype()+"' ";
 		for(PrjReportDtBean prdb:dtList){
 			String fieldid=prdb.getFieldid();
 			String fieldname =prdb.getFieldname();

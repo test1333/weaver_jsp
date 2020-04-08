@@ -105,7 +105,7 @@
         sqlWhere += " and SQRXX= " + userId;
     }
 
-    // out.println("select "+ backfields + fromSql +"where"+ sqlWhere);
+     //out.println("select "+ backfields + fromSql +"where"+ sqlWhere);
     String orderby = " requestId ";//排序关键字
     String tableString = "";
 

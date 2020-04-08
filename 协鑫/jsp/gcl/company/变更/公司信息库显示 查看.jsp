@@ -95,9 +95,6 @@
                 </tbody>
             </table>
             <div>&nbsp;</div>
-            <div align="left"><span style="text-decoration: underline; text-decoration-color: blue"><font size="4">&nbsp;&nbsp;股权穿透图&nbsp;&nbsp;</font></span></div>
-            <div style="height: 2px">&nbsp;</div>
-            <div><iframe id="gqctt" height="400" src="" frameborder="1" width="100%"></iframe></div>
             <table style="width: 100%">
                 <colgroup><col width="50%"></col><col width="50%"></col></colgroup>
                 <tbody>
@@ -136,11 +133,9 @@
                                         <tbody>
                                             <tr class="header detailtitle">
                                                 <td class="detailtitle" nowrap="nowrap"><input id="$label1775244$" class="Label" name="label1775244" value="董事" type="text" /></td>
-                                               
                                             </tr>
                                             <tr>
                                                 <td class="detailtable"><input id="$field1775244$" class="InputStyle" name="field1775244" value="董事" type="text" /></td>
-                                               
                                             </tr>
                                         </tbody>
                                     </table>
@@ -161,11 +156,9 @@
                                         <tbody>
                                             <tr class="header detailtitle">
                                                 <td class="detailtitle" nowrap="nowrap"><input id="$label1775247$" class="Label" name="label1775247" value="监事" type="text" /></td>
-                                                
                                             </tr>
                                             <tr>
                                                 <td class="detailtable"><input id="$field1775247$" class="InputStyle" name="field1775247" value="监事" type="text" /></td>
-                                                
                                             </tr>
                                         </tbody>
                                     </table>
@@ -182,6 +175,10 @@
             <div align="left"><span style="text-decoration: underline; text-decoration-color: blue"><font size="4">&nbsp;&nbsp;对外投资&nbsp;&nbsp;</font></span></div>
             <div style="height: 2px">&nbsp;</div>
             <div><iframe id="dwtz" height="400" src="" frameborder="0" width="90%"></iframe></div>
+            <div>&nbsp;</div>
+             <div align="left"><span style="text-decoration: underline; text-decoration-color: blue"><font size="4">&nbsp;&nbsp;股权穿透图&nbsp;&nbsp;</font></span></div>
+            <div style="height: 2px">&nbsp;</div>
+            <div><iframe id="gqctt" height="400" src="" frameborder="1" width="100%"></iframe></div>
             <div>&nbsp;</div>
             <div align="left"><span style="text-decoration: underline; text-decoration-color: blue"><font size="4">&nbsp;&nbsp;其他信息&nbsp;&nbsp;</font></span></div>
             <div style="height: 2px">&nbsp;</div>

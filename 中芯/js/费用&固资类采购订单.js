@@ -9,7 +9,7 @@ var cbzx_dt1 = "#field6798_";//明细1 成本中心
 var je_dt1 = "#field6445_";//明细1 金额
 var yje_dt1 = "#field7044_";//明细1 原金额
 jQuery(document).ready(function () {
-	jQuery("#xzmx").html("<input type=button class='e8_btn_top_first'  style='width:70px;height:30px' value='选择明细' onclick='showxx()'>");
+	jQuery("#xzwl").html("<input type=button class='e8_btn_top_first'  style='width:70px;height:30px' value='选择物料' onclick='showxx()'>");
 	checkCustomize = function () {
 		var indexnum0 = jQuery("#indexnum0").val();
         var countnum=0;

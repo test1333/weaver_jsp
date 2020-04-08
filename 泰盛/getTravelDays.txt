@@ -1,0 +1,21 @@
+create or replace function getTravelDays( i_begindate in varchar2,i_enddate in varchar2,i_starttime in varchar2,i_endtime in varchar2,i_type in varchar2 )
+return  number is
+       v_result number(10,2) := 0.00;
+
+begin
+    if  i_type = '1' then
+      if i_starttime = '08:00' then
+         select count(1) into v_result from (select day_id,rownum as countnum from (SELECT  TO_CHAR(TO_DATE(i_begindate, 'YYYY-MM-DD') + ROWNUM-1 , 'YYYY-MM-DD') DAY_ID  FROM DUAL   CONNECT BY ROWNUM <= TO_DATE(i_enddate, 'YYYY-MM-DD') - TO_DATE(i_begindate, 'YYYY-MM-DD')+1 ) a where DAY_ID<= TO_CHAR(TO_DATE(i_enddate, 'YYYY-MM-DD') , 'YYYY-MM-DD')and ks_what_holiday(DAY_ID)=2);
+      else
+        select count(1)+0.5 into v_result from (select day_id,rownum as countnum from (SELECT  TO_CHAR(TO_DATE(i_begindate, 'YYYY-MM-DD') + ROWNUM , 'YYYY-MM-DD') DAY_ID  FROM DUAL   CONNECT BY ROWNUM <= TO_DATE(i_enddate, 'YYYY-MM-DD') - TO_DATE(i_begindate, 'YYYY-MM-DD')+1 ) a where DAY_ID<= TO_CHAR(TO_DATE(i_enddate, 'YYYY-MM-DD') , 'YYYY-MM-DD')and ks_what_holiday(DAY_ID)=2);
+      end if;
+
+    elsif i_type = '2' then
+      if i_endtime = '18:00' then
+         select count(1) into v_result from (select day_id,rownum as countnum from (SELECT  TO_CHAR(TO_DATE(i_begindate, 'YYYY-MM-DD') + ROWNUM-1 , 'YYYY-MM-DD') DAY_ID  FROM DUAL   CONNECT BY ROWNUM <= TO_DATE(i_enddate, 'YYYY-MM-DD') - TO_DATE(i_begindate, 'YYYY-MM-DD')+1 ) a where DAY_ID<= TO_CHAR(TO_DATE(i_enddate, 'YYYY-MM-DD') , 'YYYY-MM-DD')and ks_what_holiday(DAY_ID)=2);
+      else
+        select count(1)+0.5 into v_result from (select day_id,rownum as countnum from (SELECT  TO_CHAR(TO_DATE(i_begindate, 'YYYY-MM-DD') + ROWNUM-1 , 'YYYY-MM-DD') DAY_ID  FROM DUAL   CONNECT BY ROWNUM <= TO_DATE(i_enddate, 'YYYY-MM-DD') - TO_DATE(i_begindate, 'YYYY-MM-DD')+1 ) a where DAY_ID<= TO_CHAR(TO_DATE(i_enddate, 'YYYY-MM-DD')-1 , 'YYYY-MM-DD')and ks_what_holiday(DAY_ID)=2);
+      end if;
+    end if;
+    return v_result;
+end;

@@ -78,8 +78,9 @@ weaver.general.AccountType.langId.set(lg);
 				<tr>
 					<td></td>
 					<td class="rightSearchSpan" style="text-align:right;">
-					<input type="button" value="合并单据" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice();"/>
-					<input type="button" value="单笔付款" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice2();"/>
+					<input type="button" value="合并单据" id="hbdj" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice();"/>
+					<input type="button" value="单笔付款" id="dbfk" class="e8_btn_top_first" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis; max-width: 100px;" onclick="doservice2();"/>
+					
 					<span id="advancedSearch" class="advancedSearch"><%=SystemEnv.getHtmlLabelName(21995,user.getLanguage())%></span>
 						<span title="<%=SystemEnv.getHtmlLabelName(23036,user.getLanguage())%>" class="cornerMenu"></span>
 					</td>
@@ -173,6 +174,7 @@ weaver.general.AccountType.langId.set(lg);
 	%>
 	<wea:SplitPageTag isShowTopInfo="false" tableString="<%=tableString%>" mode="run"  />
 	<script type="text/javascript">
+		var checkflag = "0";
 		 function onBtnSearchClick() {
 			report.submit();
 		}
@@ -182,6 +184,14 @@ weaver.general.AccountType.langId.set(lg);
   		}
 	
 	   function doservice(){
+		   if(checkflag=="0"){
+			   checkflag = "1";
+		   }else{
+			   return false;
+		   }
+		   var parentWin = window.parent;
+       		 parentWin.hiddenbutton();
+
 		   	var ids = _xtable_CheckedCheckboxId();
           //alert(ids);
 		  if(ids!=null && ids!=""){
@@ -213,9 +223,18 @@ weaver.general.AccountType.langId.set(lg);
 				window.location.reload();
 			}else{
 				alert("请先选择需要付款的流程");
+				 parentWin.showbutton();
+				    checkflag = "0";
 			}
 	   }
 	   function doservice2(){
+		    if(checkflag=="0"){
+			   checkflag = "1";
+		   }else{
+			   return false;
+		   }
+		  var parentWin = window.parent;
+       		 parentWin.hiddenbutton();
 		   	var ids = _xtable_CheckedCheckboxId();
           //alert(ids);
 		  if(ids!=null && ids!=""){
@@ -243,6 +262,8 @@ weaver.general.AccountType.langId.set(lg);
 				window.location.reload();
 			}else{
 				alert("请先选择需要付款的流程");
+				parentWin.showbutton();
+				  checkflag = "0";
 			}
 	   }
    </script>

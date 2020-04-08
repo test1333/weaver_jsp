@@ -1,0 +1,72 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        html,body{
+            width:100%;
+        }
+        html,div,p,body{
+            margin:0px;
+            padding:0px;
+        }
+    </style>
+    <!-- http://10.171.53.58:8089/hrm/resource/HrmResourcePassword.jsp?id=&fromHrmTab=1 -->
+</head>
+<body>
+<table>
+    </br>
+    </br>
+    </br>
+    </br>
+    <tr>
+        <td>
+            旧密码：
+        </td>
+        <td>
+            <input type="password" value="" id="password1" name="password1"/>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            新密码：
+        </td>
+        <td>
+            <input type="password" value="" id="password2" name="password2"/>
+
+        </td>
+    </tr>
+    <tr>
+        <td>
+            确认新密码：
+        </td>
+        <td>
+            <input type="password" value="" id="password3" name="password3"/>
+
+        </td>
+    </tr>
+    <tr>
+
+        <td colspan="2" align="center">
+            <input name="a" type="button" value="确认修改"  onclick="checkpassword();"/>
+        </td>
+    </tr>
+
+
+</table>
+<script>
+    function checkpassword(){
+        var oldpwd=jQuery("password2").val();//旧密码
+        var newpwd=jQuery("password3").val();//新密码
+        // var inpwd=document.getElementById("password").value;//获取输入的代码
+        if(oldpwd !== newpwd){  //判断一下是否一样
+            alert("两次输入的密码不相同，请重新输入!");
+//            swal("", "两次输入的密码不相同，请重新输入!", "error");
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+alter view  v_gnsbb_yfzkzl as
+select  distinct d.id,d.xtkh as gys,d.yjcbzx,(select name from CRM_CustomerInfo where id=d.xtkh) as gysmc,(select portalloginid from CRM_CustomerInfo where id=d.xtkh) as gysbh, b.lastoperatedate,d.fprq ,'0' as type
+from formtable_main_273 a,workflow_requestbase b,formtable_main_273_dt1 c ,uf_invoice d
+where a.requestid=b.requestid and a.id=c.mainid and c.fphm=d.id and  b.currentnodetype>=3 and b.lastoperatedate<CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)
+and not exists(select t.id from uf_flow_payinternal t, uf_fkzjb t1 where t.pklcid=t1.pklcid and t.pklcmxid=t1.yfkmxid and t1.flag=1 and t.sfpzpk=0 and t.fkid=a.requestid and t.fph=c.fphm)
+
+union all
+select  distinct d.id,d.xtkh as gys,d.yjcbzx,(select name from CRM_CustomerInfo where id=d.xtkh) as gysmc,(select portalloginid from CRM_CustomerInfo where id=d.xtkh) as gysbh, b.lastoperatedate,d.fprq ,'1' as type
+from formtable_main_273 a,workflow_requestbase b,formtable_main_273_dt1 c ,uf_invoice d
+where a.requestid=b.requestid and a.id=c.mainid and c.fphm=d.id and  b.currentnodetype>=3 and b.lastoperatedate>=CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)
+and not exists(select t.id from uf_flow_payinternal t, uf_fkzjb t1 where t.pklcid=t1.pklcid and t.pklcmxid=t1.yfkmxid and t1.flag=1 and t.sfpzpk=0 and t.fkid=a.requestid and t.fph=c.fphm)
+union all
+select  distinct d.id,d.xtkh,d.yjcbzx,(select name from CRM_CustomerInfo where id=d.xtkh) as gysmc,(select portalloginid from CRM_CustomerInfo where id=d.xtkh) as gysbh, b.lastoperatedate,d.fprq ,'2' as type
+from formtable_main_273 a,workflow_requestbase b,formtable_main_273_dt1 c ,uf_invoice d,uf_flow_payinternal t, uf_fkzjb t1
+where a.requestid=b.requestid and a.id=c.mainid and c.fphm=d.id and t.pklcid=t1.pklcid and t.pklcmxid=t1.yfkmxid and t1.flag=1 and t.sfpzpk=0 and t.fkid=a.requestid and t.fph=c.fphm and  b.currentnodetype>=3 and b.lastoperatedate<CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)
+and t1.kjqrqq>=CONVERT(varchar(100),DATEADD(mm, DATEDIFF(mm,0,getdate()), 0),23)

@@ -1,0 +1,21 @@
+create or replace function getBreakOffDaysnew( i_userid in varchar2,i_type in varchar2,i_sqrq in varchar2,i_lx in varchar2)
+return  number(10,2) is
+       returntime number(10,2) := 0;
+       returntime2 number(10,2) := 0;
+       returntimeall number(10,2) := 0;
+begin
+    if  type = -13 or type = 27 or  type = -6 or  type = 28  then
+      select SUM(nvl(bcqjts1,0.0)) into returntime from formtable_main_256 main join workflow_requestbase work on main.requestid = work.requestid
+      where work.currentnodetype in (1,2,3) and sqr = userid and qjlx in(-13,27,-6,28)
+      and to_char(to_date(qjkssrq,'yyyy-mm-dd'),'yyyy-mm') = to_char(to_date(i_sqrq,'yyyy-mm-dd'), 'yyyy-mm');
+       select SUM(nvl(bcqjxs,0.0)*8) into returntime2 from formtable_main_251 main join workflow_requestbase work on main.requestid = work.requestid
+      where work.currentnodetype in (1,2,3) and sqr = userid and qjlx in(-13,27,-6,28)
+      and to_char(to_date(qjkssrq,'yyyy-mm-dd'),'yyyy-mm') = to_char(to_date(i_sqrq,'yyyy-mm-dd'), 'yyyy-mm');
+       returntimeall = returntime + returntime2
+      if i_lx = '1' then
+        select round(returntimeall/8,2) into returntimeall from dual
+       end if;
+     end if;
+       return returntimeall;
+
+end;

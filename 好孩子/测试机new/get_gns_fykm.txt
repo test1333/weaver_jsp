@@ -1,0 +1,37 @@
+alter function get_gns_fykm(@i_fykm varchar(20),@i_cbzx varchar(20),@i_wlid varchar(20),@i_type varchar(20))
+     returns varchar(30)
+as
+begin
+     declare @fylxname varchar(30),
+			 @fykmflname varchar(30),
+			 @kmmc varchar(30),
+			 @kmbm varchar(30),
+               @result varchar(30)
+     if @i_fykm = '' or @i_fykm = null 
+      begin
+        select @fylxname=(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='uf_cbzx' and a.fieldname='fylx' and c.selectvalue=fylx) from uf_cbzx where id=@i_cbzx
+		select @fykmflname=(select selectname from workflow_billfield a, workflow_bill b,workflow_selectitem c where a.billid=b.id and c.fieldid=a.id  and b.tablename='uf_NPP' and a.fieldname='fykmfl' and c.selectvalue=fykmfl) from uf_materialDatas a,uf_npp b where a.wllx=b.id  and  a.id=@i_wlid
+		if @fylxname <> '' and @fykmflname<>''
+			begin
+			 select @kmmc=kmmc,@kmbm=kmbm1 from uf_fykm where kmmc=@fylxname+'\'+@fykmflname
+			end
+		else
+		   begin
+			set @kmmc=''
+			set @kmbm=''
+		   end
+      end
+     else
+      begin
+       select @kmmc=kmmc,@kmbm=kmbm1 from uf_fykm where id=@i_fykm
+      end
+      if @i_type = '0'
+		begin 
+			set @result=@kmmc
+		end
+	  else
+		begin 
+			set @result=@kmbm
+		end
+  return @result;
+end

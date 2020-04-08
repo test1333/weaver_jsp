@@ -168,7 +168,7 @@ weaver.general.AccountType.langId.set(lg);
 			</div>
 		</FORM>
 		<%
-		String backfields = "rownum,id,year,department,(select typename from uf_prj_businesstype where id=a.businesstype) as businesstype,nvl(budget,0) as budget,nvl(amount,0) as amount,case when nvl(budget,0) =0 then 0 else round(nvl(amount,0)/budget,2)*100 end||'%' as fsl,(select nvl(sum(nvl(t3.usedmoney,0)),0) from hs_projectinfo t,uf_project_type t1,uf_prj_usedmoney t2,uf_prj_usedmoney_dt1 t3 where  t.id=t2.prjid and t2.id=t3.mainid and t3.year=a.year and t.prjtype=t1.id and t.belongdepart=a.department and t1.businesstype=a.businesstype) as amounthq";
+		String backfields = "rownum,id,year,department,(select typename from uf_prj_businesstype where id=a.businesstype) as businesstype,nvl(budget,0) as budget,nvl(amount,0) as amount,case when nvl(budget,0) =0 then 0 else round(nvl(amount,0)/budget,2)*100 end||'%' as fsl,(select nvl(sum(nvl(t3.usedmoney,0)),0) from hs_projectinfo t,uf_project_type t1,uf_prj_usedmoney t2,uf_prj_usedmoney_dt1 t3 where  t.id=t2.prjid and t2.id=t3.mainid and t3.year=a.year and t.prjtype=t1.id and t.belongdepart=a.department and t1.businesstype=a.businesstype and t.status not in('删除')) as amounthq";
 		String fromSql  =  " from (select * from uf_prj_depbudget order by department asc,id desc) a";
 		String sqlWhere =  " 1=1  ";
 		if(userid !=1 && "-1".equals(cansee)){

@@ -323,7 +323,7 @@ ProjectInfoDao pid = new ProjectInfoDao();
 							}
 
 					 	}
-					 	String sqlWhere = " a.id=b.prjid and a.prjtype='"+parb.getPrjtype()+"' ";
+					 	String sqlWhere = " a.id=b.prjid and a.status not in('删除') and a.prjtype='"+parb.getPrjtype()+"' ";
 
 					 	for(PrjAllReportDtBean prdb:prjlist){
 							String fieldid=prdb.getFieldid();

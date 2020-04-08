@@ -17,7 +17,7 @@
 	 String sql = "";
 	 String sql_dt = "";
 	 if("0".equals(ftlx)){
-		sql = "select bmmc as bm,sum(convert(float,isnull(gsbl,'0'))) as bl from uf_gsft group by bmmc";
+		sql = "select bmmc as bm,convert(varchar(100) , cast(sum(convert(decimal(10,6),isnull(gsbl,'0'))) as numeric(10,6))) as bl from uf_gsft group by bmmc";
 		rs.executeSql(sql);
 		while(rs.next()){
 			String bm = Util.null2String(rs.getString("bm"));

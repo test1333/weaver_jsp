@@ -46,7 +46,7 @@ weaver.general.AccountType.langId.set(lg);
 	String needfav ="1";
 	String needhelp ="";
 	boolean flagaccount = weaver.general.GCONST.getMOREACCOUNTLANDING();
-    String out_pageId = "cxyslisthistory2";
+    String out_pageId = "cxyslisthistory5";
 	String year = Util.null2String(request.getParameter("year"));
 	String month = Util.null2String(request.getParameter("month"));
 	String bm = Util.null2String(request.getParameter("bm"));
@@ -79,7 +79,9 @@ weaver.general.AccountType.langId.set(lg);
 		<%@ include file="/systeminfo/RightClickMenuConent_wev8.jsp" %>
 		<%
 		RCMenu += "{刷新,javascript:refersh(),_self} " ;
-		RCMenu += "{导入,javascript:daoru(),_self} " ;
+		//RCMenu += "{导出,javascript:_xtable_getAllExcel(),_self} " ;
+		RCMenu += "{导出,javascript:_xtable_getAllExcel(),_self} " ;
+		RCMenuHeight += RCMenuHeightStep ;
 		RCMenuHeight += RCMenuHeightStep ;
 		%>
 		<%@ include file="/systeminfo/RightClickMenu_wev8.jsp" %>
@@ -180,9 +182,9 @@ weaver.general.AccountType.langId.set(lg);
 		<tr>
 		<td>
 		<%
-		String backfields = "id,nf,fsyf,rjbm,ejbm,nbdd,xm,(select INTERNAL_ORDER_DESC from uf_nbdd where id=a.xm) as xmname,fykmbh,fykm,(select yskmmc from uf_yskmsj where id=a.fykm) as yskmmc,sl,jldw,dj,hjje,jtsm,fyxqrr,bb,zt ";
-		String fromSql  =  " from uf_yssjdr a ";
-		String sqlWhere =  " 1=1 and zt=1";
+		String backfields = "id,nf,fsyf,rjbm,ejbm,nbdd,xm,(select INTERNAL_ORDER_DESC from uf_nbdd where id=a.xm) as xmname,fykmbh,fykm,(select yskmmc from uf_yskmsj where id=a.fykm) as yskmmc,sl,jldw,dj,hjje,jtsm,fyxqrr,bb,zt,case when sfyfsys='1' then '是' else '否' end as sfyfsys ";
+		String fromSql  =  " from (select * from uf_yssjdr where zt=1) a ";
+		String sqlWhere =  " 1=1 ";
 		if(!"".equals(version)){
 			sqlWhere = sqlWhere + " and bb='"+version+"'";
 		}
@@ -216,22 +218,22 @@ weaver.general.AccountType.langId.set(lg);
 				   "	   <sql backfields=\""+backfields+"\" sqlform=\""+fromSql+"\" sqlwhere=\""+Util.toHtmlForSplitPage(sqlWhere)+"\"  sqlorderby=\""+orderby+"\"  sqlprimarykey=\"id\" sqlsortway=\"desc\" sqlisdistinct=\"false\" />"+
 		operateString+
 		"			<head>";
-				tableString +="<col width=\"5%\" text=\"版本\" column=\"bb\" orderkey=\"bb\"  />"+ 
+				tableString +="<col width=\"5%\" text=\"历史版本\" column=\"bb\" orderkey=\"bb\"  />"+ 
 							"<col width=\"5%\" text=\"年份\" column=\"nf\" orderkey=\"nf\"  />"+ 
-							"<col width=\"6%\" text=\"发生月份\" column=\"fsyf\" orderkey=\"fsyf\"  />"+ 
+							"<col width=\"5%\" text=\"发生月份\" column=\"fsyf\" orderkey=\"fsyf\"  />"+ 
 							"<col width=\"6%\" text=\"二级部门\" column=\"rjbm\" orderkey=\"rjbm\" transmethod=\"weaver.hrm.company.DepartmentComInfo.getDepartmentname\" />"+ 
 							"<col width=\"6%\" text=\"三级部门\" column=\"ejbm\" orderkey=\"ejbm\" transmethod=\"weaver.hrm.company.DepartmentComInfo.getDepartmentname\"/>"+ 
 							"<col width=\"6%\" text=\"内部订单\" column=\"nbdd\" orderkey=\"nbdd\"  />"+ 
 							"<col width=\"8%\" text=\"项目\" column=\"xmname\" orderkey=\"xmname\"  />"+ 
 							"<col width=\"8%\" text=\"费用科目编号\" column=\"fykmbh\" orderkey=\"fykmbh\"  />"+ 
-							"<col width=\"10%\" text=\"费用科目类型\" column=\"yskmmc\" orderkey=\"yskmmc\"  />"+ 
+							"<col width=\"8%\" text=\"费用科目类型\" column=\"yskmmc\" orderkey=\"yskmmc\"  />"+ 
 							"<col width=\"6%\" text=\"数量\" column=\"sl\" orderkey=\"sl\"  />"+ 
 							"<col width=\"6%\" text=\"计量单位\" column=\"jldw\" orderkey=\"jldw\"  />"+ 
 							"<col width=\"6%\" text=\"单价（元）\" column=\"dj\" orderkey=\"dj\"  />"+ 
 							"<col width=\"6%\" text=\"合计金额（元）\" column=\"hjje\" orderkey=\"hjje\"  />"+ 
-							"<col width=\"10%\" text=\"具体说明\" column=\"jtsm\" orderkey=\"jtsm\"  />"+ 
+							"<col width=\"7%\" text=\"具体说明\" column=\"jtsm\" orderkey=\"jtsm\"  />"+ 
 							"<col width=\"6%\" text=\"费用需求人员\" column=\"fyxqrr\" orderkey=\"fyxqrr\"  transmethod='weaver.proj.util.ProjectTransUtil.getResourceNamesWithLink' />"+ 
-							
+							"<col width=\"6%\" text=\"是否已发生预算\" column=\"sfyfsys\" orderkey=\"sfyfsys\"  />"+ 
 				
 						
 						

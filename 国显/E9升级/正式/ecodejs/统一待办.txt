@@ -1,0 +1,13 @@
+ecodeSDK.overwritePropsFnQueueMapSet('WeaTop', {
+    fn:(Com,newProps,name)=>{
+        const { pathname, hash } = window.location;
+         if (pathname === "/spa/workflow/index_mobx.jsp" && hash.indexOf('#/main/workflow/listDoing?tabkeys=102') >= 0 ){
+
+             Com.title="统一待办 （不含抄送和通知类流程，抄送和通知类等见原\"待办事宜\"）";
+            
+         }else{ 
+         }
+    }
+
+
+})
